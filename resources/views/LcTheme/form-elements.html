@@ -1,0 +1,2194 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<!-- Meta data -->
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="Spaner - Simple light Bootstrap Nice Admin Panel Dashboard Design Responsive HTML5 Template" name="description">
+		<meta content="Spruko Technologies Private Limited" name="author">
+		<meta name="keywords" content="bootstrap panel, bootstrap admin template, dashboard template, bootstrap dashboard, dashboard design, best dashboard, html css admin template, html admin template, admin panel template, admin dashbaord template, bootstrap dashbaord template, it dashbaord, hr dashbaord, marketing dashbaord, sales dashbaord, dashboard ui, admin portal, bootstrap 4 admin template, bootstrap 4 admin"/>
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico" />
+
+		<!-- Title -->
+		<title>Spaner - Simple light Bootstrap Nice Admin Panel Dashboard Design Responsive HTML5 Template</title>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
+
+        <!--Font Awesome-->
+		<link href="../assets/plugins/fontawesome-free/css/all.css" rel="stylesheet">
+
+		<!-- Dashboard Css -->
+		<link href="../assets/css/style.css" rel="stylesheet" />
+		<link href="../assets/css/boxed.css" rel="stylesheet" />
+		<link href="../assets/css/color-styles.css" rel="stylesheet" />
+		<link href="../assets/css/skin-modes.css" rel="stylesheet" />
+
+		<!-- Custom scroll bar css-->
+		<link href="../assets/plugins/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+		<!-- select2 Plugin -->
+		<link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" />
+
+		<!-- Horizontal css -->
+		<link href="../assets/plugins/horizontal-menu/dropdown-effects/fade-down.css" rel="stylesheet">
+		<link href="../assets/plugins/horizontal-menu/horizontal-menu.css" rel="stylesheet">
+
+		<!-- P-scroll css -->
+		<link href="../assets/plugins/p-scroll/p-scroll.css" rel="stylesheet" type="text/css">
+
+		<!-- Time picker Plugin -->
+		<link href="../assets/plugins/jquery.timepicker/jquery.timepicker.css" rel="stylesheet" />
+
+		<!-- Date Picker Plugin -->
+		<link href="../assets/plugins/date-picker/date-picker.css" rel="stylesheet" />
+
+		<!--mutipleselect css-->
+		<link rel="stylesheet" href="../assets/plugins/multipleselect/multiple-select.css">
+
+		<!---Font icons-->
+		<link href="../assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
+
+		<!-- Sidebar css -->
+		<link href="../assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+
+	</head>
+
+	<body class="app">
+
+		<!-- Global Loader-->
+		<div id="global-loader"><img src="../assets/images/svgs/loader.svg" alt="loader"></div>
+
+		<div class="page">
+			<div class="page-main">
+
+				<!-- Navbar-->
+				<header class="header top-header">
+					<!-- Navbar Right Menu-->
+					<div class="container">
+						<div class="d-flex">
+							 <a id="horizontal-navtoggle" class="animated-arrow hor-toggle"><span></span></a>
+							<a class="header-brand" href="index.html">
+								<img alt="logo" class="header-brand-img main-logo" src="../assets/images/brand/logo1.png">
+								<img alt="logo" class="header-brand-img mobile-logo" src="../assets/images/brand/icon.png">
+							</a>
+							<!-- Sidebar toggle button-->
+							<div class="dropdown d-sm-flex d-none">
+								<a href="#" class="nav-link icon" data-toggle="dropdown">
+									<i class="fe fe-search"></i>
+								</a>
+								<div class="dropdown-menu header-search dropdown-menu-left dropdown-menu-arrow">
+									<div class="input-group w-100 p-2">
+										<input type="text" class="form-control " placeholder="Search....">
+										<div class="input-group-append ">
+											<button type="button" class="btn btn-primary ">
+												<i class="fas fa-search" aria-hidden="true"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dropdown d-sm-flex d-none header-message">
+								<a class="nav-link icon" data-toggle="dropdown">
+									<i class="fe fe-grid mr-2"></i><span class="lay-outstyle">Menus styles</span>
+									<span class="pulse2 bg-warning" aria-hidden="true"></span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+									<a class="dropdown-item d-flex pb-3" href="left-menu.html">Icon Menu</a>
+									<a class="dropdown-item d-flex pb-3" href="sidemenu.html">Icon Closed Menu</a>
+									<a class="dropdown-item d-flex pb-3" href="overlay2.html">Icon Overlay Menu</a>
+									<a class="dropdown-item d-flex pb-3" href="overlay.html">Closed Overlay Menu</a>
+									<a class="dropdown-item d-flex pb-3" href="toggle.html">Toggle Menu</a>
+
+								</div>
+							</div>
+							<div class="d-flex order-lg-2 ml-auto">
+								<div class="d-sm-flex d-none">
+									<a href="#" class="nav-link icon full-screen-link">
+										<i class="fe fe-minimize fullscreen-button"></i>
+									</a>
+								</div>
+								<div class="dropdown d-none d-md-flex">
+									<a href="#" class="d-flex nav-link pr-0 country-flag" data-toggle="dropdown">
+										<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/french_flag.jpg"></span>
+										<div>
+											<span class="text-white mr-3 mt-0">English</span>
+										</div>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+										<a href="#" class="dropdown-item d-flex pb-3">
+											<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/french_flag.jpg"></span>
+											<div class="d-flex">
+												<span class="">French</span>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item d-flex pb-3">
+											<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/germany_flag.jpg"></span>
+											<div class="d-flex">
+												<span class="">Germany</span>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item d-flex pb-3">
+											<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/italy_flag.jpg"></span>
+											<div class="d-flex">
+												<span class="">Italy</span>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item d-flex pb-3">
+											<span class="avatar country-Flag  mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/russia_flag.jpg"></span>
+											<div class="d-flex">
+												<span class="">Russia</span>
+											</div>
+										</a>
+										<a href="#" class="dropdown-item d-flex pb-3">
+											<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/spain_flag.jpg"></span>
+											<div class="d-flex">
+												<span class="">spain</span>
+											</div>
+										</a>
+									</div>
+								</div><!-- flag -->
+								<div class="dropdown d-sm-flex d-none header-message">
+									<a class="nav-link icon" data-toggle="dropdown">
+										<i class="fe fe-mail"></i>
+										<span class=" nav-unread badge badge-danger badge-pill">4</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+										<a class="dropdown-item text-center" href="#">2 New Messages</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item d-flex pb-3" href="#">
+											<span class="avatar avatar-md brround mr-3 align-self-center cover-image" data-image-src="../assets/images/users/7.jpg"></span>
+											<div>
+												<strong>Madeleine</strong> Hey! there I' am available....
+												<div class="small text-muted">
+													3 hours ago
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item d-flex pb-3" href="#"><span class="avatar avatar-md brround mr-3 align-self-center cover-image" data-image-src="../assets/images/users/3.jpg"></span>
+											<div>
+												<strong>Anthony</strong> New product Launching...
+												<div class="small text-muted">
+													5 hour ago
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item d-flex pb-3" href="#"><span class="avatar avatar-md brround mr-3 align-self-center cover-image" data-image-src="../assets/images/users/8.jpg"></span>
+											<div>
+												<strong>Olivia</strong> New Schedule Realease......
+												<div class="small text-muted">
+													45 mintues ago
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item d-flex pb-3" href="#"><span class="avatar avatar-md brround mr-3 align-self-center cover-image" data-image-src="../assets/images/users/9.jpg"></span>
+											<div>
+												<strong>Sanderson</strong> New Schedule Realease......
+												<div class="small text-muted">
+													2 days ago
+												</div>
+											</div>
+										</a>
+										<div class="dropdown-divider"></div>
+										<div class="text-center dropdown-btn pb-3">
+											<div class="btn-list">
+												<a href="#" class="btn btn-primary btn-sm"><i class="fe fe-plus mr-1"></i>Add New</a>
+												<a href="#" class=" btn btn-secondary btn-sm"><i class="fe fe-eye mr-1"></i>View All</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dropdown d-sm-flex d-none header-message">
+									<a class="nav-link icon" data-toggle="dropdown">
+										<i class="fe fe-bell"></i>
+										<span class=" nav-unread badge badge-warning  badge-pill">3</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+										<a class="dropdown-item text-center" href="#">Notifications</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item d-flex pb-4" href="#">
+											<span class="avatar brround mr-3 align-self-center avatar-md cover-image bg-primary"><i class="fe fe-mail fs-12"></i></span>
+											<div>
+												<span class="font-weight-bold"> commented on your post </span>
+												<div class="small text-muted d-flex">
+													3 hours ago
+													<div class="ml-auto">
+													<span class="badge badge-primary">New</span>
+													</div>
+												</div>
+												<div class="progress progress-xs mt-1">
+													<div class="progress-bar bg-primary w-30"></div>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item d-flex pb-4" href="#">
+											<span class="avatar avatar-md brround mr-3 align-self-center cover-image bg-secondary"><i class="fe fe-download"></i>
+											</span>
+											<div>
+												<span class="font-weight-bold"> New file has been Uploaded </span>
+												<div class="small text-muted d-flex">
+													5 hour ago
+													<div class="ml-auto">
+													<span class="badge badge-secondary">New</span>
+													</div>
+												</div>
+												<div class="progress progress-xs mt-1">
+													<div class="progress-bar bg-secondary w-50"></div>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item d-flex pb-4" href="#">
+											<span class="avatar avatar-md brround mr-3 align-self-center cover-image bg-warning"><i class="fe fe-user"></i>
+											</span>
+											<div>
+												<span class="font-weight-bold"> User account has Updated</span>
+												<div class="small text-muted d-flex">
+													5 hour ago
+													<div class="ml-auto">
+													<span class="badge badge-warning">New</span>
+													</div>
+												</div>
+												<div class="progress progress-xs mt-1">
+													<div class="progress-bar bg-warning w-70"></div>
+												</div>
+											</div>
+										</a>
+										<div class="dropdown-divider"></div>
+										<div class="text-center dropdown-btn pb-3">
+											<div class="btn-list">
+												<a href="#" class="btn btn-primary btn-sm"><i class="fe fe-plus mr-1"></i>Add New</a>
+												<a href="#" class=" btn btn-secondary btn-sm"><i class="fe fe-eye mr-1"></i>View All</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<button class="navbar-toggler navresponsive-toggler d-sm-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+									aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon fe fe-more-vertical text-white"></span>
+								</button>
+								<!--Navbar -->
+								<div class="dropdown">
+									<a class="nav-link pr-0 leading-none d-flex" data-toggle="dropdown" href="#">
+										<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/5.jpg"></span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+										<div class="drop-heading">
+											<div class="text-center">
+												<h5 class="text-dark mb-1">Vanessa Dyer</h5>
+												<small class="text-muted">Web Developer</small>
+											</div>
+										</div>
+										<div class="dropdown-divider m-0"></div>
+										<a class="dropdown-item" href="#"><i class="dropdown-icon fe fe-user"></i>Profile</a>
+										<a class="dropdown-item" href="#"><i class="dropdown-icon fe fe-edit"></i>Schedule</a>
+										<a class="dropdown-item" href="#"><i class="dropdown-icon fe fe-mail"></i> Inbox</a>
+										<a class="dropdown-item" href="#"><i class="dropdown-icon fe fe-unlock"></i> Look Screen</a>
+										<a class="dropdown-item" href="#"><i class="dropdown-icon fe fe-power"></i> Log Out</a>
+										<div class="dropdown-divider"></div>
+										<div class="text-center dropdown-btn pb-3">
+											<div class="btn-list">
+												<a href="#" class="btn btn-icon btn-facebook btn-sm"><i class="si si-social-facebook"></i></a>
+												<a href="#" class="btn btn-icon btn-twitter btn-sm"><i class="si si-social-twitter"></i></a>
+												<a href="#" class="btn btn-icon btn-instagram btn-sm"><i class="si si-social-instagram"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dropdown d-md-flex header-settings">
+									<a href="#" class="nav-link icon" data-toggle="sidebar-right" data-target=".sidebar-right">
+										<i class="fe fe-align-right"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<div class="mb-1 navbar navbar-expand-lg  responsive-navbar navbar-dark d-sm-none bg-white">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+						<div class="d-flex order-lg-2 ml-auto">
+							<div class="dropdown d-md-flex">
+								<a href="#" class="nav-link icon" data-toggle="dropdown">
+									<i class="fe fe-search"></i>
+								</a>
+								<div class="dropdown-menu  dropdown-menu-right dropdown-menu-arrow">
+									<div class="input-group w-100 p-2">
+										<input type="text" class="form-control " placeholder="Search....">
+										<div class="input-group-append ">
+											<button type="button" class="btn btn-primary ">
+												<i class="fas fa-search" aria-hidden="true"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="d-md-flex">
+								<a href="#" class="nav-link icon full-screen-link text-dark">
+									<i class="fe fe-minimize fullscreen-button"></i>
+								</a>
+							</div>
+							<div class="dropdown  d-md-flex header-contact">
+								<a class="nav-link icon text-dark" data-toggle="dropdown">
+									<i class="fe fe-flag"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+									<a href="#" class="dropdown-item d-flex pb-3">
+										<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/french_flag.jpg"></span>
+										<div class="d-flex">
+											<span class="">French</span>
+										</div>
+									</a>
+									<a href="#" class="dropdown-item d-flex pb-3">
+										<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/germany_flag.jpg"></span>
+										<div class="d-flex">
+											<span class="">Germany</span>
+										</div>
+									</a>
+									<a href="#" class="dropdown-item d-flex pb-3">
+										<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/italy_flag.jpg"></span>
+										<div class="d-flex">
+											<span class="">Italy</span>
+										</div>
+									</a>
+									<a href="#" class="dropdown-item d-flex pb-3">
+										<span class="avatar country-Flag  mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/russia_flag.jpg"></span>
+										<div class="d-flex">
+											<span class="">Russia</span>
+										</div>
+									</a>
+									<a href="#" class="dropdown-item d-flex pb-3">
+										<span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="../assets/images/svgs/flags/spain_flag.jpg"></span>
+										<div class="d-flex">
+											<span class="">spain</span>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="dropdown  d-md-flex header-contact">
+								<a class="nav-link icon text-dark" data-toggle="dropdown">
+									<i class="fe fe-mail"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+									<a class="dropdown-item text-center" href="#">2 New Messages</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item d-flex pb-3" href="#">
+										<span class="avatar avatar-md brround mr-3 align-self-center cover-image" data-image-src="../assets/images/users/7.jpg"></span>
+										<div>
+											<strong>Madeleine</strong> Hey! there I' am available....
+											<div class="small text-muted">
+												3 hours ago
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item d-flex pb-3" href="#"><span class="avatar avatar-md brround mr-3 align-self-center cover-image" data-image-src="../assets/images/users/3.jpg"></span>
+										<div>
+											<strong>Anthony</strong> New product Launching...
+											<div class="small text-muted">
+												5 hour ago
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item d-flex pb-3" href="#"><span class="avatar avatar-md brround mr-3 align-self-center cover-image" data-image-src="../assets/images/users/8.jpg"></span>
+										<div>
+											<strong>Olivia</strong> New Schedule Realease......
+											<div class="small text-muted">
+												45 mintues ago
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item d-flex pb-3" href="#"><span class="avatar avatar-md brround mr-3 align-self-center cover-image" data-image-src="../assets/images/users/9.jpg"></span>
+										<div>
+											<strong>Sanderson</strong> New Schedule Realease......
+											<div class="small text-muted">
+												2 days ago
+											</div>
+										</div>
+									</a>
+									<div class="dropdown-divider"></div>
+									<div class="text-center dropdown-btn pb-3">
+										<div class="btn-list">
+											<a href="#" class="btn btn-primary btn-sm"><i class="fe fe-plus mr-1"></i>Add New</a>
+											<a href="#" class=" btn btn-secondary btn-sm"><i class="fe fe-eye mr-1"></i>View All</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dropdown d-md-flex header-message">
+								<a class="nav-link icon text-dark" data-toggle="dropdown">
+									<i class="fe fe-bell"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+									<a class="dropdown-item text-center" href="#">Notifications</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item d-flex pb-4" href="#">
+										<span class="avatar brround mr-3 align-self-center avatar-md cover-image bg-primary"><i class="fe fe-mail fs-12"></i></span>
+										<div>
+											<span class="font-weight-bold"> commented on your post </span>
+											<div class="small text-muted d-flex">
+												3 hours ago
+												<div class="ml-auto">
+												<span class="badge badge-primary">New</span>
+												</div>
+											</div>
+											<div class="progress progress-xs mt-1">
+												<div class="progress-bar bg-primary w-30"></div>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item d-flex pb-4" href="#">
+										<span class="avatar avatar-md brround mr-3 align-self-center cover-image bg-secondary"><i class="fe fe-download"></i>
+										</span>
+										<div>
+											<span class="font-weight-bold"> New file has been Uploaded </span>
+											<div class="small text-muted d-flex">
+												5 hour ago
+												<div class="ml-auto">
+												<span class="badge badge-secondary">New</span>
+												</div>
+											</div>
+											<div class="progress progress-xs mt-1">
+												<div class="progress-bar bg-secondary w-50"></div>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item d-flex pb-4" href="#">
+										<span class="avatar avatar-md brround mr-3 align-self-center cover-image bg-warning"><i class="fe fe-user"></i>
+										</span>
+										<div>
+											<span class="font-weight-bold"> User account has Updated</span>
+											<div class="small text-muted d-flex">
+												5 hour ago
+												<div class="ml-auto">
+												<span class="badge badge-warning">New</span>
+												</div>
+											</div>
+											<div class="progress progress-xs mt-1">
+												<div class="progress-bar bg-warning w-70"></div>
+											</div>
+										</div>
+									</a>
+									<div class="dropdown-divider"></div>
+									<div class="text-center dropdown-btn pb-3">
+										<div class="btn-list">
+											<a href="#" class="btn btn-primary btn-sm"><i class="fe fe-plus mr-1"></i>Add New</a>
+											<a href="#" class=" btn btn-secondary btn-sm"><i class="fe fe-eye mr-1"></i>View All</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dropdown d-md-flex header-message">
+								<a class="nav-link icon" data-toggle="dropdown">
+									<i class="fe fe-grid"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+									<a class="dropdown-item d-flex pb-3" href="left-menu.html">Icon Menu</a>
+									<a class="dropdown-item d-flex pb-3" href="sidemenu.html">Icon Closed Menu</a>
+									<a class="dropdown-item d-flex pb-3" href="overlay2.html">Icon Overlay Menu</a>
+									<a class="dropdown-item d-flex pb-3" href="overlay.html">Closed Overlay Menu</a>
+									<a class="dropdown-item d-flex pb-3" href="toggle.html">Toggle Menu</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/Navbar -->
+
+				<!-- Horizontal-Menu -->
+				<div class="sticky">
+					<div class="horizontal-main hor-menu clearfix">
+						<div class="horizontal-mainwrapper container clearfix">
+							<nav class="horizontalMenu clearfix">
+								<ul class="horizontalMenu-list">
+									<li aria-haspopup="true"><a href="#" class="sub-icon "><i class="fe fe-home"></i> Dashboard <i class="fa fa-angle-down horizontal-icon"></i></a>
+										<ul class="sub-menu">
+											<li aria-haspopup="true"><a href="index.html">Dashboard 01</a></li>
+											<li aria-haspopup="true"><a href="index2.html">Dashboard 02</a></li>
+											<li aria-haspopup="true"><a href="index3.html">Dashboard 03</a></li>
+											<li aria-haspopup="true"><a href="index4.html">Dashboard 04</a></li>
+											<li aria-haspopup="true"><a href="index5.html">Dashboard 05</a></li>
+										</ul>
+									</li>
+									<li aria-haspopup="true"><a href="widgets.html" class=""><i class="fe fe-grid"></i> widgets</a></li>
+									<li aria-haspopup="true"><a href="#" class="sub-icon"><i class="fe fe-layers"></i>Components <i class="fa fa-angle-down horizontal-icon"></i></a>
+										<ul class="sub-menu">
+											<li aria-haspopup="true"><a href="maps.html">Maps</a></li>
+											<li aria-haspopup="true"><a href="crypto-currencies.html">Crypto-currencies</a></li>
+											<li aria-haspopup="true"><a href="users-list.html">User List</a></li>
+											<li aria-haspopup="true"><a href="time-line.html">Timeline</a></li>
+											<li aria-haspopup="true"><a href="rating.html">Rating</a></li>
+											<li aria-haspopup="true" class="sub-menu-sub"><span class="horizontalMenu-click02"></span><a href="#">Calendar</a>
+												<ul class="sub-menu">
+													<li aria-haspopup="true"><a href="calendar.html">Default calendar</a></li>
+													<li aria-haspopup="true"><a href="calendar2.html">Full calendar</a></li>
+												</ul>
+											</li>
+											<li aria-haspopup="true" class="sub-menu-sub"><a href="#">Mail</a>
+												<ul class="sub-menu">
+													<li aria-haspopup="true"><a href="email.html">Mail-Compose</a></li>
+													<li aria-haspopup="true"><a href="emailservices.html">Mail-inbox</a></li>
+												</ul>
+											</li>
+											<li aria-haspopup="true" class="sub-menu-sub"><span class="horizontalMenu-click02"></span><a href="#">Tables</a>
+												<ul class="sub-menu">
+													<li aria-haspopup="true"><a href="tables.html">Default table</a></li>
+													<li aria-haspopup="true"><a href="datatable.html">Data Table</a></li>
+												</ul>
+											</li>
+											<li aria-haspopup="true"><a href="search.html">Search page</a></li>
+										</ul>
+									</li>
+									<li aria-haspopup="true"><a href="#" class="sub-icon"><i class="fe fe-pie-chart"></i> Charts <i class="fa fa-angle-down horizontal-icon"></i></a>
+										<ul class="sub-menu">
+											<li aria-haspopup="true">
+												<a href="chart-morris.html">Morris Chart </a>
+											</li>
+											<li aria-haspopup="true">
+												<a href="chart-echart.html">Echarts</a>
+											</li>
+											<li aria-haspopup="true">
+												<a href="charts-peity.html">Peity Charts</a>
+											</li>
+											<li aria-haspopup="true">
+												<a href="chart-chartist.html">Chartist Charts</a>
+											</li>
+											<li aria-haspopup="true">
+												<a href="chartjs.html">Chart js</a>
+											</li>
+											<li aria-haspopup="true">
+												<a href="chart-flot.html">Chart flot</a>
+											</li>
+										</ul>
+									</li>
+									<li aria-haspopup="true"><a href="#" class="sub-icon"><i class="fe fe-package"></i> Elements  <i class="fa fa-angle-down horizontal-icon"></i></a>
+										<div class="horizontal-megamenu clearfix ">
+											<div class="container ">
+												<div class="mega-menubg ">
+													<div class="row">
+														<div class="col-lg-3 col-md-12 col-xs-12 link-list">
+															<ul>
+																<li aria-haspopup="true"><a href="alerts.html">Alerts</a></li>
+																<li aria-haspopup="true"><a href="buttons.html">Buttons</a></li>
+																<li aria-haspopup="true"><a href="colors.html">Colors</a></li>
+																<li aria-haspopup="true"><a href="avatars.html">Avatars</a></li>
+																<li aria-haspopup="true"><a href="dropdown.html">Drop downs</a></li>
+																<li aria-haspopup="true"><a href="cards.html">Cards design</a></li>
+																<li aria-haspopup="true"><a href="chat.html">Default Chat</a></li>
+																<li aria-haspopup="true"><a href="list.html">List</a></li>
+															</ul>
+														</div>
+														<div class="col-lg-3 col-md-12 col-xs-12 link-list">
+															<ul>
+																<li aria-haspopup="true"><a href="modal.html">Modal</a></li>
+																<li aria-haspopup="true"><a href="pagination.html">Pagination</a></li>
+																<li aria-haspopup="true"><a href="navigation.html">Navigation</a></li>
+																<li aria-haspopup="true"><a href="typography.html">Typography</a></li>
+																<li aria-haspopup="true"><a href="breadcrumbs.html">Breadcrumbs</a></li>
+																<li aria-haspopup="true"><a href="badge.html">Badges</a></li>
+																<li aria-haspopup="true"><a href="notify.html">Notifications</a></li>
+																<li aria-haspopup="true"><a href="sweetalert.html">Sweet alerts</a></li>
+
+															</ul>
+														</div>
+														<div class="col-lg-3 col-md-12 col-xs-12 link-list">
+															<ul>
+																<li aria-haspopup="true"><a href="jumbotron.html">Jumbotron</a></li>
+																<li aria-haspopup="true"><a href="panels.html">Panels</a></li>
+																<li aria-haspopup="true"><a href="thumbnails.html">Thumbnails</a></li>
+																<li aria-haspopup="true"><a href="mediaobject.html">Media Object</a></li>
+																<li aria-haspopup="true"><a href="accordion.html">Accordions</a></li>
+																<li aria-haspopup="true"><a href="tabs.html">Tabs</a></li>
+																<li aria-haspopup="true"><a href="rangeslider.html">Range slider</a></li>
+																<li aria-haspopup="true"><a href="scroll.html">Content Scroll bar</a></li>
+															</ul>
+														</div>
+														<div class="col-lg-3 col-md-12 col-xs-12 link-list">
+															<ul>
+																<li aria-haspopup="true"><a href="tooltipandpopover.html">Tooltip and popover</a></li>
+																<li aria-haspopup="true"><a href="progress.html">Progress</a></li>
+																<li aria-haspopup="true"><a href="carousel.html">Carousels</a></li>
+																<li aria-haspopup="true"><a href="headers.html">Headers</a></li>
+																<li aria-haspopup="true"><a href="footers.html">Footers  </a></li>
+																<li aria-haspopup="true"><a href="loaders.html">Loaders</a></li>
+																<li aria-haspopup="true"><a href="counters.html">Counters</a></li>
+																<li aria-haspopup="true"><a href="tags.html">Tags</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li aria-haspopup="true"><a href="#" class="sub-icon"><i class="fe fe-life-buoy"></i> Pages <i class="fa fa-angle-down horizontal-icon"></i></a>
+										<ul class="sub-menu">
+											<li aria-haspopup="true" class="sub-menu-sub"><a href="#">Profile</a>
+												<ul class="sub-menu">
+													<li aria-haspopup="true"><a href="profile.html">Profile</a></li>
+													<li aria-haspopup="true"><a href="editprofile.html">Edit Profile</a></li>
+												</ul>
+											</li>
+											<li aria-haspopup="true" class="sub-menu-sub"><a href="#">E-commerce</a>
+												<ul class="sub-menu">
+													<li aria-haspopup="true"><a href="shop.html">Shop</a></li>
+													<li aria-haspopup="true"><a href="shop-des.html">Product Details</a></li>
+													<li aria-haspopup="true"><a href="cart.html">Shopping Cart</a></li>
+												</ul>
+											</li>
+											<li aria-haspopup="true" class="sub-menu-sub"><a href="#">Custom Pages</a>
+												<ul class="sub-menu">
+													<li aria-haspopup="true"><a href="login.html">Login</a></li>
+													<li aria-haspopup="true"><a href="register.html">Register</a></li>
+													<li aria-haspopup="true"><a href="forgot-password.html">Forgot Password</a></li>
+													<li aria-haspopup="true"><a href="lockscreen.html">Lock screen</a></li>
+													<li aria-haspopup="true"><a href="empty.html">Empty Page</a></li>
+												</ul>
+											</li>
+											<li aria-haspopup="true" class="sub-menu-sub"><a href="#">Error Pages</a>
+												<ul class="sub-menu">
+													<li aria-haspopup="true"><a href="400.html">400</a></li>
+													<li aria-haspopup="true"><a href="401.html">401</a></li>
+													<li aria-haspopup="true"><a href="500.html">500</a></li>
+													<li aria-haspopup="true"><a href="503.html">503</a></li>
+												</ul>
+											</li>
+											<li aria-haspopup="true" ><a href="construction.html">Under Construction</a></li>
+											<li aria-haspopup="true"><a href="gallery.html">Gallery</a></li>
+											<li aria-haspopup="true"><a href="about.html">About Company </a></li>
+											<li aria-haspopup="true"><a href="services.html">Services </a></li>
+											<li aria-haspopup="true"><a href="faq.html">FAQS</a></li>
+											<li aria-haspopup="true"><a href="terms.html">Terms</a></li>
+											<li aria-haspopup="true"><a href="invoice.html">Invoice</a></li>
+											<li aria-haspopup="true"><a href="pricing.html">Pricing Tables</a></li>
+											<li aria-haspopup="true"><a href="blog.html">Blog</a></li>
+										</ul>
+									</li>
+									<li aria-haspopup="true"><a href="#" class="sub-icon active"><i class="fe fe-file-text"></i> Forms <i class="fa fa-angle-down horizontal-icon"></i></a>
+										<ul class="sub-menu">
+											<li aria-haspopup="true"><a href="form-elements.html">Form Elements</a></li>
+											<li aria-haspopup="true"><a href="form-edior.html">Form Editor</a></li>
+											<li aria-haspopup="true"><a href="form-wizard.html">Form Wizard</a></li>
+										</ul>
+									</li>
+									<li aria-haspopup="true"><a href="#" class="sub-icon"><i class="fe fe-stop-circle"></i> Icons <i class="fa fa-angle-down horizontal-icon"></i></a>
+										<ul class="sub-menu">
+											<li aria-haspopup="true"><a href="icons.html">Font Awesome</a></li>
+											<li aria-haspopup="true"><a href="icons2.html">Material Design Icons</a></li>
+											<li aria-haspopup="true"><a href="icons3.html">Simple Line Icons</a></li>
+											<li aria-haspopup="true"><a href="icons4.html">Feather Icons</a></li>
+											<li aria-haspopup="true"><a href="icons5.html">Ionic Icons</a></li>
+											<li aria-haspopup="true"><a href="icons6.html">Flag Icons</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
+							<!-- Nav End -->
+						</div>
+					</div>
+				</div>
+				<!-- Horizontal-Menu End -->
+
+				<div class="container content-area">
+					<div class="horizontal-content">
+
+						<!--Page Header-->
+						<div class="mb-5">
+							<div class="page-header">
+								<h4 class="page-title"><i class="fe fe-file-text mr-1"></i> Forms</h4>
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="#">Forms</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Form Elements</li>
+								</ol>
+							</div>
+						</div>
+						<!--page header-->
+
+						<div class="row">
+							<div class="col-lg-12">
+								<form  method="post" class="card">
+									<div class="card-header">
+										<h3 class="card-title">Form elements</h3>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6 col-lg-6">
+												<div class="form-group">
+													<label class="form-label">Enter Name</label>
+													<input type="text" class="form-control" name="example-text-input" placeholder="Name">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Text</label>
+													<input type="text" class="form-control" name="example-text-input" placeholder="Text..">
+												</div>
+
+												<div class="form-group">
+													<label class="form-label">Message <span class="form-label-small">56/100</span></label>
+													<textarea class="form-control" name="example-textarea-input" rows="6" placeholder="text here.."></textarea>
+												</div>
+												<div class="form-group">
+													<label class="form-label">Disabled</label>
+													<input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled text area.." value="" disabled>
+												</div>
+												<div class="form-group">
+													<label class="form-label">Readonly</label>
+													<input type="text" class="form-control" name="example-disabled-input" placeholder="Read Only Text area." value="Read Only Text area. " readonly>
+												</div>
+												<div class="form-group">
+													<label class="form-label">Password</label>
+													<input type="password" class="form-control" name="example-password-input" placeholder="Password..">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Valid Email</label>
+													<input type="text" class="form-control is-valid state-valid" name="example-text-input-valid" placeholder="Valid Email..">
+												</div>
+												<div class="form-group m-0">
+													<label class="form-label">Invalid Number</label>
+													<input type="text" class="form-control is-invalid state-invalid" name="example-text-input-invalid"
+													placeholder="Invalid Number..">
+													<div class="invalid-feedback">Invalid feedback</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-lg-6">
+												<div class="form-group">
+													<label class="form-label">Country</label>
+													<select name="country" id="select-countries" class="form-control select2 custom-select">
+														<option value="br" data-data='{"image": "../assets/images/flags/br.svg"}'>Brazil</option>
+														<option value="cz" data-data='{"image": "../assets/images/flags/cz.svg"}'>Czech Republic</option>
+														<option value="de" data-data='{"image": "../assets/images/flags/de.svg"}'>Germany</option>
+														<option value="pl" data-data='{"image": "../assets/images/flags/pl.svg"}' selected>Poland</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label class="form-label">Input group</label>
+													<div class="input-group">
+														<input type="text" class="form-control" placeholder="Search for...">
+														<span class="input-group-append">
+															<button class="btn btn-primary" type="button">Go!</button>
+														</span>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="form-label">Input group buttons</label>
+													<div class="input-group">
+														<input type="text" class="form-control">
+														<div class="input-group-append">
+															<button type="button" class="btn btn-primary">Action</button>
+															<button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"></button>
+															<div class="dropdown-menu dropdown-menu-right">
+																<a class="dropdown-item" href="javascript:void(0)">News</a>
+																<a class="dropdown-item" href="javascript:void(0)">Messages</a>
+																<div class="dropdown-divider"></div>
+																<a class="dropdown-item" href="javascript:void(0)">Edit Profile</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="form-label">Separated inputs</label>
+													<div class="row gutters-xs">
+														<div class="col">
+															<input type="text" class="form-control" placeholder="Search for...">
+														</div>
+														<span class="col-auto">
+															<button class="btn btn-primary" type="button"><i class="fe fe-search text-white"></i></button>
+														</span>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="form-label">Icon input</label>
+
+													<div class="input-icon">
+														<span class="input-icon-addon">
+															<i class="fe fe-user"></i>
+														</span>
+														<input type="text" class="form-control" placeholder="Username">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="form-label">ZIP Code</label>
+													<div class="row gutters-sm">
+														<div class="col">
+															<input type="text" class="form-control" placeholder="Search for...">
+														</div>
+														<span class="col-auto align-self-center">
+															<span class="form-help bg-primary text-white" data-toggle="popover" data-placement="top"
+															data-content="<p>ZIP Code must be US or CDN format. You can use an extended ZIP+4 code to determine address more accurately.</p>
+															<p class='mb-0'><a href=''>USP ZIP codes lookup tools</a></p>
+															">?</span>
+														</span>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="form-label">Bootstrap's Custom File Input</div>
+													<div class="custom-file">
+														<input type="file" class="custom-file-input" name="example-file-input-custom">
+														<label class="custom-file-label">Choose file</label>
+													</div>
+												</div>
+												<div class="form-group m-0">
+													<label class="form-label">Date of birth</label>
+													<div class="row gutters-xs">
+														<div class="col-5">
+															<select name="user[month]" class="form-control select2 custom-select">
+																<option value="">Month</option>
+																<option value="1">January</option>
+																<option value="2">February</option>
+																<option value="3">March</option>
+																<option value="4">April</option>
+																<option value="5">May</option>
+																<option selected="selected" value="6">June</option>
+																<option value="7">July</option>
+																<option value="8">August</option>
+																<option value="9">September</option>
+																<option value="10">October</option>
+																<option value="11">November</option>
+																<option value="12">December</option>
+															</select>
+														</div>
+														<div class="col-3">
+															<select name="user[day]" class="form-control select2 custom-select">
+																<option value="">Day</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
+																<option value="11">11</option>
+																<option value="12">12</option>
+																<option value="13">13</option>
+																<option value="14">14</option>
+																<option value="15">15</option>
+																<option value="16">16</option>
+																<option value="17">17</option>
+																<option value="18">18</option>
+																<option value="19">19</option>
+																<option selected="selected" value="20">20</option>
+																<option value="21">21</option>
+																<option value="22">22</option>
+																<option value="23">23</option>
+																<option value="24">24</option>
+																<option value="25">25</option>
+																<option value="26">26</option>
+																<option value="27">27</option>
+																<option value="28">28</option>
+																<option value="29">29</option>
+																<option value="30">30</option>
+																<option value="31">31</option>
+															</select>
+														</div>
+														<div class="col-4">
+															<select name="user[year]" class="form-control select2 custom-select">
+																<option value="">Year</option>
+																<option value="2014">2014</option>
+																<option value="2013">2013</option>
+																<option value="2012">2012</option>
+																<option value="2011">2011</option>
+																<option value="2010">2010</option>
+																<option value="2009">2009</option>
+																<option value="2008">2008</option>
+																<option value="2007">2007</option>
+																<option value="2006">2006</option>
+																<option value="2005">2005</option>
+																<option value="2004">2004</option>
+																<option value="2003">2003</option>
+																<option value="2002">2002</option>
+																<option value="2001">2001</option>
+																<option value="2000">2000</option>
+																<option value="1999">1999</option>
+																<option value="1998">1998</option>
+																<option value="1997">1997</option>
+																<option value="1996">1996</option>
+																<option value="1995">1995</option>
+																<option value="1994">1994</option>
+																<option value="1993">1993</option>
+																<option value="1992">1992</option>
+																<option value="1991">1991</option>
+																<option value="1990">1990</option>
+																<option selected="selected" value="1989">1989</option>
+																<option value="1988">1988</option>
+																<option value="1987">1987</option>
+																<option value="1986">1986</option>
+																<option value="1985">1985</option>
+																<option value="1984">1984</option>
+																<option value="1983">1983</option>
+																<option value="1982">1982</option>
+																<option value="1981">1981</option>
+																<option value="1980">1980</option>
+																<option value="1979">1979</option>
+																<option value="1978">1978</option>
+																<option value="1977">1977</option>
+																<option value="1976">1976</option>
+																<option value="1975">1975</option>
+																<option value="1974">1974</option>
+																<option value="1973">1973</option>
+																<option value="1972">1972</option>
+																<option value="1971">1971</option>
+																<option value="1970">1970</option>
+																<option value="1969">1969</option>
+																<option value="1968">1968</option>
+																<option value="1967">1967</option>
+																<option value="1966">1966</option>
+																<option value="1965">1965</option>
+																<option value="1964">1964</option>
+																<option value="1963">1963</option>
+																<option value="1962">1962</option>
+																<option value="1961">1961</option>
+																<option value="1960">1960</option>
+																<option value="1959">1959</option>
+																<option value="1958">1958</option>
+																<option value="1957">1957</option>
+																<option value="1956">1956</option>
+																<option value="1955">1955</option>
+																<option value="1954">1954</option>
+																<option value="1953">1953</option>
+																<option value="1952">1952</option>
+																<option value="1951">1951</option>
+																<option value="1950">1950</option>
+																<option value="1949">1949</option>
+																<option value="1948">1948</option>
+																<option value="1947">1947</option>
+																<option value="1946">1946</option>
+																<option value="1945">1945</option>
+																<option value="1944">1944</option>
+																<option value="1943">1943</option>
+																<option value="1942">1942</option>
+																<option value="1941">1941</option>
+																<option value="1940">1940</option>
+																<option value="1939">1939</option>
+																<option value="1938">1938</option>
+																<option value="1937">1937</option>
+																<option value="1936">1936</option>
+																<option value="1935">1935</option>
+																<option value="1934">1934</option>
+																<option value="1933">1933</option>
+																<option value="1932">1932</option>
+																<option value="1931">1931</option>
+																<option value="1930">1930</option>
+																<option value="1929">1929</option>
+																<option value="1928">1928</option>
+																<option value="1927">1927</option>
+																<option value="1926">1926</option>
+																<option value="1925">1925</option>
+																<option value="1924">1924</option>
+																<option value="1923">1923</option>
+																<option value="1922">1922</option>
+																<option value="1921">1921</option>
+																<option value="1920">1920</option>
+																<option value="1919">1919</option>
+																<option value="1918">1918</option>
+																<option value="1917">1917</option>
+																<option value="1916">1916</option>
+																<option value="1915">1915</option>
+																<option value="1914">1914</option>
+																<option value="1913">1913</option>
+																<option value="1912">1912</option>
+																<option value="1911">1911</option>
+																<option value="1910">1910</option>
+																<option value="1909">1909</option>
+																<option value="1908">1908</option>
+																<option value="1907">1907</option>
+																<option value="1906">1906</option>
+																<option value="1905">1905</option>
+																<option value="1904">1904</option>
+																<option value="1903">1903</option>
+																<option value="1902">1902</option>
+																<option value="1901">1901</option>
+																<option value="1900">1900</option>
+																<option value="1899">1899</option>
+																<option value="1898">1898</option>
+																<option value="1897">1897</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Vertical Form</div>
+									</div>
+									<div class="card-body">
+										<form >
+											<div class="">
+												<div class="form-group">
+													<label for="exampleInputEmail1">Email address</label>
+													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+												</div>
+												<div class="form-group">
+													<label for="exampleInputPassword1">Password</label>
+													<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+												</div>
+												<div class="checkbox">
+													<div class="custom-checkbox custom-control">
+														<input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-1">
+														<label for="checkbox-1" class="custom-control-label">Check me Out</label>
+													</div>
+												</div>
+											</div>
+											<div class=" mt-2 mb-0">
+												<button type="submit" class="btn btn-primary">Submit</button>
+												<button type="submit" class="btn btn-secondary">Cancel</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Horizontal Form</div>
+									</div>
+									<div class="card-body">
+										<form class="form-horizontal" >
+											<div class="form-group row">
+												<label for="inputName" class="col-md-3 col-form-label">User Name</label>
+												<div class="col-md-9">
+													<input type="text" class="form-control" id="inputName" placeholder="Name">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="inputEmail3" class="col-md-3 col-form-label">Email</label>
+												<div class="col-md-9">
+													<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="inputPassword3" class="col-md-3 col-form-label">Password</label>
+												<div class="col-md-9">
+													<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+												</div>
+											</div>
+											<div class="form-group mb-0 row justify-content-end">
+												<div class="col-md-9">
+													<div class="checkbox">
+														<div class="custom-checkbox custom-control">
+															<input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-2">
+															<label for="checkbox-2" class="custom-control-label">Check me Out</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-group mb-0 mt-2 row justify-content-end">
+												<div class="col-md-9">
+													<button type="submit" class="btn btn-primary">Sign in</button>
+													<button type="submit" class="btn btn-secondary">Cancel</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Form Different Heights</div>
+									</div>
+									<div class="card-body">
+										<input class="form-control input-lg" type="text" placeholder=".input-lg">
+										<br>
+										<input class="form-control" type="text" placeholder="Default input">
+										<br>
+										<input class="form-control input-sm" type="text" placeholder=".input-sm">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-12">
+								<form method="post" class="card">
+									<div class="card-header">
+										<h3 class="card-title">form elements</h3>
+									</div>
+									<div class=" card-body">
+										<div class="row">
+											<div class="col-md-6 col-lg-6">
+												<div class="form-group">
+													<div class="form-label">Toggle switch single</div>
+													<label class="custom-switch pl-0">
+														<input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+														<span class="custom-switch-indicator"></span>
+														<span class="custom-switch-description">I agree with terms and conditions</span>
+													</label>
+												</div>
+												<div class="form-group ">
+													<label class="form-label">Your skills</label>
+													<div class="selectgroup selectgroup-pills">
+														<label class="selectgroup-item">
+															<input type="checkbox" name="value" value="HTML" class="selectgroup-input" checked="">
+															<span class="selectgroup-button">HTML</span>
+														</label>
+														<label class="selectgroup-item">
+															<input type="checkbox" name="value" value="CSS" class="selectgroup-input">
+															<span class="selectgroup-button">CSS</span>
+														</label>
+														<label class="selectgroup-item">
+															<input type="checkbox" name="value" value="PHP" class="selectgroup-input">
+															<span class="selectgroup-button">PHP</span>
+														</label>
+														<label class="selectgroup-item">
+															<input type="checkbox" name="value" value="JavaScript" class="selectgroup-input">
+															<span class="selectgroup-button">JavaScript</span>
+														</label>
+														<label class="selectgroup-item">
+															<input type="checkbox" name="value" value="Angular" class="selectgroup-input">
+															<span class="selectgroup-button">Angular</span>
+														</label>
+														<label class="selectgroup-item">
+															<input type="checkbox" name="value" value="Java" class="selectgroup-input">
+															<span class="selectgroup-button">Java</span>
+														</label>
+														<label class="selectgroup-item">
+															<input type="checkbox" name="value" value="C++" class="selectgroup-input">
+															<span class="selectgroup-button">C++</span>
+														</label>
+													</div>
+												</div>
+												<div class="form-group m-0">
+													<label class="form-label">Select Color</label>
+													<div class="row gutters-xs">
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="azure" class="colorinput-input" checked />
+																<span class="colorinput-color bg-azure"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="indigo" class="colorinput-input"  />
+																<span class="colorinput-color bg-indigo"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="purple" class="colorinput-input" />
+																<span class="colorinput-color bg-purple"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="pink" class="colorinput-input" />
+																<span class="colorinput-color bg-pink"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="red" class="colorinput-input" />
+																<span class="colorinput-color bg-red"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="orange" class="colorinput-input" />
+																<span class="colorinput-color bg-orange"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="yellow" class="colorinput-input" />
+																<span class="colorinput-color bg-yellow"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="lime" class="colorinput-input" />
+																<span class="colorinput-color bg-lime"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="green" class="colorinput-input" />
+																<span class="colorinput-color bg-green"></span>
+															</label>
+														</div>
+														<div class="col-auto">
+															<label class="colorinput">
+																<input name="color" type="checkbox" value="teal" class="colorinput-input" />
+																<span class="colorinput-color bg-teal"></span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-lg-6">
+												<div class="form-group ">
+													<div class="form-label">Radios</div>
+													<div class="custom-controls-stacked">
+														<label class="custom-control custom-radio">
+															<input type="radio" class="custom-control-input" name="example-radios" value="option1" checked>
+															<span class="custom-control-label">Option 1</span>
+														</label>
+														<label class="custom-control custom-radio">
+															<input type="radio" class="custom-control-input" name="example-radios" value="option2">
+															<span class="custom-control-label">Option 2</span>
+														</label>
+														<label class="custom-control custom-radio">
+															<input type="radio" class="custom-control-input" name="example-radios" value="option3" disabled>
+															<span class="custom-control-label">Option Disabled</span>
+														</label>
+														<label class="custom-control custom-radio">
+															<input type="radio" class="custom-control-input" name="example-radios2" value="option4" disabled checked>
+															<span class="custom-control-label">Option Disabled Checked</span>
+														</label>
+													</div>
+												</div>
+
+												<div class="form-group m-0">
+													<div class="form-label">Checkboxes</div>
+													<div class="custom-controls-stacked">
+														<label class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked>
+															<span class="custom-control-label">Option 1</span>
+														</label>
+														<label class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+															<span class="custom-control-label">Option 2</span>
+														</label>
+														<label class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" name="example-checkbox3" value="option3" disabled>
+															<span class="custom-control-label">Option Disabled</span>
+														</label>
+														<label class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" name="example-checkbox4" value="option4" checked disabled>
+															<span class="custom-control-label">Option Disabled Checked</span>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-12">
+								<form  method="post" class="card">
+									<div class="card-header">
+										<h3 class="card-title">Select2 elements</h3>
+									</div>
+									<div class="card-body ">
+										<div class="form-group ">
+											<label class="form-label">Beast</label>
+											<select class="form-control select2 custom-select" data-placeholder="Choose one">
+												<option label="Choose one">
+												</option>
+												<option value="1">Chuck Testa</option>
+												<option value="2">Sage Cattabriga-Alosa</option>
+												<option value="3">Nikola Tesla</option>
+												<option value="4">Cattabriga-Alosa</option>
+												<option value="5">Nikola Alosa</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label class="form-label">Basic Select2</label>
+											<select class="form-control select2" data-placeholder="Choose one (with optgroup)">
+												<optgroup label="Mountain Time Zone">
+													<option value="AZ">Arizona</option>
+													<option value="CO">Colorado</option>
+													<option value="ID">Idaho</option>
+													<option value="MT">Montana</option><option value="NE">Nebraska</option>
+													<option value="NM">New Mexico</option>
+													<option value="ND">North Dakota</option>
+													<option value="UT">Utah</option>
+													<option value="WY">Wyoming</option>
+												</optgroup>
+												<optgroup label="Central Time Zone">
+													<option value="AL">Alabama</option>
+													<option value="AR">Arkansas</option>
+													<option value="IL">Illinois</option>
+													<option value="IA">Iowa</option>
+													<option value="KS">Kansas</option>
+													<option value="KY">Kentucky</option>
+													<option value="LA">Louisiana</option>
+													<option value="MN">Minnesota</option>
+													<option value="MS">Mississippi</option>
+													<option value="MO">Missouri</option>
+													<option value="OK">Oklahoma</option>
+													<option value="SD">South Dakota</option>
+													<option value="TX">Texas</option>
+													<option value="TN">Tennessee</option>
+													<option value="WI">Wisconsin</option>
+												</optgroup>
+											</select>
+										</div>
+										<div class="form-group">
+											<label class="form-label"> Select2 with search box</label>
+											<select class="form-control select2-show-search" data-placeholder="Choose one (with searchbox)">
+												<optgroup label="Mountain Time Zone">
+													<option value="AZ">Arizona</option>
+													<option value="CO">Colorado</option>
+													<option value="ID">Idaho</option>
+													<option value="MT">Montana</option><option value="NE">Nebraska</option>
+													<option value="NM">New Mexico</option>
+													<option value="ND">North Dakota</option>
+													<option value="UT">Utah</option>
+													<option value="WY">Wyoming</option>
+												</optgroup>
+												<optgroup label="Central Time Zone">
+													<option value="AL">Alabama</option>
+													<option value="AR">Arkansas</option>
+													<option value="IL">Illinois</option>
+													<option value="IA">Iowa</option>
+													<option value="KS">Kansas</option>
+													<option value="KY">Kentucky</option>
+													<option value="LA">Louisiana</option>
+													<option value="MN">Minnesota</option>
+													<option value="MS">Mississippi</option>
+													<option value="MO">Missouri</option>
+													<option value="OK">Oklahoma</option>
+													<option value="SD">South Dakota</option>
+													<option value="TX">Texas</option>
+													<option value="TN">Tennessee</option>
+													<option value="WI">Wisconsin</option>
+												</optgroup>
+											</select>
+										</div>
+										<div class="form-group">
+											<label class="form-label">Users list</label>
+											<select class="form-control select2" data-placeholder="Choose Browser" multiple>
+												<option value="Firefox">
+													Firefox
+												</option>
+												<option value="Chrome selected">
+													Chrome
+												</option>
+												<option value="Safari">
+													Safari
+												</option>
+												<option selected value="Opera">
+													Opera
+												</option>
+												<option value="Internet Explorer">
+													Internet Explorer
+												</option>
+											</select>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<h4>MutipleSelect Styles</h4>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Basic MutipleSelect</label>
+													<select multiple="multiple" class="multi-select">
+														<option value="1">January</option>
+														<option value="2">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Disabled MutipleSelect</label>
+													<select multiple="multiple" class="multi-select"  disabled="disabled">
+														<option value="1">January</option>
+														<option value="2">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Single Group Disabled MutipleSelect</label>
+													<select multiple="multiple" class="multi-select">
+														<optgroup label="Group 1" disabled="disabled">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+														</optgroup>
+														<optgroup label="Group 2">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+															<option value="6">Option 6</option>
+															<option value="7">Option 7</option>
+															<option value="8">Option 8</option>
+														</optgroup>
+														<optgroup label="Group 3">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+															<option value="6">Option 6</option>
+															<option value="7">Option 7</option>
+															<option value="8">Option 8</option>
+															<option value="9">Option 9</option>
+														</optgroup>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Multiple Items With Group-Option</label>
+													<select multiple="multiple" class="optmulti-select">
+														<optgroup label="Group 1">
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+														</optgroup>
+														<optgroup label="Group 2">
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+														</optgroup>
+														<optgroup label="Group 3">
+															<option value="11">11</option>
+															<option value="12">12</option>
+															<option value="13">13</option>
+															<option value="14">14</option>
+															<option value="15">15</option>
+														</optgroup>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Single Row</label>
+													<select multiple="multiple" class="single-select">
+														<option value="1">First</option>
+														<option value="2">Second</option>
+														<option value="3">Third</option>
+														<option value="4"  selected="selected">Fourth</option>
+													</select>
+												</div>
+												<div class="form-group mb-0">
+													<label>Group-Option Filter</label>
+													<select multiple="multiple" class="group-filter">
+														<optgroup label="Group 1">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+														</optgroup>
+														<optgroup label="Group 2">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+															<option value="6">Option 6</option>
+															<option value="7">Option 7</option>
+															<option value="8">Option 8</option>
+														</optgroup>
+														<optgroup label="Group 3">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+															<option value="6">Option 6</option>
+															<option value="7">Option 7</option>
+															<option value="8">Option 8</option>
+															<option value="9">Option 9</option>
+														</optgroup>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>MutipleSelect</label>
+													<select multiple="multiple" class="multi-select">
+														<option value="1" selected="selected">January</option>
+														<option value="2" disabled="disabled">February</option>
+														<option value="3" selected="selected" disabled="disabled">March</option>
+														<option value="4"  disabled="disabled">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Group-Option MutipleSelect</label>
+													<select multiple="multiple" class="multi-select">
+														<optgroup label="Group 1">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+														</optgroup>
+														<optgroup label="Group 2">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+															<option value="6">Option 6</option>
+															<option value="7">Option 7</option>
+															<option value="8">Option 8</option>
+														</optgroup>
+														<optgroup label="Group 3">
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+															<option value="4">Option 4</option>
+															<option value="5">Option 5</option>
+															<option value="6">Option 6</option>
+															<option value="7">Option 7</option>
+															<option value="8">Option 8</option>
+															<option value="9">Option 9</option>
+														</optgroup>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Multiple Items</label>
+													<select multiple="multiple" class="multiselect" >
+														<option value="1">1</option>
+														<option value="2" >2</option>
+														<option value="3" >3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+														<option value="16">16</option>
+														<option value="17">17</option>
+														<option value="18">18</option>
+														<option value="19">19</option>
+														<option value="20">20</option>
+														<option value="21">21</option>
+														<option value="22">22</option>
+														<option value="23">23</option>
+														<option value="24">24</option>
+														<option value="25">25</option>
+														<option value="26">26</option>
+														<option value="27">27</option>
+														<option value="28">28</option>
+														<option value="29">29</option>
+														<option value="30">30</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Hide SelectAll</label>
+													<select multiple="multiple" class="hide-select">
+														<option value="1">First</option>
+														<option value="2">Second</option>
+														<option value="3">Third</option>
+														<option value="4">Fourth</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Select Filter</label>
+													<select multiple="multiple" class="filter-multi">
+														<option value="1">1</option>
+														<option value="2" >2</option>
+														<option value="3" >3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+														<option value="16">16</option>
+														<option value="17">17</option>
+														<option value="18">18</option>
+														<option value="19">19</option>
+														<option value="20">20</option>
+													</select>
+												</div>
+												<div class="form-group mb-0">
+													<label>Custom Style</label>
+													<select multiple="multiple" class="custom-multiselect" >
+														<option value="1">January</option>
+														<option value="2">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-6 ">
+								<div class="card">
+									<div class="card-header">
+										<h3 class="card-title">Time Picker</h3>
+									</div>
+									<div class=" card-body">
+										<label >Default Time Picker:</label>
+										<div class="wd-150 mg-b-30">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<i class="fas fa-clock tx-16 lh-0 op-6"></i>
+													</div>
+												</div><!-- input-group-prepend -->
+												<input class="form-control" id="tpBasic" placeholder="Set time" type="text">
+											</div>
+										</div><!-- wd-150 -->
+										<label class="mt-4">Set the scroll position to local time if no value selected:</label>
+										<div class="wd-150 mg-b-30">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<i class="fas fa-clock tx-16 lh-0 op-6"></i>
+													</div><!-- input-group-text -->
+												</div><!-- input-group-prepend -->
+												<input class="form-control" id="tp2" placeholder="Set time" type="text">
+											</div>
+										</div><!-- wd-150 -->
+										<label class="mt-4 ">Dynamically set the time using a Javascript Date object:</label>
+										<div class="d-flex">
+											<div class="input-group date-gutters wd-150">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<i class="fas fa-clock tx-16 lh-0 op-6"></i>
+													</div><!-- input-group-text -->
+												</div><!-- input-group-prepend -->
+												<input class="form-control" id="tp3" placeholder="Set time" type="text">
+												<button class="btn btn btn-primary " id="setTimeButton">Set Current Time</button>
+											</div><!-- input-group -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 ">
+								<div class="card">
+									<div class="card-header">
+										<h3 class="card-title">Color Picker</h3>
+									</div>
+									<div class=" card-body">
+										<p class=" mb-1">A simple component to select color in the same way you select color in Adobe Photoshop.</p><input id="colorpicker" type="text">
+										<p class="mt-3  mb-1">You can allow alpha transparency selection. Check out these example.</p><input id="showAlpha" type="text">
+										<p class="mt-4 mb-1">Show pallete only. If you'd like, spectrum can show the palettes you specify, and nothing else.</p><input id="showPaletteOnly" type="text">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Date pickers</div>
+									</div>
+									<div class="card-body">
+										<div class="wd-200 mb-3">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<i class="fas fa-calendar tx-16 lh-0 op-6"></i>
+													</div>
+												</div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
+											</div>
+										</div>
+										<div class="wd-200">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<i class="fas fa-calendar tx-16 lh-0 op-6"></i>
+													</div>
+												</div><input class="form-control" id="datepickerNoOfMonths" placeholder="MM/DD/YYYY" type="text">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--Sidebar-right-->
+					<div class="sidebar sidebar-right sidebar-animate">
+
+						<div class="panel panel-primary">
+							<div class="tab-menu-heading border-0">
+								<div class="tabs-menu ">
+									<!-- Tabs -->
+									<ul class="nav panel-tabs">
+										<li class=""><a href="#side1" class="active" data-toggle="tab"><i class="fas fa-bell"></i> Notifications</a></li>
+										<li><a href="#side2" data-toggle="tab"><i class="fas fa-comments"></i> Chat</a></li>
+										<li><a href="#side3" data-toggle="tab"><i class="fas fa-user-friends"></i> Friends</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-body tabs-menu-body p-0 border-0">
+								<div class="tab-content">
+									<div class="tab-pane active " id="side1">
+										<div class="list-group list-group-flush ">
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-3">
+													<span class="avatar avatar-lg brround cover-image" data-image-src="../assets/images/users/5.jpg"><span class="avatar-status bg-green"></span></span>
+												</div>
+												<div>
+													<strong>Madeleine</strong> Hey! there I' am available....
+													<div class="small text-muted">
+														3 hours ago
+													</div>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-3">
+													<span class="avatar avatar-lg brround cover-image" data-image-src="../assets/images/users/4.jpg"></span>
+												</div>
+												<div>
+													<strong>Anthony</strong> New product Launching...
+													<div class="small text-muted">
+														5 hour ago
+													</div>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-3">
+													<span class="avatar avatar-lg brround cover-image" data-image-src="../assets/images/users/3.jpg"><span class="avatar-status bg-green"></span></span>
+												</div>
+												<div>
+													<strong>Olivia</strong> New Schedule Realease......
+													<div class="small text-muted">
+														45 mintues ago
+													</div>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-3">
+													<span class="avatar avatar-lg brround cover-image" data-image-src="../assets/images/users/2.jpg"><span class="avatar-status bg-green"></span></span>
+												</div>
+												<div>
+													<strong>Madeleine</strong> Hey! there I' am available....
+													<div class="small text-muted">
+														3 hours ago
+													</div>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-3">
+													<span class="avatar avatar-lg brround cover-image" data-image-src="../assets/images/users/1.jpg"></span>
+												</div>
+												<div>
+													<strong>Anthony</strong> New product Launching...
+													<div class="small text-muted">
+														5 hour ago
+													</div>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-3">
+													<span class="avatar avatar-lg brround cover-image" data-image-src="../assets/images/users/9.jpg"><span class="avatar-status bg-green"></span></span>
+												</div>
+												<div>
+													<strong>Olivia</strong> New Schedule Realease......
+													<div class="small text-muted">
+														45 mintues ago
+													</div>
+												</div>
+											</div>
+											<div class="pt-4 text-center">
+												<a href="#" class="btn btn-primary">View more</a>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane  " id="side2">
+										<div class="list d-flex align-items-center border-bottom p-4">
+											<div class="">
+												<span class="avatar bg-primary brround avatar-md">CH</span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0 d-flex">
+													<b>New Websites is Created</b>
+												</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<small class="text-muted ml-auto">30 mins ago</small>
+														<p class="mb-0"></p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center border-bottom p-4">
+											<div class="">
+												<span class="avatar bg-danger brround avatar-md">N</span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0 d-flex">
+													<b>Prepare For the Next Project</b>
+												</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<small class="text-muted ml-auto">2 hours ago</small>
+														<p class="mb-0"></p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center border-bottom p-4">
+											<div class="">
+												<span class="avatar bg-info brround avatar-md">S</span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0 d-flex">
+													<b>Decide the live Discussion</b>
+												</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<small class="text-muted ml-auto">3 hours ago</small>
+														<p class="mb-0"></p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center border-bottom p-4">
+											<div class="">
+												<span class="avatar bg-warning brround avatar-md">K</span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0 d-flex">
+													<b>Meeting at 3:00 pm</b>
+												</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<small class="text-muted ml-auto">4 hours ago</small>
+														<p class="mb-0"></p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center border-bottom p-4">
+											<div class="">
+												<span class="avatar bg-success brround avatar-md">R</span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0 d-flex">
+													<b>Prepare for Presentation</b>
+												</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<small class="text-muted ml-auto">1 days ago</small>
+														<p class="mb-0"></p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center border-bottom p-4">
+											<div class="">
+												<span class="avatar bg-pink brround avatar-md">MS</span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0 d-flex">
+													<b>Prepare for Presentation</b>
+												</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<small class="text-muted ml-auto">1 days ago</small>
+														<p class="mb-0"></p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center border-bottom p-4">
+											<div class="">
+												<span class="avatar bg-purple brround avatar-md">L</span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0 d-flex">
+													<b>Prepare for Presentation</b>
+												</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<small class="text-muted ml-auto">45 mintues ago</small>
+														<p class="mb-0"></p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center p-4">
+											<div class="">
+												<span class="avatar bg-blue brround avatar-md">U</span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0 d-flex">
+													<b>Prepare for Presentation</b>
+												</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<small class="text-muted ml-auto">2 days ago</small>
+														<p class="mb-0"></p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane  " id="side3">
+										<div class="list-group list-group-flush ">
+											<form class="form-inline p-4">
+												<div class="search-element">
+													<input class="form-control header-search" type="search" placeholder="Search..." aria-label="Search">
+												</div>
+											</form>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/2.jpg"><span class="avatar-status bg-green"></span></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Mozelle Belt</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/1.jpg"></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Florinda Carasco</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/9.jpg"><span class="avatar-status bg-green"></span></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Alina Bernier</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/3.jpg"><span class="avatar-status bg-green"></span></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Zula Mclaughin</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/4.jpg"></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Isidro Heide</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/5.jpg"><span class="avatar-status bg-green"></span></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Mozelle Belt</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/6.jpg"></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Florinda Carasco</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/8.jpg"></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Alina Bernier</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+											<div class="list-group-item d-flex  align-items-center">
+												<div class="mr-2">
+													<span class="avatar avatar-md brround cover-image" data-image-src="../assets/images/users/7.jpg"></span>
+												</div>
+												<div class="">
+													<div class="font-weight-semibold">Isidro Heide</div>
+												</div>
+												<div class="ml-auto">
+													<a href="#" class="btn btn-sm btn-light"><i class="fab fa-facebook-messenger"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/Sidebar-right-->
+
+					<!--footer-->
+					<footer class="footer">
+						<div class="container">
+							<div class="row align-items-center flex-row-reverse">
+								<div class="col-md-12 col-sm-12 text-center">
+									Copyright © 2019 <a href="#">Spaner</a>. Designed by <a href="https://spruko.com/">Spruko Technologies Pvt.Ltd</a> All rights reserved.
+								</div>
+							</div>
+						</div>
+					</footer>
+					<!-- End Footer-->
+				</div>
+			</div>
+		</div>
+
+		<!-- Back to top -->
+		<a href="#top" id="back-to-top"><i class="fas fa-angle-up "></i></a>
+
+		<!--Jquery js -->
+		<script src="../assets/js/vendors/jquery-3.2.1.min.js"></script>
+
+		<!--Jquery.Sparkline js -->
+		<script src="../assets/js/vendors/jquery.sparkline.min.js"></script>
+
+		<!--Circle-Progress js -->
+		<script src="../assets/js/vendors/circle-progress.min.js"></script>
+
+		<!--Jquery.rating js -->
+		<script src="../assets/plugins/jquery.rating/jquery.rating-stars.js"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="../assets/plugins/bootstrap/popper.min.js"></script>
+		<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Custom scroll bar Js-->
+		<script src="../assets/plugins/jquery.mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+		<!--Sticky JS -->
+		<script src="../assets/js/sticky.js"></script>
+
+		<!--Sidemenu js-->
+		<script src="../assets/plugins/side-menu/side-menu.js"></script>
+
+		<!-- Sidemenu-responsive-tabs js-->
+		<script src="../assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
+		<script src="../assets/js/left-menu.js"></script>
+
+		<!--Sticky JS -->
+		<script src="../assets/js/sticky.js"></script>
+
+		<!--Horizontal js -->
+		<script src="../assets/plugins/horizontal-menu/horizontal-menu.js"></script>
+
+		<!--Select2 js -->
+		<script src="../assets/plugins/select2/select2.full.min.js"></script>
+
+		<!-- peitychart -->
+		<script src="../assets/plugins/peitychart/jquery.peity.min.js"></script>
+
+		<!-- Timepicker js -->
+		<script src="../assets/plugins/jquery.timepicker/jquery.timepicker.js"></script>
+		<script src="../assets/plugins/jquery.timepicker/toggles.min.js"></script>
+
+		<!-- Datepicker js -->
+		<script src="../assets/plugins/date-picker/date-picker.js"></script>
+		<script src="../assets/plugins/date-picker/jquery-ui.js"></script>
+		<script src="../assets/plugins/jquery.mask/jquery.maskedinput.js"></script>
+
+		<!--MutipleSelect js-->
+		<script src="../assets/plugins/multipleselect/multiple-select.js"></script>
+		<script src="../assets/plugins/multipleselect/multi-select.js"></script>
+
+		<!-- Inline js -->
+		<script src="../assets/js/select2.js"></script>
+
+		<!--Counters -->
+		<script src="../assets/plugins/counters/counterup.min.js"></script>
+		<script src="../assets/plugins/counters/waypoints.min.js"></script>
+
+		<!-- Sidebar js -->
+		<script src="../assets/plugins/sidebar/sidebar.js"></script>
+
+		<!-- Custom js -->
+		<script src="../assets/js/custom.js"></script>
+
+	</body>
+</html>
+
+
