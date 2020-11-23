@@ -20,7 +20,8 @@ class Job extends Model
     'customer_address', 'customer_title', 'customer_tel', 'level', 'soi', 'road',
     'estimatecondition', 'remark',
     'landsize', 'units', 'percentsell', 'startprice', 'roomtype', 'convenient', 
-    'broker', 'yearstart', 'buildingprogress', 'inforesource', 'easydiff', 'valuationfee', 'valuationfee_case'
+    'broker', 'yearstart', 'buildingprogress', 'inforesource', 'easydiff', 'valuationfee', 'valuationfee_case',
+    'moo','soi','road','deedno','deedtumbon','deedamphur','level',
     ];
     
     /*
