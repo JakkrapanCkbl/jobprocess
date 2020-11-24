@@ -184,8 +184,8 @@
                       font-size: 25px;
                     }
 
-                    .fa-icon-blue{
-color: #2874A6;
+                    .fa-icon-blue {
+                      color: #2874A6;
                     }
                   </style>
 
@@ -279,13 +279,13 @@ color: #2874A6;
                             <div class="container">
                               <div class="md-col-4">
                                 <div class="card-body">
-<?php
+                                  <?php
                                   $jobcode = str_replace('/', '_', $job->jobcode);
                                   // $docList = preg_grep('#\.pdf$#', glob('storage/project_reports/' . $jobcode . '/**/*'), PREG_GREP_INVERT);
                                   $docList = glob('storage/project_reports/' . $jobcode . '/**/*');
                                   ?>
 
- @foreach($docList as $file)
+                                  @foreach($docList as $file)
                                   <?php
                                   $filename = basename($file);
                                   ?>
@@ -391,7 +391,7 @@ color: #2874A6;
   <!-- @include('partials.blog') -->
   @include('partials.footer')
 
-     <!--Rang slider js-->
+  <!--Rang slider js-->
   <script src="../external2/plugins/ion.rangeSlider/ion.rangeSlider.js"></script>
   <script src="../external2/js/rangeslider.js"></script>
 
