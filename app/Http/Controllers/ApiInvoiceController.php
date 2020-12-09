@@ -44,6 +44,8 @@ class ApiInvoiceController extends Controller
         $invoice->description = request('description');
         $invoice->qty = request('qty');
         $invoice->amountjob = request('amountjob');
+        $invoice->receiptno = request('receiptno');
+        $invoice->receiptdate = request('receiptdate');
         $invoice->save();
         return response()->json($invoice);
     }
