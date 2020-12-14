@@ -11,17 +11,29 @@ class Job extends Model
 {
     use SoftDeletes;
 
-    protected $fillable=['id','jobcode','reportcode','projectname','jobsize',
-    'jobtype','client','customer','prop_type','prop_size',
+    protected $fillable=['id','projectname','jobsize',
+    'jobtype','client','prop_size',
     'proplocation','lcduedate','headvaluer','valuer','percentfinish',
-    'startdate','inspectiondate','clientduedate','created_at','updated_at',
+    'created_at','updated_at',
     'propd_id', 'province_id', 'amphure_id', 'district', 'obj_id', 
     'marketvalue', 'assessmentvalue', 'lat', 'lng', 'customer_company',
     'customer_address', 'customer_title', 'customer_tel', 'level', 'soi', 'road',
     'estimatecondition', 'remark',
-    'landsize', 'units', 'percentsell', 'startprice', 'roomtype', 'convenient', 
+    'landsize', 'units', 'percentsell', 'startprice',  'convenient', 
     'broker', 'yearstart', 'buildingprogress', 'inforesource', 'easydiff', 'valuationfee', 'valuationfee_case',
     'moo','soi','road','deedno','deedtumbon','deedamphur','level',
+    'transport_id','materialscore','stylescore',
+
+    // page 1
+    'jobcode','clientcode','prop_type','customer','startdate','inspectiondate','submissiondate','lcduedate',
+    // page 3 
+    'roomtype','buildingyear','buildingstatus','roomlocation','roomview',
+    'material_room1','material_room2','material_room3','material_floor1','material_floor2','material_floor3','material_floor4',
+    'material_wall1','material_wall2','material_wall3','material_wall4','material_ceiling1','material_ceiling2','material_ceiling3',
+    'material_bath1','material_bath2','material_bath3','material_door1','material_door2','material_door3','material_door4',
+    'material_window1','material_window2','material_window3','material_window4',
+    // page 4
+
     ];
     
     /*
