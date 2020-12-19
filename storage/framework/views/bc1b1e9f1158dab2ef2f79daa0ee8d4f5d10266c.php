@@ -12,7 +12,6 @@
                     Edit Job
                 </div> -->
 
-
             <div class="card-body" style="background-color: #f8ede4;">
                 <form action="<?php echo e(route('report.update',[$job->id])); ?>" method="POST" enctype="multipart/form-data"><?php echo csrf_field(); ?>
 
@@ -21,6 +20,7 @@
                             font-size: 19px;
                         }
                     </style>
+
 
 
                     <div class="container">
@@ -43,7 +43,7 @@
                                 <label class="float-right">รายงานเลขที่</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="reportcode" class="form-control<?php echo e($errors->has('reportcode') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->reportcode); ?>" placeholder="HLHO640000000">
+                                <input type="text" name="clientcode" class="form-control<?php echo e($errors->has('clientcode') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->clientcode); ?>" placeholder="HLHO640000000">
                             </div>
 
                         </div>

@@ -34,12 +34,12 @@
                             <label class="float-right">การใช้ประโยชน์ที่ดินใกล้เคียง</label>
                         </div>
                         <div class="col-md-6">
-                            <select name="prop_type" class="form-control">
-                                <option value="ที่อยู่อาศัย" <?php echo e($job->prop_type=='ที่อยู่อาศัย'?'selected':''); ?>>ที่อยู่อาศัย</option>
-                                <option value="ปล่อยว่าง" <?php echo e($job->prop_type=='ปล่อยว่าง'?'selected':''); ?>>ปล่อยว่าง</option>
-                                <option value="พณิชยกรรม" <?php echo e($job->prop_type=='พณิชยกรรม'?'selected':''); ?>>พณิชยกรรม</option>
-                                <option value="อุตสาหกรรม" <?php echo e($job->prop_type=='อุตสาหกรรม'?'selected':''); ?>>อุตสาหกรรม</option>
-                                <option value="ที่อยู่อาศัยและพณิชยกรรม" <?php echo e($job->prop_type=='ที่อยู่อาศัยและพณิชยกรรม'?'selected':''); ?>>ที่อยู่อาศัยและพณิชยกรรม</option>
+                            <select name="propertiesnearused" class="form-control">
+                                <option value="ที่อยู่อาศัย" <?php echo e($job->propertiesnearused=='ที่อยู่อาศัย'?'selected':''); ?>>ที่อยู่อาศัย</option>
+                                <option value="ปล่อยว่าง" <?php echo e($job->propertiesnearused=='ปล่อยว่าง'?'selected':''); ?>>ปล่อยว่าง</option>
+                                <option value="พณิชยกรรม" <?php echo e($job->propertiesnearused=='พณิชยกรรม'?'selected':''); ?>>พณิชยกรรม</option>
+                                <option value="อุตสาหกรรม" <?php echo e($job->propertiesnearused=='อุตสาหกรรม'?'selected':''); ?>>อุตสาหกรรม</option>
+                                <option value="ที่อยู่อาศัยและพณิชยกรรม" <?php echo e($job->propertiesnearused=='ที่อยู่อาศัยและพณิชยกรรม'?'selected':''); ?>>ที่อยู่อาศัยและพณิชยกรรม</option>
                             </select>
                         </div>
 
@@ -54,10 +54,10 @@
                             <label class="float-right">การเติบโตในบริเวณใกล้เคียง</label>
                         </div>
                         <div class="col-md-6">
-                            <select name="prop_type" class="form-control">
-                                <option value="เจริญมาก" <?php echo e($job->prop_type=='เจริญมาก'?'selected':''); ?>>เจริญมาก</option>
-                                <option value="เจริญปานกลาง" <?php echo e($job->prop_type=='เจริญปานกลาง'?'selected':''); ?>>เจริญปานกลาง</option>
-                                <option value="เจริญน้อย" <?php echo e($job->prop_type=='เจริญน้อย'?'selected':''); ?>>เจริญน้อย</option>
+                            <select name="prosperity" class="form-control">
+                                <option value="เจริญมาก" <?php echo e($job->prosperity=='เจริญมาก'?'selected':''); ?>>เจริญมาก</option>
+                                <option value="เจริญปานกลาง" <?php echo e($job->prosperity=='เจริญปานกลาง'?'selected':''); ?>>เจริญปานกลาง</option>
+                                <option value="เจริญน้อย" <?php echo e($job->prosperity=='เจริญน้อย'?'selected':''); ?>>เจริญน้อย</option>
                             </select>
                         </div>
 
@@ -72,10 +72,10 @@
                             <label class="float-right">สภาพคล่องในการซื้อ-ขาย</label>
                         </div>
                         <div class="col-md-6">
-                            <select name="prop_type" class="form-control">
-                                <option value="สูง" <?php echo e($job->prop_type=='สูง'?'selected':''); ?>>สูง</option>
-                                <option value="ปานกลาง" <?php echo e($job->prop_type=='ปานกลาง'?'selected':''); ?>>ปานกลาง</option>
-                                <option value="ต่ำ" <?php echo e($job->prop_type=='ต่ำ'?'selected':''); ?>>ต่ำ</option>
+                            <select name="liquidity" class="form-control">
+                                <option value="สูง" <?php echo e($job->liquidity=='สูง'?'selected':''); ?>>สูง</option>
+                                <option value="ปานกลาง" <?php echo e($job->liquidity=='ปานกลาง'?'selected':''); ?>>ปานกลาง</option>
+                                <option value="ต่ำ" <?php echo e($job->liquidity=='ต่ำ'?'selected':''); ?>>ต่ำ</option>
                             </select>
                         </div>
 
@@ -90,17 +90,17 @@
                             <label class="float-right">ข้อบังคับกฎหมายผังเมือง</label>
                         </div>
                         <div class="col-md-6">
-                            <select name="prop_type" class="form-control">
-                                <option value="สีเหลือง (ที่อยู่อาศัยหนาแน่นน้อย)" <?php echo e($job->prop_type=='สีเหลือง (ที่อยู่อาศัยหนาแน่นน้อย)'?'selected':''); ?>>สีเหลือง (ที่อยู่อาศัยหนาแน่นน้อย)</option>
-                                <option value="สีส้ม (ที่อยู่อาศัยหนาแน่นปานกลาง) " <?php echo e($job->prop_type=='สีส้ม (ที่อยู่อาศัยหนาแน่นปานกลาง) '?'selected':''); ?>>สีส้ม (ที่อยู่อาศัยหนาแน่นปานกลาง) </option>
-                                <option value="สีน้ำตาล (ที่อยู่อาศัยหนาแน่นมาก) " <?php echo e($job->prop_type=='สีน้ำตาล (ที่อยู่อาศัยหนาแน่นมาก) '?'selected':''); ?>>สีน้ำตาล (ที่อยู่อาศัยหนาแน่นมาก) </option>
-                                <option value="สีแดง  (พาณิชยกรรม) " <?php echo e($job->prop_type=='สีแดง  (พาณิชยกรรม) '?'selected':''); ?>>สีแดง (พาณิชยกรรม) </option>
-                                <option value="สีเขียว (ชนบทและเกษตรกรรม)" <?php echo e($job->prop_type=='สีเขียว (ชนบทและเกษตรกรรม)'?'selected':''); ?>>สีเขียว (ชนบทและเกษตรกรรม)</option>
-                                <option value="ถนนลูกรัง" <?php echo e($job->prop_type=='ถนนลูกรัง'?'selected':''); ?>>ถนนลูกรัง</option>
-                                <option value="สีม่วง (อุตสาหกรรม) " <?php echo e($job->prop_type=='สีม่วง (อุตสาหกรรม) '?'selected':''); ?>>สีม่วง (อุตสาหกรรม) </option>
-                                <option value="สีชมพู (ชุมชน)" <?php echo e($job->prop_type=='สีชมพู (ชุมชน)'?'selected':''); ?>>สีชมพู (ชุมชน)</option>
-                                <option value="สีขาวมีกรอบและเส้นทแยงสีเขียว  (อนุรักษ์ชนบทและเกษตรกรรม)" <?php echo e($job->prop_type=='สีขาวมีกรอบและเส้นทแยงสีเขียว  (อนุรักษ์ชนบทและเกษตรกรรม)'?'selected':''); ?>>สีขาวมีกรอบและเส้นทแยงสีเขียว (อนุรักษ์ชนบทและเกษตรกรรม)</option>
-                                <option value="นอกเขตบังคับกำหนดผังเมืองรวม" <?php echo e($job->prop_type=='นอกเขตบังคับกำหนดผังเมืองรวม'?'selected':''); ?>>นอกเขตบังคับกำหนดผังเมืองรวม</option>
+                            <select name="planlaw" class="form-control">
+                                <option value="สีเหลือง (ที่อยู่อาศัยหนาแน่นน้อย)" <?php echo e($job->planlaw=='สีเหลือง (ที่อยู่อาศัยหนาแน่นน้อย)'?'selected':''); ?>>สีเหลือง (ที่อยู่อาศัยหนาแน่นน้อย)</option>
+                                <option value="สีส้ม (ที่อยู่อาศัยหนาแน่นปานกลาง)" <?php echo e($job->planlaw=='สีส้ม (ที่อยู่อาศัยหนาแน่นปานกลาง)'?'selected':''); ?>>สีส้ม (ที่อยู่อาศัยหนาแน่นปานกลาง)</option>
+                                <option value="สีน้ำตาล (ที่อยู่อาศัยหนาแน่นมาก)" <?php echo e($job->planlaw=='สีน้ำตาล (ที่อยู่อาศัยหนาแน่นมาก)'?'selected':''); ?>>สีน้ำตาล (ที่อยู่อาศัยหนาแน่นมาก)</option>
+                                <option value="สีแดง (พาณิชยกรรม)" <?php echo e($job->planlaw=='สีแดง (พาณิชยกรรม)'?'selected':''); ?>>สีแดง (พาณิชยกรรม)</option>
+                                <option value="สีเขียว (ชนบทและเกษตรกรรม)" <?php echo e($job->planlaw=='สีเขียว (ชนบทและเกษตรกรรม)'?'selected':''); ?>>สีเขียว (ชนบทและเกษตรกรรม)</option>
+                                <option value="ถนนลูกรัง" <?php echo e($job->planlaw=='ถนนลูกรัง'?'selected':''); ?>>ถนนลูกรัง</option>
+                                <option value="สีม่วง (อุตสาหกรรม)" <?php echo e($job->planlaw=='สีม่วง (อุตสาหกรรม)'?'selected':''); ?>>สีม่วง (อุตสาหกรรม)</option>
+                                <option value="สีชมพู (ชุมชน)" <?php echo e($job->planlaw=='สีชมพู (ชุมชน)'?'selected':''); ?>>สีชมพู (ชุมชน)</option>
+                                <option value="สีขาวมีกรอบและเส้นทแยงสีเขียว (อนุรักษ์ชนบทและเกษตรกรรม)" <?php echo e($job->planlaw=='สีขาวมีกรอบและเส้นทแยงสีเขียว (อนุรักษ์ชนบทและเกษตรกรรม)'?'selected':''); ?>>สีขาวมีกรอบและเส้นทแยงสีเขียว (อนุรักษ์ชนบทและเกษตรกรรม)</option>
+                                <option value="นอกเขตบังคับกำหนดผังเมืองรวม" <?php echo e($job->planlaw=='นอกเขตบังคับกำหนดผังเมืองรวม'?'selected':''); ?>>นอกเขตบังคับกำหนดผังเมืองรวม</option>
                             </select>
                         </div>
 
@@ -115,13 +115,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
-
+                                <input type="text" name="marketvalue" class="form-control<?php echo e($errors->has('marketvalue') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->marketvalue); ?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <p>บาท</p>
@@ -141,13 +135,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
-
+                                <input type="text" name="forcesale" class="form-control<?php echo e($errors->has('forcesale') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->forcesale); ?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <p>%</p>
@@ -166,23 +154,24 @@
                             <label class="float-right">ผู้ประเมิน</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
+                            <input type="text" name="valuer_n" class="form-control<?php echo e($errors->has('valuer_n') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->valuer_n); ?>">
                         </div>
 
                     </div>
                 </div>
 
                 <div class="container">
+
                     <div class="row">
 
                         <div class="col-md-3 align-self-center p-1">
                             <label class="float-right">ผู้ตรวจสอบรายงาน</label>
                         </div>
                         <div class="col-md-6">
-                            <select name="prop_type" class="form-control">
-                                <option value="นายสาโรจน์ พ่วงศรี - ผู้ประเมินหลักชั้นวุฒิ วฒ. 157" <?php echo e($job->prop_type=='นายสาโรจน์ พ่วงศรี - ผู้ประเมินหลักชั้นวุฒิ วฒ. 157'?'selected':''); ?>>นายสาโรจน์ พ่วงศรี - ผู้ประเมินหลักชั้นวุฒิ วฒ. 157</option>
-                                <option value="นายมนต์ชัย มณีวงศ์ - ผู้ประเมินหลักชั้นสามัญ สม. 671" <?php echo e($job->prop_type=='นายมนต์ชัย มณีวงศ์ - ผู้ประเมินหลักชั้นสามัญ สม. 671'?'selected':''); ?>>นายมนต์ชัย มณีวงศ์ - ผู้ประเมินหลักชั้นสามัญ สม. 671</option>
-                                <option value="นายนิรันดร เอื้อเฟื้อ - ผู้ประเมินหลักชั้นวิสามัญ วส. 566" <?php echo e($job->prop_type=='นายนิรันดร เอื้อเฟื้อ - ผู้ประเมินหลักชั้นวิสามัญ วส. 566'?'selected':''); ?>>นายนิรันดร เอื้อเฟื้อ - ผู้ประเมินหลักชั้นวิสามัญ วส. 566</option>
+                            <select name="headvaluer_n" class="form-control">
+                                <option value="สาโรจน์ พ่วงศรี" <?php echo e($job->headvaluer_n=='สาโรจน์ พ่วงศรี'?'selected':''); ?>>สาโรจน์ พ่วงศรี</option>
+                                <option value="มนต์ชัย มณีวงศ์" <?php echo e($job->headvaluer_n=='มนต์ชัย มณีวงศ์'?'selected':''); ?>>มนต์ชัย มณีวงศ์</option>
+                                <option value="นิรันดร เอื้อเฟื้อ" <?php echo e($job->headvaluer_n=='นิรันดร เอื้อเฟื้อ'?'selected':''); ?>>นิรันดร เอื้อเฟื้อ</option>
                             </select>
                         </div>
 
@@ -197,12 +186,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
-
+                                <input type="text" name="fireinsurance" class="form-control<?php echo e($errors->has('fireinsurance') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->fireinsurance); ?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <p>บาท/ตร.ม.</p>
@@ -213,6 +197,131 @@
 
                     </div>
                 </div>
+
+                <br>
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-3 align-self-center p-1">
+                            <label class="float-right">เนื้อที่ตามเอกสารสิทธิ์ห้องชุด</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input type="text" name="govprice_row1a" class="form-control<?php echo e($errors->has('govprice_row1a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row1a); ?>">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <p>ตร.ม.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-3 align-self-center p-1">
+                            <label class="float-right">- พื้นที่ภายในห้องชุด</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input type="text" name="govprice_row2a" class="form-control<?php echo e($errors->has('govprice_row2a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row2a); ?>">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <p>ตร.ม.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" name="govprice_row2b" class="form-control<?php echo e($errors->has('govprice_row2b') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row2b); ?>">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" name="govprice_row2c" class="form-control<?php echo e($errors->has('govprice_row2c') ? ' is-invalid' : ''); ?>" disabled>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="govprice_row2d" class="form-control<?php echo e($errors->has('govprice_row2d') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row2d); ?>">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-3 align-self-center p-1">
+                            <label class="float-right">- ระเบียงที่วางแอร์</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input type="text" name="govprice_row3a" class="form-control<?php echo e($errors->has('govprice_row3a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row3a); ?>">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <p>ตร.ม.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" name="govprice_row3b" class="form-control<?php echo e($errors->has('govprice_row3b') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row3b); ?>">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" name="govprice_row3c" class="form-control<?php echo e($errors->has('govprice_row3c') ? ' is-invalid' : ''); ?>" disabled>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="govprice_row3d" class="form-control<?php echo e($errors->has('govprice_row3d') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row3d); ?>">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-3 align-self-center p-1">
+                            <label class="float-right">- ที่จอดรถส่วนบุคคล</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input type="text" name="govprice_row4a" class="form-control<?php echo e($errors->has('govprice_row4a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row4a); ?>">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <p>ตร.ม.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" name="govprice_row4b" class="form-control<?php echo e($errors->has('govprice_row4b') ? ' is-invalid' : ''); ?>" disabled>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" name="govprice_row4c" class="form-control<?php echo e($errors->has('govprice_row4c') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row4c); ?>">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="govprice_row4d" class="form-control<?php echo e($errors->has('govprice_row4d') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row4d); ?>">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-3">
+                            <input type="text" name="govprice_row5a" class="form-control<?php echo e($errors->has('govprice_row5a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row5a); ?>">
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="container">
                     <div class="row">

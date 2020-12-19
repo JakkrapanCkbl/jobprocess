@@ -35,7 +35,7 @@
                             <input type="text" name="lat" class="form-control{{ $errors->has('lat') ? ' is-invalid' : '' }}" value="{{ $job->lat }}" placeholder="latitude">
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="long" class="form-control{{ $errors->has('long') ? ' is-invalid' : '' }}" value="{{ $job->long }}" placeholder="longitude">
+                            <input type="text" name="lng" class="form-control{{ $errors->has('lng') ? ' is-invalid' : '' }}" value="{{ $job->lng }}" placeholder="longitude">
                         </div>
 
                     </div>
@@ -48,7 +48,7 @@
                             <label class="float-right">ห้องชุดเลขที่</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="roomtype" class="form-control{{ $errors->has('roomtype') ? ' is-invalid' : '' }}" value="{{ $job->roomtype }}">
+                            <input type="text" name="roomno" class="form-control{{ $errors->has('roomno') ? ' is-invalid' : '' }}" value="{{ $job->roomno }}">
                         </div>
 
                     </div>
@@ -61,7 +61,7 @@
                             <label class="float-right">ชื่ออาคารชุด</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="projectname" class="form-control{{ $errors->has('projectname') ? ' is-invalid' : '' }}" value="{{ $job->projectname }}">
+                            <input type="text" name="roomno" class="form-control{{ $errors->has('roomno') ? ' is-invalid' : '' }}" value="{{ $job->roomno }}">
                         </div>
 
                     </div>
@@ -119,29 +119,23 @@
                     </div>
                 </div>
 
-                <div class="container">
+                <!-- <div class="container">
                     <div class="row">
 
                         <div class="col-md-3 align-self-center p-1">
                             <label class="float-right">จังหวัด (ตามเขตปกครอง)</label>
                         </div>
                         <div class="col-md-6">
-                            <select name="province_code" id="province_code" class="form-control province{{ $errors->has('province_code') ? ' is-invalid' : '' }}" value="{{ $job->province_code }}">
+                            <select name="province_code" class="form-control province_code{{ $errors->has('province_code') ? ' is-invalid' : '' }}">
                                 @foreach($list as $row)
-                                <option value="{{ $row->code }}" {{ ($job->province_code == $row->code) ? 'selected' : '' }}>
+                                <option value="{{ $row->name_th }}" {{ ($job->province_code == $row->code) ? 'selected' : '' }}>
                                     {{ $row->name_th }}
                                 </option>
                                 @endforeach
                             </select>
-                            @if ($errors->has('province_code'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('province_code') }}</strong>
-                            </span>
-                            @endif
                         </div>
-
                     </div>
-                </div>
+                </div> -->
 
                 <div class="container">
                     <div class="row">
@@ -208,10 +202,10 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control{{ $errors->has('roomtype') ? ' is-invalid' : '' }}" value="{{ $job->roomtype }}" placeholder="0-0-00.0">
-                                @if ($errors->has('roomtype'))
+                                <input type="text" name="roomarea" class="form-control{{ $errors->has('roomarea') ? ' is-invalid' : '' }}" value="{{ $job->roomarea }}" placeholder="0-0-00.0">
+                                @if ($errors->has('roomarea'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('roomtype') }}</strong>
+                                    <strong>{{ $errors->first('roomarea') }}</strong>
                                 </span>
                                 @endif
 
@@ -233,7 +227,7 @@
                             <label class="float-right">ผู้ถือกรรมสิทธิ์</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="owenership" class="form-control{{ $errors->has('owenership') ? ' is-invalid' : '' }}" value="{{ $job->owenership }}">
+                            <input type="text" name="ownership" class="form-control{{ $errors->has('ownership') ? ' is-invalid' : '' }}" value="{{ $job->ownership }}">
                         </div>
 
                     </div>
@@ -281,7 +275,7 @@
                         <div class="col-md-6">
                             <select name="sequester" class="form-control">
                                 <option value="ไม่มี" {{$job->sequester=='ไม่มี'?'selected':''}}>ไม่มี</option>
-                                <option value="มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25..." {{$job->sequester==' มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25...'?'selected':''}}> มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25...</option>
+                                <option value="มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25..." {{$job->sequester!='ไม่มี'?'selected':''}}>มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25...</option>
                             </select>
                         </div>
 

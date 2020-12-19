@@ -32,15 +32,17 @@
                     <div class="row">
 
                         <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">โครงการเปิดขายประมาณ</label>
+                            <label class="float-right">ปีที่โครงการเปิดขาย</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                            <?php if($errors->has('roomtype')): ?>
-                            <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                            </span>
-                            <?php endif; ?>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <p>พ.ศ.</p>
+                                    </div>
+                                </div>
+                                <input type="text" name="yearstart" class="form-control<?php echo e($errors->has('yearstart') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->yearstart); ?>">
+                            </div>
                         </div>
 
                     </div>
@@ -55,13 +57,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
-
+                                <input type="text" name="buildinghight" class="form-control<?php echo e($errors->has('buildinghight') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->buildinghight); ?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <p>ชั้น</p>
@@ -82,12 +78,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
+                                <input type="text" name="units" class="form-control<?php echo e($errors->has('units') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->units); ?>">
+
 
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -105,20 +97,15 @@
                     <div class="row">
 
                         <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">ยอดขายโครงการ (ประมาณ)</label>
+                            <label class="float-right">ยอดขายโครงการ (%)</label>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
+                                <input type="text" name="percentsell" class="form-control<?php echo e($errors->has('percentsell') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->percentsell); ?>">
 
                                 <div class="input-group-append">
                                     <div class="input-group-text">
-                                        <p>ยูนิต</p>
+                                        <p>%</p>
                                     </div>
                                 </div>
                             </div>
@@ -132,20 +119,16 @@
                     <div class="row">
 
                         <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">ยอดโอน (ประมาณ)</label>
+                            <label class="float-right">ยอดโอน (%)</label>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
+                                <input type="text" name="percenttransfer" class="form-control<?php echo e($errors->has('percenttransfer') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->percenttransfer); ?>">
+
 
                                 <div class="input-group-append">
                                     <div class="input-group-text">
-                                        <p>ยูนิต</p>
+                                        <p>%</p>
                                     </div>
                                 </div>
                             </div>
@@ -159,15 +142,10 @@
                     <div class="row">
 
                         <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">ตัวแทนขาย</label>
+                            <label class="float-right">ชื่อตัวแทนขาย</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                            <?php if($errors->has('roomtype')): ?>
-                            <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                            </span>
-                            <?php endif; ?>
+                            <input type="text" name="salesname" class="form-control<?php echo e($errors->has('salesname') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->salesname); ?>">
 
                         </div>
 
@@ -183,12 +161,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
+                                <input type="text" name="percenliverate" class="form-control<?php echo e($errors->has('percenliverate') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->percenliverate); ?>">
+
 
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -211,12 +185,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
+                                <input type="text" name="commonfee" class="form-control<?php echo e($errors->has('commonfee') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->commonfee); ?>">
+
 
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -239,12 +209,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                                <?php if($errors->has('roomtype')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                                </span>
-                                <?php endif; ?>
+                                <input type="text" name="commonoverdue" class="form-control<?php echo e($errors->has('commonoverdue') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->commonoverdue); ?>">
+
 
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -266,12 +232,7 @@
                             <label class="float-right">สิ่งอำนวยความสะดวกในโครงการ</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
-                            <?php if($errors->has('roomtype')): ?>
-                            <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('roomtype')); ?></strong>
-                            </span>
-                            <?php endif; ?>
+                            <input type="text" name="facilities" class="form-control<?php echo e($errors->has('facilities') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->facilities); ?>">
 
 
                         </div>

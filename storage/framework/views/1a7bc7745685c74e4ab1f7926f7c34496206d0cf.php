@@ -35,7 +35,7 @@
                             <input type="text" name="lat" class="form-control<?php echo e($errors->has('lat') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->lat); ?>" placeholder="latitude">
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="long" class="form-control<?php echo e($errors->has('long') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->long); ?>" placeholder="longitude">
+                            <input type="text" name="lng" class="form-control<?php echo e($errors->has('lng') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->lng); ?>" placeholder="longitude">
                         </div>
 
                     </div>
@@ -48,7 +48,7 @@
                             <label class="float-right">ห้องชุดเลขที่</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>">
+                            <input type="text" name="roomno" class="form-control<?php echo e($errors->has('roomno') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomno); ?>">
                         </div>
 
                     </div>
@@ -61,7 +61,7 @@
                             <label class="float-right">ชื่ออาคารชุด</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="projectname" class="form-control<?php echo e($errors->has('projectname') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->projectname); ?>">
+                            <input type="text" name="roomno" class="form-control<?php echo e($errors->has('roomno') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomno); ?>">
                         </div>
 
                     </div>
@@ -119,30 +119,24 @@
                     </div>
                 </div>
 
-                <div class="container">
+                <!-- <div class="container">
                     <div class="row">
 
                         <div class="col-md-3 align-self-center p-1">
                             <label class="float-right">จังหวัด (ตามเขตปกครอง)</label>
                         </div>
                         <div class="col-md-6">
-                            <select name="province_code" id="province_code" class="form-control province<?php echo e($errors->has('province_code') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->province_code); ?>">
+                            <select name="province_code" class="form-control province_code<?php echo e($errors->has('province_code') ? ' is-invalid' : ''); ?>">
                                 <?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <option value="<?php echo e($row->code); ?>" <?php echo e(($job->province_code == $row->code) ? 'selected' : ''); ?>>
+                                <option value="<?php echo e($row->name_th); ?>" <?php echo e(($job->province_code == $row->code) ? 'selected' : ''); ?>>
                                     <?php echo e($row->name_th); ?>
 
                                 </option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
-                            <?php if($errors->has('province_code')): ?>
-                            <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('province_code')); ?></strong>
-                            </span>
-                            <?php endif; ?>
                         </div>
-
                     </div>
-                </div>
+                </div> -->
 
                 <div class="container">
                     <div class="row">
@@ -209,10 +203,10 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="roomtype" class="form-control<?php echo e($errors->has('roomtype') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomtype); ?>" placeholder="0-0-00.0">
-                                <?php if($errors->has('roomtype')): ?>
+                                <input type="text" name="roomarea" class="form-control<?php echo e($errors->has('roomarea') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomarea); ?>" placeholder="0-0-00.0">
+                                <?php if($errors->has('roomarea')): ?>
                                 <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('roomtype')); ?></strong>
+                                    <strong><?php echo e($errors->first('roomarea')); ?></strong>
                                 </span>
                                 <?php endif; ?>
 
@@ -234,7 +228,7 @@
                             <label class="float-right">ผู้ถือกรรมสิทธิ์</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="owenership" class="form-control<?php echo e($errors->has('owenership') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->owenership); ?>">
+                            <input type="text" name="ownership" class="form-control<?php echo e($errors->has('ownership') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->ownership); ?>">
                         </div>
 
                     </div>
@@ -282,7 +276,7 @@
                         <div class="col-md-6">
                             <select name="sequester" class="form-control">
                                 <option value="ไม่มี" <?php echo e($job->sequester=='ไม่มี'?'selected':''); ?>>ไม่มี</option>
-                                <option value="มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25..." <?php echo e($job->sequester==' มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25...'?'selected':''); ?>> มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25...</option>
+                                <option value="มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25..." <?php echo e($job->sequester!='ไม่มี'?'selected':''); ?>>มีคำสั่งอายัดห้ามโอน ให้งดการจดทะเบียนหรือเปลี่ยนแปลงทางทะเบียน ที่ ยธ....... ลงวันที่ ... พ.ศ. 25.. คดีแดงเลขที่ ........ ระหว่าง .......(โจทก์) กับ ……...(จำเลย) เรื่องอายัด .......วันที่อายัด ....พ.ศ. 25...</option>
                             </select>
                         </div>
 

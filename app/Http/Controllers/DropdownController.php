@@ -42,7 +42,7 @@ class DropdownController extends Controller
 			->get();
 		$output = '<option value="">เลือกตำบล</option>';
 		foreach ($query as $row) {
-			$output .= '<option value="' . $row->name_th . '">' . $row->name_th . '</option>';
+			$output .= '<option value="' . $row->id . '">' . $row->name_th . '</option>';
 		}
 		echo $output;
 	}

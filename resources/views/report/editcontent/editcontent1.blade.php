@@ -12,7 +12,6 @@
                     Edit Job
                 </div> -->
 
-
             <div class="card-body" style="background-color: #f8ede4;">
                 <form action="{{route('report.update',[$job->id])}}" method="POST" enctype="multipart/form-data">@csrf
 
@@ -21,6 +20,7 @@
                             font-size: 19px;
                         }
                     </style>
+
 
 
                     <div class="container">

@@ -262,3 +262,6 @@ Route::get('/preview-pdf', 'JobController@pdf_dragdrop');
 Route::get('/report/{id}/edit', 'ReportController@edit')->name('report.edit');
 Route::post('/report/{id}/update', 'ReportController@update')->name('report.update');
 Route::post('/report/fetch', 'ReportController@fetch')->name('report.fetch');
+Route::get('/report/{id}/preview', 'ReportController@preview')->name('report.preview');
+
+

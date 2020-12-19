@@ -172,25 +172,27 @@ class ReportController extends Controller
             'customer_tel' => $request->get('customer_tel'),
             'prop_size' => $request->get('prop_size'),
             'proplocation' => $request->get('proplocation'),
-            'province_code' => $request->get('province_code'),
             'amphure_code' => $request->get('amphure_code'),
-            'district' => $request->get('district'),
             // 'obj_id' => $request->get('obj_id'),
             'jobsize' => $request->get('jobsize'),
             'easydiff' => $request->get('easydiff'),
             'valuationfee' => $request->get('valuationfee'),
             'valuationfee_case' => $request->get('valuationfee_case'),
-            'valuer_n' => $request->get('valuer_n'),
-            'headvaluer_n' => $request->get('headvaluer_n'),
             'jobtype' => $request->get('jobtype'),
             'clientduedate' => $request->get('clientduedate'),
-            'level' => $request->get('level'),
             'moo' => $request->get('moo'),
-            'soi' => $request->get('soi'),
-            'deedno' => $request->get('deedno'),
-            'deedtumbon' => $request->get('deedtumbon'),
-            'deedamphur' => $request->get('deedamphur'),
-            'transport_id' => $request->get('transport_id'),
+
+            //page6
+            'propertiesnearused' => $request->get('propertiesnearused'),
+            'prosperity' => $request->get('prosperity'),
+            'liquidity' => $request->get('liquidity'),
+            'planlaw' => $request->get('planlaw'),
+            'marketvalue' => $request->get('marketvalue'),
+            'forcesale' => $request->get('forcesale'),
+            'valuer_n' => $request->get('valuer_n'),
+            'headvaluer_n' => $request->get('headvaluer_n'),
+            'fireinsurance' => $request->get('fireinsurance'),
+
 
             //page1
             'jobcode' => $request->get('jobcode'),
@@ -201,6 +203,24 @@ class ReportController extends Controller
             'inspectiondate' => $request->get('inspectiondate'),
             'submissiondate' => $request->get('submissiondate'),
             'lcduedate' => $request->get('lcduedate'),
+
+            //page2
+            'lat' => $request->get('lat'),
+            'lng' => $request->get('lng'),
+            'roomno' => $request->get('roomno'),
+            'level' => $request->get('level'),
+            'deedno' => $request->get('deedno'),
+            'buildingno' => $request->get('buildingno'),
+            'buildingregno' => $request->get('buildingregno'),
+            'province_code' => $request->get('province_code'),
+            'deedtumbon' => $request->get('deedtumbon'),
+            'deedamphur' => $request->get('deedamphur'),
+            'landsize' => $request->get('landsize'),
+            'roomarea' => $request->get('roomarea'),
+            'ownership' => $request->get('ownership'),
+            'mortgage' => $request->get('mortgage'),
+            'sequester' => $request->get('sequester'),
+            'deprive' => $request->get('deprive'),
 
             //page3
             'roomtype' => $request->get('roomtype'),
@@ -234,11 +254,55 @@ class ReportController extends Controller
             'material_window3' => $request->get('material_window3'),
             'material_window4' => ($request->get('material_window_others') == '1' ? $request->get('material_window4') : ''),
 
+            //page4
+            'yearstart' => $request->get('yearstart'),
+            'buildinghight' => $request->get('buildinghight'),
+            'units' => $request->get('units'),
+            'percentsell' => $request->get('percentsell'),
+            'percenttransfer' => $request->get('percenttransfer'),
+            'salesname' => $request->get('salesname'),
+            'percenliverate' => $request->get('percenliverate'),
+            'commonfee' => $request->get('commonfee'),
+            'commonoverdue' => $request->get('commonoverdue'),
+            'facilities' => $request->get('facilities'),
+            'maintainstatus' => $request->get('maintainstatus'),
+
+            //page5
+            'soi' => $request->get('soi'),
+            'road' => $request->get('road'),
+            'province_code' => $request->get('province_code'),
+            'amphure_code' => $request->get('amphure_code'),
+            'district' => $request->get('district'),
+            'estimatecondition' => $request->get('estimatecondition'),
+            'remark' => $request->get('remark'),
+            'nearmrt' => $request->get('transname'),
+            'transport_id' => $request->get('transtation'),
+            'nearmrtdistance' => $request->get('nearmrtdistance'),
+            'frontstreet' => $request->get('frontstreet'),
+            'publicentrance' => $request->get('publicentrance'),
+            'materialstreet' => $request->get('materialstreet'),
+            'streetwide' => $request->get('streetwide'),
+            'streetareawide' => $request->get('streetareawide'),
+            'utilities' => $request->get('utilities'),
+            'cmn_transportation' => $request->get('cmn_transportation'),
+            'remark2' => $request->get('remark2'),
         ]);
         //}
 
         //$this->updateAllExceptImage($request,$id);
         //return redirect()->back()->with('message','Post updated successfully');
         return redirect('/dashboard')->with('message', 'Post created successfully');
+    }
+
+    public function preview($id, Request $request)
+    {
+        $list = DB::table('provinces')->get();
+        $listtwo = DB::table('amphures')->get();
+        $job = Job::find($id);
+        $listthree = DB::table('jobs_img')->get();
+        $list_transportation = DB::table('transportation')->get();
+        $list_district = DB::table('districts')->get();
+        return view('report.preview', compact('job'))->with('list', $list)->with('listtwo', $listtwo)
+            ->with('listthree', $listthree)->with('listfour', $list_transportation)->with('listfive', $list_district);
     }
 }

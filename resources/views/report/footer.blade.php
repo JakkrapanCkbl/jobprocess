@@ -198,8 +198,45 @@
 			})
 		}
 	});
-</script>
 
+	//varant for P.6 Table 
+	var a1 = document.getElementsByName('govprice_row1a')[0];
+	var a2 = document.getElementsByName('govprice_row2a')[0];
+	var b2 = document.getElementsByName('govprice_row2b')[0];
+	var d2 = document.getElementsByName('govprice_row2d')[0];
+	var a3 = document.getElementsByName('govprice_row3a')[0];
+	var b3 = document.getElementsByName('govprice_row3b')[0];
+	var d3 = document.getElementsByName('govprice_row3d')[0];
+	var a4 = document.getElementsByName('govprice_row4a')[0];
+	var c4 = document.getElementsByName('govprice_row4c')[0];
+	var d4 = document.getElementsByName('govprice_row4d')[0];
+	var a5 = document.getElementsByName('govprice_row5a')[0];
+
+	$("input[name = 'govprice_row2a']").keyup(
+		function update_a1() {
+			a1.value = +a2.value + +a3.value + +a4.value;
+		}
+	);
+	$("input[name = 'govprice_row3a']").keyup(
+		function update_a1() {
+			a1.value = +a2.value + +a3.value + +a4.value;
+		}
+	);
+	$("input[name = 'govprice_row4a']").keyup(
+		function update_a1() {
+			a1.value = +a2.value + +a3.value + +a4.value;
+		}
+	);
+
+	$("input[name = 'govprice_row2b']").keyup(function() {
+		d2.value = Math.round(a2.value * b2.value);
+		b3.value = Math.round(b2.value / 2);
+		d3.value = Math.round(a3.value * b3.value);
+		a5.value = Math.round(+d2.value + +d3.value + +d4.value);
+	});
+
+	
+</script>
 </body>
 
 </html>
