@@ -466,7 +466,7 @@
 									<input type="text" name="moo" placeholder="หมู่" class="form-control{{ $errors->has('moo') ? ' is-invalid' : '' }}" value="{{ $job->moo }}">
 									@if ($errors->has('moo'))
 									<span class="invalid-feedback" role="alert">
-										<strong>{{ $errors->first('msoo') }}</strong>
+										<strong>{{ $errors->first('moo') }}</strong>
 									</span>
 									@endif
 								</div>

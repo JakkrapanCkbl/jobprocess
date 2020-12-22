@@ -96,8 +96,8 @@ class AdminInputController extends Controller
             'client' => $request->get('client'),
             'prop_size' => $request->get('prop_size'),
             'proplocation' => $request->get('proplocation'),
-            'province_id' => $request->get('province'),
-            'amphure_id' => $request->get('amphures'),
+            'province_code' => $request->get('province'),
+            'amphure_code' => $request->get('amphures'),
             'district' => $request->get('district'),
             'customer' => $request->get('customer'),
             'customer_tel' => $request->get('customer_tel'),
@@ -160,8 +160,8 @@ class AdminInputController extends Controller
         //dd($request->get('reportcode') . ' : ' . $request->get('landsize'));
         $this->validate($request, [
             'jobcode' => 'required',
-            'province_id' => 'required',
-            'amphure_id' => 'required',
+            'province_code' => 'required',
+            'amphure_code' => 'required',
             'obj_id' => 'required'
         ]);
         //$date = Carbon::createFromFormat('d-m-Y', $request->startdate)->toDateString();
@@ -180,8 +180,8 @@ class AdminInputController extends Controller
             'prop_type' => $request->get('prop_type'),
             'prop_size' => $request->get('prop_size'),
             'proplocation' => $request->get('proplocation'),
-            'province_id' => $request->get('province_id'),
-            'amphure_id' => $request->get('amphure_id'),
+            'province_code' => $request->get('province_code'),
+            'amphure_code' => $request->get('amphure_code'),
             'district' => $request->get('district'),
             'obj_id' => $request->get('obj_id'),
             'jobsize' => $request->get('jobsize'),

@@ -21,6 +21,20 @@
 <!--Font Awesome-->
 <link href="{{asset('external2/plugins/fontawesome-free/css/all.css')}}" rel="stylesheet">
 
+
+<style>
+    .container .row label {
+
+        margin: 0;
+        font-family: 'CordiaUPC';
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #2A1B4D;
+        text-align: left;
+    }
+</style>
+
 <!-- Dashboard Css -->
 <link href="{{asset('external2/css/style.css')}}" rel="stylesheet" />
 <link href="{{asset('external2/css/boxed.css')}}" rel="stylesheet" />
