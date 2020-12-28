@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/admin/editcontent/vertical_editcontent6.blade.php ENDPATH**/ ?>
