@@ -22,5 +22,46 @@
 <link href="<?php echo e(asset('external2/plugins/fontawesome-free/css/all.css')); ?>" rel="stylesheet">
 
 
+<style>
+    .container .row label {
+
+        margin: 0;
+        font-family: 'CordiaUPC';
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #2A1B4D;
+        text-align: left;
+    }
+</style>
+
+<!-- Dashboard Css -->
+<link href="<?php echo e(asset('external2/css/style.css')); ?>" rel="stylesheet" />
+<link href="<?php echo e(asset('external2/css/boxed.css')); ?>" rel="stylesheet" />
+<link href="<?php echo e(asset('external2/css/color-styles.css')); ?>" rel="stylesheet" />
+<link href="<?php echo e(asset('external2/css/skin-modes.css')); ?>" rel="stylesheet" />
+
+<!-- Vector-map -->
+<link href="<?php echo e(asset('external2/plugins/jquery.vmap/jqvmap.min.css')); ?>" rel="stylesheet">
+
+<!-- Custom scroll bar css-->
+<link href="<?php echo e(asset('external2/plugins/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css')); ?>" rel="stylesheet" />
+
+<!-- Horizontal css -->
+<link href="<?php echo e(asset('external2/plugins/horizontal-menu/dropdown-effects/fade-down.css')); ?>" rel="stylesheet">
+<link href="<?php echo e(asset('external2/plugins/horizontal-menu/horizontal-menu.css')); ?>" rel="stylesheet">
+
+<!-- morris Charts Plugin -->
+<link href="<?php echo e(asset('external2/plugins/morris/morris.css')); ?>" rel="stylesheet" />
+
+<!---Font icons-->
+<link href="<?php echo e(asset('external2/plugins/iconfonts/plugin.css')); ?>" rel="stylesheet" />
+
+<!-- Sidebar css -->
+<link href="<?php echo e(asset('external2/plugins/sidebar/sidebar.css')); ?>" rel="stylesheet">
+
+<!-- Date Picker Plugin -->
+<link href="<?php echo e(asset('external2/plugins/date-picker/date-picker.css')); ?>" rel="stylesheet" />
+
 <!-- Gallery Plugin -->
 <link href="<?php echo e(asset('external2/plugins/gallery/gallery.css')); ?>" rel="stylesheet"><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/dashboard/head.blade.php ENDPATH**/ ?>

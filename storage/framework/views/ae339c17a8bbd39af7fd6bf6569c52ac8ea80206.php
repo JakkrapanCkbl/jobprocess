@@ -233,17 +233,9 @@
 		b3.value = Math.round(b2.value / 2);
 		d3.value = Math.round(a3.value * b3.value);
 		a5.value = Math.round(+d2.value + +d3.value + +d4.value);
-
-		// document.getElementsByName('govprice_row2d')[0].value =
-		// 	Math.round(document.getElementsByName('govprice_row2a')[0].value * document.getElementsByName('govprice_row2b')[0].value);
-		// document.getElementsByName('govprice_row3b')[0].value = document.getElementsByName('govprice_row2b')[0].value / 2;
-		// document.getElementsByName('govprice_row3d')[0].value =
-		// 	Math.round(document.getElementsByName('govprice_row3a')[0].value * document.getElementsByName('govprice_row3b')[0].value);
-
-		// document.getElementsByName('govprice_row5a')[0].value =
-		// 	Math.round(+document.getElementsByName('govprice_row2d')[0].value + +document.getElementsByName('govprice_row3d')[0].value +
-		// 		+document.getElementsByName('govprice_row4d')[0].value);
 	});
+
+	
 </script>
 </body>
 
