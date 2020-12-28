@@ -203,8 +203,10 @@ Route::get('/user/trash', 'UserController@trash')->name('user.trash');
 Route::get('/user/{id}/trash', 'UserController@restore')->name('user.restore');
 
 //PDF by Note
+//PDF by Note
 Route::get('/print-order/{id}', 'JobController@pdf_order')->name('print-order.show');
-Route::get('/print-invoice/{id}', 'JobController@pdf_invoice');
+Route::get('/print-invoice/{id}', 'JobController@pdf_invoice')->name('print-invoice.show');
+Route::get('/print-receipt/{id}', 'JobController@pdf_receipt')->name('print-receipt.show');
 
 
 //AdminInput Job order

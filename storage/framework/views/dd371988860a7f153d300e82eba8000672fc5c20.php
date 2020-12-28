@@ -73,8 +73,9 @@
 														
 														<td>
 															<a href="<?php echo e(route('invoice.edit',[$invoice->id])); ?>" class="mr-3" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-															<a href="" class="mr-3" data-toggle="tooltip" title="" data-original-title="Check"><i class="fe fe-file text-dark fs-16"></i></a>
-															<a href="" class="mr-3" data-toggle="tooltip" title="" data-original-title="Folder"><i class="fe fe-folder-plus text-dark fs-16"></i></a>
+															<a href="<?php echo e(route('print-invoice.show',[$invoice->id])); ?>" class="mr-3" data-toggle="tooltip" title="" data-original-title="Check"><i class="fe fe-file text-dark fs-16"></i></a>
+															<a href="<?php echo e(route('print-receipt.show',[$invoice->id])); ?>" class="mr-3" data-toggle="tooltip" title="" data-original-title="Check"><i class="fe fe-file text-dark fs-16"></i></a>
+															<!--<a href="" class="mr-3" data-toggle="tooltip" title="" data-original-title="Folder"><i class="fe fe-folder-plus text-dark fs-16"></i></a> -->
 															<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Delete" data-toggle="modal" data-target="#exampleModal<?php echo e($invoice->id); ?>"><i class="fe fe-trash-2 text-dark fs-16"></i></a>
 
 															<!-- Modal -->
