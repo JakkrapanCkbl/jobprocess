@@ -31,7 +31,8 @@ class AdminInputController extends Controller
     {
         $list = DB::table('provinces')->get();
         $listtwo = DB::table('amphures')->get();
-        return view('admin.create')->with('list', $list)->with('listtwo', $listtwo);
+        $listthree = DB::table('users')->get();
+        return view('admin.create')->with('list', $list)->with('listtwo', $listtwo)->with('listthree', $listthree);
     }
 
     public function fetch(Request $request)

@@ -406,6 +406,45 @@
 														</select>
 													</div>
 												</div>
+
+												
+
+												<div class="row">
+													<div class="col-md-3 align-self-center p-1">
+														<label class="float-right">ผู้ประเมินหลัก</label>
+													</div>
+													<div class="col-md-6">
+														<select name="headvaluer" class="form-control headvaluer{{ $errors->has('headvaluer') ? ' is-invalid' : '' }}">
+															@foreach($listthree as $employee)
+																@if($employee->id =='3')   
+																	<option value="{{ $employee->id }}" selected="">
+																		{{ $employee->username }}
+																	</option>
+																@else
+																	<option value="{{ $employee->id }}">
+																		{{ $employee->username }}
+																	</option>        
+																@endif
+															@endforeach
+														</select>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-md-3 align-self-center p-1">
+														<label class="float-right">ผู้ประเมิน</label>
+													</div>
+													<div class="col-md-6">
+														<select name="valuer" class="form-control valuer{{ $errors->has('valuer') ? ' is-invalid' : '' }}">
+															@foreach($listthree as $employee)
+															<option value="{{ $employee->id }}">
+																{{ $employee->username }}
+															</option>
+															@endforeach
+														</select>
+													</div>
+												</div>
+												
 												
 												<div class="container">
 													<div class="row">

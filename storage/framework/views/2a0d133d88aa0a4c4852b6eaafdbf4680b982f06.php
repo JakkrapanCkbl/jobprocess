@@ -408,6 +408,48 @@
 														</select>
 													</div>
 												</div>
+
+												
+
+												<div class="row">
+													<div class="col-md-3 align-self-center p-1">
+														<label class="float-right">ผู้ประเมินหลัก</label>
+													</div>
+													<div class="col-md-6">
+														<select name="headvaluer" class="form-control headvaluer<?php echo e($errors->has('headvaluer') ? ' is-invalid' : ''); ?>">
+															<?php $__currentLoopData = $listthree; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+																<?php if($employee->id =='3'): ?>   
+																	<option value="<?php echo e($employee->id); ?>" selected="">
+																		<?php echo e($employee->username); ?>
+
+																	</option>
+																<?php else: ?>
+																	<option value="<?php echo e($employee->id); ?>">
+																		<?php echo e($employee->username); ?>
+
+																	</option>        
+																<?php endif; ?>
+															<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+														</select>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-md-3 align-self-center p-1">
+														<label class="float-right">ผู้ประเมิน</label>
+													</div>
+													<div class="col-md-6">
+														<select name="valuer" class="form-control valuer<?php echo e($errors->has('valuer') ? ' is-invalid' : ''); ?>">
+															<?php $__currentLoopData = $listthree; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+															<option value="<?php echo e($employee->id); ?>">
+																<?php echo e($employee->username); ?>
+
+															</option>
+															<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+														</select>
+													</div>
+												</div>
+												
 												
 												<div class="container">
 													<div class="row">
