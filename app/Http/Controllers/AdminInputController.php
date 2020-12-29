@@ -70,8 +70,8 @@ class AdminInputController extends Controller
         $this->validate($request, [
             'jobcode' => 'required',
             'projectname' => 'required',
-            'province' => 'required',
-            'amphures' => 'required',
+            'province_code' => 'required',
+            'amphure_code' => 'required',
             'obj_id' => 'required'
             /**'image'=>'required|mimes:jpeg,jpg,png'**/
         ]);
@@ -85,35 +85,26 @@ class AdminInputController extends Controller
         Job::create([
             /*'slug'=>str_slug($title),*/
             'jobcode' => $jobcode = $request->get('jobcode'),
-            'reportcode' => $request->get('reportcode'),
-            'projectname' => $request->get('projectname'),
-            'startdate' => $request->get('startdate'),
-            'inspectiondate' => $request->get('inspectiondate'),
-            'lcduedate' => $request->get('lcduedate'),
-            'jobsize' => $request->get('jobsize'),
-            'easydiff' => $request->get('easydiff'),
-            'jobtype' => $request->get('jobtype'),
             'client' => $request->get('client'),
+            'reportcode' => $request->get('reportcode'),
+            'prop_type' => $request->get('prop_type'),
+            'projectname' => $request->get('projectname'),
             'prop_size' => $request->get('prop_size'),
             'proplocation' => $request->get('proplocation'),
-            'province_code' => $request->get('province'),
-            'amphure_code' => $request->get('amphures'),
+            'province_code' => $request->get('province_code'),
+            'amphure_code' => $request->get('amphure_code'),
             'district' => $request->get('district'),
             'customer' => $request->get('customer'),
-            'customer_tel' => $request->get('customer_tel'),
-            'prop_type' => $request->get('prop_type'),
+            'jobtype' => $request->get('jobtype'),
+            'jobsize' => $request->get('jobsize'),
+            'easydiff' => $request->get('easydiff'),
             'obj_id' => $request->get('obj_id'),
             'valuationfee' => $request->get('valuationfee'),
             'valuationfee_case' => $request->get('valuationfee_case'),
-            'valuer_n' => $request->get('valuer_n'),
-            'headvaluer_n' => $request->get('headvaluer_n'),
-            'level' => $request->get('level'),
-            'moo' => $request->get('moo'),
-            'soi' => $request->get('soi'),
-            'soi' => $request->get('soi'),
-            'deedno' => $request->get('deedno'),
-            'deedtumbon' => $request->get('deedtumbon'),
-            'deedamphur' => $request->get('deedamphur'),
+            'startdate' => $request->get('startdate'),
+            'inspectiondate' => $request->get('inspectiondate'),
+            'lcduedate' => $request->get('lcduedate'),
+            'clientduedate' => $request->get('clientduedate'),
         ]);
         /**}*/
         //return redirect('/admininput')->with('message','Post created successfully');

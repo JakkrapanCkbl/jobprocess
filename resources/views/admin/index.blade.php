@@ -10,7 +10,7 @@
           @include('admin.left-menu')      
       </div>
       <div class="col-md-9">
-          <div class="card">Job Order
+          <div class="card">Job Orderxxxx
             <div class="card-body">
               <table class="table table-striped">
                 <thead>
