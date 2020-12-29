@@ -246,6 +246,8 @@
 		d3.value = Math.round(a3.value * b3.value);
 		a5.value = Math.round(+d2.value + +d3.value + +d4.value);
 	});
+
+	
 </script>
 </body>
 

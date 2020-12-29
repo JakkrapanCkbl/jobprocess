@@ -91,39 +91,31 @@ class JobController extends Controller
 
 public function pdf_order($id)
     {
-        //$aa = $this->bahtText('1000000.50');
-        //dd($aa);
-        //$aa = DB::select('select * from vw_order where id = :id', ['id' => $id]);
-        //dd($aa);
-
         
-        //$jobsx = job::find($id);
-        // This  $data array will be passed to our PDF blade
         $jobs = DB::select('select * from vw_order where id = :id', ['id' => $id]);
         $pdf = PDFbarry::loadView('pdf_forms.order', compact('jobs'));    
-        //return $pdf->download('order.pdf');
         return $pdf->stream();
     }
 
     public function pdf_invoice($id)
     {
-        $job = job::find($id);
-        $testdata = "This is Some Test Data Trying to Flex the PDF Format.";
-        // This  $data array will be passed to our PDF blade
-        $pdf = PDFbarry::loadView('pdf_forms.invoice', compact('job'));
-        
-        return $pdf->stream('invoice.pdf');
+
+        $invoices = DB::select('select * from invoice where id = :id', ['id' => $id]);
+        $money = $invoices[0]->amountjob;
+        $vat = $money * 0.07;
+        $total = $money + $vat;
+        $aa = $this->bahtText($total);
+        $pdf = PDFbarry::loadView('invoice.pdf_invoice', compact('invoices','aa'));        
+        return $pdf->stream();
+
     }
 
-    public function pdf_tax_receipt($id)
+    public function pdf_receipt($id)
     {
-        $job = job::find($id);
-        // This  $data array will be passed to our PDF blade
-        $pdf = PDFbarry::loadView('pdf_forms.tax_receipt', compact('job'));
-
-        return $pdf->stream('tax-receipt.pdf');
-        // return view('pdf_forms.invoice', compact('job'));
-
+        
+        $receipts = DB::select('select * from invoice where id = :id', ['id' => $id]);
+        $pdf = PDFbarry::loadView('invoice.pdf_receipt', compact('receipts'));    
+        return $pdf->stream();
     }
 
     public function ope()

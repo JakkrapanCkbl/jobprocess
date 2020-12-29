@@ -3,16 +3,7 @@
     <div class="alert alert-success"><?php echo e(Session::get('message')); ?></div>
     <?php endif; ?>
     <div class="row">
-
-
-
         <div class="col-md-12">
-            <!-- <div class="card">
-                <div class="card-header">
-                    Edit Job
-                </div> -->
-
-
             <div class="card-body" style="background-color: #B0C4DE;">
                 <form action="<?php echo e(route('admininputjob.update',[$job->id])); ?>" method="POST" enctype="multipart/form-data"><?php echo csrf_field(); ?>
 
