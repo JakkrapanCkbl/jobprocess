@@ -11,7 +11,7 @@
                 </div> -->
 
 
-            <div class="card-body" style="background-color: #B0C4DE;">
+            <div class="card-body" style="background-color: #f8ede4;">
 
                 <style>
                     .row {
@@ -209,7 +209,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="input-group">
-                                <input type="text" name="govprice_row1a" class="form-control<?php echo e($errors->has('govprice_row1a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row1a); ?>">
+                                <input type="text" name="govprice_row1a" class="form-control<?php echo e($errors->has('roomarea') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->roomarea); ?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <p>ตร.ม.</p>
@@ -230,7 +230,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="input-group">
-                                <input type="text" name="govprice_row2a" class="form-control<?php echo e($errors->has('govprice_row2a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row2a); ?>">
+                                <input type="text" name="govprice_row2a" class="form-control<?php echo e($errors->has('room_indoor_area') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_indoor_area); ?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <p>ตร.ม.</p>
@@ -240,13 +240,13 @@
                         </div>
 
                         <div class="col-md-2">
-                            <input type="text" name="govprice_row2b" class="form-control<?php echo e($errors->has('govprice_row2b') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row2b); ?>">
+                            <input type="text" name="govprice_row2b" class="form-control<?php echo e($errors->has('room_indoor_price') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_indoor_price); ?>">
                         </div>
                         <div class="col-md-2">
                             <input type="text" name="govprice_row2c" class="form-control<?php echo e($errors->has('govprice_row2c') ? ' is-invalid' : ''); ?>" disabled>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="govprice_row2d" class="form-control<?php echo e($errors->has('govprice_row2d') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row2d); ?>">
+                            <input type="text" name="govprice_row2d" class="form-control<?php echo e($errors->has('room_indoor_gov_price') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_indoor_gov_price); ?>">
                         </div>
 
                     </div>
@@ -260,7 +260,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="input-group">
-                                <input type="text" name="govprice_row3a" class="form-control<?php echo e($errors->has('govprice_row3a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row3a); ?>">
+                                <input type="text" name="govprice_row3a" class="form-control<?php echo e($errors->has('room_balcony_area') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_balcony_area); ?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <p>ตร.ม.</p>
@@ -270,13 +270,13 @@
                         </div>
 
                         <div class="col-md-2">
-                            <input type="text" name="govprice_row3b" class="form-control<?php echo e($errors->has('govprice_row3b') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row3b); ?>">
+                            <input type="text" name="govprice_row3b" class="form-control<?php echo e($errors->has('room_balcony_price') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_balcony_price); ?>">
                         </div>
                         <div class="col-md-2">
                             <input type="text" name="govprice_row3c" class="form-control<?php echo e($errors->has('govprice_row3c') ? ' is-invalid' : ''); ?>" disabled>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="govprice_row3d" class="form-control<?php echo e($errors->has('govprice_row3d') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row3d); ?>">
+                            <input type="text" name="govprice_row3d" class="form-control<?php echo e($errors->has('room_balcony_gov_price	') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_balcony_gov_price); ?>">
                         </div>
 
                     </div>
@@ -291,7 +291,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="input-group">
-                                <input type="text" name="govprice_row4a" class="form-control<?php echo e($errors->has('govprice_row4a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row4a); ?>">
+                                <input type="text" name="govprice_row4a" class="form-control<?php echo e($errors->has('room_parking_area') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_parking_area); ?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <p>ตร.ม.</p>
@@ -304,10 +304,10 @@
                             <input type="text" name="govprice_row4b" class="form-control<?php echo e($errors->has('govprice_row4b') ? ' is-invalid' : ''); ?>" disabled>
                         </div>
                         <div class="col-md-2">
-                            <input type="text" name="govprice_row4c" class="form-control<?php echo e($errors->has('govprice_row4c') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row4c); ?>">
+                            <input type="text" name="govprice_row4c" class="form-control<?php echo e($errors->has('room_parking_price') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_parking_price); ?>">
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="govprice_row4d" class="form-control<?php echo e($errors->has('govprice_row4d') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row4d); ?>">
+                            <input type="text" name="govprice_row4d" class="form-control<?php echo e($errors->has('room_parking_gov_price') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_parking_gov_price); ?>">
                         </div>
 
                     </div>
@@ -317,7 +317,7 @@
                     <div class="row">
                         <div class="col-md-9"></div>
                         <div class="col-md-3">
-                            <input type="text" name="govprice_row5a" class="form-control<?php echo e($errors->has('govprice_row5a') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->govprice_row5a); ?>">
+                            <input type="text" name="govprice_row5a" class="form-control<?php echo e($errors->has('room_total_gov_price') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->room_total_gov_price); ?>">
                         </div>
                     </div>
                 </div>

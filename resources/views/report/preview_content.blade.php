@@ -17,8 +17,6 @@
                         }
                     </style>
 
-
-
                     <div class="container">
                         <div class="row">
 
@@ -141,7 +139,11 @@
                     </div>
 
 
-
+                    <div class="container">
+                        <div class="row">
+                            <label>{{$testtext}}</label>
+                        </div>
+                    </div>
 
                     <div class="container">
                         <div class="row">

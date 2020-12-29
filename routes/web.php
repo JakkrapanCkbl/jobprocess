@@ -252,7 +252,7 @@ Route::post('/invoice/{id}/update', 'InvoiceController@update')->name('invoice.u
 Route::get('/invoice/{id}/edit', 'InvoiceController@edit')->name('invoice.edit');
 
 
-//Drag and Drop File in [Recent Jobs]
+//Drag and Drop File in [Recent Jobs] 
 Route::get('/drag', 'JobController@drop');
 Route::post('/jobs/fileupload/{id}', 'JobController@pdf_dragdrop')->name('jobs.pdf_dragdrop');
 Route::get('/preview-pdf', 'JobController@pdf_dragdrop');
@@ -263,5 +263,4 @@ Route::get('/report/{id}/edit', 'ReportController@edit')->name('report.edit');
 Route::post('/report/{id}/update', 'ReportController@update')->name('report.update');
 Route::post('/report/fetch', 'ReportController@fetch')->name('report.fetch');
 Route::get('/report/{id}/preview', 'ReportController@preview')->name('report.preview');
-
-
+// Route::get('/report/{id}/pdf', 'ReportController@pdf')->name('report.pdf');

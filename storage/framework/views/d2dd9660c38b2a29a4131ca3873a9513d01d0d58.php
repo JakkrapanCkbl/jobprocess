@@ -184,8 +184,8 @@
                       font-size: 25px;
                     }
 
-                    .fa-icon-blue{
-color: #2874A6;
+                    .fa-icon-blue {
+                      color: #2874A6;
                     }
                   </style>
 
@@ -213,7 +213,7 @@ color: #2874A6;
                   <div class="d-flex row justify-content-center justify-content-md-start">
                     <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload<?php echo e($job->id); ?>" onclick="dropzone(<?php echo e($job->id); ?>)" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div>
                     <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc<?php echo e($job->id); ?>" aria-expanded="false" aria-controls="collapse" title="open file"></div>
-                    <div class="fa-icon "><span class="fas fa-book" title="I am hovering over the text"></div>
+                    <div class="fa-icon "><a href="<?php echo e(route('report.edit',[$job->id])); ?>"><span class="fas fa-book" title="To Report"> </a></div>
                     <div class="fa-icon "><span class="fas fa-folder-open" title="I am hovering over the text"></div>
                     <div class="fa-icon "><span class="fas fa-tasks" title="I am hovering over the text"></div>
                     <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div>
@@ -279,13 +279,13 @@ color: #2874A6;
                             <div class="container">
                               <div class="md-col-4">
                                 <div class="card-body">
-<?php
+                                  <?php
                                   $jobcode = str_replace('/', '_', $job->jobcode);
                                   // $docList = preg_grep('#\.pdf$#', glob('storage/project_reports/' . $jobcode . '/**/*'), PREG_GREP_INVERT);
                                   $docList = glob('storage/project_reports/' . $jobcode . '/**/*');
                                   ?>
 
- <?php $__currentLoopData = $docList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                  <?php $__currentLoopData = $docList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                   <?php
                                   $filename = basename($file);
                                   ?>
@@ -391,7 +391,7 @@ color: #2874A6;
   <!-- <?php echo $__env->make('partials.blog', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> -->
   <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-     <!--Rang slider js-->
+  <!--Rang slider js-->
   <script src="../external2/plugins/ion.rangeSlider/ion.rangeSlider.js"></script>
   <script src="../external2/js/rangeslider.js"></script>
 

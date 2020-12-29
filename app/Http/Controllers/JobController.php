@@ -108,10 +108,11 @@ public function pdf_order($id)
     public function pdf_invoice($id)
     {
         $job = job::find($id);
+        $testdata = "This is Some Test Data Trying to Flex the PDF Format.";
         // This  $data array will be passed to our PDF blade
         $pdf = PDFbarry::loadView('pdf_forms.invoice', compact('job'));
         
-        return $pdf->download('invoice.pdf');
+        return $pdf->stream('invoice.pdf');
     }
 
     public function pdf_tax_receipt($id)
