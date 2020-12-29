@@ -222,9 +222,21 @@
 			a1.value = +a2.value + +a3.value + +a4.value;
 		}
 	);
+	$("input[name = 'govprice_row3b']").keyup(
+		function update_d3() {
+			d3.value = Math.round(a3.value * b3.value);
+			a5.value = Math.round(+d2.value + +d3.value + +d4.value);
+		}
+	);
 	$("input[name = 'govprice_row4a']").keyup(
 		function update_a1() {
 			a1.value = +a2.value + +a3.value + +a4.value;
+		}
+	);
+	$("input[name = 'govprice_row4c']").keyup(
+		function update_d4() {
+			d4.value = a4.value * c4.value;
+			a5.value = Math.round(+d2.value + +d3.value + +d4.value);
 		}
 	);
 

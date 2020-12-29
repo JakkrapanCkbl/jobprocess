@@ -213,7 +213,7 @@
                   <div class="d-flex row justify-content-center justify-content-md-start">
                     <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload<?php echo e($job->id); ?>" onclick="dropzone(<?php echo e($job->id); ?>)" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div>
                     <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc<?php echo e($job->id); ?>" aria-expanded="false" aria-controls="collapse" title="open file"></div>
-                    <div class="fa-icon "><span class="fas fa-book" title="I am hovering over the text"></div>
+                    <div class="fa-icon "><a href="<?php echo e(route('report.edit',[$job->id])); ?>"><span class="fas fa-book" title="To Report"> </a></div>
                     <div class="fa-icon "><span class="fas fa-folder-open" title="I am hovering over the text"></div>
                     <div class="fa-icon "><span class="fas fa-tasks" title="I am hovering over the text"></div>
                     <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div>

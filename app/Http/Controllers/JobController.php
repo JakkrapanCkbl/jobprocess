@@ -99,6 +99,7 @@ public function pdf_order($id)
 
     public function pdf_invoice($id)
     {
+
         $invoices = DB::select('select * from invoice where id = :id', ['id' => $id]);
         $money = $invoices[0]->amountjob;
         $vat = $money * 0.07;
@@ -106,6 +107,7 @@ public function pdf_order($id)
         $aa = $this->bahtText($total);
         $pdf = PDFbarry::loadView('invoice.pdf_invoice', compact('invoices','aa'));        
         return $pdf->stream();
+
     }
 
     public function pdf_receipt($id)

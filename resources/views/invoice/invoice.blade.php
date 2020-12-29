@@ -42,7 +42,7 @@
         text-align: center;
         margin-top: 20px;
     }
-    
+
     div {
         white-space: nowrap;
     }
@@ -241,7 +241,7 @@
                 <th class="finalamount" style="font-size: 20px;">245.00</th>
             </tr>
             <tr class="hightlight">
-                <th class="floatleft" style="font-size: 20px;">Total Amount</th>    
+                <th class="floatleft" style="font-size: 20px;">Total Amount</th>
                 <th class="finalamount" style="font-size: 20px;">3,745.00</th>
             </tr>
         </table>
