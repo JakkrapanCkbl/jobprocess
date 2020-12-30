@@ -219,9 +219,7 @@
             <tr class="hightlight">
            
                 <th class="floatmid" rowspan="3" style="font-size: 22px; width:60%;">(
-                    <?php echo e($aa); ?>
-
-            บาทถ้วน)</th>
+                    <?php echo e($aa); ?>บาทถ้วน)</th>
                 <th class="floatleft" style="font-size: 20px; width:20%">Total</th>
                 <th class="finalamount" style="font-size: 20px; width:20%"><?php echo e(number_format("$item->amountjob",2)); ?></th>
             </tr>

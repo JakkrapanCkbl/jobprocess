@@ -209,7 +209,7 @@
                     }
                   }
                   ?>
-
+                  
                   <div class="d-flex row justify-content-center justify-content-md-start">
                     <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload{{$job->id}}" onclick="dropzone({{$job->id}})" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div>
                     <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc{{$job->id}}" aria-expanded="false" aria-controls="collapse" title="open file"></div>
@@ -217,10 +217,13 @@
                     <div class="fa-icon "><span class="fas fa-folder-open" title="I am hovering over the text"></div>
                     <div class="fa-icon "><span class="fas fa-tasks" title="I am hovering over the text"></div>
                     <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div>
-                    <div class="fa-icon"><span class="far fa-paper-plane" alt="ส่งรายงาน" title="ส่งรายงาน" id="fa-invoice"></div>
-                    <div class="fa-icon" id="fa-invoice{{$job->id}}"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></div>
-                    <div class="fa-icon" id="fa-receipt{{$job->id}}"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></div>
-                    <div class="fa-icon-inrow" id="fa-ope{{$job->id}}"><span class="fas fa-donate" alt="OPE" title="OPE"></div>
+                    <div class="fa-icon"><a href="{{route('print-order.show',[$job->id])}}"><span class="far fa-paper-plane" alt="ใบสั่งงาน" title="ใบสั่งงาน" id="fa-invoice"></a></div>
+                    <div class="fa-icon" id="fa-invoice{{$job->id}}"><a href="{{route('print-invoice.show','1200')}}"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div> 
+                    <div class="fa-icon" id="fa-receipt{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div>
+                    <div class="fa-icon-inrow" id="fa-ope{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div>
+                    
+                    
+                   
                   </div>
 
                   <div id="pdfCollapse{{$job->id}}">

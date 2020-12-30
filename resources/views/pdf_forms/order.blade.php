@@ -189,9 +189,7 @@
     </table>
   </div>
 
-  <div>
-    <h1>{{$testdata}}</h1>
-  </div>
+  
 
   <p><strong>5. TIMELINE</strong> </p>
   <p>--------------------------</p>

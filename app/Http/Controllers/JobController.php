@@ -93,6 +93,7 @@ public function pdf_order($id)
     {
         
         $jobs = DB::select('select * from vw_order where id = :id', ['id' => $id]);
+        //dd($jobs);
         $pdf = PDFbarry::loadView('pdf_forms.order', compact('jobs'));    
         return $pdf->stream();
     }
