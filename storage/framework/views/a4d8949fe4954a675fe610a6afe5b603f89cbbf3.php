@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <style>
@@ -5,28 +7,28 @@
         font-family: 'THSarabunNew';
         font-style: normal;
         font-weight: normal;
-        src: url("{{ public_path('fonts/THSarabun.ttf') }}") format('truetype');
+        src: url("<?php echo e(public_path('fonts/THSarabun.ttf')); ?>") format('truetype');
     }
 
     @font-face {
         font-family: 'THSarabunNew';
         font-style: normal;
         font-weight: bold;
-        src: url("{{ public_path('fonts/THSarabun Bold.ttf') }}") format('truetype');
+        src: url("<?php echo e(public_path('fonts/THSarabun Bold.ttf')); ?>") format('truetype');
     }
 
     @font-face {
         font-family: 'THSarabunNew';
         font-style: italic;
         font-weight: normal;
-        src: url("{{ public_path('fonts/THSarabun Italic.ttf') }}") format('truetype');
+        src: url("<?php echo e(public_path('fonts/THSarabun Italic.ttf')); ?>") format('truetype');
     }
 
     @font-face {
         font-family: 'THSarabunNew';
         font-style: italic;
         font-weight: bold;
-        src: url("{{ public_path('fonts/THSarabun Bold Italic.ttf') }}") format('truetype');
+        src: url("<?php echo e(public_path('fonts/THSarabun Bold Italic.ttf')); ?>") format('truetype');
     }
 
     body {
@@ -34,17 +36,17 @@
         font-size: 19px;
     }
 
-    @page {
+    @page  {
         margin: 0cm 1cm;
     }
 
-    div {
-        white-space: nowrap;
-    }
-    
     .title {
         text-align: center;
         margin-top: 20px;
+    }
+    
+    div {
+        white-space: nowrap;
     }
 
     h3,
@@ -54,7 +56,6 @@
         margin-left: 0;
         margin-right: 0;
     }
-
 
     p {
         margin-top: 0;
@@ -132,13 +133,6 @@
         padding-bottom: 4px;
         padding-right: 5px;
     }
-
-    .square {
-        height: 15px;
-        width: 15px;
-        background-color: #FFFFFF;
-        border: solid 2px #141613;
-    }
 </style>
 
 
@@ -147,20 +141,21 @@
 </head>
 
 <body>
-@foreach($receipts as $item)
+    <?php $__currentLoopData = $invoices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    
     <div class="container">
-        <p class="title" style="font-size: 30px;"><b>สำเนาใบเสร็จรับเงิน/ใบกำกับภาษี</b> </p>
+        <p class="title" style="font-size: 30px;"><b>สำเนาใบแจ้งหนี้/ใบวางบิล</b> </p>
     </div>
     <div class="container">
         <div class="logo">
             <img src="img/LM3.png" alt="Logo" width="240" height="60">
         </div>
         <p style="float:right; text-align:right; padding-top:0px;"><b>
-                Receipt {{$item->invoiceno}}<br>
-                Date : {{date('d-m-yy', strtotime($item->receiptdate))}}<br>
+                Invoice <?php echo e($item->invoiceno); ?><br>
+                Date : <?php echo e(date('d-m-yy', strtotime($item->invoicedate))); ?><br>
             </b></p>
     </div>
-
+    
     <div class="container">
 
         <p style="text-align:left; padding-top:78px"><b> บริษัท แลนด์มาร์ค คอนซัลแทนส์ จำกัด</b>
@@ -175,8 +170,8 @@
         </div>
 
         <br><br><br><br>
-        <p><b>Customer : {{$item->customer}}</b> </p>
-        <p><b>Address : {{$item->address}}</b> </p>
+        <p><b>Customer : <?php echo e($item->customer); ?></b> </p>
+        <p><b>Address : <?php echo e($item->address); ?></b> </p>
 
     </div>
 
@@ -189,8 +184,8 @@
             </tr>
             <!-- main content -->
             <tr class="hightlight">
-                <th class="description">{{$item->description}}</th>
-                <th class="amount">{{number_format("$item->amountjob")}}</th>
+                <th class="description"><?php echo e($item->description); ?></th>
+                <th class="amount"><?php echo e(number_format("$item->amountjob")); ?></th>
             </tr>
            
             <tr class="hightlight">
@@ -222,52 +217,60 @@
         <!-- sum table -->
         <table width=100%>
             <tr class="hightlight">
-                <th class="floatmid" rowspan="3" style="font-size: 22px; width:60%;">({{$aa}}บาทถ้วน)</th>
+           
+                <th class="floatmid" rowspan="3" style="font-size: 22px; width:60%;">(
+                    <?php echo e($aa); ?>
+
+            บาทถ้วน)</th>
                 <th class="floatleft" style="font-size: 20px; width:20%">Total</th>
-                <th class="finalamount" style="font-size: 20px; width:20%">{{number_format("$item->amountjob",2)}}</th>
+                <th class="finalamount" style="font-size: 20px; width:20%"><?php echo e(number_format("$item->amountjob",2)); ?></th>
             </tr>
             <tr class="hightlight">
                 <th class="floatleft" style="font-size: 20px;">Vat 7%</th>
-                <th class="finalamount" style="font-size: 20px;">{{number_format($item->amountjob * 0.07,2)}}</th>
+                <th class="finalamount" style="font-size: 20px;"><?php echo e(number_format($item->amountjob * 0.07,2)); ?></th>
             </tr>
             <tr class="hightlight">
-                <th class="floatleft" style="font-size: 20px;">Total Amount</th>
-                <th class="finalamount" style="font-size: 20px;">{{number_format($item->amountjob + ($item->amountjob * 0.07),2)}}</th>
+                <th class="floatleft" style="font-size: 20px;">Total Amount</th>    
+                <th class="finalamount" style="font-size: 20px;"><?php echo e(number_format($item->amountjob + ($item->amountjob * 0.07),2)); ?></th>
             </tr>
         </table>
     </div>
+    <span class="text-bold">
+  
+ </span>
+    <!-- lower table part -->
 
     <br>
     <div class="container">
         <table width=100%>
             <tr>
-                <th style="text-align:left;">
-                    <div class="square" style="display: inline-block;"></div> &nbsp;Cash
-                </th>
-                <th style="text-align:left;">
-                    <div class="square" style="display: inline-block;"></div> &nbsp;Cheque
-                </th>
-                <th colspan="2" style="text-align:center; width:50%">ตรวจสอบถูกต้องเรียบร้อยแล้ว</th>
+                <th style="text-align: left;" class="borderleft">กรุณาชำระเงินเมื่อได้รับใบวางบิล</th>
+                <th class="borderleft borderright" colspan="3"><b><u>ชื่อบัญชี : บริษัท แลนด์มาร์ค คอนซัลแทนส์ จำกัด</u></b> </th>
             </tr>
             <tr>
-                <th style="text-align:left; width:25%; padding-top:15px;">Bank___________________</th>
-                <th style="text-align:left; width:25%; padding-top:15px;">Cheque__________________</th>
-                <th></th>
+                <th class="borderleft"></th>
+                <th class="borderleft borderright" colspan="3">ธนาคารกสิกรไทย บ/ช กระแสรายวัน</th>
             </tr>
-            <br>
+
             <tr>
-                <th style="text-align:left; padding-top:15px;">Date___________________</th>
-                <th style="text-align:left; padding-top:15px;">Amount__________________</th>
-                <th colspan="2" style="text-align:right; padding-top:15px">______________________________ Collector</th>
+                <th style="text-align: left;" class="borderleft">ผู้รับวางบิล &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ________________________ (กรุณาเขียนตัวบรรจง)</th>
+                <th class="borderleft borderright borderbot" colspan="3">เลขที่ 044-2926-727 สาขาบิ๊กซีอ่อนนุช</th>
             </tr>
             <tr>
-                <th style="text-align:left;"></th>
-                <th style="text-align:left;"></th>
-                <th colspan="2" style="text-align:center; padding-top:15px">Date__________________________</th>
+                <th style="text-align: left; padding-top:10px" class="borderleft">วันที่วางบิล &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ________________________</th>
+                <th class="borderleft borderright" colspan="3"></th>
+            </tr>
+            <tr>
+                <th style="text-align: left; padding-top:10px" class="borderleft">นัดชำระเงินวันที่ &nbsp; ________________________</th>
+                <th class="borderleft borderright" style="padding-top:10px" colspan="3">_____________________________</th>
+            </tr>
+            <tr>
+                <th class="borderleft"></th>
+                <th class="borderleft borderright " colspan="3">ผู้มีอำนาจลงนาม (แผนกบัญชี)</th>
             </tr>
         </table>
     </div>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </body>
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/invoice/pdf_invoice.blade.php ENDPATH**/ ?>

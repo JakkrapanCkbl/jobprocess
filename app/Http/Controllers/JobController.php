@@ -114,7 +114,11 @@ public function pdf_order($id)
     {
         
         $receipts = DB::select('select * from invoice where id = :id', ['id' => $id]);
-        $pdf = PDFbarry::loadView('invoice.pdf_receipt', compact('receipts'));    
+        $money = $receipts[0]->amountjob;
+        $vat = $money * 0.07;
+        $total = $money + $vat;
+        $aa = $this->bahtText($total);
+        $pdf = PDFbarry::loadView('invoice.pdf_receipt', compact('receipts','aa'));    
         return $pdf->stream();
     }
 

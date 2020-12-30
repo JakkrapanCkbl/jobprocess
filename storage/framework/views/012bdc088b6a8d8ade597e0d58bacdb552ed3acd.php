@@ -156,8 +156,8 @@
             <img src="img/LM3.png" alt="Logo" width="240" height="60">
         </div>
         <p style="float:right; text-align:right; padding-top:0px;"><b>
-                Invoice No. : LC-R-20/08/077<br>
-                Date : 17 สิงหาคม 2563<br>
+                Receipt <?php echo e($item->invoiceno); ?><br>
+                Date : <?php echo e(date('d-m-yy', strtotime($item->receiptdate))); ?><br>
             </b></p>
     </div>
 
@@ -175,8 +175,8 @@
         </div>
 
         <br><br><br><br>
-        <p><b>Customer : นายธนกฤต อนันต์ประกฤติ</b> </p>
-        <p><b>Address : 469 ซอยสำโรงเหนือ ตำบลสำโรงเหนือ อำเภอเมืองสมุทรปราการ จ.สมุทรปราการ</b> </p>
+        <p><b>Customer : <?php echo e($item->customer); ?></b> </p>
+        <p><b>Address : <?php echo e($item->address); ?></b> </p>
 
     </div>
 
@@ -189,29 +189,10 @@
             </tr>
             <!-- main content -->
             <tr class="hightlight">
-                <th class="description">ค่าบริการประเมินมูลค่าทรัพย์สิน LC/63BF-1101 HLHO 630800328</th>
-                <th class="amount">3,500.00</th>
+                <th class="description"><?php echo e($item->description); ?></th>
+                <th class="amount"><?php echo e(number_format("$item->amountjob")); ?></th>
             </tr>
-            <tr class="hightlight">
-                <th class="description">ค่าบริการประเมินมูลค่าทรัพย์สิน LC/63BF-1101 HLHO 630800328</th>
-                <th class="amount">3,500.00</th>
-            </tr>
-            <tr class="hightlight">
-                <th class="description">ค่าบริการประเมินมูลค่าทรัพย์สิน LC/63BF-1101 HLHO 630800328</th>
-                <th class="amount">3,500.00</th>
-            </tr>
-            <tr class="hightlight">
-                <th class="description">ค่าบริการประเมินมูลค่าทรัพย์สิน LC/63BF-1101 HLHO 630800328</th>
-                <th class="amount">3,500.00</th>
-            </tr>
-            <tr class="hightlight">
-                <th class="description">ค่าบริการประเมินมูลค่าทรัพย์สิน LC/63BF-1101 HLHO 630800328</th>
-                <th class="amount">3,500.00</th>
-            </tr>
-            <tr class="hightlight">
-                <th class="description">ค่าบริการประเมินมูลค่าทรัพย์สิน LC/63BF-1101 HLHO 630800328</th>
-                <th class="amount">3,500.00</th>
-            </tr>
+           
             <tr class="hightlight">
                 <th class="description"></th>
                 <th class="amount"></th>
@@ -241,17 +222,17 @@
         <!-- sum table -->
         <table width=100%>
             <tr class="hightlight">
-                <th class="floatmid" rowspan="3" style="font-size: 22px; width:60%;"> (ห้าแสนเก้าหมื่นสามพันเจ็ดร้อยสี่สิบห้าบาทสี่สิบห้าสตางค์)</th>
+                <th class="floatmid" rowspan="3" style="font-size: 22px; width:60%;">(<?php echo e($aa); ?>บาทถ้วน)</th>
                 <th class="floatleft" style="font-size: 20px; width:20%">Total</th>
-                <th class="finalamount" style="font-size: 20px; width:20%">3,500.00</th>
+                <th class="finalamount" style="font-size: 20px; width:20%"><?php echo e(number_format("$item->amountjob",2)); ?></th>
             </tr>
             <tr class="hightlight">
                 <th class="floatleft" style="font-size: 20px;">Vat 7%</th>
-                <th class="finalamount" style="font-size: 20px;">245.00</th>
+                <th class="finalamount" style="font-size: 20px;"><?php echo e(number_format($item->amountjob * 0.07,2)); ?></th>
             </tr>
             <tr class="hightlight">
                 <th class="floatleft" style="font-size: 20px;">Total Amount</th>
-                <th class="finalamount" style="font-size: 20px;">3,745.00</th>
+                <th class="finalamount" style="font-size: 20px;"><?php echo e(number_format($item->amountjob + ($item->amountjob * 0.07),2)); ?></th>
             </tr>
         </table>
     </div>
