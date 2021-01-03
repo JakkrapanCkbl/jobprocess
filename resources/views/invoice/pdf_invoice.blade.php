@@ -185,7 +185,7 @@
             <!-- main content -->
             <tr class="hightlight">
                 <th class="description">{{$item->description}}</th>
-                <th class="amount">{{number_format("$item->amountjob")}}</th>
+                <th class="amount">{{-- number_format("$item->amountjob") --}}</th>
             </tr>
            
             <tr class="hightlight">
@@ -219,17 +219,17 @@
             <tr class="hightlight">
            
                 <th class="floatmid" rowspan="3" style="font-size: 22px; width:60%;">(
-                    {{$aa}}บาทถ้วน)</th>
+                    {{-- $aa --}}บาทถ้วน)</th>
                 <th class="floatleft" style="font-size: 20px; width:20%">Total</th>
-                <th class="finalamount" style="font-size: 20px; width:20%">{{number_format("$item->amountjob",2)}}</th>
+                <th class="finalamount" style="font-size: 20px; width:20%">{{-- number_format("$item->amountjob",2) --}}</th>
             </tr>
             <tr class="hightlight">
                 <th class="floatleft" style="font-size: 20px;">Vat 7%</th>
-                <th class="finalamount" style="font-size: 20px;">{{number_format($item->amountjob * 0.07,2)}}</th>
+                <th class="finalamount" style="font-size: 20px;">{{-- number_format($item->amountjob * 0.07,2) --}}</th>
             </tr>
             <tr class="hightlight">
                 <th class="floatleft" style="font-size: 20px;">Total Amount</th>    
-                <th class="finalamount" style="font-size: 20px;">{{number_format($item->amountjob + ($item->amountjob * 0.07),2)}}</th>
+                <th class="finalamount" style="font-size: 20px;">{{-- number_format($item->amountjob + ($item->amountjob * 0.07),2) --}}</th>
             </tr>
         </table>
     </div>

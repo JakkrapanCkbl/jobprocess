@@ -185,7 +185,7 @@
             <!-- main content -->
             <tr class="hightlight">
                 <th class="description"><?php echo e($item->description); ?></th>
-                <th class="amount"><?php echo e(number_format("$item->amountjob")); ?></th>
+                <th class="amount"></th>
             </tr>
            
             <tr class="hightlight">
@@ -219,17 +219,17 @@
             <tr class="hightlight">
            
                 <th class="floatmid" rowspan="3" style="font-size: 22px; width:60%;">(
-                    <?php echo e($aa); ?>บาทถ้วน)</th>
+                    บาทถ้วน)</th>
                 <th class="floatleft" style="font-size: 20px; width:20%">Total</th>
-                <th class="finalamount" style="font-size: 20px; width:20%"><?php echo e(number_format("$item->amountjob",2)); ?></th>
+                <th class="finalamount" style="font-size: 20px; width:20%"></th>
             </tr>
             <tr class="hightlight">
                 <th class="floatleft" style="font-size: 20px;">Vat 7%</th>
-                <th class="finalamount" style="font-size: 20px;"><?php echo e(number_format($item->amountjob * 0.07,2)); ?></th>
+                <th class="finalamount" style="font-size: 20px;"></th>
             </tr>
             <tr class="hightlight">
                 <th class="floatleft" style="font-size: 20px;">Total Amount</th>    
-                <th class="finalamount" style="font-size: 20px;"><?php echo e(number_format($item->amountjob + ($item->amountjob * 0.07),2)); ?></th>
+                <th class="finalamount" style="font-size: 20px;"></th>
             </tr>
         </table>
     </div>
