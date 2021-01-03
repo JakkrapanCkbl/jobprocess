@@ -28,7 +28,6 @@
   @include('partials.nav')
   @include('partials.hero')
   <!-- @include('partials.category') -->
-
   <div class="site-section bg-light">
     <div class="container">
       <div class="row">

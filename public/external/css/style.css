@@ -107,7 +107,7 @@ a {
   padding: 3em 0; }
   @media (min-width: 768px) {
     .site-section {
-      padding: 7em 0; } }
+      padding: 4em 0; } }
   .site-section.site-section-sm {
     padding: 4em 0; }
 
@@ -511,11 +511,11 @@ a {
       top: 0;
       background: rgba(0, 0, 0, 0.4); }
   .site-blocks-cover, .site-blocks-cover > .container > .row {
-    min-height: 600px;
-    height: calc(100vh); }
+    min-height: 400px;
+    height: calc(55vh); }
   .site-blocks-cover.inner-page, .site-blocks-cover.inner-page > .container > .row {
     min-height: 400px;
-    height: calc(30vh); }
+    height: calc(40vh); }
   .site-blocks-cover .sub-text {
     font-size: 1.1rem;
     text-transform: uppercase;

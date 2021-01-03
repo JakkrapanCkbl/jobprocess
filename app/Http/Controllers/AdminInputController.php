@@ -260,7 +260,7 @@ class AdminInputController extends Controller
 
     public static function gennewbfid()
     {
-        $prefix = "LC/63BF-";
+        $prefix = "LC/64BF-";
         $id = $prefix;
         $id = IdGenerator::generate(['table' => 'jobs', 'field' => 'jobcode', 'length' => 12, 'prefix' => $prefix, 'reset_on_prefix_change' => true]);
         //dd($id);
@@ -270,7 +270,7 @@ class AdminInputController extends Controller
 
     public static function gennewrid()
     {
-        $prefix = "LC/63R-";
+        $prefix = "LC/64R-";
         $id = $prefix;
         $id = IdGenerator::generate(['table' => 'jobs', 'field' => 'jobcode', 'length' => 11, 'prefix' => $prefix, 'reset_on_prefix_change' => true]);
         //dd($id);
