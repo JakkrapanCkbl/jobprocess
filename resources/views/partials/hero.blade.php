@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12" data-aos="fade">
-        <h1>Find Property</h1>
+        <!--h1>Find Property</h1-->
         <form action="{{route('alljobs')}}">
           <div class="row mb-3">
             <div class="col-md-9">
               <div class="row">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <input type="text" name="search" class="mr-3 form-control border-0 px-4" placeholder="title, keywords or project name ">
+                  <input type="text" name="search" class="mr-3 form-control border-0 px-4" placeholder="ค้นหา : ชื่อคอนโด, ชื่อหมู่บ้าน, ชื่อถนน, ชื่ออำเภอ, ...">
                 </div>
                 <!--<div class="col-md-6 mb-3 mb-md-0">
                       <div class="input-wrap">
@@ -18,10 +18,10 @@
                     </div>-->
               </div>
             </div>
-            <div class="col-md-3">
+            <!--div class="col-md-3">
               <input type="submit" class="btn btn-search btn-primary btn-block" value="Search">
             </div>
-          </div>
+          </div-->
 
 
 
