@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="<?php echo e(asset('external2/plugins/bootstrap/css/bootstrap.min.css')); ?>">
 
 <!-- js ajax -->
-<script src="<?php echo e(asset('external2/js/vendors/jquery-3.2.1.min.js')); ?>"></script>
+<script src="<?php echo e(asset('external2/js/vendors/jquery-3.2.1.min.js')); ?>"></script> 
 
 <!--Font Awesome-->
 <link href="<?php echo e(asset('external2/plugins/fontawesome-free/css/all.css')); ?>" rel="stylesheet">

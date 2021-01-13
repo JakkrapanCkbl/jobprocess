@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="{{asset('external2/plugins/bootstrap/css/bootstrap.min.css')}}">
 
 <!-- js ajax -->
-<script src="{{asset('external2/js/vendors/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('external2/js/vendors/jquery-3.2.1.min.js')}}"></script> 
 
 <!--Font Awesome-->
 <link href="{{asset('external2/plugins/fontawesome-free/css/all.css')}}" rel="stylesheet">
