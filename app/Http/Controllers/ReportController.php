@@ -84,9 +84,9 @@ class ReportController extends Controller
             'prop_type' => $request->get('prop_type'),
             'customer' => $request->get('customer'),
             'startdate' => $request->get('startdate'),
-                'inspectiondate' => $request->get('inspectiondate'),
-                'submissiondate' => $request->get('submissiondate'),
-                'lcduedate' => $request->get('lcduedate'),
+            'inspectiondate' => $request->get('inspectiondate'),
+            'submissiondate' => $request->get('submissiondate'),
+            'lcduedate' => $request->get('lcduedate'),
 
             //page2
             'lat' => $request->get('lat'),
@@ -385,10 +385,10 @@ class ReportController extends Controller
         // return view('report.preview', compact('job'))->with('list', $list)->with('listtwo', $listtwo)
         //     ->with('listthree', $listthree)->with('listfour', $list_transportation)->with('listfive', $list_district);
 
-        $testtext= "Try Adding Random Text Between Some of This";
-            return view('report.preview', compact('job'))->with('list', $list)->with('listtwo', $listtwo)
-                ->with('listthree', $listthree)->with('listfour', $list_transportation)->with('listfive', $list_district)
-                ->with('testtext',$testtext);
+        $testtext = "Try Adding Random Text Between Some of This";
+        return view('report.preview', compact('job'))->with('list', $list)->with('listtwo', $listtwo)
+            ->with('listthree', $listthree)->with('listfour', $list_transportation)->with('listfive', $list_district)
+            ->with('testtext', $testtext);
     }
 
     public function pdf($id)
@@ -410,5 +410,12 @@ class ReportController extends Controller
             ->with('listthree', $listthree)->with('listfour', $list_transportation)->with('listfive', $list_district);
 
         $pdf = PDFbarry::loadView('pdf_forms.invoice', compact('job'));
+    }
+
+    //aa Cover Print-out
+    public function cover_printout($array)
+    {
+        print_r($array);
+        return view('aa.cover-printout', ['headers' => $array]);
     }
 }

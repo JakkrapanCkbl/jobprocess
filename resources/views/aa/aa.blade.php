@@ -62,23 +62,23 @@
 
                         @include('aa.button_group')
 
-                        
-<div class="btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-        <input type="checkbox" checked autocomplete="off"> Checked
-    </label>
-    <label class="btn btn-secondary">
-        <input type="checkbox" checked autocomplete="off"> Checked
-    </label>
-    <label class="btn btn-secondary active">
-        <input type="checkbox" checked autocomplete="off"> Checked
-    </label>
-    <br>
-    <label class="btn btn-primary active btn-test">
-        <input type="checkbox" checked autocomplete="off"> Checked
-        หนังสือสัญญาขายที่ดิน (ท.ด13)
-    </label>
-</div>
+
+                        <!-- <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary active">
+                                <input type="checkbox" checked autocomplete="off" id="toggle-one"> Checked
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="checkbox" checked autocomplete="off" id="toggle-two"> Checked
+                            </label>
+                            <label class="btn btn-secondary active">
+                                <input type="checkbox" checked autocomplete="off"> Checked
+                            </label>
+                            <br>
+                            <label class="btn btn-primary">
+                                <input type="checkbox" checked autocomplete="off" id="toggle-four">
+                                หนังสือสัญญาขายที่ดิน (ท.ด13)
+                            </label>
+                        </div> -->
 
                         <div id="more-box">
                         </div>
@@ -91,10 +91,15 @@
                     </div>
                 </div>
 
+                <?php
+                $hello = 'hahah';
+                ?>
                 <div class="container">
+                    <!-- <a href="{{route('aa.cover-printout' ,['document.innerHTML(array)'])}}"> -->
+                    <a href="" id="hreflink"></a>
                     <button class="btn btn-primary" id="submit">GO NEXT</button>
+                    </a>
                 </div>
-
 
 
             </div>
@@ -117,6 +122,7 @@
     <script>
         let childNumber = 1;
 
+
         const add_box = document.getElementsByClassName('plus-sign');
         add_box[0].addEventListener('mouseup', e => {
             var parent = document.getElementById('more-box');
@@ -127,17 +133,46 @@
         });
 
         const submit = document.getElementById('submit');
-        console.log($('.btn-test').is("checked"));
         submit.addEventListener('mouseup', e => {
             for (i = 0; i < childNumber; i++) {
-                console.log("HEY" + childNumber);
-                const checked = $('.btn-test').prop('checked');
-                const checked2 = $('.btn-test').is('checked');
-                console.log("button 1 is " + checked +" " + checked2);
-                console.log($(".btn-test").prop('checked'));
-                alert($('.btn-test').prop('checked'));
+                console.log("Child: " + childNumber);
+                // console.log("button 1 is " + $('#toggle-one').prop('checked') );
             }
-            $('#btn-test').button('toggle');
+            const array = [
+                $('.toggle-one').prop('checked') ? [$('.toggle-one').val()] : [],
+                $('.toggle-two').prop('checked') ? [$('.toggle-two').val()] : [],
+                $('.toggle-three').prop('checked') ? [$('.toggle-three').val()] : [],
+                $('.toggle-four').prop('checked') ? [$('.toggle-four').val()] : [],
+                $('.toggle-five').prop('checked') ? [$('.toggle-five').val()] : [],
+                $('.toggle-six').prop('checked') ? [$('.toggle-six').val()] : [],
+            ];
+
+            console.log($('.toggle-one').prop('checked') + " " + $('.toggle-two').prop('checked') + " " +
+                $('.toggle-three').prop('checked') + " " + $('.toggle-four').prop('checked') + " " +
+                $('.toggle-five').prop('checked') + " " + $('.toggle-six').prop('checked')
+            );
+
+            console.log(array);
+
+            // var action = " {{route('aa.cover-printout' ,[' " + array + " '])}} ";
+            var word1 = "{{route('aa.cover-printout' ,['";
+            
+            var word2 = "'])}}";
+            var action = word1.concat(array, word2);
+            console.log(action);
+
+            // var action = "google.com"
+            // $(".hreflink").attr('href', action);
+
+            var link = document.getElementById("hreflink");
+            // window.open(
+            //     link.href,
+            //     '_blank'
+            // );
+
+            link.innerHTML = "ปกหน้า";
+            link.setAttribute('href', action);
+
         });
     </script>
     @include('aa.footer')
