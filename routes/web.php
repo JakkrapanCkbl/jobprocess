@@ -271,3 +271,13 @@ Route::get('/report/{id}/preview', 'ReportController@preview')->name('report.pre
 Route::get('/aa', function () {
     return view('aa/aa');
 });
+Route::get('/aa/cover', function () {
+    return view('aa/cover-printout');
+});
+
+Route::get('/aaa/{hello}', 'ReportController@cover_printout')->name('aa.cover-printout');
+
+// Route::get('/aaa/{$hello}', function () {
+//     return view('aa/cover-printout');
+// }
+// )->name('aa.cover-printout');
