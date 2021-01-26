@@ -18,9 +18,9 @@
                     </div>-->
               </div>
             </div>
-            <!-- <div class="col-md-3">
+            <div class="col-md-3">
               <input type="submit" class="btn btn-search btn-primary btn-block" value="Search">
-            </div> -->
+            </div>
           </div>
 
 

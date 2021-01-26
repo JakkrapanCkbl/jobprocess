@@ -14,8 +14,8 @@
 									</li>
 									<li aria-haspopup="true"><a href="#" class="sub-icon active"><i class="fe fe-home"></i> Valuer/Checker <i class="fa fa-angle-down horizontal-icon"></i></a>
 										<ul class="sub-menu">
-											<li aria-haspopup="true"><a href="#">ผังเมือง</a></li>
-											<li aria-haspopup="true"><a href="#">กฎหมายควบคุมอาคาร</a></li>
+											<li aria-haspopup="true"><a href="{{asset('storage/docs/logo.png')}}">ผังเมือง</a></li>
+											<li aria-haspopup="true"><a href="{{asset('img/logo.png')}}">กฎหมายควบคุมอาคาร</a></li>
 											<li aria-haspopup="true"><a href="#">โครงการพัฒนา/เวนคืนรัฐบาล</a></li>
 											<li aria-haspopup="true"><a href="#">ตรวจสอบป่าไม้</a></li>
 											<li aria-haspopup="true"><a href="#">เสาไฟฟ้าแรงสูง</a></li>

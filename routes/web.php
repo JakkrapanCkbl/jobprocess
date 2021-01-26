@@ -42,7 +42,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //------Display Job Detail---------------
-Route::get('/jobs/{id}/{job}', 'JobController@show')->name('jobs.show');
+Route::get('/jobs/{id}', 'JobController@show')->name('jobs.show');
 
 //-------test Vue.JS---------------
 Route::get('/welcomevuejs', function () {
