@@ -4,15 +4,15 @@
 						<div class="horizontal-mainwrapper container clearfix">
 							<nav class="horizontalMenu clearfix">
 								<ul class="horizontalMenu-list">
-									<li aria-haspopup="true"><a href="#" class="sub-icon active"><i class="fe fe-home"></i> Job <i class="fa fa-angle-down horizontal-icon"></i></a>
+									<li aria-haspopup="true"><a href="#" class="sub-icon active"><i class="fe fe-home"></i> Go To <i class="fa fa-angle-down horizontal-icon"></i></a>
 										<ul class="sub-menu">
-											<li aria-haspopup="true"><a href="#">Work in Progress</a></li>
-											<li aria-haspopup="true"><a href="#">Jobs to Done</a></li>
-											<li aria-haspopup="true"><a href="#">LC Big Data</a></li>
+											<li aria-haspopup="true"><a href="#">Home</a></li>
+											<li aria-haspopup="true"><a href="#">Valuer</a></li>
+											<li aria-haspopup="true"><a href="#">Admin</a></li>
 											
 										</ul>
 									</li>
-									<li aria-haspopup="true"><a href="#" class="sub-icon active"><i class="fe fe-home"></i> Valuer/Checker <i class="fa fa-angle-down horizontal-icon"></i></a>
+									<!-- <li aria-haspopup="true"><a href="#" class="sub-icon active"><i class="fe fe-home"></i> Valuer/Checker <i class="fa fa-angle-down horizontal-icon"></i></a>
 										<ul class="sub-menu">
 											<li aria-haspopup="true"><a href="{{asset('storage/docs/logo.png')}}">ผังเมือง</a></li>
 											<li aria-haspopup="true"><a href="{{asset('img/logo.png')}}">กฎหมายควบคุมอาคาร</a></li>
@@ -197,7 +197,7 @@
 											<li aria-haspopup="true"><a href="#">อื่นๆ</a></li>
 											
 										</ul>
-									</li>
+									</li> -->
 									<li aria-haspopup="true"><a href="#" class="sub-icon active"><i class="fe fe-home"></i> Dashboard <i class="fa fa-angle-down horizontal-icon"></i></a>
 										<ul class="sub-menu">
 											<li aria-haspopup="true"><a href="#">Job in progress</a></li>
@@ -209,7 +209,6 @@
 											<li aria-haspopup="true"><a href="#">Breakeven</a></li>
 											<li aria-haspopup="true"><a href="#">Working Capital</a></li>
 											<li aria-haspopup="true"><a href="#">Potential Jobs</a></li>
-											<li aria-haspopup="true"><a href="#">SEC Report</a></li>
 											
 										</ul>
 									</li>
@@ -218,6 +217,7 @@
 											<li aria-haspopup="true"><a href="#">Order for Service</a></li>
 											<li aria-haspopup="true"><a href="#">Invoice</a></li>
 											<li aria-haspopup="true"><a href="#">Tax Receipt</a></li>
+											<li aria-haspopup="true"><a href="#">SEC Report</a></li>
 											
 										</ul>
 									</li>
