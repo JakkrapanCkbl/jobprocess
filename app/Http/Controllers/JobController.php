@@ -19,22 +19,29 @@ class JobController extends Controller
     }
 
     public function index(){
+        
         $adminRole = Auth::user()->roles()->pluck('name');
         if($adminRole->contains('admin')){
             //return redirect('/admininput');
-            //
             //$jobs = Job::latest()->limit(10)->get();
-            $jobs = Job::with('showavatar')->latest()->limit(10)->get();
+            //$jobs = Job::with('showavatar')->latest()->limit(10)->get();
+            //return view('welcome',compact('jobs'));
+            //$jobs = DB::select('select * from vw_order order by id desc LIMIT 100');
+            //return view('welcomedido',compact('jobs'));
+            $jobs = DB::select('select * from vw_order order by id desc LIMIT 100');
             return view('welcome',compact('jobs'));
         }
 
         //$jobs = Job::all();
         //$jobs = Job::paginate(10);
-        $jobs = Job::latest()->limit(10)->get();
+        //$jobs = Job::latest()->limit(10)->get();
         //$jobs = Job::with('valuer')->get();
        
+        $jobs = DB::select('select * from vw_order order by id desc LIMIT 100');
         return view('welcome',compact('jobs'));
     }
+
+
     
     public function show($id,Job $job){
         $job=Job::find($id);
@@ -208,7 +215,26 @@ public function pdf_order($id)
         $pdf->saveImage($path . "/preview_" . explode(".", $fileName)[0] . ".jpg");
     }
 
+    public function show_allfiles()
+    {
+        
+        // $path = public_path('storage/images/users');
+        // $files = File::allFiles($path);
+        // dd($files);
+        // https://dev.to/skipperhoa/show-all-image-from-public-folder-using-laravel-5-8-3a02
+        $path = public_path('storage/images/users');
+        $files = \File::allFiles($path);
+        // return View('pages.form')->with(array('images'=>$images));
+        dd($files);
+    }
 
+    public function showjoblist(){
+      
+            $jobs = DB::select('select * from vw_order order by id desc LIMIT 100');  
+            return view('welcomedido',compact('jobs'));
+        }
+
+    
 
 
 }

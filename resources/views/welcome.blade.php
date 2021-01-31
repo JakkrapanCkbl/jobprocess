@@ -27,15 +27,19 @@
 
   @include('partials.nav')
   @include('partials.hero')
+  
   <!-- @include('partials.category') -->
   <div class="site-section bg-light">
     <div class="container">
       <div class="row">
         <div class="col-md-12 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
           <h2 class="mb-5 h3">Recent Jobs</h2>
+
+          <!-- ---------------------------- display Jobs List ------------------------------------------------------>
           <div class="rounded border jobs-wrap">
 
             @foreach($jobs as $job)
+
             <div class="job-item d-block d-md-flex align-items-center border-bottom fulltime">
               <!-- <div class="text-center text-md-left pl-3 thumb-post">
                 <img src="external/images/gal_1.jpg" alt="Image" class="img-fluid ">
@@ -65,31 +69,31 @@
 
                   <div class="carousel-inner">
                     <?php
-                    $jobcode = str_replace('/', '_', $job->jobcode);
-                    $fileList = glob('storage/project_reports/' . $jobcode . '/*.*');
+                        $jobcode = str_replace('/', '_', $job->jobcode);
+                        $fileList = glob('storage/project_reports/' . $jobcode . '/*.*');
                     ?>
                     @foreach($fileList as $file)
-                    @if ($loop->first)
-                    <div class="carousel-item carousel-item-min active">
-                      <a href="{{ asset($file) }}" target="_blank">
-                        <img class="d-block w-100" src="{{ asset($file) }}" alt="First slide">
-                      </a>
-                    </div>
-                    @else
-                    <div class="carousel-item carousel-item-min">
-                      <a href="{{ asset($file) }}" target="_blank">
-                        <img class="d-block w-100" src="{{ asset($file) }}" alt="Sec slide">
-                      </a>
-                    </div>
-                    <a class="carousel-control-prev" href="#carousel{{$job->id}}" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel{{$job->id}}" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                    @endif
+                        @if ($loop->first)
+                            <div class="carousel-item carousel-item-min active">
+                                <a href="{{ asset($file) }}" target="_blank">
+                                    <img class="d-block w-100" src="{{ asset($file) }}" alt="First slide">
+                                </a>
+                            </div>
+                        @else
+                            <div class="carousel-item carousel-item-min">
+                                <a href="{{ asset($file) }}" target="_blank">
+                                    <img class="d-block w-100" src="{{ asset($file) }}" alt="Sec slide">
+                                </a>
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel{{$job->id}}" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel{{$job->id}}" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        @endif
                     @endforeach
 
 
@@ -97,6 +101,7 @@
                 </div>
               </div>
 
+              
 
               <div class="job-details h-100">
                 <div class="p-3 align-self-center">
@@ -109,20 +114,44 @@
                         &nbsp;<u>{{$job->jobcode}}</u>
                       </a>
                     </div>
-
-                    <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">Urgent</span></div>
-                    <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->client}}</span></div>
-                    <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">HL</span></div>
-                    <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">Norm</span></div>
-                    <!-- <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">Diff</span></div> -->
-                    <div class="mr-2"><span class="fas fa-building text-primary"></span>&nbsp;CD</div>
-                    <div class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;181 ถนนสุรวงศ์ เขตบางรัก กรุงเทพฯ 10500</div>
-                  </div>
+                    @if ($job->urgent == 1)
+                        <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">Urgent</span></div>
+                    @endif
+                    @empty(!$job->client)
+                        <div title="ส่งธนาคาร" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->client}}</span></div>
+                    @endempty
+                    @if ($job->jobsize != "" && $job->jobsize != "-")
+                      <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->jobsize}}</span></div>
+                    @endif
+                    <!-- @empty(!$job->jobsize)              
+                            <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->jobsize}}</span></div>
+                    @endempty -->
+                    @if ($job->easydiff == "DIFF")
+                      <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">DIFF</span></div>
+                    @endif
+                    <!-- <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">Norm</span></div>
+                    <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">Diff</span></div> -->
+                    @if ($job->withcd == 1)
+                      <div class="mr-2"><span class="fas fa-compact-disc text-primary"></span>&nbsp;CD</div>
+                    @endif
+                    
+                    <div title="ขนาดพื้นที่" class="mr-2"><span class="fas fa-th-large text-primary"></span>&nbsp;{{$job->prop_size}} </div>
+                    
+                    
+                </div>
+                <div class="d-flex row justify-content-center justify-content-md-start">
+                    <!-- <div title="ชื่อโครงการ" class="mr-2"><span class="fas fa-building text-primary"></span>&nbsp;{{$job->projectname}}</div> -->
+                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;{{$job->projectname}}&nbsp;{{$job->proplocation}}</div>
+                    
+                </div>
                   <div class="d-flex row justify-content-center justify-content-md-start">
-                    <div class="mr-2"><span class="fas fa-th-large text-primary"></span>&nbsp;{{$job->prop_size}} </div>
+                    
                     <div class="mr-3"><span class="fas fa-money-bill-alt text-primary"></span>&nbsp;{{$job->marketvalue}} บาท</div>
                     <div class="mr-3"><span class="far fa-money-bill-alt text-primary"></span>&nbsp;20,000 ตร.ม.</div>
+                    
                   </div>
+
+                  
 
 
                   <div class="d-flex row justify-content-center justify-content-md-start">
@@ -170,7 +199,10 @@
                         </div>
                       </div>
                     </div>
+                            
                   </div>
+
+                    
 
                   <style>
                     .fa-icon {
@@ -210,19 +242,19 @@
                   ?>
                   
                   <div class="d-flex row justify-content-center justify-content-md-start">
-                    <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload{{$job->id}}" onclick="dropzone({{$job->id}})" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div>
+                    
                     <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc{{$job->id}}" aria-expanded="false" aria-controls="collapse" title="open file"></div>
-                    <div class="fa-icon "><a href="{{route('report.edit',[$job->id])}}"><span class="fas fa-book" title="To Report"> </a></div>
-                    <div class="fa-icon "><span class="fas fa-folder-open" title="I am hovering over the text"></div>
-                    <div class="fa-icon "><span class="fas fa-tasks" title="I am hovering over the text"></div>
+                    <!-- <div class="fa-icon "><a href="{{route('report.edit',[$job->id])}}"><span class="fas fa-book" title="To Report"> </a></div> -->
+                    <!-- <div class="fa-icon "><span class="fas fa-folder-open" title="I am hovering over the text"></div> -->
+                    <div class="fa-icon"><a onclick="popupCenter('testfn', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div>
+                    <div class="fa-icon "><a onclick="popupCenter('testfn', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div>
                     <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div>
                     <div class="fa-icon"><a href="{{route('print-order.show',[$job->id])}}"><span class="far fa-paper-plane" alt="ใบสั่งงาน" title="ใบสั่งงาน" id="fa-invoice"></a></div>
                     <div class="fa-icon" id="fa-invoice{{$job->id}}"><a href="{{route('print-invoice.show','1200')}}"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div> 
                     <div class="fa-icon" id="fa-receipt{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div>
                     <div class="fa-icon-inrow" id="fa-ope{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div>
+                    <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload{{$job->id}}" onclick="dropzone({{$job->id}})" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div>
                     
-                    
-                   
                   </div>
 
                   <div id="pdfCollapse{{$job->id}}">
@@ -241,7 +273,7 @@
                                     <label class="btn btn-secondary" onclick="uploadGroup({{$job->id}},'report')">
                                       <input type="radio" name="options" value="report" autocomplete="off"> Report
                                     </label>
-                                    <label class="btn btn-secondary" onclick="uploadGroup({{$job->id}},'invoice')">
+                                    <!-- <label class="btn btn-secondary" onclick="uploadGroup({{$job->id}},'invoice')">
                                       <input type="radio" name="options" value="invoice" autocomplete="off"> Invoice
                                     </label>
                                     <label class="btn btn-secondary" onclick="uploadGroup({{$job->id}},'receipt')">
@@ -249,7 +281,7 @@
                                     </label>
                                     <label class="btn btn-secondary" onclick="uploadGroup({{$job->id}},'ope')">
                                       <input type="radio" name="options" value="ope" autocomplete="off"> OPE
-                                    </label>
+                                    </label> -->
                                   </div>
 
                                   <script>
@@ -311,14 +343,47 @@
                       <div><span class="icon-money mr-1"></span>2,555,000 &mdash;4,000,000</div>
                     </div>-->
                 </div>
+
+
               </div>
               <div class="job-category align-self-center">
-                <div class="p-3">
+                <!-- <div class="p-3">
                   <span class="text-info p-2 rounded border border-info">Completed</span>
                 </div>
                 <div class="progress progress-sm mb-5">
                   <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary w-70"></div>
-                </div>
+                </div> -->
+                @if($job->percentfinish == 100)
+                    <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-primary">  
+                        
+                        {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                @elseif ($job->percentfinish >= 50 and $job->percentfinish < 100)
+                    <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-warning">
+                        {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                @elseif($job->percentfinish == 0)
+                    <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-danger">
+                        0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>                
+                @else
+                    <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-danger">
+                        {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                @endif
+                    
               </div>
             </div>
 
@@ -326,6 +391,7 @@
 
 
           </div>
+          <!-- --------------------------------- display Jobs List---------------------------------------- -->
 
           <div class="col-md-12 text-center mt-5">
             <a href="#" class="btn btn-primary rounded py-3 px-5"><span class="icon-plus-circle"></span> Show More Jobs</a>
@@ -446,6 +512,14 @@
     document.getElementById('monthCaption').innerHTML = month[date.getMonth()];
     document.getElementById('dayofweek').innerHTML = weekday[date.getDay()];
   </script>
+
+  <SCRIPT>
+      function popupCenter(url, title, w, h) {
+        var left = (screen.width/2)-(w/2);
+        var top = (screen.height/2)-(h/2);
+        return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+      }
+  </SCRIPT>
 
 </body>
 

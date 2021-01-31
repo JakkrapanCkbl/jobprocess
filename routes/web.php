@@ -12,9 +12,13 @@ Auth::routes(['verify' => true]);
 //jobs
 Route::get('/', 'JobController@index')->name('welcome');
 Route::get('/jobs/alljobs', 'JobController@allJobs')->name('alljobs');
+Route::get('/testfm', 'JobController@showjoblist')->name('testfm');
+Route::get('/testfn', 'JobController@show_allfiles')->name('testfn');
+
 
 
 //-----test First Page------
+Route::view('welcomedido', 'welcomedido');
 
 /*    return view('welcome');
 }); */
@@ -42,7 +46,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //------Display Job Detail---------------
-Route::get('/jobs/{id}/{job}', 'JobController@show')->name('jobs.show');
+Route::get('/jobs/{id}', 'JobController@show')->name('jobs.show');
 
 //-------test Vue.JS---------------
 Route::get('/welcomevuejs', function () {
