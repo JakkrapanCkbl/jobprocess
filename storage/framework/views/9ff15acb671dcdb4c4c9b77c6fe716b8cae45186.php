@@ -1,5 +1,5 @@
 <!-- Navbar-->
-				<header class="header top-header">
+<header class="header top-header">
 					<!-- Navbar Right Menu-->
 					<div class="container">
 						<div class="d-flex">
@@ -28,7 +28,7 @@
 							<div class="d-flex order-lg-2 ml-auto">
 								<div class="d-sm-flex d-none">
 									<a href="#" class="nav-link icon full-screen-link">
-										<i class="fe fe-minimize fullscreen-button"></i>
+										<i class="fe fe-maximize-2 fullscreen-button"></i>
 									</a>
 								</div>
 								

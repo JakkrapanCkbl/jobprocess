@@ -15,6 +15,19 @@ Route::get('/jobs/alljobs', 'JobController@allJobs')->name('alljobs');
 Route::get('/testfm', 'JobController@showjoblist')->name('testfm');
 Route::get('/testfn', 'JobController@show_allfiles')->name('testfn');
 
+Route::view('first_page', 'may_template.first_page')->name('first_page');
+
+Route::view('marketing', 'may_template.marketing')->name('marketing');
+
+
+Route::get('/testdc', function() {
+    dd(Storage::disk('c-drive'));
+});
+
+Route::get('/storagelink', function () {
+    Artisan::call('storage:link');
+});
+
 
 
 //-----test First Page------

@@ -1,0 +1,120 @@
+    body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #FAFAFA;
+        font: "Tahoma";
+        
+    }
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .page {
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 2cm;
+        margin: 1cm auto;
+        border: 1px #D3D3D3 solid;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .subpage {
+        /*padding: 0.5cm;
+        border: 5px red solid;*/
+        height: 256mm;
+        outline: 2cm #ffffff solid;
+    }
+    
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    @media print {
+        .page {
+            margin: 0;
+            border: initial;
+            border-radius: initial;
+            width: initial;
+            min-height: initial;
+            box-shadow: initial;
+            background: initial;
+            page-break-after: always;
+        }
+    }
+h1 {
+    font-size: 12pt;
+}
+h2 {
+    font-size: 8pt;
+    
+}
+
+
+.centered{
+    text-align: center;
+}
+
+
+
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    font-size:8pt;
+    padding: 5px;
+    
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 5px;   
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.marketing-table th, .marketing-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    font-size: 8pt;
+    padding: 5px 2px;
+}
+
+.marketing-table td {
+    width: 20% ;
+}
+
+.none {
+    border: none;
+}
+
+.marketing_total-table td {
+    width: 10%  ;
+    
+} 
+
+.detail td  {
+    text-align: left;
+}
+
+.space {
+    margin: 10px;
+}
+
+.market_approach table {
+    font-size: 7pt;
+}
+.market_approach th, .market_approach td{
+    padding: 2px;
+}
+
+.total_market-table {
+    padding: 2px;
+}

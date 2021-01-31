@@ -47,7 +47,7 @@
 
               <!-- Carousel Picture Display -->
               <div class="col-md-4">
-
+              
 
                 <div id="carousel<?php echo e($job->id); ?>" class="carousel slide" data-interval="false">
                   <style>
@@ -75,9 +75,11 @@
                     <?php $__currentLoopData = $fileList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($loop->first): ?>
                             <div class="carousel-item carousel-item-min active">
+                                
                                 <a href="<?php echo e(asset($file)); ?>" target="_blank">
                                     <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="First slide">
                                 </a>
+                                
                             </div>
                         <?php else: ?>
                             <div class="carousel-item carousel-item-min">
@@ -247,7 +249,7 @@
                     <!-- <div class="fa-icon "><a href="<?php echo e(route('report.edit',[$job->id])); ?>"><span class="fas fa-book" title="To Report"> </a></div> -->
                     <!-- <div class="fa-icon "><span class="fas fa-folder-open" title="I am hovering over the text"></div> -->
                     <div class="fa-icon"><a onclick="popupCenter('testfn', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div>
-                    <div class="fa-icon "><a onclick="popupCenter('testfn', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div>
+                    <div class="fa-icon "><a onclick="popupCenter('file:///C:\test\', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div>
                     <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div>
                     <div class="fa-icon"><a href="<?php echo e(route('print-order.show',[$job->id])); ?>"><span class="far fa-paper-plane" alt="ใบสั่งงาน" title="ใบสั่งงาน" id="fa-invoice"></a></div>
                     <div class="fa-icon" id="fa-invoice<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-invoice.show','1200')); ?>"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div> 

@@ -2,7 +2,7 @@
       <div class="container">
         
 
-        <div class="row">
+        <!--div class="row">
           <div class="col-md-4">
             <h3 class="footer-heading mb-4 text-white">About</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
@@ -46,12 +46,12 @@
                 </p>
               </div>
           </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
+        </div-->
+        <div class="row text-center">
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | <a href="https://landmarkcon.net" target="_blank" >Landmark Consultants co., ltd.</a>
+            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | <a href="https://landmarkcon.net" target="_blank" >Landmark Consultants Co., Ltd.</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

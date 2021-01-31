@@ -77,6 +77,11 @@ return [
             'folderId' => env("GOOGLE_DRIVE_FOLDER_ID"),
         ],
 
+        'c-drive' => [
+            'driver' => 'local',
+            'root' => 'C:\\',
+        ],
+
     ],
 
    'links' => [
