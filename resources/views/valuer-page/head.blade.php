@@ -65,38 +65,3 @@
 
 <!-- Gallery Plugin -->
 <link href="{{asset('external2/plugins/gallery/gallery.css')}}" rel="stylesheet">
-
-
-
-
-<!-- extra from sub-menu -->
-
-<!--Bootstrap.min css-->
-<link rel="stylesheet" href="{{asset('external2/assets/plugins/bootstrap/css/bootstrap.min.css')}}">
-
-<!--Font Awesome-->
-<link href="{{asset('external2/assets/plugins/fontawesome-free/css/all.css')}}" rel="stylesheet">
-
-<!-- Dashboard Css -->
-<link href="{{asset('external2/assets/css/style.css')}}" rel="stylesheet" />
-<link href="{{asset('external2/assets/css/boxed.css')}}" rel="stylesheet" />
-<link href="{{asset('external2/assets/css/color-styles.css')}}" rel="stylesheet" />
-<link href="{{asset('external2/assets/css/skin-modes.css')}}" rel="stylesheet" />
-
-<!-- Vector-map -->
-<link href="{{asset('external2/assets/plugins/jquery.vmap/jqvmap.min.css')}}" rel="stylesheet">
-
-<!-- Custom scroll bar css-->
-<link href="{{asset('external2/assets/plugins/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css')}}" rel="stylesheet" />
-
-<!-- Sidemenu Css -->
-<link href="{{asset('external2/assets/plugins/sidemenu/css/sidemenu.css')}}" rel="stylesheet">
-
-<!-- morris Charts Plugin -->
-<link href="{{asset('external2/assets/plugins/morris/morris.css')}}" rel="stylesheet" />
-
-<!---Font icons-->
-<link href="{{asset('external2/assets/plugins/iconfonts/plugin.css')}}" rel="stylesheet" />
-
-<!-- Sidebar css -->
-<link href="{{asset('external2/assets/plugins/sidebar/sidebar.css')}}" rel="stylesheet">

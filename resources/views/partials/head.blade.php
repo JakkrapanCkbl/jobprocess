@@ -29,3 +29,4 @@
 <!--Rang slider js-->
 <script src="../external2/plugins/ion.rangeSlider/ion.rangeSlider.js"></script>
 <script src="../external2/js/rangeslider.js"></script>
+
