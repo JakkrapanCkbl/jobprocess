@@ -176,7 +176,7 @@
   <div id="container">
   
     <h1>Directory Contents</h1>
-    <input type="file" id="files" name="files[]" multiple />
+    <input type="file" id="files" name="files[]" multiple webkitdirectory />
     <output id="list"></output>
     
     <div id="table_box">
@@ -199,7 +199,7 @@
           </tbody>
         </table>
     </div>
-    <h2></h2>
+    <h2><a href="file:///C:\@test3\page1.html">Link 1</a></h2>
     
   </div>
   
