@@ -178,26 +178,27 @@
     <h1>Directory Contents</h1>
     <input type="file" id="files" name="files[]" multiple />
     <output id="list"></output>
-
-    <table id="TableList" class="sortable">
-      <thead>
-        <tr>
-          <th>Filename</th>
-          <th>Type</th>
-          <th>Size <small>(bytes)</small></th>
-          <th>Date Modified</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td>a.doc</td>
-            <td>Ms Word</td>
-            <td>1 MB</td>
-            <td>07-02-2021</td>
-          </tr>   
-      </tbody>
-    </table>
-  
+    
+    <div id="table_box">
+        <table id="TableList" class="sortable">
+          <thead>
+            <tr>
+              <th>Filename</th>
+              <th>Type</th>
+              <th>Size <small>(bytes)</small></th>
+              <th>Date Modified</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>   
+          </tbody>
+        </table>
+    </div>
     <h2></h2>
     
   </div>
@@ -212,22 +213,80 @@
     }
 
     function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
-    // files is a FileList of File objects. List some properties.
-    var output = [];
-        for (var i = 0, f; f = files[i]; i++) {
-        output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                    f.size, ' bytes, last modified: ',
-                    f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-                    '</li>');
-        }
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-     
-  }
-
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+      var files = evt.target.files; // FileList object
+      // files is a FileList of File objects. List some properties.
+      var output = [];
+          for (var i = 0, f; f = files[i]; i++) {
+          output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                      f.size, ' bytes, last modified: ',
+                      f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                      '</li>');
+          }
+      document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+      var table = '';
+      
+      table = '<table id="TableList" class="sortable">';
+      table += '<thead>';
+      table += '<tr>';
+      table += '<th>Filename</th>';
+      table += '<th>Type</th>';
+      table += '<th>Size <small>(bytes)</small></th>';
+      table += '<th>Date Modified</th>';
+      table += '</tr>';
+      table += '</thead>';
+      table += '<tbody>';
+      
+      for (var i = 0, f; f = files[i]; i++)
+      {
+        table += '<tr>';
+            table += '<td>' + escape(f.name) + '</td>';
+            table += '<td>' + f.type || 'n/a' + '</td>';
+            table += '<td>' + f.size + ' bytes' + '</td>';
+            table += '<td>' + f.lastModifiedDate + '</td>';
+        table += '</tr>';
+      }
+      table += '</tbody>';
+      table += '</table>';
+      // document.write(table);
+      document.getElementById('table_box').innerHTML = table;
+    }
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
   </script>
+      
+
+  <!-- <script>
+      // loop write table with javascript
+      var table = '';
+      var rows = 2;
+      var cols = 4;
+      table = '<table id="TableList" class="sortable">';
+      table += '<thead>';
+      table += '<tr>';
+      table += '<th>Filename</th>';
+      table += '<th>Type</th>';
+      table += '<th>Size <small>(bytes)</small></th>';
+      table += '<th>Date Modified</th>';
+      table += '</tr>';
+      table += '</thead>';
+      table += '<tbody>';
+      
+      for (var r = 0; r < rows;r++)
+      {
+        table += '<tr>';
+          for (var c = 1; c <= cols;c++)
+          {
+            table += '<td>' + c + '</td>';
+          }
+        table += '</tr>';
+      }
+      table += '</tbody>';
+      table += '</table>';
+      document.write(table);
+      // document.write('<table border=1>' + table + '</table>');
+  </script> -->
+
+
 </body>
 
 </html><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/test/test3.blade.php ENDPATH**/ ?>
