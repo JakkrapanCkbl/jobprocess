@@ -21,8 +21,12 @@ Route::view('marketing', 'may_template.marketing')->name('marketing');
 
 
 Route::get('/testdc', function() {
-    dd(Storage::disk('c-drive'));
+    dd(Storage::disk('c-drive'));   
 });
+
+Route::view('/testdc2', 'test.test2');
+Route::view('/testdc3', 'test.test3');
+Route::view('/testdc4', 'test.test4');
 
 Route::get('/storagelink', function () {
     Artisan::call('storage:link');

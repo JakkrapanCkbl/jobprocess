@@ -74,4 +74,4 @@
 
 
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/test/test2.blade.php ENDPATH**/ ?>
