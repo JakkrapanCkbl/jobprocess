@@ -65,6 +65,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //------Display Job Detail---------------
 Route::get('/jobs/{id}', 'JobController@show')->name('jobs.show');
 
+
+
 //-------test Vue.JS---------------
 Route::get('/welcomevuejs', function () {
     return view('welcomevuejs');

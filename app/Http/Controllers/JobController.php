@@ -46,8 +46,9 @@ class JobController extends Controller
     public function show($id,Job $job){
         $job=Job::find($id);
         //dd($job->jobcode);
-        return view('jobs.show',compact('job'));
+        //return view('jobs.show',compact('job'));
         //return view('home');
+        return view('jobs.index');
 
     }
 
