@@ -41,7 +41,7 @@ class Google_Service_CloudRuntimeConfig extends Google_Service
       "https://www.googleapis.com/auth/cloudruntimeconfig";
 
   public $operations;
-  
+
   /**
    * Constructs the internal representation of the CloudRuntimeConfig service.
    *
@@ -96,13 +96,13 @@ class Google_Service_CloudRuntimeConfig extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),

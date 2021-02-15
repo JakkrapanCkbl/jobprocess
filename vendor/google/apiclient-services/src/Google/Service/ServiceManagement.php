@@ -50,7 +50,7 @@ class Google_Service_ServiceManagement extends Google_Service
   public $services_configs;
   public $services_consumers;
   public $services_rollouts;
-  
+
   /**
    * Constructs the internal representation of the ServiceManagement service.
    *
@@ -94,13 +94,13 @@ class Google_Service_ServiceManagement extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),
@@ -120,16 +120,6 @@ class Google_Service_ServiceManagement extends Google_Service
             ),'delete' => array(
               'path' => 'v1/services/{serviceName}',
               'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'serviceName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'disable' => array(
-              'path' => 'v1/services/{serviceName}:disable',
-              'httpMethod' => 'POST',
               'parameters' => array(
                 'serviceName' => array(
                   'location' => 'path',
@@ -170,11 +160,11 @@ class Google_Service_ServiceManagement extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'view' => array(
+                'configId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'configId' => array(
+                'view' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -193,7 +183,7 @@ class Google_Service_ServiceManagement extends Google_Service
               'path' => 'v1/services',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'pageToken' => array(
+                'consumerId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -201,11 +191,11 @@ class Google_Service_ServiceManagement extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'producerProjectId' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'consumerId' => array(
+                'producerProjectId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -288,13 +278,13 @@ class Google_Service_ServiceManagement extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),'submit' => array(
@@ -395,13 +385,13 @@ class Google_Service_ServiceManagement extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),

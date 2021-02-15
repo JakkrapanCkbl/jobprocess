@@ -44,7 +44,7 @@ class Google_Service_FirebaseRules extends Google_Service
   public $projects;
   public $projects_releases;
   public $projects_rulesets;
-  
+
   /**
    * Constructs the internal representation of the FirebaseRules service.
    *
@@ -139,7 +139,7 @@ class Google_Service_FirebaseRules extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageToken' => array(
+                'filter' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -147,7 +147,7 @@ class Google_Service_FirebaseRules extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'filter' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -211,7 +211,7 @@ class Google_Service_FirebaseRules extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageToken' => array(
+                'filter' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -219,7 +219,7 @@ class Google_Service_FirebaseRules extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'filter' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

@@ -17,12 +17,22 @@
 
 class Google_Service_DataCatalog_GoogleCloudDatacatalogV1beta1TagTemplateField extends Google_Model
 {
+  public $description;
   public $displayName;
   public $isRequired;
   public $name;
+  public $order;
   protected $typeType = 'Google_Service_DataCatalog_GoogleCloudDatacatalogV1beta1FieldType';
   protected $typeDataType = '';
 
+  public function setDescription($description)
+  {
+    $this->description = $description;
+  }
+  public function getDescription()
+  {
+    return $this->description;
+  }
   public function setDisplayName($displayName)
   {
     $this->displayName = $displayName;
@@ -46,6 +56,14 @@ class Google_Service_DataCatalog_GoogleCloudDatacatalogV1beta1TagTemplateField e
   public function getName()
   {
     return $this->name;
+  }
+  public function setOrder($order)
+  {
+    $this->order = $order;
+  }
+  public function getOrder()
+  {
+    return $this->order;
   }
   /**
    * @param Google_Service_DataCatalog_GoogleCloudDatacatalogV1beta1FieldType

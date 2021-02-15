@@ -20,6 +20,8 @@ class Google_Service_Dfareporting_CustomEvent extends Google_Collection
   protected $collection_key = 'customVariables';
   protected $annotateClickEventType = 'Google_Service_Dfareporting_CustomEventClickAnnotation';
   protected $annotateClickEventDataType = '';
+  protected $annotateImpressionEventType = 'Google_Service_Dfareporting_CustomEventImpressionAnnotation';
+  protected $annotateImpressionEventDataType = '';
   protected $customVariablesType = 'Google_Service_Dfareporting_CustomVariable';
   protected $customVariablesDataType = 'array';
   public $eventType;
@@ -45,14 +47,28 @@ class Google_Service_Dfareporting_CustomEvent extends Google_Collection
     return $this->annotateClickEvent;
   }
   /**
-   * @param Google_Service_Dfareporting_CustomVariable
+   * @param Google_Service_Dfareporting_CustomEventImpressionAnnotation
+   */
+  public function setAnnotateImpressionEvent(Google_Service_Dfareporting_CustomEventImpressionAnnotation $annotateImpressionEvent)
+  {
+    $this->annotateImpressionEvent = $annotateImpressionEvent;
+  }
+  /**
+   * @return Google_Service_Dfareporting_CustomEventImpressionAnnotation
+   */
+  public function getAnnotateImpressionEvent()
+  {
+    return $this->annotateImpressionEvent;
+  }
+  /**
+   * @param Google_Service_Dfareporting_CustomVariable[]
    */
   public function setCustomVariables($customVariables)
   {
     $this->customVariables = $customVariables;
   }
   /**
-   * @return Google_Service_Dfareporting_CustomVariable
+   * @return Google_Service_Dfareporting_CustomVariable[]
    */
   public function getCustomVariables()
   {

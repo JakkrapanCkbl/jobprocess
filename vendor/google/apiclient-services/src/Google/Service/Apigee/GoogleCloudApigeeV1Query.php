@@ -20,11 +20,13 @@ class Google_Service_Apigee_GoogleCloudApigeeV1Query extends Google_Collection
   protected $collection_key = 'metrics';
   public $csvDelimiter;
   public $dimensions;
+  public $envgroupHostname;
   public $filter;
   public $groupByTimeUnit;
   public $limit;
   protected $metricsType = 'Google_Service_Apigee_GoogleCloudApigeeV1QueryMetric';
   protected $metricsDataType = 'array';
+  public $name;
   public $outputFormat;
   public $reportDefinitionId;
   public $timeRange;
@@ -44,6 +46,14 @@ class Google_Service_Apigee_GoogleCloudApigeeV1Query extends Google_Collection
   public function getDimensions()
   {
     return $this->dimensions;
+  }
+  public function setEnvgroupHostname($envgroupHostname)
+  {
+    $this->envgroupHostname = $envgroupHostname;
+  }
+  public function getEnvgroupHostname()
+  {
+    return $this->envgroupHostname;
   }
   public function setFilter($filter)
   {
@@ -70,18 +80,26 @@ class Google_Service_Apigee_GoogleCloudApigeeV1Query extends Google_Collection
     return $this->limit;
   }
   /**
-   * @param Google_Service_Apigee_GoogleCloudApigeeV1QueryMetric
+   * @param Google_Service_Apigee_GoogleCloudApigeeV1QueryMetric[]
    */
   public function setMetrics($metrics)
   {
     $this->metrics = $metrics;
   }
   /**
-   * @return Google_Service_Apigee_GoogleCloudApigeeV1QueryMetric
+   * @return Google_Service_Apigee_GoogleCloudApigeeV1QueryMetric[]
    */
   public function getMetrics()
   {
     return $this->metrics;
+  }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
   }
   public function setOutputFormat($outputFormat)
   {

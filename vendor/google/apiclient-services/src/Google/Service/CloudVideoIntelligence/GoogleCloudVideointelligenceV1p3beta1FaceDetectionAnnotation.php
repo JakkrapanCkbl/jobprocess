@@ -21,6 +21,7 @@ class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p3beta
   public $thumbnail;
   protected $tracksType = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p3beta1Track';
   protected $tracksDataType = 'array';
+  public $version;
 
   public function setThumbnail($thumbnail)
   {
@@ -31,17 +32,25 @@ class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p3beta
     return $this->thumbnail;
   }
   /**
-   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p3beta1Track
+   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p3beta1Track[]
    */
   public function setTracks($tracks)
   {
     $this->tracks = $tracks;
   }
   /**
-   * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p3beta1Track
+   * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1p3beta1Track[]
    */
   public function getTracks()
   {
     return $this->tracks;
+  }
+  public function setVersion($version)
+  {
+    $this->version = $version;
+  }
+  public function getVersion()
+  {
+    return $this->version;
   }
 }

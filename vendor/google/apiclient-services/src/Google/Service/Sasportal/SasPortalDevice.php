@@ -20,6 +20,8 @@ class Google_Service_Sasportal_SasPortalDevice extends Google_Collection
   protected $collection_key = 'grants';
   protected $activeConfigType = 'Google_Service_Sasportal_SasPortalDeviceConfig';
   protected $activeConfigDataType = '';
+  protected $deviceMetadataType = 'Google_Service_Sasportal_SasPortalDeviceMetadata';
+  protected $deviceMetadataDataType = '';
   public $displayName;
   public $fccId;
   protected $grantsType = 'Google_Service_Sasportal_SasPortalDeviceGrant';
@@ -44,6 +46,20 @@ class Google_Service_Sasportal_SasPortalDevice extends Google_Collection
   {
     return $this->activeConfig;
   }
+  /**
+   * @param Google_Service_Sasportal_SasPortalDeviceMetadata
+   */
+  public function setDeviceMetadata(Google_Service_Sasportal_SasPortalDeviceMetadata $deviceMetadata)
+  {
+    $this->deviceMetadata = $deviceMetadata;
+  }
+  /**
+   * @return Google_Service_Sasportal_SasPortalDeviceMetadata
+   */
+  public function getDeviceMetadata()
+  {
+    return $this->deviceMetadata;
+  }
   public function setDisplayName($displayName)
   {
     $this->displayName = $displayName;
@@ -61,14 +77,14 @@ class Google_Service_Sasportal_SasPortalDevice extends Google_Collection
     return $this->fccId;
   }
   /**
-   * @param Google_Service_Sasportal_SasPortalDeviceGrant
+   * @param Google_Service_Sasportal_SasPortalDeviceGrant[]
    */
   public function setGrants($grants)
   {
     $this->grants = $grants;
   }
   /**
-   * @return Google_Service_Sasportal_SasPortalDeviceGrant
+   * @return Google_Service_Sasportal_SasPortalDeviceGrant[]
    */
   public function getGrants()
   {

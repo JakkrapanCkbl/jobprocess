@@ -19,8 +19,8 @@
  * The "instances" collection of methods.
  * Typical usage is:
  *  <code>
- *   $sqlService = new Google_Service_SQLAdmin(...);
- *   $instances = $sqlService->instances;
+ *   $sqladminService = new Google_Service_SQLAdmin(...);
+ *   $instances = $sqladminService->instances;
  *  </code>
  */
 class Google_Service_SQLAdmin_Resource_ProjectsInstances extends Google_Service_Resource
@@ -34,10 +34,6 @@ class Google_Service_SQLAdmin_Resource_ProjectsInstances extends Google_Service_
    * project ID.
    * @param Google_Service_SQLAdmin_SqlInstancesRescheduleMaintenanceRequestBody $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param string parent The parent resource where Cloud SQL reshedule this
-   * database instance's maintenance. Format:
-   * projects/{project}/locations/{location}/instances/{instance}
    * @return Google_Service_SQLAdmin_Operation
    */
   public function rescheduleMaintenance($project, $instance, Google_Service_SQLAdmin_SqlInstancesRescheduleMaintenanceRequestBody $postBody, $optParams = array())
@@ -47,18 +43,16 @@ class Google_Service_SQLAdmin_Resource_ProjectsInstances extends Google_Service_
     return $this->call('rescheduleMaintenance', array($params), "Google_Service_SQLAdmin_Operation");
   }
   /**
-   * Start External master migration. (instances.startExternalSync)
+   * Start External primary instance migration. (instances.startExternalSync)
    *
-   * @param string $project ID of the project that contains the first generation
-   * instance.
+   * @param string $project ID of the project that contains the instance.
    * @param string $instance Cloud SQL instance ID. This does not include the
    * project ID.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string syncMode External sync mode
-   * @opt_param string parent The parent resource where Cloud SQL starts this
-   * database instance external sync. Format:
-   * projects/{project}/locations/{location}/instances/{instance}
+   * @opt_param bool skipVerification Whether to skip the verification step
+   * (VESS).
+   * @opt_param string syncMode External sync mode.
    * @return Google_Service_SQLAdmin_Operation
    */
   public function startExternalSync($project, $instance, $optParams = array())
@@ -68,7 +62,7 @@ class Google_Service_SQLAdmin_Resource_ProjectsInstances extends Google_Service_
     return $this->call('startExternalSync', array($params), "Google_Service_SQLAdmin_Operation");
   }
   /**
-   * Verify External master external sync settings.
+   * Verify External primary instance external sync settings.
    * (instances.verifyExternalSyncSettings)
    *
    * @param string $project Project ID of the project that contains the instance.
@@ -77,9 +71,6 @@ class Google_Service_SQLAdmin_Resource_ProjectsInstances extends Google_Service_
    * @param array $optParams Optional parameters.
    *
    * @opt_param string syncMode External sync mode
-   * @opt_param string parent The parent resource where Cloud SQL verifies this
-   * database instance external sync settings. Format:
-   * projects/{project}/locations/{location}/instances/{instance}
    * @opt_param bool verifyConnectionOnly Flag to enable verifying connection only
    * @return Google_Service_SQLAdmin_SqlInstancesVerifyExternalSyncSettingsResponse
    */

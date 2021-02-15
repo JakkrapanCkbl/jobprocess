@@ -23,8 +23,6 @@
             </div>
           </div>
 
-
-
           <div class="row">
             <div class="col-md-12">
               <p>
@@ -41,10 +39,26 @@
                       <div class="container">
                         <div class="md-col-4">
                           <div class="card-body">
+                            <!-- Price Range -->
                             <input type="text" class="js-range-slider-01" id="range_advsearchyear">
                             <input type="text" name="pricerange" value="" style="width: 500px;" readonly>
                             <input type="hidden" name="pricefrom">
                             <input type="hidden" name="priceto">
+
+
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Default checkbox
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                              <label class="form-check-label" for="flexCheckChecked">
+                                Checked checkbox
+                              </label>
+                            </div>
+
                           </div>
                         </div>
                       </div>

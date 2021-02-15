@@ -18,6 +18,7 @@
 class Google_Service_Dataproc_Job extends Google_Collection
 {
   protected $collection_key = 'yarnApplications';
+  public $done;
   public $driverControlFilesUri;
   public $driverOutputResourceUri;
   protected $hadoopJobType = 'Google_Service_Dataproc_HadoopJob';
@@ -30,6 +31,8 @@ class Google_Service_Dataproc_Job extends Google_Collection
   protected $pigJobDataType = '';
   protected $placementType = 'Google_Service_Dataproc_JobPlacement';
   protected $placementDataType = '';
+  protected $prestoJobType = 'Google_Service_Dataproc_PrestoJob';
+  protected $prestoJobDataType = '';
   protected $pysparkJobType = 'Google_Service_Dataproc_PySparkJob';
   protected $pysparkJobDataType = '';
   protected $referenceType = 'Google_Service_Dataproc_JobReference';
@@ -49,6 +52,14 @@ class Google_Service_Dataproc_Job extends Google_Collection
   protected $yarnApplicationsType = 'Google_Service_Dataproc_YarnApplication';
   protected $yarnApplicationsDataType = 'array';
 
+  public function setDone($done)
+  {
+    $this->done = $done;
+  }
+  public function getDone()
+  {
+    return $this->done;
+  }
   public function setDriverControlFilesUri($driverControlFilesUri)
   {
     $this->driverControlFilesUri = $driverControlFilesUri;
@@ -136,6 +147,20 @@ class Google_Service_Dataproc_Job extends Google_Collection
   public function getPlacement()
   {
     return $this->placement;
+  }
+  /**
+   * @param Google_Service_Dataproc_PrestoJob
+   */
+  public function setPrestoJob(Google_Service_Dataproc_PrestoJob $prestoJob)
+  {
+    $this->prestoJob = $prestoJob;
+  }
+  /**
+   * @return Google_Service_Dataproc_PrestoJob
+   */
+  public function getPrestoJob()
+  {
+    return $this->prestoJob;
   }
   /**
    * @param Google_Service_Dataproc_PySparkJob
@@ -236,28 +261,28 @@ class Google_Service_Dataproc_Job extends Google_Collection
     return $this->status;
   }
   /**
-   * @param Google_Service_Dataproc_JobStatus
+   * @param Google_Service_Dataproc_JobStatus[]
    */
   public function setStatusHistory($statusHistory)
   {
     $this->statusHistory = $statusHistory;
   }
   /**
-   * @return Google_Service_Dataproc_JobStatus
+   * @return Google_Service_Dataproc_JobStatus[]
    */
   public function getStatusHistory()
   {
     return $this->statusHistory;
   }
   /**
-   * @param Google_Service_Dataproc_YarnApplication
+   * @param Google_Service_Dataproc_YarnApplication[]
    */
   public function setYarnApplications($yarnApplications)
   {
     $this->yarnApplications = $yarnApplications;
   }
   /**
-   * @return Google_Service_Dataproc_YarnApplication
+   * @return Google_Service_Dataproc_YarnApplication[]
    */
   public function getYarnApplications()
   {

@@ -205,7 +205,7 @@ class Google_Service_Reseller_Resource_Subscriptions extends Google_Service_Reso
    * for a customer name. Using an example customer group that includes exam.com,
    * example20.com and example.com: - exa -- Returns all customer names that start
    * with 'exa' which could include exam.com, example20.com, and example.com. A
-   * name prefix is similar to using a regular expression's asterisk, exa*.  -
+   * name prefix is similar to using a regular expression's asterisk, exa*. -
    * example -- Returns example20.com and example.com.
    * @opt_param string maxResults When retrieving a large list, the maxResults is
    * the maximum number of results per page. The nextPageToken value takes you to
