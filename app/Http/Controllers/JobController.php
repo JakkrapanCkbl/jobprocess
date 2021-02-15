@@ -48,7 +48,7 @@ class JobController extends Controller
         //dd($job->jobcode);
         //return view('jobs.show',compact('job'));
         //return view('home');
-        return view('jobs.index');
+        return view('jobs.index',compact('job'));
 
     }
 
