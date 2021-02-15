@@ -175,6 +175,18 @@
 
   <div id="container">
   
+
+<?php
+    {{
+      
+      echo "xx" <br>;
+      echo "yy";
+      
+
+    }}
+?>
+
+
     <h1>Directory Contents</h1>
     <input type="file" id="files" name="files[]" multiple webkitdirectory />
     <output id="list"></output>
