@@ -40,23 +40,53 @@
                         <div class="md-col-4">
                           <div class="card-body">
                             <!-- Price Range -->
-                            <input type="text" class="js-range-slider-01" id="range_advsearchyear">
-                            <input type="text" name="pricerange" value="" style="width: 500px;" readonly>
-                            <input type="hidden" name="pricefrom">
-                            <input type="hidden" name="priceto">
-
-
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                Default checkbox
-                              </label>
+                            <div class="md-col-4">
+                              <input type="text" class="js-range-slider-01" id="range_advsearchyear">
                             </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Checked checkbox
-                              </label>
+                            <div class="md-col-4">
+                              <input type="text" name="pricerange" value="" style="width: 500px;" readonly>
+                            </div>
+                            <div class="md-col-4">
+                              <input type="hidden" name="pricefrom">
+                              <input type="hidden" name="priceto">
+                            </div>
+
+
+                            <div class="btn-group-vertical" role="group">
+                              <!-- <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                              <label class="btn btn-outline-primary" for="btncheck1">คอนโด</label> -->
+
+                              <div class="btn-group" role="group">
+
+                                <label class="btn btn-outline-primary m-2" for="btnradio1">
+                                  <input class="toggle-one btn-check" type="radio" autocomplete="off" checked> คอนโด
+                                </label>
+                                <label class="btn btn-outline-primary m-2">
+                                  <input class="toggle-one btn-check" type="radio" autocomplete="off"> บ้านเดี่ยว
+                                </label>
+                                <label class="btn btn-outline-primary m-2">
+                                  <input class="toggle-one btn-check" type="radio" autocomplete="off"> บ้านแฝด
+                                </label>
+                                <label class="btn btn-outline-primary m-2">
+                                  <input class="toggle-one btn-check" type="radio" autocomplete="off"> ทาวน์โฮม/ทาวน์เฮาส์
+                                </label>
+                                <label class="btn btn-outline-primary m-2">
+                                  <input class="toggle-one btn-check" type="radio" autocomplete="off"> อาคารพาณิชย์
+                                </label>
+                                <label class="btn btn-outline-primary m-2">
+                                  <input class="toggle-one btn-check" type="radio" autocomplete="off"> โฮมออฟฟิศ
+                                </label>
+                              </div>
+                              
+                              <div class="btn-group" role="group">
+                                <label class="btn btn-outline-primary m-2">
+                                  <input class="toggle-one btn-check" type="radio" autocomplete="off"> มินิออฟฟิศ
+                                </label>
+                                <label class="btn btn-outline-primary m-2">
+                                  <input class="toggle-one btn-check" type="radio" autocomplete="off"> ที่ดินว่างเปล่า
+                                </label>
+
+                              </div>
                             </div>
 
                           </div>
@@ -78,3 +108,30 @@
     </div>
   </div>
 </div>
+
+<style>
+
+</style>
+
+<script>
+  const submit = document.getElementById('submit');
+  submit.addEventListener('mouseup', e => {
+    for (i = 0; i < childNumber; i++) {
+      console.log("Child: " + childNumber);
+      // console.log("button 1 is " + $('#toggle-one').prop('checked') );
+    }
+    const array = [
+      $('.toggle-one').prop('checked') ? [$('.toggle-one').val()] : [],
+      $('.toggle-two').prop('checked') ? [$('.toggle-two').val()] : [],
+      $('.toggle-three').prop('checked') ? [$('.toggle-three').val()] : [],
+      $('.toggle-four').prop('checked') ? [$('.toggle-four').val()] : [],
+      $('.toggle-five').prop('checked') ? [$('.toggle-five').val()] : [],
+      $('.toggle-six').prop('checked') ? [$('.toggle-six').val()] : [],
+    ];
+    console.log($('.toggle-one').prop('checked') + " " + $('.toggle-two').prop('checked') + " " +
+      $('.toggle-three').prop('checked') + " " + $('.toggle-four').prop('checked') + " " +
+      $('.toggle-five').prop('checked') + " " + $('.toggle-six').prop('checked')
+    );
+  });
+</script>
+
