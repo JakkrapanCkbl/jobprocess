@@ -17,6 +17,7 @@
 
 		<!--Bootstrap.min css-->
 		<link rel="stylesheet" href="<?php echo e(asset('external2/plugins/bootstrap/css/bootstrap.min.css')); ?>">
+		
 
         <!--Font Awesome-->
 		<link href="<?php echo e(asset('external2/plugins/fontawesome-free/css/all.css')); ?>" rel="stylesheet">
@@ -45,6 +46,13 @@
 		<!-- Sidebar css -->
 		<link href="<?php echo e(asset('external2/plugins/sidebar/sidebar.css')); ?>" rel="stylesheet">
 
+		<!--Font Awesome-->
+		<link href="<?php echo e(asset('external2/plugins/fontawesome-free/css/all.css')); ?>" rel="stylesheet">
+
+		<!-- css for popup preview img -->
+		<link rel="stylesheet" href="<?php echo e(asset('external/css/magnific-popup.css')); ?>">
+
+	
 	</head>
 
 	<body class="app sidebar-mini">
@@ -650,7 +658,8 @@
 										</div>
 
 										<!-- Right Column -->
-										<div class="col-md-12 p-4 site-section bg-light">         
+										<div class="col-md-12 p-4 site-section bg-light">
+											        
 												<div class="company-logo blank-logo text-center text-md-left pl-3 popup-gallery">
 													<a href="<?php echo e(asset('external/images/gal_1.jpg')); ?>" title="The Cleaner"><img src="<?php echo e(asset('external/images/gal_1.jpg')); ?>" width="150" height="80" class="rounded"></a>
 													<a href="<?php echo e(asset('external/images/gal_2.jpg')); ?>" title="The Cleaner"><img src="<?php echo e(asset('external/images/gal_2.jpg')); ?>" width="150" height="80" class="rounded"></a>
@@ -660,7 +669,7 @@
 													<a href="<?php echo e(asset('external/images/gal_7.jpg')); ?>" title="The Cleaner"><img src="<?php echo e(asset('external/images/gal_7.jpg')); ?>" width="150" height="80" class="rounded"></a>
 												</div>
 												
-											</p> 
+											<p></p>
 											
 														
 											<p><a href="#" class="btn btn-warning" style="width: 100%;">Visit Official Page</a></p>
@@ -1105,6 +1114,16 @@
 
 		<!-- custom js -->
 		<script src="<?php echo e(asset('external2/js/custom.js')); ?>"></script>
+
+		
+		<!-- popup preview img -->
+  		<script src="<?php echo e(asset('external/js/jquery.magnific-popup.min.js')); ?>"></script>
+		<script src="<?php echo e(asset('external/js/bootstrap-datepicker.min.js')); ?>"></script>
+  		<script src="<?php echo e(asset('external/js/aos.js')); ?>"></script>
+  		<script src="<?php echo e(asset('external/js/mediaelement-and-player.min.js')); ?>"></script>
+  		<script src="<?php echo e(asset('external/js/main.js')); ?>"></script>
+ 
+
 
 	</body>
 </html><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/jobs/index.blade.php ENDPATH**/ ?>
