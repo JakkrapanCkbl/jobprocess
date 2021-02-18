@@ -368,48 +368,45 @@
 
 
         </div>
-        <div class="job-category align-self-center">
-            <!-- <div class="p-3">
-            <span class="text-info p-2 rounded border border-info">Completed</span>
-            </div>
-            <div class="progress progress-sm mb-5">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary w-70"></div>
-            </div> -->
-            <?php if($job->percentfinish == 100): ?>
-                <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
-                <br>
-                <span class="badge badge-pill badge-primary">  
+            <div class="job-category align-self-center">
+            
+                <?php if($job->percentfinish == 100): ?>
+                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-primary">  
+                        
+                        <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                <?php elseif($job->percentfinish >= 50 and $job->percentfinish < 100): ?>
+                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-warning">
+                        <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                <?php elseif($job->percentfinish == 0): ?>
+                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-danger">
+                        0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>                
+                <?php else: ?>
+                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-danger">
+                        <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                <?php endif; ?>
                     
-                    <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                </span>
-            <?php elseif($job->percentfinish >= 50 and $job->percentfinish < 100): ?>
-                <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
-                <br>
-                <span class="badge badge-pill badge-warning">
-                    <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                </span>
-            <?php elseif($job->percentfinish == 0): ?>
-                <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
-                <br>
-                <span class="badge badge-pill badge-danger">
-                    0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                </span>                
-            <?php else: ?>
-                <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
-                <br>
-                <span class="badge badge-pill badge-danger">
-                    <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                </span>
-            <?php endif; ?>
-                
-        </div>
+            </div>
         </div>
 
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+       
+        <?php echo e($jobs->links()); ?>
 
 
     </div>

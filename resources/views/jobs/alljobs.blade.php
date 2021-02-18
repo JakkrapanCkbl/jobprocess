@@ -368,49 +368,45 @@
 
 
         </div>
-        <div class="job-category align-self-center">
-            <!-- <div class="p-3">
-            <span class="text-info p-2 rounded border border-info">Completed</span>
-            </div>
-            <div class="progress progress-sm mb-5">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary w-70"></div>
-            </div> -->
-            @if($job->percentfinish == 100)
-                <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
-                <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
-                <br>
-                <span class="badge badge-pill badge-primary">  
+            <div class="job-category align-self-center">
+            
+                @if($job->percentfinish == 100)
+                    <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-primary">  
+                        
+                        {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                @elseif ($job->percentfinish >= 50 and $job->percentfinish < 100)
+                    <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-warning">
+                        {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                @elseif($job->percentfinish == 0)
+                    <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-danger">
+                        0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>                
+                @else
+                    <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
+                    <br>
+                    <span class="badge badge-pill badge-danger">
+                        {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                    </span>
+                @endif
                     
-                    {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                </span>
-            @elseif ($job->percentfinish >= 50 and $job->percentfinish < 100)
-                <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
-                <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
-                <br>
-                <span class="badge badge-pill badge-warning">
-                    {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                </span>
-            @elseif($job->percentfinish == 0)
-                <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
-                <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
-                <br>
-                <span class="badge badge-pill badge-danger">
-                    0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                </span>                
-            @else
-                <img src="{{ $job->ValuerAvatar }}" alt="valuer" class="brround  avatar-md w-32">
-                <img src="{{ $job->HeadAvatar }}" alt="headvaluer" class="brround  avatar-md w-32">
-                <br>
-                <span class="badge badge-pill badge-danger">
-                    {{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                </span>
-            @endif
-                
-        </div>
+            </div>
         </div>
 
         @endforeach
-
+       
+        {{ $jobs->links() }}
 
     </div>
 <!-- --------------------------------- display Jobs List---------------------------------------- -->

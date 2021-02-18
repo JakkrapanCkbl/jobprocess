@@ -28,7 +28,7 @@ class JobController extends Controller
             //return view('welcome',compact('jobs'));
             //$jobs = DB::select('select * from vw_order order by id desc LIMIT 100');
             //return view('welcomedido',compact('jobs'));
-            $jobs = DB::select('select * from vw_order order by id desc LIMIT 100');
+            $jobs = DB::select('select * from vw_order order by id desc LIMIT 10');
             return view('welcome',compact('jobs'));
         }
 
@@ -37,7 +37,7 @@ class JobController extends Controller
         //$jobs = Job::latest()->limit(10)->get();
         //$jobs = Job::with('valuer')->get();
        
-        $jobs = DB::select('select * from vw_order order by id desc LIMIT 100');
+        $jobs = DB::select('select * from vw_order order by id desc LIMIT 10');
         return view('welcome',compact('jobs'));
     }
 
@@ -73,9 +73,8 @@ class JobController extends Controller
         $search = $request->get('search');
         $replaced = str_replace(' ', '%', $search);
         if($search){
-           $jobs = Job::where('projectname','LIKE','%'.$replaced.'%')                                     
-                    ->paginate(20);
-            return view('jobs.alljobs',compact('jobs'));
+           $jobs = Job::where('projectname','LIKE','%'.$replaced.'%')->orderBy('id', 'DESC')->paginate(10);
+           return view('jobs.alljobs',compact('jobs'));
 
         }
 
