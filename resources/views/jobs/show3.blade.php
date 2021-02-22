@@ -264,11 +264,31 @@
 										</div>
 									</div>
 								</div> -->
+								<div class="dropdown d-none d-md-flex">
+									<a href="#" class="d-flex nav-link pr-0 country-flag" data-toggle="dropdown">
+										<!-- <span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="{{asset('external2/images/svgs/flags/french_flag.jpg')}}"></span> -->
+										<div>
+											<span class="text-white mr-3 mt-0">Home</span>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown d-none d-md-flex">
+									<a href="#" class="d-flex nav-link pr-0 country-flag" data-toggle="dropdown">
+										<!-- <span class="avatar country-Flag mr-3 align-self-center cover-image" data-image-src="{{asset('external2/images/svgs/flags/french_flag.jpg')}}"></span> -->
+										<div>
+											<span class="text-white mr-3 mt-0">Admin</span>
+										</div>
+									</a>
+								</div>
+
+
 								<button class="navbar-toggler navresponsive-toggler d-sm-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
 									aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
 									<span class="navbar-toggler-icon fe fe-more-vertical text-white"></span>
 								</button>
+								
 								<!--Navbar -->
+								
 								<div class="dropdown">
 									<a class="nav-link pr-0 leading-none d-flex" data-toggle="dropdown" href="#">
 										<span class="avatar avatar-md brround cover-image" data-image-src="{{asset(Auth::user()->avatar)}}"></span>
