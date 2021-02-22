@@ -73,7 +73,8 @@
 								<img alt="logo" class="header-brand-img mobile-logo" src="<?php echo e(asset('external2/images/brand/icon.png')); ?>">
 							</a>
 							<!-- Sidebar toggle button-->
-							<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
+							
+							<a id="autoClickBtn" onclick="autoClick()" aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
 							<div class="dropdown d-sm-flex d-none">
 								<a href="#" class="nav-link icon" data-toggle="dropdown">
 									<i class="fe fe-search"></i>
@@ -1123,7 +1124,14 @@
   		<script src="<?php echo e(asset('external/js/mediaelement-and-player.min.js')); ?>"></script>
   		<script src="<?php echo e(asset('external/js/main.js')); ?>"></script>
  
-
+		<script>
+		function autoClick(){
+				// alert("I am loaded and automatically clicked");
+			}
+				window.onload = function(){
+				document.getElementById('autoClickBtn').click();
+			}
+		</script>
 
 	</body>
 </html><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/jobs/show3.blade.php ENDPATH**/ ?>
