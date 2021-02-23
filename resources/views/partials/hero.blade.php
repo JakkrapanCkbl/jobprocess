@@ -45,6 +45,87 @@
                             <input type="text" name="pricerange" value="" style="width: 500px;" readonly>
                             <input type="hidden" name="pricefrom">
                             <input type="hidden" name="priceto">
+
+                            <div class="btn-group btn-group-toggle mt-2 mb-2" data-toggle="buttons">
+                              <label class="btn btn-outline-primary mt-2 active" for="btnradio1">
+                                <input class="btn-check" type="radio" autocomplete="off" checked> คอนโด
+                              </label>
+                              <label class="btn btn-outline-primary mt-2">
+                                <input class="btn-check" type="radio" autocomplete="off"> บ้านเดี่ยว
+                              </label>
+                              <label class="btn btn-outline-primary mt-2">
+                                <input class="btn-check" type="radio" autocomplete="off"> บ้านแฝด
+                              </label>
+                              <label class="btn btn-outline-primary mt-2">
+                                <input class="btn-check" type="radio" autocomplete="off"> ทาวน์โฮม/ทาวน์เฮาส์
+                              </label>
+                              <label class="btn btn-outline-primary mt-2">
+                                <input class="btn-check" type="radio" autocomplete="off"> อาคารพาณิชย์
+                              </label>
+                              <label class="btn btn-outline-primary mt-2">
+                                <input class="btn-check" type="radio" autocomplete="off"> โฮมออฟฟิศ
+                              </label>
+                              <label class="btn btn-outline-primary mt-2">
+                                <input class="btn-check" type="radio" autocomplete="off"> มินิออฟฟิศ
+                              </label>
+                              <label class="btn btn-outline-primary mt-2">
+                                <input class="btn-check" type="radio" autocomplete="off"> ที่ดินว่างเปล่า
+                              </label>
+                            </div>
+
+                            <h4 style="color: black;">คลาส</h4>
+
+                            <div class="btn-group-toggle" data-toggle="buttons">
+                              <label class="btn btn-secondary" style="width: 50px;" onclick="getvalue()" text="AAS" value="A+">ASD</label>
+                              <input type="text" value="XXX" onclick="getvalue()">
+                              <label class="btn btn-secondary" style="width: 50px;" name="grade_group" onclick="getvalue()" value="A+">
+                                <input type="checkbox" checked onclick="getvalue()" value="A+"> A+
+                              </label>
+                              <label class="btn btn-secondary" style="width: 50px;" value="A" name="grade_group" onclick="getvalue()">
+                                <input type="checkbox" checked value="D"> A
+                              </label>
+                              <label class="btn btn-secondary" style="width: 50px;" value="B" name="grade_group" onclick="getvalue()">
+                                <input type="checkbox" checked value="D"> B
+                              </label>
+                              <label class="btn btn-secondary" style="width: 50px;" value="C" name="grade_group" onclick="getvalue()">
+                                <input type="checkbox" checked value="D"> C
+                              </label>
+                              <label class="btn btn-secondary" style="width: 50px;" value="D" name="grade_group" onclick="getvalue()">
+                                <input type="checkbox" checked value="D"> D
+                              </label>
+                              <label class="btn btn-secondary" style="width: 50px;" value="E" name="grade_group" onclick="getvalue()">
+                                <input type="checkbox" checked value="D"> E
+                              </label>
+                              <label class="btn btn-secondary" style="width: 50px;" value="F" name="grade_group" onclick="getvalue()">
+                                <input type="checkbox" checked value="D"> F
+                              </label>
+                            </div>
+
+                            <input type="text" onclick="getvalue()" value="asdf"></input>
+                            <input type="text" onclick="getvalue()" value="asdf2"></input>
+                            <input type="text" onclick="getvalue()" value="asdf3"></input>
+
+                            <script>
+                              function gradeOfCondo() {
+                                // event.preventDefault();
+                                // const value = event.innerHTML;
+                                // console.log(this.innerHTML);
+                              }
+
+                              function getvalue() {
+                                // console.log(event.target);
+                                // console.log(event.target.text);
+                                // console.log(event.target.value);
+                              }
+
+                              var list = document.getElementsByName('grade_group');
+                              console.log(list);
+                              list.addEventListener("click", function(e) {
+                                console.log(list);
+                              })
+                            </script>
+                            <input type="text" name="pricerange" value="" style="width: 500px;" readonly>
+
                           </div>
                         </div>
                       </div>
