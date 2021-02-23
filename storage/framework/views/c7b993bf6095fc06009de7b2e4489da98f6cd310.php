@@ -176,16 +176,7 @@
   <div id="container">
   
 
-  <?php
-    {{
-      $cfs = new ClientFileService();
-$this->window->addChild( $cfs );
-
-$cfs->writeFileFromString( "C:\\hello.txt", "Hello World!" );
-     
-    
-    }}
-  ?>
+  
 
 
     <h1>Directory Contents</h1>

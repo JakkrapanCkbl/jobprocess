@@ -69,7 +69,7 @@
 					<div class="container-fluid">
 						<div class="d-flex">
 							<a class="header-brand" href="index.html">
-								<img alt="logo" class="header-brand-img main-logo" src="<?php echo e(asset('external2/images/brand/logo1.png')); ?>">
+								<img alt="logo" class="header-brand-img main-logo" src="../img/LM4.png">
 								<img alt="logo" class="header-brand-img mobile-logo" src="<?php echo e(asset('external2/images/brand/icon.png')); ?>">
 							</a>
 							<!-- Sidebar toggle button-->
