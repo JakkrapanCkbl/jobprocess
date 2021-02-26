@@ -245,7 +245,7 @@
                   
                   <div class="d-flex row justify-content-center justify-content-md-start">
                     
-                    <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc{{$job->id}}" aria-expanded="false" aria-controls="collapse" title="open file"></div>
+                    <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc{{$job->id}}" aria-expanded="false" aria-controls="collapse" title="open file"></div> -->
                     <!-- <div class="fa-icon "><a href="{{route('report.edit',[$job->id])}}"><span class="fas fa-book" title="To Report"> </a></div> -->
                     <!-- <div class="fa-icon "><span class="fas fa-folder-open" title="I am hovering over the text"></div> -->
                     <div class="fa-icon"><a onclick="popupCenter('testdc3', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div>
@@ -273,7 +273,7 @@
                                       <input type="radio" name="options" value="" autocomplete="off">Image
                                     </label>
                                     <label class="btn btn-secondary" onclick="uploadGroup({{$job->id}},'report')">
-                                      <input type="radio" name="options" value="report" autocomplete="off"> Report
+                                      <input type="radio" name="options" value="report" autocomplete="off"> PDF
                                     </label>
                                     <!-- <label class="btn btn-secondary" onclick="uploadGroup({{$job->id}},'invoice')">
                                       <input type="radio" name="options" value="invoice" autocomplete="off"> Invoice
@@ -284,7 +284,12 @@
                                     <label class="btn btn-secondary" onclick="uploadGroup({{$job->id}},'ope')">
                                       <input type="radio" name="options" value="ope" autocomplete="off"> OPE
                                     </label> -->
+                                    <!-- <label class="btn btn-danger" onclick="uploadGroup({{$job->id}},'')">
+                                          <input type="radio" name="options" value="" autocomplete="off">Delete
+                                    </label> -->
                                   </div>
+
+                                 
 
                                   <script>
                                     function uploadGroup(id, folderType) {
@@ -315,6 +320,9 @@
                             <div class="container">
                               <div class="md-col-4">
                                 <div class="card-body">
+
+                                  
+
                                   <?php
                                   $jobcode = str_replace('/', '_', $job->jobcode);
                                   // $docList = preg_grep('#\.pdf$#', glob('storage/project_reports/' . $jobcode . '/**/*'), PREG_GREP_INVERT);
