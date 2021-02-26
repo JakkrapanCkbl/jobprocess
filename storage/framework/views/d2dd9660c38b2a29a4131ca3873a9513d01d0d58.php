@@ -284,9 +284,9 @@
                                     <label class="btn btn-secondary" onclick="uploadGroup(<?php echo e($job->id); ?>,'ope')">
                                       <input type="radio" name="options" value="ope" autocomplete="off"> OPE
                                     </label> -->
-                                    <label class="btn btn-danger" onclick="uploadGroup(<?php echo e($job->id); ?>,'')">
+                                    <!-- <label class="btn btn-danger" onclick="uploadGroup(<?php echo e($job->id); ?>,'')">
                                           <input type="radio" name="options" value="" autocomplete="off">Delete
-                                    </label>
+                                    </label> -->
                                   </div>
 
                                  

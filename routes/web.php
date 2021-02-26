@@ -289,3 +289,9 @@ Route::post('/report/{id}/update', 'ReportController@update')->name('report.upda
 Route::post('/report/fetch', 'ReportController@fetch')->name('report.fetch');
 Route::get('/report/{id}/preview', 'ReportController@preview')->name('report.preview');
 // Route::get('/report/{id}/pdf', 'ReportController@pdf')->name('report.pdf');
+
+
+// /laravel-filemanager/demo
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
