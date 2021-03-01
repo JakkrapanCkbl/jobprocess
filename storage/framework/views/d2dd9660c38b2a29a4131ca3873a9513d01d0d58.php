@@ -143,8 +143,17 @@
                 </div>
                 <div class="d-flex row justify-content-center justify-content-md-start">
                     <!-- <div title="ชื่อโครงการ" class="mr-2"><span class="fas fa-building text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div> -->
-                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div>
-                    
+                    <!-- <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div> -->
+                    <?php if($job->projectname == $job->proplocation): ?>
+                        <?php if($job->projectname != ""): ?>
+                            <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div>
+                        <?php else: ?>
+                            <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->proplocation); ?></div>
+                        <?php endif; ?>
+                        
+                    <?php else: ?>
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div>
+                    <?php endif; ?>
                 </div>
                   <div class="d-flex row justify-content-center justify-content-md-start">
                     

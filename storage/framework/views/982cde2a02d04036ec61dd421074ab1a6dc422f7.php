@@ -56,6 +56,10 @@
     </div> -->
 
      <!-- ---------------------------- display Jobs List ------------------------------------------------------>
+     <div class="col-md-4 mt-3">
+        <p>result = <?php echo e($jobs->total()); ?></p>
+     </div>
+     
      <div class="rounded border jobs-wrap">
 
         <?php $__currentLoopData = $jobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -163,7 +167,17 @@
             </div>
             <div class="d-flex row justify-content-center justify-content-md-start">
                 <!-- <div title="ชื่อโครงการ" class="mr-2"><span class="fas fa-building text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div> -->
-                <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div>
+                <?php if($job->projectname == $job->proplocation): ?>
+                    <?php if($job->projectname != ""): ?>
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div>
+                    <?php else: ?>
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->proplocation); ?></div>
+                    <?php endif; ?>
+                    
+                <?php else: ?>
+                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div>
+                <?php endif; ?>
+                
                 
             </div>
             <div class="d-flex row justify-content-center justify-content-md-start">
@@ -371,30 +385,30 @@
             <div class="job-category align-self-center">
             
                 <?php if($job->percentfinish == 100): ?>
-                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e(asset($job->ValuerAvatar)); ?>" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e(asset($job->HeadAvatar)); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                     <br>
                     <span class="badge badge-pill badge-primary">  
                         
                         <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                     </span>
                 <?php elseif($job->percentfinish >= 50 and $job->percentfinish < 100): ?>
-                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e(asset($job->ValuerAvatar)); ?>" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e(asset($job->HeadAvatar)); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                     <br>
                     <span class="badge badge-pill badge-warning">
                         <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                     </span>
                 <?php elseif($job->percentfinish == 0): ?>
-                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e(asset($job->ValuerAvatar)); ?>" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e(asset($job->HeadAvatar)); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                     <br>
                     <span class="badge badge-pill badge-danger">
                         0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                     </span>                
                 <?php else: ?>
-                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e(asset($job->ValuerAvatar)); ?>" alt="valuer" class="brround  avatar-md w-32">
+                    <img src="<?php echo e(asset($job->HeadAvatar)); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                     <br>
                     <span class="badge badge-pill badge-danger">
                         <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>

@@ -73,7 +73,31 @@ class JobController extends Controller
         $search = $request->get('search');
         $replaced = str_replace(' ', '%', $search);
         if($search){
-           $jobs = Job::where('projectname','LIKE','%'.$replaced.'%')->orderBy('id', 'DESC')->paginate(10);
+
+           //$jobs = Job::where('projectname','LIKE','%'.$replaced.'%')->orderBy('id', 'DESC')->paginate(10);
+           //$jobs = DB::table('vw_order')->where('HideResult','LIKE','%'.$replaced.'%')->get();
+           //$jobs = DB::table('vw_order')->get();
+           //dd($jobs);
+
+           $jobs = DB::table('vw_order')
+           ->where('HideResult','LIKE','%'.$replaced.'%')
+           ->orderBy('id', 'DESC')
+           ->paginate(10);
+        //    dd($jobs);
+
+        //    $jobs = Job::where('projectname','LIKE','%'.$replaced.'%')
+        //    ->orWhere('proplocation','LIKE','%'.$replaced.'%')
+        //    ->orderBy('id', 'DESC')->paginate(10);
+
+            // $jobs = DB::table('jobs')
+            // ->leftJoin('users', 'users.id', '=', 'jobs.valuer')
+            // ->select('jobs.id as id, jobs.projectname As jobname, 
+            // jobs.proplocation As proplocation, users.avatar As ValuerAvatar')
+            // ->where('jobs.projectname','LIKE','%'.$replaced.'%')
+            // ->orWhere('jobs.proplocation','LIKE','%'.$replaced.'%')
+            // ->orderBy('jobs.id', 'DESC')->get();
+            // dd($jobs);
+
            return view('jobs.alljobs',compact('jobs'));
 
         }

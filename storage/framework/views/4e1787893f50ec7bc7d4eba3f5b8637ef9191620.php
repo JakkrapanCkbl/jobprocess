@@ -10,6 +10,7 @@
                 <div class="col-md-12 mb-3 mb-md-0">
                   <input type="text" name="search" class="mr-3 form-control border-0 px-4" placeholder="ค้นหา : ชื่อคอนโด, ชื่อหมู่บ้าน, ชื่อถนน, ชื่ออำเภอ, ...">
                 </div>
+                
                 <!--<div class="col-md-6 mb-3 mb-md-0">
                       <div class="input-wrap">
                         <span class="icon icon-room"></span>
