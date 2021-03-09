@@ -664,6 +664,7 @@ class ComposerStaticInit0fec7833c75f16f9db3c3d14a0f0e7e9
         'App\\Exports\\CondosExport' => __DIR__ . '/../..' . '/app/Exports/CondosExport.php',
         'App\\Exports\\UsersExport' => __DIR__ . '/../..' . '/app/Exports/UsersExport.php',
         'App\\Food' => __DIR__ . '/../..' . '/app/Food.php',
+        'App\\Handlers\\LfmConfigHandler' => __DIR__ . '/../..' . '/app/Handlers/LfmConfigHandler.php',
         'App\\Http\\Controllers\\AdminInputController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminInputController.php',
         'App\\Http\\Controllers\\ApiInvoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiInvoiceController.php',
         'App\\Http\\Controllers\\Api\\Job2controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/Job2controller.php',

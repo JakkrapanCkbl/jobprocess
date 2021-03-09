@@ -26,7 +26,7 @@ Route::get('/testdc', function() {
 
 Route::view('/testdc2', 'test.test2');
 Route::view('/testdc3', 'test.test3');
-Route::view('/testdc4', 'test.test4');
+
 
 Route::get('/storagelink', function () {
     Artisan::call('storage:link');
@@ -295,3 +295,7 @@ Route::get('/report/{id}/preview', 'ReportController@preview')->name('report.pre
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+Route::view('/fmg', 'file_manager.fmg_embed');
+
+// Route::get('post/{slug}', [PostController::class, 'show']);

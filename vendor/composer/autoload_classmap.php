@@ -12,6 +12,7 @@ return array(
     'App\\Exports\\CondosExport' => $baseDir . '/app/Exports/CondosExport.php',
     'App\\Exports\\UsersExport' => $baseDir . '/app/Exports/UsersExport.php',
     'App\\Food' => $baseDir . '/app/Food.php',
+    'App\\Handlers\\LfmConfigHandler' => $baseDir . '/app/Handlers/LfmConfigHandler.php',
     'App\\Http\\Controllers\\AdminInputController' => $baseDir . '/app/Http/Controllers/AdminInputController.php',
     'App\\Http\\Controllers\\ApiInvoiceController' => $baseDir . '/app/Http/Controllers/ApiInvoiceController.php',
     'App\\Http\\Controllers\\Api\\Job2controller' => $baseDir . '/app/Http/Controllers/Api/Job2controller.php',

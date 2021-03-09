@@ -1,297 +1,215 @@
 <!doctype html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Directory Contents</title>
-  <!-- <link rel="stylesheet" href=".style.css"> -->
-  <style>
-      * {
-        padding:0;
-        margin:0;
-        }
-
-        body {
-        color: #333;
-        font: 14px Sans-Serif;
-        padding: 50px;
-        background: #eee;
-        }
-
-        h1 {
-        text-align: center;
-        padding: 20px 0 12px 0;
-        margin: 0;
-        }
-
-        h2 {
-        font-size: 16px;
-        text-align: center;
-        padding: 0 0 12px 0; 
-        }
-
-        #container {
-        box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
-        position: relative;
-        background: white; 
-        }
-
-        table {
-        background-color: #F3F3F3;
-        border-collapse: collapse;
-        width: 100%;
-        margin: 15px 0;
-        }
-
-        th {
-        background-color: #FE4902;
-        color: #FFF;
-        cursor: pointer;
-        padding: 5px 10px;
-        }
-
-        th small {
-        font-size: 9px; 
-        }
-
-        td, th {
-        text-align: left;
-        }
-
-        a {
-        text-decoration: none;
-        }
-
-        td a {
-        color: #663300;
-        display: block;
-        padding: 5px 10px;
-        }
-
-        th a {
-        padding-left: 0
-        }
-
-        td:first-of-type a {
-        background: url(./.images/file.png) no-repeat 10px 50%;
-        padding-left: 35px;
-        }
-
-        th:first-of-type {
-        padding-left: 35px;
-        }
-
-        td:not(:first-of-type) a {
-        background-image: none !important;
-        } 
-
-        tr:nth-of-type(odd) {
-        background-color: #E6E6E6;
-        }
-
-        tr:hover td {
-        background-color:#CACACA;
-        }
-
-        tr:hover td a {
-        color: #000;
-        }
-
-        /* icons for file types (icons by famfamfam) */
-
-        /* images */
-        table tr td:first-of-type a[href$=".jpg"], 
-        table tr td:first-of-type a[href$=".png"], 
-        table tr td:first-of-type a[href$=".gif"], 
-        table tr td:first-of-type a[href$=".svg"], 
-        table tr td:first-of-type a[href$=".jpeg"] {
-        background-image: url(./.images/image.png);
-        }
-
-        /* zips */
-        table tr td:first-of-type a[href$=".zip"] {
-        background-image: url(./.images/zip.png);
-        }
-
-        /* css */
-        table tr td:first-of-type a[href$=".css"] {
-        background-image: url(./.images/css.png);
-        }
-
-        /* docs */
-        table tr td:first-of-type a[href$=".doc"],
-        table tr td:first-of-type a[href$=".docx"],
-        table tr td:first-of-type a[href$=".ppt"],
-        table tr td:first-of-type a[href$=".pptx"],
-        table tr td:first-of-type a[href$=".pps"],
-        table tr td:first-of-type a[href$=".ppsx"],
-        table tr td:first-of-type a[href$=".xls"],
-        table tr td:first-of-type a[href$=".xlsx"] {
-        background-image: url(./.images/office.png)
-        }
-
-        /* videos */
-        table tr td:first-of-type a[href$=".avi"], 
-        table tr td:first-of-type a[href$=".wmv"], 
-        table tr td:first-of-type a[href$=".mp4"], 
-        table tr td:first-of-type a[href$=".mov"], 
-        table tr td:first-of-type a[href$=".m4a"] {
-        background-image: url(./.images/video.png);
-        }
-
-        /* audio */
-        table tr td:first-of-type a[href$=".mp3"], 
-        table tr td:first-of-type a[href$=".ogg"], 
-        table tr td:first-of-type a[href$=".aac"], 
-        table tr td:first-of-type a[href$=".wma"] {
-        background-image: url(./.images/audio.png);
-        }
-
-        /* web pages */
-        table tr td:first-of-type a[href$=".html"],
-        table tr td:first-of-type a[href$=".htm"],
-        table tr td:first-of-type a[href$=".xml"] {
-        background-image: url(./.images/xml.png);
-        }
-
-        table tr td:first-of-type a[href$=".php"] {
-        background-image: url(./.images/php.png);
-        }
-
-        table tr td:first-of-type a[href$=".js"] {
-        background-image: url(./.images/script.png);
-        }
-
-        /* directories */
-        table tr.dir td:first-of-type a {
-        background-image: url(./.images/folder.png);
-        }
-  </style>
-  
-  <script src="../external2/js/sorttable.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Laravel Filemanager</title>
+  <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('vendor/laravel-filemanager/img/72px color.png')); ?>">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
-
 <body>
-<div id="container">
-  
-  <h1>Directory Contents</h1>
-  
-  <table class="sortable">
-    <thead>
-      <tr>
-        <th>Filename</th>
-        <th>Type</th>
-        <th>Size <small>(bytes)</small></th>
-        <th>Date Modified</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-        // Opens directory
-        $myDirectory=opendir(".");
-      
-        // Gets each entry
-        while($entryName=readdir($myDirectory)) {
-            $dirArray[]=$entryName;
-        }
-      
-        // Finds extensions of files
-        function findexts ($filename) {
-            $filename=strtolower($filename);
-            $exts=split("[/\\.]", $filename);
-            $n=count($exts)-1;
-            $exts=$exts[$n];
-            return $exts;
-        }
-      
-        // Closes directory
-        closedir($myDirectory);
-      
-        // Counts elements in array
-        $indexCount=count($dirArray);
-      
-        // Sorts files
-        sort($dirArray);
-      
-        // Loops through the array of files
-        for($index=0; $index < $indexCount; $index++) {
-      
-            // Allows ./?hidden to show hidden files
-            if($_SERVER['QUERY_STRING']=="hidden")
-                {$hide="";
-                $ahref="./";
-                $atext="Hide";}
-            else
-                {$hide=".";
-                $ahref="./?hidden";
-                $atext="Show";}
-            if(substr("$dirArray[$index]", 0, 1) != $hide) {
-        
-                // Gets File Names
-                $name=$dirArray[$index];
-                $namehref=$dirArray[$index];
-        
-                // Gets Extensions 
-                $extn=findexts($dirArray[$index]); 
-        
-                // Gets file size 
-                $size=number_format(filesize($dirArray[$index]));
-        
-                // Gets Date Modified Data
-                $modtime=date("M j Y g:i A", filemtime($dirArray[$index]));
-                $timekey=date("YmdHis", filemtime($dirArray[$index]));
-        
-                // Prettifies File Types, add more to suit your needs.
-                switch ($extn){
-                    case "png": $extn="PNG Image"; break;
-                    case "jpg": $extn="JPEG Image"; break;
-                    case "svg": $extn="SVG Image"; break;
-                    case "gif": $extn="GIF Image"; break;
-                    case "ico": $extn="Windows Icon"; break;
-                    case "txt": $extn="Text File"; break;
-                    case "log": $extn="Log File"; break;
-                    case "htm": $extn="HTML File"; break;
-                    case "php": $extn="PHP Script"; break;
-                    case "js": $extn="Javascript"; break;
-                    case "css": $extn="Stylesheet"; break;
-                    case "pdf": $extn="PDF Document"; break;
-                    case "zip": $extn="ZIP Archive"; break;
-                    case "bak": $extn="Backup File"; break;
-                    default: $extn=strtoupper($extn)." File"; break;
-        }
-        // Separates directories
-        if(is_dir($dirArray[$index])) {
-          $extn="&lt;Directory&gt;"; 
-          $size="&lt;Directory&gt;"; 
-          $class="dir";
+  <div class="container">
+    <h1 class="page-header">Integration Demo Page</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="mt-4">CKEditor</h2>
+        <textarea name="ce" class="form-control"></textarea>
+      </div>
+      <div class="col-md-6">
+        <h2 class="mt-4">TinyMCE</h2>
+        <textarea name="tm" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="mt-4">Summernote</h2>
+        <textarea id="summernote-editor" name="content"></textarea>
+      </div>
+      <div class="col-md-6">
+        <h2 class="mt-4">Standalone Image Button</h2>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary text-white">
+              <i class="fa fa-picture-o"></i> Choose
+            </a>
+          </span>
+          <input id="thumbnail" class="form-control" type="text" name="filepath">
+        </div>
+        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+        <h2 class="mt-4">Standalone File Button</h2>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <a id="lfm2" data-input="thumbnail2" data-preview="holder2" class="btn btn-primary text-white">
+              <i class="fa fa-picture-o"></i> Choose
+            </a>
+          </span>
+          <input id="thumbnail2" class="form-control" type="text" name="filepath">
+        </div>
+        <div id="holder2" style="margin-top:15px;max-height:100px;"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="mt-4">Embed file manager</h2>
+        <iframe src="/filemanager" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script>
+   var route_prefix = "/filemanager";
+  </script>
+
+  <!-- CKEditor init -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/ckeditor.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/adapters/jquery.js"></script>
+  <script>
+    $('textarea[name=ce]').ckeditor({
+      height: 100,
+      filebrowserImageBrowseUrl: route_prefix + '?type=Images',
+      filebrowserImageUploadUrl: route_prefix + '/upload?type=Images&_token=<?php echo e(csrf_token()); ?>',
+      filebrowserBrowseUrl: route_prefix + '?type=Files',
+      filebrowserUploadUrl: route_prefix + '/upload?type=Files&_token=<?php echo e(csrf_token()); ?>'
+    });
+  </script>
+
+  <!-- TinyMCE init -->
+  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>
+    var editor_config = {
+      path_absolute : "",
+      selector: "textarea[name=tm]",
+      plugins: [
+        "link image"
+      ],
+      relative_urls: false,
+      height: 129,
+      file_browser_callback : function(field_name, url, type, win) {
+        var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+        var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+        var cmsURL = editor_config.path_absolute + route_prefix + '?field_name=' + field_name;
+        if (type == 'image') {
+          cmsURL = cmsURL + "&type=Images";
         } else {
-          $class="file";
+          cmsURL = cmsURL + "&type=Files";
         }
-        
-        // Cleans up . and .. directories 
-        if($name=="."){$name=". (Current Directory)"; $extn="&lt;System Dir&gt;";}
-        if($name==".."){$name=".. (Parent Directory)"; $extn="&lt;System Dir&gt;";}
-        
-        // Print 'em
-        print("
-        <tr class='$class'>
-          <td><a href='./$namehref'>$name</a></td>
-          <td><a href='./$namehref'>$extn</a></td>
-          <td><a href='./$namehref'>$size</a></td>
-          <td sorttable_customkey='$timekey'><a href='./$namehref'>$modtime</a></td>
-        </tr>");
-        }
+
+        tinyMCE.activeEditor.windowManager.open({
+          file : cmsURL,
+          title : 'Filemanager',
+          width : x * 0.8,
+          height : y * 0.8,
+          resizable : "yes",
+          close_previous : "no"
+        });
       }
-    ?>
-    </tbody>
-  </table>
+    };
 
-  <h2><?php print("<a href='$ahref'>$atext hidden files</a>"); ?></h2>
-  
-</div>
-  
-  
-  
+    tinymce.init(editor_config);
+  </script>
+
+  <script>
+    <?php echo \File::get(base_path('vendor/unisharp/laravel-filemanager/public/js/stand-alone-button.js')); ?>
+
+  </script>
+  <script>
+    $('#lfm').filemanager('image', {prefix: route_prefix});
+    // $('#lfm').filemanager('file', {prefix: route_prefix});
+  </script>
+
+  <script>
+    var lfm = function(id, type, options) {
+      let button = document.getElementById(id);
+
+      button.addEventListener('click', function () {
+        var route_prefix = (options && options.prefix) ? options.prefix : '/filemanager';
+        var target_input = document.getElementById(button.getAttribute('data-input'));
+        var target_preview = document.getElementById(button.getAttribute('data-preview'));
+
+        window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
+        window.SetUrl = function (items) {
+          var file_path = items.map(function (item) {
+            return item.url;
+          }).join(',');
+
+          // set the value of the desired input to image url
+          target_input.value = file_path;
+          target_input.dispatchEvent(new Event('change'));
+
+          // clear previous preview
+          target_preview.innerHtml = '';
+
+          // set or change the preview image src
+          items.forEach(function (item) {
+            let img = document.createElement('img')
+            img.setAttribute('style', 'height: 5rem')
+            img.setAttribute('src', item.thumb_url)
+            target_preview.appendChild(img);
+          });
+
+          // trigger change event
+          target_preview.dispatchEvent(new Event('change'));
+        };
+      });
+    };
+
+    lfm('lfm2', 'file', {prefix: route_prefix});
+  </script>
+
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+  <style>
+    .popover {
+      top: auto;
+      left: auto;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+
+      // Define function to open filemanager window
+      var lfm = function(options, cb) {
+        var route_prefix = (options && options.prefix) ? options.prefix : '/filemanager';
+        window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
+        window.SetUrl = cb;
+      };
+
+      // Define LFM summernote button
+      var LFMButton = function(context) {
+        var ui = $.summernote.ui;
+        var button = ui.button({
+          contents: '<i class="note-icon-picture"></i> ',
+          tooltip: 'Insert image with filemanager',
+          click: function() {
+
+            lfm({type: 'image', prefix: '/filemanager'}, function(lfmItems, path) {
+              lfmItems.forEach(function (lfmItem) {
+                context.invoke('insertImage', lfmItem.url);
+              });
+            });
+
+          }
+        });
+        return button.render();
+      };
+
+      // Initialize summernote with LFM button in the popover button group
+      // Please note that you can add this button to any other button group you'd like
+      $('#summernote-editor').summernote({
+        toolbar: [
+          ['popovers', ['lfm']],
+        ],
+        buttons: {
+          lfm: LFMButton
+        }
+      })
+    });
+  </script>
 </body>
-
-</html><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/test/test4.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/test/test4.blade.php ENDPATH**/ ?>
