@@ -6,12 +6,7 @@ class LfmConfigHandler extends \UniSharp\LaravelFilemanager\Handlers\ConfigHandl
 {
     public function userField()
     {
-        return parent::userField();
-        //return public_path('storage').'/project_reports/LC_64BF-0321/';
-        //return storage_path('app');
-        //return 'LC_64BF-9999/';
+        // return parent::userField();
+        return public_path('storage/images/users');
     }
-
-    
-
 }

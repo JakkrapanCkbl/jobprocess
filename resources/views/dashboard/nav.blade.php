@@ -4,7 +4,7 @@
 					<div class="container">
 						<div class="d-flex">
 							 <a id="horizontal-navtoggle" class="animated-arrow hor-toggle"><span></span></a>
-							<a class="header-brand" href="index.html">
+							<a class="header-brand" href="{{route('welcome')}}">
 								<img alt="logo" class="header-brand-img main-logo" src="{{asset('external2/images/brand/logo1.png')}}">
 								<img alt="logo" class="header-brand-img mobile-logo" src="{{asset('external2/images/brand/icon.png')}}">
 							</a>

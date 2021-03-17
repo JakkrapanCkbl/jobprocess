@@ -1,0 +1,56 @@
+[2021-03-09 12:28:58] local.ERROR: There are no commands defined in the "clear" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"clear\" namespace. at C:\\xampp\\htdocs\\jobprocess\\vendor\\symfony\\console\\Application.php:597)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\jobprocess\\vendor\\symfony\\console\\Application.php(650): Symfony\\Component\\Console\\Application->findNamespace('clear')
+#1 C:\\xampp\\htdocs\\jobprocess\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('clear:casch')
+#2 C:\\xampp\\htdocs\\jobprocess\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\xampp\\htdocs\\jobprocess\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-03-09 13:14:33] local.ERROR: Class 'UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider' not found at C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('UniSharp\\\\Larave...')
+#1 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(584): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(210): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(322): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 C:\\xampp\\htdocs\\jobprocess\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-03-09 13:19:27] local.ERROR: Class 'UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider' not found at C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('UniSharp\\\\Larave...')
+#1 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(584): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(210): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(322): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 C:\\xampp\\htdocs\\jobprocess\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-03-09 13:19:42] local.ERROR: Class 'UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider' not found at C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('UniSharp\\\\Larave...')
+#1 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(584): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(210): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(322): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 C:\\xampp\\htdocs\\jobprocess\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-03-09 13:46:20] local.ERROR: There are no commands defined in the "clear" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"clear\" namespace. at C:\\xampp\\htdocs\\jobprocess\\vendor\\symfony\\console\\Application.php:597)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\jobprocess\\vendor\\symfony\\console\\Application.php(650): Symfony\\Component\\Console\\Application->findNamespace('clear')
+#1 C:\\xampp\\htdocs\\jobprocess\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('clear:casch')
+#2 C:\\xampp\\htdocs\\jobprocess\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\xampp\\htdocs\\jobprocess\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\xampp\\htdocs\\jobprocess\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 

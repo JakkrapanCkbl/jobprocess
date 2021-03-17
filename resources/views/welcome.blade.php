@@ -271,7 +271,7 @@
                   
                   <div class="col-md-12 row justify-content-center justify-content-md-start">
                     <!-- <div class="fa-icon"><a onclick="popupCenter('testdc4', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
-                    <div class="fa-icon"><a onclick="popupCenter('fmg', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div>
+                    <div class="fa-icon"><a onclick="popupCenter('fmg', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div>
                     <div class="fa-icon "><a onclick="popupCenter('file:///C:\test\', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div>
                     <div class="col-md-1"></div>
                     <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div>
