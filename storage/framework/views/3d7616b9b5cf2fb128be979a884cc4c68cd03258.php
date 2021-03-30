@@ -191,7 +191,7 @@
                                 <label class="float-right">ค่าประเมิน (Net)</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="valuationfee" id="valuationfee" class="form-control<?php echo e($errors->has('valuationfee') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->valuationfee); ?>" oninput="valuationfeeVat.value=parseInt(valuationfee.value)*107/100">
+                                <input type="text" name="valuationfee" id="valuationfee" class="form-control<?php echo e($errors->has('valuationfee') ? ' is-invalid' : ''); ?>" value="<?php echo e(number_format($job->valuationfee,2)); ?>" oninput="valuationfeeVat.value=parseInt(valuationfee.value)*7/100">
                                 <?php if($errors->has('valuationfee')): ?>
                                 <span class="invalid-feedback" role="alert">
                                     <strong><?php echo e($errors->first('valuationfee')); ?></strong>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group">
-                                    <input type="text" name="valuationfeeVat" id="valuationfeeVat" class="form-control<?php echo e($errors->has('valuationfee') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->valuationfee*107/100); ?>">
+                                    <input type="text" name="valuationfeeVat" id="valuationfeeVat" class="form-control<?php echo e($errors->has('valuationfee') ? ' is-invalid' : ''); ?>" value="<?php echo e(number_format($job->valuationfee*7/100,2)); ?>">
                                     <?php if($errors->has('valuationfee')): ?>
                                     <span class="invalid-feedback" role="alert">
                                         <strong><?php echo e($errors->first('valuationfee')); ?></strong>

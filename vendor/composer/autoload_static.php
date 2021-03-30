@@ -96,6 +96,10 @@ class ComposerStaticInit0fec7833c75f16f9db3c3d14a0f0e7e9
             'phpseclib\\' => 10,
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'k' => 
+        array (
+            'kartik\\plugins\\fileinput\\' => 25,
+        ),
         'Y' => 
         array (
             'Yajra\\DataTables\\' => 17,
@@ -260,6 +264,10 @@ class ComposerStaticInit0fec7833c75f16f9db3c3d14a0f0e7e9
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
         ),
         'Yajra\\DataTables\\' => 
         array (

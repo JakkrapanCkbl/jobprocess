@@ -1,5 +1,182 @@
 <div class="horizontal-content">
 
+<div class="row">
+							<div class="col-xl-12 col-lg-12">
+								<div class="card">
+									<div class="card-header">
+										<h3 class="card-title">Job List </h3>
+										
+										<div class="card-options d-none d-sm-block">
+											<div class="btn-group btn-sm">
+												<form action="/dashboardsearch" method="get">	
+													<div class="input-group w-100 p-2">
+														<input type="search" name="search" class="form-control " placeholder="Search....">
+														<div class="input-group-append ">
+															<button type="submit" class="btn btn-primary ">
+																<i class="fas fa-search" aria-hidden="true"></i>
+															</button>
+														</div>
+													</div>
+												</form>
+
+												 
+												
+												
+												<!--
+												<button type="button" class="btn btn-light btn-sm">
+													<span class="">Add</span>
+												</button>												
+												<button type="button" class="btn btn-light btn-sm">
+													<span class="">Month</span>
+												</button>
+												<button type="button" class="btn btn-light btn-sm">
+													<span class="">Year</span>
+												</button>
+												-->
+											</div>
+
+										</div>
+									</div>
+									<div class="card-body">
+										@if(Session::has('message'))
+										    <div class="alert alert-success">{{Session::get('message')}}</div>
+										 @endif
+										<div class="table-responsive">
+											<table class="table card-table table-vcenter  border text-nowrap">
+												<thead>
+													<tr>
+														<th class="w-1">Client</th>
+														<th>Code</th>
+														<th>Project</th>
+														<th>Progress</th>
+														<th>Size</th>
+														<th>Start Date</th>
+														<th><a href="/admininput/create" class="btn btn-secondary btn-sm"><i class="fe fe-folder-plus "></i> Add</a></th>
+													</tr>
+												</thead>
+												<tbody>
+													@foreach($jobs as $job)
+													<tr>
+														<td><span class="text-muted num-font">{{$job->client}}</span></td>
+														<td>{{$job->jobcode}}</td>
+														<td>{{$job->projectname}}</td>
+														<td>
+															@if($job->percentfinish ==100)
+																<img src="{{ url('storage/images/users/pks.jpg') }}" alt="valuer" class="brround  avatar-sm w-32">
+																<img src="{{ url('storage/images/users/mkc.jpg') }}" alt="headvaluer" class="brround  avatar-sm w-32">        
+      															<span class="badge badge-pill badge-primary">  
+      																{{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+																</span>      
+															@elseif ($job->percentfinish > 50 and $job->percentfinish < 100)
+																<img src="{{ url('storage/images/users/mcm.jpg') }}" alt="valuer" class="brround  avatar-sm w-32">
+																<img src="{{ url('storage/images/users/srp.jpg') }}" alt="headvaluer" class="brround  avatar-sm w-32"> 
+																<span class="badge badge-pill badge-warning">  
+      																{{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+																</span>   
+															@else
+															    <img src="{{ url('storage/images/users/avatar.jpg') }}" alt="valuer" class="brround  avatar-sm w-32">
+																<img src="{{ url('storage/images/users/nda.jpg') }}" alt="headvaluer" class="brround  avatar-sm w-32">
+															    <span class="badge badge-pill badge-danger">  
+      																{{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+																</span>        
+															@endif
+															
+
+															
+														
+														</td>
+														<td class="num-font">{{$job->prop_size}}</td>
+														<td><i class="mdi mdi-av-timer text-muted mr-1 num-font"></i>{{date('d-m-Y', strtotime($job->startdate))}}</td>
+														<td<img src="{{asset(Auth::user()->avatar)}}" style="height:65px;width:65px; border-radius:50%; margin-right:15px;" alt=""></td>
+														<td>
+																														
+															<a href="{{route('admininputjob.edit',[$job->id])}}" class="mr-3" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+															<a href="{{route('print-order.show',[$job->id])}}" class="mr-3" data-toggle="tooltip" title="" data-original-title="Check"><i class="fe fe-file text-dark fs-16"></i></a>
+															
+															<a href="/admininput/create" class="mr-3" data-toggle="tooltip" title="" data-original-title="Folder"><i class="fe fe-folder-plus text-dark fs-16"></i></a>
+															
+															<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Delete" data-toggle="modal" data-target="#exampleModal{{$job->id}}"><i class="fe fe-trash-2 text-dark fs-16"></i></a>															
+
+
+															 <!-- Modal -->
+									                        <div class="modal fade" id="exampleModal{{$job->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									                          <div class="modal-dialog" role="document">
+									                            <div class="modal-content">
+									                              <div class="modal-header">
+									                                  <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
+									                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									                                    <span aria-hidden="true">&times;</span>
+									                                  </button>
+									                              </div>
+									                              <div class="modal-body">Do you want to delete?</div>                             
+									                              <form action="{{route('admininputjob.delete')}}" method="POST">@csrf
+									                                  <div class="modal-footer">
+									                                      <input type="hidden" name="id" value="{{$job->id}}">
+									                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									                                      <button type="submit" class="btn btn-danger">delete</button>
+									                                  </div>
+									                              </form>
+									                            </div>
+									                          </div>
+									                        </div>
+									                        <!-- End Button trigger modal -->  
+
+									                         <!-- Modal -->
+									                        <div class="modal fade" id="progressModal{{$job->id}}" tabindex="-1" role="dialog" aria-labelledby="progressModalLabel" aria-hidden="true">
+									                          <div class="modal-dialog" role="document">
+									                            <div class="modal-content">
+									                              <div class="modal-header">
+									                                  <h5 class="modal-title" id="progressModalLabel">Update % Completed</h5>
+									                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									                                    <span aria-hidden="true">&times;</span>
+									                                  </button>
+									                              </div>
+									                              <form action="{{route('admininputjob.updateprogress')}}" method="POST">@csrf
+									                              	<div class="modal-body">									                              	
+									                              		
+										                                <div class="form-group">
+										                                	<input type="hidden" name="id" value="{{$job->id}}">
+																			<label for="mypercent" class="form-control-label">Input %:</label>
+																			<select name="mypercent" class="form-control">
+																				<option value="50">50</option>
+																				<option value="60">60</option>
+																				<option value="70">70</option>
+																				<option value="80">80</option>
+																				<option value="90">90</option>
+																				<option value="100">100</option>								
+																			</select>
+
+
+
+																			<!--<input name="mypercent" type="text" class="form-control" id="mypercent" placeholder="0 to 100" value="{{$job->percentfinish}}">-->
+																		</div>
+
+									                              	</div>  
+
+									                             
+									                                  <div class="modal-footer">								
+									                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									                                      <button type="submit" class="btn btn-primary">OK</button>
+									                                  </div>
+									                              </form>
+
+									                            </div>
+									                          </div>
+									                        </div>
+									                        <!-- End Button trigger modal -->  
+
+
+														</td>
+													</tr>
+													 @endforeach
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="page-header">
 							<h3 class="page-title"><i class="fe fe-home mr-1"></i>Employee Dashboard</h3>
 							<ol class="breadcrumb">
@@ -437,180 +614,5 @@
 							</div>
 						</div>
 
-						<div class="row">
-							<div class="col-xl-12 col-lg-12">
-								<div class="card">
-									<div class="card-header">
-										<h3 class="card-title">Job List </h3>
-										
-										<div class="card-options d-none d-sm-block">
-											<div class="btn-group btn-sm">
-												<form action="/dashboardsearch" method="get">	
-													<div class="input-group w-100 p-2">
-														<input type="search" name="search" class="form-control " placeholder="Search....">
-														<div class="input-group-append ">
-															<button type="submit" class="btn btn-primary ">
-																<i class="fas fa-search" aria-hidden="true"></i>
-															</button>
-														</div>
-													</div>
-												</form>
-
-												 
-												
-												
-												<!--
-												<button type="button" class="btn btn-light btn-sm">
-													<span class="">Add</span>
-												</button>												
-												<button type="button" class="btn btn-light btn-sm">
-													<span class="">Month</span>
-												</button>
-												<button type="button" class="btn btn-light btn-sm">
-													<span class="">Year</span>
-												</button>
-												-->
-											</div>
-
-										</div>
-									</div>
-									<div class="card-body">
-										@if(Session::has('message'))
-										    <div class="alert alert-success">{{Session::get('message')}}</div>
-										 @endif
-										<div class="table-responsive">
-											<table class="table card-table table-vcenter  border text-nowrap">
-												<thead>
-													<tr>
-														<th class="w-1">Client</th>
-														<th>Code</th>
-														<th>Project</th>
-														<th>Progress</th>
-														<th>Size</th>
-														<th>Start Date</th>
-														<th><a href="/admininput/create" class="btn btn-secondary btn-sm"><i class="fe fe-folder-plus "></i> Add</a></th>
-													</tr>
-												</thead>
-												<tbody>
-													@foreach($jobs as $job)
-													<tr>
-														<td><span class="text-muted num-font">{{$job->client}}</span></td>
-														<td>{{$job->jobcode}}</td>
-														<td>{{$job->projectname}}</td>
-														<td>
-															@if($job->percentfinish ==100)
-																<img src="{{ url('storage/images/users/pks.jpg') }}" alt="valuer" class="brround  avatar-sm w-32">
-																<img src="{{ url('storage/images/users/mkc.jpg') }}" alt="headvaluer" class="brround  avatar-sm w-32">        
-      															<span class="badge badge-pill badge-primary">  
-      																{{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-																</span>      
-															@elseif ($job->percentfinish > 50 and $job->percentfinish < 100)
-																<img src="{{ url('storage/images/users/mcm.jpg') }}" alt="valuer" class="brround  avatar-sm w-32">
-																<img src="{{ url('storage/images/users/srp.jpg') }}" alt="headvaluer" class="brround  avatar-sm w-32"> 
-																<span class="badge badge-pill badge-warning">  
-      																{{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-																</span>   
-															@else
-															    <img src="{{ url('storage/images/users/avatar.jpg') }}" alt="valuer" class="brround  avatar-sm w-32">
-																<img src="{{ url('storage/images/users/nda.jpg') }}" alt="headvaluer" class="brround  avatar-sm w-32">
-															    <span class="badge badge-pill badge-danger">  
-      																{{$job->percentfinish}}&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal{{$job->id}}"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-																</span>        
-															@endif
-															
-
-															
-														
-														</td>
-														<td class="num-font">{{$job->prop_size}}</td>
-														<td><i class="mdi mdi-av-timer text-muted mr-1 num-font"></i>{{date('d-m-Y', strtotime($job->startdate))}}</td>
-														<td<img src="{{asset(Auth::user()->avatar)}}" style="height:65px;width:65px; border-radius:50%; margin-right:15px;" alt=""></td>
-														<td>
-																														
-															<a href="{{route('admininputjob.edit',[$job->id])}}" class="mr-3" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-															<a href="{{route('print-order.show',[$job->id])}}" class="mr-3" data-toggle="tooltip" title="" data-original-title="Check"><i class="fe fe-file text-dark fs-16"></i></a>
-															
-															<a href="/admininput/create" class="mr-3" data-toggle="tooltip" title="" data-original-title="Folder"><i class="fe fe-folder-plus text-dark fs-16"></i></a>
-															
-															<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Delete" data-toggle="modal" data-target="#exampleModal{{$job->id}}"><i class="fe fe-trash-2 text-dark fs-16"></i></a>															
-
-
-															 <!-- Modal -->
-									                        <div class="modal fade" id="exampleModal{{$job->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-									                          <div class="modal-dialog" role="document">
-									                            <div class="modal-content">
-									                              <div class="modal-header">
-									                                  <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
-									                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									                                    <span aria-hidden="true">&times;</span>
-									                                  </button>
-									                              </div>
-									                              <div class="modal-body">Do you want to delete?</div>                             
-									                              <form action="{{route('admininputjob.delete')}}" method="POST">@csrf
-									                                  <div class="modal-footer">
-									                                      <input type="hidden" name="id" value="{{$job->id}}">
-									                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									                                      <button type="submit" class="btn btn-danger">delete</button>
-									                                  </div>
-									                              </form>
-									                            </div>
-									                          </div>
-									                        </div>
-									                        <!-- End Button trigger modal -->  
-
-									                         <!-- Modal -->
-									                        <div class="modal fade" id="progressModal{{$job->id}}" tabindex="-1" role="dialog" aria-labelledby="progressModalLabel" aria-hidden="true">
-									                          <div class="modal-dialog" role="document">
-									                            <div class="modal-content">
-									                              <div class="modal-header">
-									                                  <h5 class="modal-title" id="progressModalLabel">Update % Completed</h5>
-									                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									                                    <span aria-hidden="true">&times;</span>
-									                                  </button>
-									                              </div>
-									                              <form action="{{route('admininputjob.updateprogress')}}" method="POST">@csrf
-									                              	<div class="modal-body">									                              	
-									                              		
-										                                <div class="form-group">
-										                                	<input type="hidden" name="id" value="{{$job->id}}">
-																			<label for="mypercent" class="form-control-label">Input %:</label>
-																			<select name="mypercent" class="form-control">
-																				<option value="50">50</option>
-																				<option value="60">60</option>
-																				<option value="70">70</option>
-																				<option value="80">80</option>
-																				<option value="90">90</option>
-																				<option value="100">100</option>								
-																			</select>
-
-
-
-																			<!--<input name="mypercent" type="text" class="form-control" id="mypercent" placeholder="0 to 100" value="{{$job->percentfinish}}">-->
-																		</div>
-
-									                              	</div>  
-
-									                             
-									                                  <div class="modal-footer">								
-									                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									                                      <button type="submit" class="btn btn-primary">OK</button>
-									                                  </div>
-									                              </form>
-
-									                            </div>
-									                          </div>
-									                        </div>
-									                        <!-- End Button trigger modal -->  
-
-
-														</td>
-													</tr>
-													 @endforeach
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					
 					</div>

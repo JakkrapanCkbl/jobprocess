@@ -36,6 +36,15 @@
 			}
 		
   		</script>
+		<script>
+			function SetFeeVat(val) {
+				var vat = val * 0.07;
+				var totalprices = Number(val) + Number(vat);
+				
+				document.getElementById("valuationfeeVat").value = parseFloat(vat).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");; 
+				document.getElementById("valuationfeeAll").value = parseFloat(totalprices).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+			}
+		</script>  
 	</head>
 
 	<body class="app">
@@ -347,7 +356,9 @@
 														<div class="input-group">
 															<input type="text" name="valuationfee" id="valuationfee" placeholder="3000"
 															class="form-control{{ $errors->has('valuationfee') ? ' is-invalid' : '' }}"
-															value="{{ number_format(3000, 2, '.', ',') }}">
+															value="{{ number_format(3000, 2, '.', ',') }}"
+															oninput="SetFeeVat(this.value)"
+															>
 															@if ($errors->has('valuationfee'))
 															<span class="invalid-feedback" role="alert">
 																<strong>{{ $errors->first('valuationfee') }}</strong>
@@ -365,7 +376,7 @@
 														<div class="input-group">
 															<input type="text" name="valuationfeeVat" id="valuationfeeVat" placeholder="210"
 															class="form-control{{ $errors->has('valuationfeeVat') ? ' is-invalid' : '' }}"
-															value="{{ number_format(210, 2, '.', ',') }}">
+															>
 															@if ($errors->has('valuationfeeVat'))
 															<span class="invalid-feedback" role="alert">
 																<strong>{{ $errors->first('valuationfeeVat') }}</strong>

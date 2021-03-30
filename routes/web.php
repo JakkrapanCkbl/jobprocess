@@ -86,10 +86,17 @@ Route::get('jobapi/{id}', 'Api\Job2controller@show');
 //----------Upload single file---------
 Route::get('upload1', 'UploadController@index');
 Route::post('upload1', 'UploadController@upload');
+
 //----------Upload Multiple file-------
-Route::get('uploadfile', 'FileController@index');
-//Route::post('/docsearch/{id}/update','DocSearchController@update')->name('docsearch.update');
-Route::post('uploadfile/{id}', 'FileController@upload')->name('image.upload');
+//Route::get('uploadfile/{id}', 'FileController@index');
+//Route::post('showuploadfile/{id}', 'FileController@show')->name('showuploadfile');
+
+Route::get('/uploadfile/{id}/{jobcode}/{uploadfiletype}', 'FileController@show');
+// Route::post('uploadfilexx', 'FileController@uploadxx')->name('image.uploadxx');
+Route::post('uploadfilexx/{id}', 'FileController@uploadxx')->name('image.uploadxx');
+Route::post('uploadfile/{id}/{jobcode}/{uploadfiletype}', 'FileController@upload')->name('image.upload');
+
+
 
 //-----test menubar------------
 Route::get('/test', function () {
