@@ -244,14 +244,24 @@
 														<label class="float-right">อำเภอ/เขต</label>
 													</div>
 													<div class="col-md-6">
-														<select name="amphure_code" class="form-control amphures<?php echo e($errors->has('amphure_code') ? ' is-invalid' : ''); ?>">
+														<!-- <select name="amphure_code" class="form-control amphures<?php echo e($errors->has('amphure_code') ? ' is-invalid' : ''); ?>">
 															<?php $__currentLoopData = $listtwo; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $city): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 															<option value="<?php echo e($city->code); ?>">
 																<?php echo e($city->name_th); ?>
 
 															</option>
 															<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-														</select>
+														</select> -->
+														<!-- <input type="text" name="amphur_name" id="amphur_name" class="form-control<?php echo e($errors->has('proplocation') ? ' is-invalid' : ''); ?>" placeholder="ป้อนชื่ออำเภอ" />
+														<div id="amphurList"></div> -->
+														<input type="text" name="amphure_code" id="amphure_code" placeholder="อำเภอ"
+														class="form-control<?php echo e($errors->has('amphure_code') ? ' is-invalid' : ''); ?>"
+														value="<?php echo e(old('amphure_code')); ?>">
+														<?php if($errors->has('amphure_code')): ?>
+														<span class="invalid-feedback" role="alert">
+															<strong><?php echo e($errors->first('amphure_code')); ?></strong>
+														</span>
+														<?php endif; ?>
 													</div>
 												</div>
 												

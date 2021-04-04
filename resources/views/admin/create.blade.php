@@ -243,13 +243,23 @@
 														<label class="float-right">อำเภอ/เขต</label>
 													</div>
 													<div class="col-md-6">
-														<select name="amphure_code" class="form-control amphures{{ $errors->has('amphure_code') ? ' is-invalid' : '' }}">
+														<!-- <select name="amphure_code" class="form-control amphures{{ $errors->has('amphure_code') ? ' is-invalid' : '' }}">
 															@foreach($listtwo as $city)
 															<option value="{{ $city->code }}">
 																{{ $city->name_th }}
 															</option>
 															@endforeach
-														</select>
+														</select> -->
+														<!-- <input type="text" name="amphur_name" id="amphur_name" class="form-control{{ $errors->has('proplocation') ? ' is-invalid' : '' }}" placeholder="ป้อนชื่ออำเภอ" />
+														<div id="amphurList"></div> -->
+														<input type="text" name="amphure_code" id="amphure_code" placeholder="อำเภอ"
+														class="form-control{{ $errors->has('amphure_code') ? ' is-invalid' : '' }}"
+														value="{{ old('amphure_code') }}">
+														@if ($errors->has('amphure_code'))
+														<span class="invalid-feedback" role="alert">
+															<strong>{{ $errors->first('amphure_code') }}</strong>
+														</span>
+														@endif
 													</div>
 												</div>
 												

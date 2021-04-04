@@ -83,6 +83,8 @@ class AdminInputController extends Controller
 'startdate'=>$request->get('startdate'),
 
          **/
+        
+
         Job::create([
             /*'slug'=>str_slug($title),*/
             'jobcode' => $jobcode = $request->get('jobcode'),
@@ -93,7 +95,7 @@ class AdminInputController extends Controller
             'prop_size' => $request->get('prop_size'),
             'proplocation' => $request->get('proplocation'),
             'province_code' => $request->get('province_code'),
-            'amphure_code' => $request->get('amphure_code'),
+            'amphure_code' =>  $this->getAmphurCode($request->get('amphure_code')),
             'district' => $request->get('district'),
             'customer' => $request->get('customer'),
             'jobtype' => $request->get('jobtype'),
@@ -172,7 +174,7 @@ class AdminInputController extends Controller
             'prop_type' => $request->get('prop_type'),
             'prop_size' => $request->get('prop_size'),
             'proplocation' => $request->get('proplocation'),
-            'province_code' => $request->get('province_code'),
+            'province_code' =>  $request->get('province_code'),
             'amphure_code' => $request->get('amphure_code'),
             'district' => $request->get('district'),
             'obj_id' => $request->get('obj_id'),
@@ -287,5 +289,11 @@ class AdminInputController extends Controller
             'percentfinish' => $mypercent
         ]);
         return redirect('/dashboard')->with('message', 'Update % progress successfully');
+    }
+
+    private function  getAmphurCode($apName){
+        $output = DB::table('amphures')->where('name_th','LIKE','%'.$apName.'%')->first();
+        // dd($output->code);
+        return $output->code;
     }
 }

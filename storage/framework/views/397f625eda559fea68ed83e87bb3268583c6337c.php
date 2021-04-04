@@ -80,9 +80,5 @@
 
   </script>
 
-
-
-
-
   
 </html><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/uploadfile/upload.blade.php ENDPATH**/ ?>

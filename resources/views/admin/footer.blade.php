@@ -161,6 +161,33 @@
 	});
 </script>
 
+<!-- autofill -->
+<script type="text/javascript">	
+    	$(document).ready(function(){
+    		$('#amphur_name').keyup(function(){
+    			var query=$(this).val();
+    			//console.log(query);
+    			if(query!=''){
+    				var _token = $('input[name="_token"]').val();
+    			}
+    			$.ajax({
+    				url:"{{route('autocomplete.showamphur')}}",
+    				method:"POST",
+    				data:{query:query, _token:_token},
+    				success:function(data){
+    					$('#amphurList').fadeIn();
+              			$('#amphurList').html(data);
+    				}
+    			});
+    		});
+    	});
+
+    	$(document).on('click','li',function(){
+    		$('#amphurList').fadeOut();
+    		$('#amphur_name').val($(this).text());
+    	});
+    </script>
+
 
 </body>
 

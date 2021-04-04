@@ -24,4 +24,18 @@ class AutoCompleteController extends Controller
 			echo $output;
     	}
     }
+
+	public function showamphur(Request $request){
+		if($request->get('query')){
+    		$query=$request->get('query');
+    		//echo $query;
+    		$data = DB::table('amphures')->where('name_th', 'LIKE', "{$query}%") ->get();
+    		$output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+    		foreach($data as $row){        
+				$output .= '<li><a href="#">'.$row->name_th. '      '.$row->code.'</a></li>';		        
+			}
+			$output .= '</ul>';
+			echo $output;
+    	}
+	}
 }

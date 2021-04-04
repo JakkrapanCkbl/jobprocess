@@ -133,6 +133,7 @@ Route::post('/amphure/fetch', 'DropdownController@fetch_amphure')->name('dropdow
 //---auto complet
 Route::get('/auto', 'AutoCompleteController@index');
 Route::post('/auto', 'AutoCompleteController@show')->name('autocomplete.show');
+Route::post('/autoamphur', 'AutoCompleteController@showamphur')->name('autocomplete.showamphur');
 
 //---one to many
 Route::resource('product', 'ProductController');

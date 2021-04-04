@@ -114,13 +114,14 @@ class JobController extends Controller
 
             $jobs = Job::latest()->paginate(20);
             return view('jobs.alljobs',compact('jobs'));
+        }
+
+
     }
 
+    
 
-}
-
-
-public function pdf_order($id)
+    public function pdf_order($id)
     {
         
         $jobs = DB::select('select * from vw_order where id = :id', ['id' => $id]);
