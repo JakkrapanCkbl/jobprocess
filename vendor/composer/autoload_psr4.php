@@ -65,7 +65,7 @@ return array(
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
     'JakubOnderka\\PhpConsoleHighlighter\\' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor\\' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
-    'Intervention\\Image\\' => array($vendorDir . '/intervention/image/src/Intervention/Image'),
+    'Intervention\\Image\\' => array($vendorDir . '/intervention/image/src/Intervention/Image', $vendorDir . '/intervention/imagecache/src/Intervention/Image'),
     'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),
     'Hypweb\\Flysystem\\GoogleDrive\\' => array($vendorDir . '/nao-pon/flysystem-google-drive/src'),
     'Hypweb\\Flysystem\\Cached\\Extra\\' => array($vendorDir . '/nao-pon/flysystem-cached-extra/src'),
@@ -95,5 +95,6 @@ return array(
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
     'BC\\Laravel\\DropboxDriver\\' => array($vendorDir . '/benjamincrozat/laravel-dropbox-driver/src'),
     'App\\' => array($baseDir . '/app'),
+    'Alexusmai\\LaravelFileManager\\' => array($vendorDir . '/alexusmai/laravel-file-manager/src'),
     '' => array($vendorDir . '/nesbot/carbon/src'),
 );

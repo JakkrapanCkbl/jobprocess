@@ -51,7 +51,7 @@
 
     </script>
 
-<script type="text/javascript">	
+	<script type="text/javascript">	
     	$(document).ready(function(){
     		$('#amphur_name').keyup(function(){
     			var query=$(this).val();
@@ -75,7 +75,7 @@
     		$('#amphurList').fadeOut();
     		$('#amphur_name').val($(this).text());
     	});
-
     </script>
+
 </body>
 </html>

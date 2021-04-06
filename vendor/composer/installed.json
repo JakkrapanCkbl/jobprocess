@@ -1,5 +1,63 @@
 [
     {
+        "name": "alexusmai/laravel-file-manager",
+        "version": "v2.5.4",
+        "version_normalized": "2.5.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/alexusmai/laravel-file-manager.git",
+            "reference": "1ad25434eb321cc208dbd3cecca504bd4f774b57"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/alexusmai/laravel-file-manager/zipball/1ad25434eb321cc208dbd3cecca504bd4f774b57",
+            "reference": "1ad25434eb321cc208dbd3cecca504bd4f774b57",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "ext-zip": "*",
+            "intervention/image": "^2.4",
+            "intervention/imagecache": "^2.3",
+            "laravel/framework": "^5.5|^6.0|^7.0|^8.0",
+            "league/flysystem": "^1.0",
+            "php": ">=7.1.0"
+        },
+        "time": "2021-03-31T17:42:31+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Alexusmai\\LaravelFileManager\\FileManagerServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Alexusmai\\LaravelFileManager\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aleksandr Manekin",
+                "email": "alexusmai@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "File manager for Laravel",
+        "homepage": "https://github.com/alexusami/laravel-file-manager",
+        "keywords": [
+            "file",
+            "laravel",
+            "manager"
+        ]
+    },
+    {
         "name": "barryvdh/laravel-debugbar",
         "version": "v3.2.9",
         "version_normalized": "3.2.9.0",
@@ -1550,6 +1608,62 @@
             "laravel",
             "thumbnail",
             "watermark"
+        ]
+    },
+    {
+        "name": "intervention/imagecache",
+        "version": "2.4.2",
+        "version_normalized": "2.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Intervention/imagecache.git",
+            "reference": "d3dadc8052702805ba2b8ffb11e0b05c1f5d2873"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Intervention/imagecache/zipball/d3dadc8052702805ba2b8ffb11e0b05c1f5d2873",
+            "reference": "d3dadc8052702805ba2b8ffb11e0b05c1f5d2873",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/cache": "~4|~5|~6|~7",
+            "illuminate/filesystem": "~4|~5|~6|~7",
+            "intervention/image": "dev-master|~2,>=2.2.0",
+            "jeremeamia/superclosure": "~1|~2",
+            "nesbot/carbon": "^1.26.3 || ^2.0",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.2",
+            "phpunit/phpunit": "3.*"
+        },
+        "time": "2020-07-05T18:27:20+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Intervention\\Image\\": "src/Intervention/Image"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Oliver Vogel",
+                "email": "oliver@olivervogel.net",
+                "homepage": "http://olivervogel.net/"
+            }
+        ],
+        "description": "Caching extension for the Intervention Image Class",
+        "homepage": "http://image.intervention.io",
+        "keywords": [
+            "cache",
+            "gd",
+            "image",
+            "imagick",
+            "laravel"
         ]
     },
     {
