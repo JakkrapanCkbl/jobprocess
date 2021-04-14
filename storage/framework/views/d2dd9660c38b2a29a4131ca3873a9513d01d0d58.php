@@ -157,8 +157,8 @@
                 </div>
                   <div class="d-flex row justify-content-center justify-content-md-start">
                     
-                    <div class="mr-3"><span class="fas fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e($job->marketvalue); ?> บาท</div>
-                    <div class="mr-3"><span class="far fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e($job->assessmentvalue); ?> บาท / ตร.ม.</div>
+                    <div class="mr-3"><span class="fas fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e(number_format($job->marketvalue)); ?> บาท</div>
+                    <div class="mr-3"><span class="far fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e(number_format($job->assessmentvalue)); ?> บาท / ตร.ม.</div>
                     
                   </div>
 

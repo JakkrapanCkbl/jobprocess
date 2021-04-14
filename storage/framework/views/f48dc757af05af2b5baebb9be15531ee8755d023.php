@@ -22,7 +22,7 @@
         </div>
         
     </div>
-    <div class="form-row justify-content-center">
+    <!-- <div class="form-row justify-content-center">
         <div class="form-group col-md-8">
             <label for="image_label">Image</label>
             <div class="input-group">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <div class="container">
