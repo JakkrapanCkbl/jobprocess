@@ -23,7 +23,6 @@
           </div>
           <img src="{{asset('external/images/img_5.jpg')}}" style="width: 100%;">
           
-
         
           <!--แสดงเมนู ย่อย--->
           <div class=" col-lg-12 mt-4 mb-4">
