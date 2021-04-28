@@ -74,15 +74,31 @@
                     ?>
                     @foreach($fileList as $file)
                         @if ($loop->first)
-                            <div class="carousel-item carousel-item-min active">
+                     
+                      
+                            @if (substr($file,-3) === 'pdf')
+                                <div class="carousel-item carousel-item-min active">
                                 
+                                <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
+                                  <P ALIGN=CENTER>
+                                  <span style="font-size: 3em; color: Tomato;">
+                                      <i class="fas fa-file-pdf"></i>
+                                      {{ substr($file,-3) }}
+                                    </span>
+                                  </p>
+                                  </a>
+                                </div>
+                            @else
+                              <div class="carousel-item carousel-item-min active popup-gallery">
                                 <a href="{{ asset($file) }}" target="_blank">
                                     <img class="d-block w-100" src="{{ asset($file) }}" alt="First slide">
                                 </a>
-                                
-                            </div>
+                              </div>
+                            @endif
+
+                            
                         @else
-                            <div class="carousel-item carousel-item-min">
+                            <div class="carousel-item carousel-item-min popup-gallery">
                                 <a href="{{ asset($file) }}" target="_blank">
                                     <img class="d-block w-100" src="{{ asset($file) }}" alt="Sec slide">
                                 </a>
@@ -573,6 +589,8 @@
     document.getElementById('image_label').value = $url;
   }
 </script>
+
+
 
 </body>
 

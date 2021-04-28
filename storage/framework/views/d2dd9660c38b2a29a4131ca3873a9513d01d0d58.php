@@ -74,15 +74,32 @@
                     ?>
                     <?php $__currentLoopData = $fileList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($loop->first): ?>
-                            <div class="carousel-item carousel-item-min active">
+                     
+                      
+                            <?php if(substr($file,-3) === 'pdf'): ?>
+                                <div class="carousel-item carousel-item-min active">
                                 
+                                <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
+                                  <P ALIGN=CENTER>
+                                  <span style="font-size: 3em; color: Tomato;">
+                                      <i class="fas fa-file-pdf"></i>
+                                      <?php echo e(substr($file,-3)); ?>
+
+                                    </span>
+                                  </p>
+                                  </a>
+                                </div>
+                            <?php else: ?>
+                              <div class="carousel-item carousel-item-min active popup-gallery">
                                 <a href="<?php echo e(asset($file)); ?>" target="_blank">
                                     <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="First slide">
                                 </a>
-                                
-                            </div>
+                              </div>
+                            <?php endif; ?>
+
+                            
                         <?php else: ?>
-                            <div class="carousel-item carousel-item-min">
+                            <div class="carousel-item carousel-item-min popup-gallery">
                                 <a href="<?php echo e(asset($file)); ?>" target="_blank">
                                     <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="Sec slide">
                                 </a>
@@ -275,7 +292,7 @@
                     <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc<?php echo e($job->id); ?>" aria-expanded="false" aria-controls="collapse" title="open file"></div> -->
                    
                     <div class="fa-icon"><a onclick="popupCenter('/file-manager/fm-button', 'fm',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div>
-                    <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?=str_replace('/', '_', $job->jobcode)?>/report/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div>
+                    <!-- <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?=str_replace('/', '_', $job->jobcode)?>/report/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
                     <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?=str_replace('/', '_', $job->jobcode)?>/image/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Green;" class="far fa-images" title="open job folders"></a></div>
                     <div class="fa-icon "><a onclick="popupCenter('file:///C:\test\', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div>
                     <div class="col-md-1"></div>
@@ -573,6 +590,8 @@
     document.getElementById('image_label').value = $url;
   }
 </script>
+
+
 
 </body>
 
