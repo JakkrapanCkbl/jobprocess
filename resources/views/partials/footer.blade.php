@@ -76,9 +76,8 @@
   
   <script src="{{asset('external/js/mediaelement-and-player.min.js')}}"></script>
   <script src="{{asset('external/js/main.js')}}"></script>
- 
   
-
+  
 
  
   <script>

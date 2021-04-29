@@ -20,7 +20,17 @@
   <link rel="stylesheet" type="text/css" href="{{asset('dropzone/dist/min/dropzone.min.css')}}">
   <!-- JS -->
   <script src="{{asset('dropzone/dist/min/dropzone.min.js')}}" type="text/javascript"></script>
-
+  <!-- pdfobject -->
+  <script src="{{asset('external/js/pdfobject.js')}}"></script>
+  <style>
+.pdfobject-container {
+    max-width: 100%;
+	width: 350px;
+	height: 230px;
+	border: 10px solid rgba(0,0,0,.2);
+	margin: 0;
+}
+</style>
 </head>
 
 <body>
@@ -74,20 +84,30 @@
                     ?>
                     @foreach($fileList as $file)
                         @if ($loop->first)
-                     
-                      
+                        
                             @if (substr($file,-3) === 'pdf')
-                                <div class="carousel-item carousel-item-min active">
-                                
-                                <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
-                                  <P ALIGN=CENTER>
-                                  <span style="font-size: 3em; color: Tomato;">
-                                      <i class="fas fa-file-pdf"></i>
-                                      {{ substr($file,-3) }}
-                                    </span>
-                                  </p>
+                                <!-- <div class="carousel-item carousel-item-min active">
+                                  <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
+                                    <P ALIGN=CENTER>
+                                      <span style="font-size: 3em; color: Tomato;">
+                                        <i class="fas fa-file-pdf"></i>
+                                        {{ substr($file,-3) }}
+                                      </span>
+                                    </p>
                                   </a>
+                                </div> -->
+                                <div class="carousel-item carousel-item-min active">
+                                <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
+                                    <P ALIGN=CENTER>
+                                      <span style="font-size: 3em; color: Tomato;">
+                                        <div class="pdfobject-com" id="example1"></div>
+                                        <script>PDFObject.embed("{{asset($file)}}", "#example1", {page: "1"});</script>
+                                      </span>
+                                    </p>
+                                  </a>
+                                  
                                 </div>
+                                
                             @else
                               <div class="carousel-item carousel-item-min active popup-gallery">
                                 <a href="{{ asset($file) }}" target="_blank">
@@ -95,14 +115,28 @@
                                 </a>
                               </div>
                             @endif
-
-                            
                         @else
-                            <div class="carousel-item carousel-item-min popup-gallery">
-                                <a href="{{ asset($file) }}" target="_blank">
-                                    <img class="d-block w-100" src="{{ asset($file) }}" alt="Sec slide">
-                                </a>
-                            </div>
+                            @if (substr($file,-3) === 'pdf')
+                              <div class="carousel-item carousel-item-min">
+                                  <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
+                                        <P ALIGN=CENTER>
+                                          <span style="font-size: 3em; color: Tomato;">
+                                            <!-- <i class="fas fa-file-pdf"></i>
+                                            {{ substr($file,-3) }} -->
+                                            <div class="pdfobject-com" id="example2"></div>
+                                            <script>PDFObject.embed("{{asset($file)}}", "#example2", {page: "1"});</script>
+                                          </span>
+                                        </p>
+                                  </a>
+                              </div>
+                            @else
+                              <div class="carousel-item carousel-item-min popup-gallery">
+                                  <a href="{{ asset($file) }}" target="_blank">
+                                      <img class="d-block w-100" src="{{ asset($file) }}" alt="Sec slide">
+                                  </a>
+                              </div>
+                            @endif
+                            
                             <a class="carousel-control-prev" href="#carousel{{$job->id}}" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
@@ -589,6 +623,7 @@
     document.getElementById('image_label').value = $url;
   }
 </script>
+
 
 
 
