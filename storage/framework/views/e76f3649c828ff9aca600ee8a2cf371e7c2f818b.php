@@ -76,10 +76,8 @@
   
   <script src="<?php echo e(asset('external/js/mediaelement-and-player.min.js')); ?>"></script>
   <script src="<?php echo e(asset('external/js/main.js')); ?>"></script>
-  <script src="<?php echo e(asset('external/js/pdfobject.js')); ?>"></script>
   
   
-
 
  
   <script>
