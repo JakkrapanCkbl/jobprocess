@@ -75,7 +75,7 @@
               }
             },
             allowedFileExtensions:['pdf','jpg','pdf','gif'],
-            maxFileSize:100000
+            maxFileSize:1000000
         });
 
   </script>
