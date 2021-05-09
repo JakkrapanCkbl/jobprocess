@@ -10,6 +10,7 @@ use App\Job;
 use App\User;
 use PDFbarry;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
 
 class JobController extends Controller
 {
@@ -18,10 +19,11 @@ class JobController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
-        
+    public function index()
+    {
+
         $adminRole = Auth::user()->roles()->pluck('name');
-        if($adminRole->contains('admin')){
+        if ($adminRole->contains('admin')) {
             //return redirect('/admininput');
             //$jobs = Job::latest()->limit(10)->get();
             //$jobs = Job::with('showavatar')->latest()->limit(10)->get();
@@ -29,65 +31,94 @@ class JobController extends Controller
             //$jobs = DB::select('select * from vw_order order by id desc LIMIT 100');
             //return view('welcomedido',compact('jobs'));
             $jobs = DB::select('select * from vw_order order by id desc LIMIT 10');
-            return view('welcome',compact('jobs'));
+            return view('welcome', compact('jobs'));
         }
 
         //$jobs = Job::all();
         //$jobs = Job::paginate(10);
         //$jobs = Job::latest()->limit(10)->get();
         //$jobs = Job::with('valuer')->get();
-       
+
         $jobs = DB::select('select * from vw_order order by id desc LIMIT 10');
-        return view('welcome',compact('jobs'));
+        return view('welcome', compact('jobs'));
     }
 
 
-    
-    public function show($id,Job $job){
-        $job=Job::find($id);
+
+    public function show($id, Job $job)
+    {
+        $job = Job::find($id);
         //dd($job->jobcode);
         //return view('jobs.show',compact('job'));
         //return view('home');
-        return view('jobs.show3',compact('job'));
-
+        return view('jobs.show3', compact('job'));
     }
 
-    public function downloadPDF($id){      
-        $job = job::find($id); 
+    public function downloadPDF($id)
+    {
+        $job = job::find($id);
         //dd($job);            
-        $view = \View::make('test.pdf',compact('job'));              
-        $html = $view->render();              
-        $pdf = new PDF();              
-        $pdf::SetTitle('Report');              
-        $pdf::AddPage();              
-        $pdf::SetFont('freeserif', '', 10);              
-        $pdf::writeHTML($html, true, false, true, false, '');              
-        $pdf::Output('report.pdf');            
+        $view = \View::make('test.pdf', compact('job'));
+        $html = $view->render();
+        $pdf = new PDF();
+        $pdf::SetTitle('Report');
+        $pdf::AddPage();
+        $pdf::SetFont('freeserif', '', 10);
+        $pdf::writeHTML($html, true, false, true, false, '');
+        $pdf::Output('report.pdf');
     }
 
 
 
-    public function allJobs(Request $request){
-       
-     //front search
+    public function allJobs(Request $request)
+    {
+
+        //front search
         $search = $request->get('search');
         $replaced = str_replace(' ', '%', $search);
-        if($search){
 
-           //$jobs = Job::where('projectname','LIKE','%'.$replaced.'%')->orderBy('id', 'DESC')->paginate(10);
-           //$jobs = DB::table('vw_order')->where('HideResult','LIKE','%'.$replaced.'%')->get();
-           //$jobs = DB::table('vw_order')->get();
-           //dd($jobs);
+        $test1 = $request->get('test1');
+        $price_from1 = $request->get('pricefrom-slider-01');
+        $price_to1 = $request->get('priceto-slider-01');
 
-           $jobs = DB::table('vw_order')
-           ->where('HideResult','LIKE','%'.$replaced.'%')
-           ->orderBy('id', 'DESC')
-           ->paginate(10);
-        //    dd($jobs);
+        $proptype = Input::get('prop-type-radio');
+        // dd($proptype, $price_from1, $price_to1);
 
-        //    $jobs = Job::where('projectname','LIKE','%'.$replaced.'%')
-        //    ->orWhere('proplocation','LIKE','%'.$replaced.'%')
-        //    ->orderBy('id', 'DESC')->paginate(10);
+        $jobs = DB::table('jobs')
+            ->whereBetween('eva_price_m2', [$price_from1, $price_to1])
+            ->orderBy('eva_price_m2', 'ASC')
+            ->paginate(100);
+
+        // dd($price_from1, $price_to1);
+        // dd($jobs);
+ 
+        //*************************************************************************************************//
+        // หน้าที่เกี่ยวข้อง hero.blade.php , JobController.php , views\jobs\alljobs.blade.php , external2\js\rangeslider.js ( line 66~)
+         
+        // todo: ทำลำดับ ช่อง search กับ adv search ให้พ้องกัน
+        // ผล search ออกที่หน้า alljobs.blade.php 
+        // todo:  แก้ alljobs.blade.php ที่ทำหน้ารองรับแค่ table vw_orders ไม่ใช่ jobs ที่ข้อมูล valuer, headvaluer
+
+        //**************************************************************************************************//
+        // ทำ return ดักไว้ก่อนช่อง search
+        return view('jobs.alljobs', compact('jobs'));
+
+        if ($search) {
+
+            //$jobs = Job::where('projectname','LIKE','%'.$replaced.'%')->orderBy('id', 'DESC')->paginate(10);
+            //$jobs = DB::table('vw_order')->where('HideResult','LIKE','%'.$replaced.'%')->get();
+            //$jobs = DB::table('vw_order')->get();
+            //dd($jobs);
+
+            $jobs = DB::table('vw_order')
+                ->where('HideResult', 'LIKE', '%' . $replaced . '%')
+                ->orderBy('id', 'DESC')
+                ->paginate(10);
+
+
+            //    $jobs = Job::where('projectname','LIKE','%'.$replaced.'%')
+            //    ->orWhere('proplocation','LIKE','%'.$replaced.'%')
+            //    ->orderBy('id', 'DESC')->paginate(10);
 
             // $jobs = DB::table('jobs')
             // ->leftJoin('users', 'users.id', '=', 'jobs.valuer')
@@ -97,35 +128,35 @@ class JobController extends Controller
             // ->orWhere('jobs.proplocation','LIKE','%'.$replaced.'%')
             // ->orderBy('jobs.id', 'DESC')->get();
             // dd($jobs);
-
-           return view('jobs.alljobs',compact('jobs'));
-
         }
 
+        $pricefrom = 250000;
+        $priceto = 700000;
+        $jobs = Job::whereBetween('eva_price', [$pricefrom, $priceto])
+            ->orderBy('id', 'DESC')
+            ->paginate(10);
 
-       $keyword = $request->get('position');      
-       $address = $request->get('address');
-       if($keyword||$address){
-        $jobs = Job::where('jobcode','LIKE','%'.$keyword.'%')               
-                ->Where('projectname','LIKE','%'.$address.'%')
+        $keyword = $request->get('position');
+        $address = $request->get('address');
+        if ($keyword || $address) {
+            $jobs = Job::where('jobcode', 'LIKE', '%' . $keyword . '%')
+                ->Where('projectname', 'LIKE', '%' . $address . '%')
                 ->paginate(20);
-                return view('jobs.alljobs',compact('jobs'));
-       }else{
+        } else {
 
             $jobs = Job::latest()->paginate(20);
-            return view('jobs.alljobs',compact('jobs'));
+        }
+
+        return view('jobs.alljobs', compact('jobs'));
     }
 
 
-}
-
-
-public function pdf_order($id)
+    public function pdf_order($id)
     {
-        
+
         $jobs = DB::select('select * from vw_order where id = :id', ['id' => $id]);
         //dd($jobs);
-        $pdf = PDFbarry::loadView('pdf_forms.order', compact('jobs'));    
+        $pdf = PDFbarry::loadView('pdf_forms.order', compact('jobs'));
         return $pdf->stream();
     }
 
@@ -137,20 +168,19 @@ public function pdf_order($id)
         $vat = $money * 0.07;
         $total = $money + $vat;
         $aa = $this->bahtText($total);
-        $pdf = PDFbarry::loadView('invoice.pdf_invoice', compact('invoices','aa'));        
+        $pdf = PDFbarry::loadView('invoice.pdf_invoice', compact('invoices', 'aa'));
         return $pdf->stream();
-
     }
 
     public function pdf_receipt($id)
     {
-        
+
         $receipts = DB::select('select * from invoice where id = :id', ['id' => $id]);
         $money = $receipts[0]->amountjob;
         $vat = $money * 0.07;
         $total = $money + $vat;
         $aa = $this->bahtText($total);
-        $pdf = PDFbarry::loadView('invoice.pdf_receipt', compact('receipts','aa'));    
+        $pdf = PDFbarry::loadView('invoice.pdf_receipt', compact('receipts', 'aa'));
         return $pdf->stream();
     }
 
@@ -169,13 +199,13 @@ public function pdf_order($id)
         $satang = $this->convert($fraction);
 
         $output = $amount < 0 ? 'ลบ' : '';
-        $output .= $baht ? $baht.'บาท' : '';
-        $output .= $satang ? $satang.'สตางค์' : 'ถ้วน';
+        $output .= $baht ? $baht . 'บาท' : '';
+        $output .= $satang ? $satang . 'สตางค์' : 'ถ้วน';
 
-        return $baht.$satang === '' ? 'ศูนย์บาทถ้วน' : $output;
+        return $baht . $satang === '' ? 'ศูนย์บาทถ้วน' : $output;
     }
 
-    
+
     public function convert($number): string
     {
         $values = ['', 'หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า'];
@@ -186,11 +216,11 @@ public function pdf_order($id)
 
         foreach (str_split(strrev($number)) as $place => $value) {
             if ($place % 6 === 0 && $place > 0) {
-                $output = $places[6].$output;
+                $output = $places[6] . $output;
             }
 
             if ($value !== '0') {
-                $output = $values[$value].$places[$place % 6].$output;
+                $output = $values[$value] . $places[$place % 6] . $output;
             }
         }
 
@@ -225,7 +255,7 @@ public function pdf_order($id)
                 // Uploading file to given path
                 $request->file('file')->move($destinationPath, $fileName);
             }
-            
+
             // if (file_exists(public_path($destinationPath . "/" . explode(".", $fileName)[0] . ".pdf"))) {
             //     //convert 1st page of PDF to .jpg using Spatie
             //     $this->pdf_to_jpg($destinationPath, $fileName);
@@ -241,7 +271,7 @@ public function pdf_order($id)
 
     public function show_allfiles()
     {
-        
+
         // $path = public_path('storage/images/users');
         // $files = File::allFiles($path);
         // dd($files);
@@ -252,12 +282,10 @@ public function pdf_order($id)
         dd($files);
     }
 
-    public function showjoblist(){
-      
-            $jobs = DB::select('select * from vw_order order by id desc LIMIT 100');  
-            return view('welcomedido',compact('jobs'));
-        }
+    public function showjoblist()
+    {
 
-    
-
+        $jobs = DB::select('select * from vw_order order by id desc LIMIT 100');
+        return view('welcomedido', compact('jobs'));
+    }
 }

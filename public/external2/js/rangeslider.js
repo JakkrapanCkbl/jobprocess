@@ -1,4 +1,6 @@
-(function ($) {
+// const { debounce } = require("lodash"); //????? Not Sure How's Its bug.
+
+(function($) {
     "use strict";
     $("#range_01").ionRangeSlider();
 
@@ -59,78 +61,35 @@
         disable: true
     });
 
-    //Advance Year Search @DocSearch Page
-    var $range = $(".js-range-slider"),
-        instance,
-        min = 1990,
-        max = new Date().getFullYear(), //max value as Current Year
-        from = min,
-        to = max,
-        $from_input = $("input[name = js-input-from]"),
-        $to_input = $("input[name = js-input-to]");
 
-    $range.ionRangeSlider({
-        type: "double",
-        grid: true,
-        min: min,
-        max: max,
-        from: min,
-        to: max,
-        onStart: updateInputs,
-        onChange: updateInputs
-    });
+    //ADV. Search V.2
+    var max_int = "999999999999";
+    var condo_range_min = [0, 50000, 70000, 100000, 150000, 200000, 300000];
+    var condo_range_max = [50000, 70000, 100000, 150000, 200000, 300000, max_int];
+    var house_range_min = [0, 3000000, 5000000, 10000000, 20000000, 40000000];
+    var house_range_max = [3000000, 5000000, 10000000, 20000000, 40000000, max_int];
+    var townhome_range_min = [0, 2000000, 4000000, 7000000, 15000000, 30000000];
+    var townhome_range_max = [2000000, 4000000, 7000000, 15000000, 30000000, max_int];
+    var wasteland_range_min = [0, 3000000, 10000000, 50000000, 100000000, 500000000];
+    var wasteland_range_max = [3000000, 10000000, 50000000, 100000000, 500000000, max_int];
+    var wasteland_area_range_min = [0, 1, 10, 30, 50, 100];
+    var wasteland_area_range_max = [1, 10, 30, 50, 100, max_int];
 
-    instance = $range.data("ionRangeSlider");
+    var condo_range_grade = ["F : น้อยกว่า 50,000", "E : 50,000 - 70,000", "D : 70,000 - 100,000", "C : 100,000 - 150,000", "B : 150,000-200,000", "A : 200,000 - 300,000", "A+ : มากกว่า 300,000"];
+    var house_range_grade = ["F : น้อยกว่า 3,000,000", "E : 3,000,000 - 5,000,000", "D : 5,000,000 - 10,000,000", "C : 10,000,000 - 20,000,000", "B : 20,000,000 - 40,000,000", "A : มากกว่า 40,000,000"];
+    var townhome_range_grade = ["F : น้อยกว่า 2,000,000", "E : 2,000,000 - 4,000,000", "D : 4,000,000 - 7,000,000", "C : 7,000,000 - 15,000,000", "B : 15,000,000 - 30,000,000", "A : มากกว่า 30,000,000"];
+    var wasteland_range_grade = ["F : น้อยกว่า 3,000,000", "E : 3,000,000 - 10,000,000", "D : 10,000,000 - 50,000,000", "C : 50,000,000 - 100,000,000", "B : 100,000,000 - 500,000,000", "A : มากกว่า 500,000,000"]
+    var wasteland_area_range_grade = ["F : น้อยกว่า 1 ไร่", "E : 1 - 10 ไร่", "D : 10 - 30 ไร่", "C : 30 - 50 ไร่", "B : 50 - 100 ไร่", "A : มากกว่า 100 ไร่"]
 
-    function updateInputs(data) {
-        var from = data.from;
-        var to = data.to;
-        $from_input.prop("value", from);
-        $to_input.prop("value", to);
-    }
+    var array_range = [condo_range_grade, house_range_grade, townhome_range_grade, wasteland_range_grade];
 
-    //input value validation set to at min or max
-    $from_input.on("input", function () {
-        var val = $(this).prop("value");
-
-        // validate
-        if (val < min) {
-            val = min;
-        } else if (val > to) {
-            val = to;
-        }
-
-        instance.update({
-            from: val
-        });
-    });
-
-    $to_input.on("input", function () {
-        var val = $(this).prop("value");
-
-        // validate
-        if (val < from) {
-            val = from;
-        } else if (val > max) {
-            val = max;
-        }
-
-        instance.update({
-            to: val
-        });
-    });
-    //End of Advance Year Search @DocSearch Page
-
-
-    //Advance Search @Hero-Home Page
     var $range01 = $(".js-range-slider-01"),
         min = 0,
-        max = 3,
+        max = 7,
         from = min,
         to = max,
-        $from_input = $("input[name = pricefrom]"),
-        $to_input = $("input[name = priceto]"),
-        $pricerange_input = $("input[name = pricerange]");
+        $from_input01 = $("input[name = pricefrom-slider-01]"),
+        $to_input01 = $("input[name = priceto-slider-01]");
 
     $range01.ionRangeSlider({
         type: "double",
@@ -139,39 +98,117 @@
         max: max,
         from: min,
         to: max,
-        onStart: updateInputs01,
-        onChange: updateInputs01,
-        values: [
-            "Below 1 M", "1M - 2M", "2M - 4M", "Above 4M"
-        ]
+        onStart: updateInputs_Price_Range01,
+        onChange: updateInputs_Price_Range01,
+        values: array_range[0],
     });
 
-    function updateInputs01(data) {
-        var from = data.from;
-        var to = data.to;
-        var printout = "";
-
-        printout = "ช่วงราคา";
-        if (from == to) {
-            if (from == 0) { printout += "น้อยกว่า 1M"; }
-            else if (from == 1) { printout += "ระหว่าง 1M - 2M"; }
-            else if (from == 2) { printout += "ระหว่าง 2M - 4M"; }
-            else if (from == 3) { printout += "มากกว่า 4M"; }
-        }
-        else {
-            if (from == 0) { printout += "น้อยกว่า 1M "; }
-            else if (from == 1) { printout += "ระหว่าง 1M "; }
-            else if (from == 2) { printout += "ระหว่าง 2M "; }
-            if (to == 1) { printout += "ถึง 2M"; }
-            else if (to == 2) { printout += "ถึง 4M"; }
-            else if (to == 3) { printout += "ถึงมากกว่า 4M"; }
-        }
-        $from_input.prop("value", from);
-        $to_input.prop("value", to);
-        $pricerange_input.prop("value", printout);
+    function updateInputs_Price_Range01(data) {
+        $from_input01.prop("value", condo_range_min[data.from]);
+        $to_input01.prop("value", condo_range_max[data.to]);
     }
+
+    var $range02 = $(".js-range-slider-02"),
+        min = 0,
+        max = 6,
+        from = min,
+        to = max,
+        $from_input02 = $("input[name = pricefrom-slider-02]"),
+        $to_input02 = $("input[name = priceto-slider-02]");
+
+    $range02.ionRangeSlider({
+        type: "double",
+        grid: true,
+        min: min,
+        max: max,
+        from: min,
+        to: max,
+        onStart: updateInputs_Price_Range02,
+        onChange: updateInputs_Price_Range02,
+        values: array_range[1],
+    });
+
+    function updateInputs_Price_Range02(data) {
+        $from_input02.prop("value", house_range_min[data.from]);
+        $to_input02.prop("value", house_range_max[data.to]);
+    }
+
+    var $range03 = $(".js-range-slider-03"),
+        min = 0,
+        max = 6,
+        from = min,
+        to = max,
+        $from_input03 = $("input[name = pricefrom-slider-03]"),
+        $to_input03 = $("input[name = priceto-slider-03]");
+
+    $range03.ionRangeSlider({
+        type: "double",
+        grid: true,
+        min: min,
+        max: max,
+        from: min,
+        to: max,
+        onStart: updateInputs_Price_Range03,
+        onChange: updateInputs_Price_Range03,
+        values: array_range[2],
+    });
+
+    function updateInputs_Price_Range03(data) {
+        $from_input03.prop("value", townhome_range_min[data.from]);
+        $to_input03.prop("value", townhome_range_max[data.to]);
+    }
+
+    var $range04 = $(".js-range-slider-04"),
+        min = 0,
+        max = 6,
+        from = min,
+        to = max,
+        $from_input04 = $("input[name = pricefrom-slider-04]"),
+        $to_input04 = $("input[name = priceto-slider-04]");
+
+    $range04.ionRangeSlider({
+        type: "double",
+        grid: true,
+        min: min,
+        max: max,
+        from: min,
+        to: max,
+        onStart: updateInputs_Price_Range04,
+        onChange: updateInputs_Price_Range04,
+        values: array_range[3],
+    });
+
+    function updateInputs_Price_Range04(data) {
+        $from_input04.prop("value", wasteland_range_min[data.from]);
+        $to_input04.prop("value", wasteland_range_max[data.to]);
+    }
+
+    var $range05 = $(".js-range-slider-05"),
+        min = 0,
+        max = 6,
+        from = min,
+        to = max,
+        $from_input05 = $("input[name = areafrom]"),
+        $to_input05 = $("input[name = areato]");
+
+    $range05.ionRangeSlider({
+        type: "double",
+        grid: true,
+        min: min,
+        max: max,
+        from: min,
+        to: max,
+        onStart: updateInputs_Price_Range05,
+        onChange: updateInputs_Price_Range05,
+        values: wasteland_area_range_grade,
+    });
+
+    function updateInputs_Price_Range05(data) {
+        $from_input05.prop("value", wasteland_area_range_min[data.from]);
+        $to_input05.prop("value", wasteland_area_range_max[data.to]);
+    }
+
+
     //End of Advance Search @Hero-Home Page
-
-
 
 })(jQuery);

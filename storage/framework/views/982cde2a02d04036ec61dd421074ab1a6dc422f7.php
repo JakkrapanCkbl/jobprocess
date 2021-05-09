@@ -182,7 +182,8 @@
             </div>
             <div class="d-flex row justify-content-center justify-content-md-start">
                 
-                <div class="mr-3"><span class="fas fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e($job->marketvalue); ?> บาท</div>
+                <!-- <div class="mr-3"><span class="fas fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e($job->marketvalue); ?> บาท</div> -->
+                <div class="mr-3"><span class="fas fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e($job->eva_price_m2); ?> บาท/ตร.ม.</div>
                 <div class="mr-3"><span class="far fa-money-bill-alt text-primary"></span>&nbsp;20,000 ตร.ม.</div>
                 
             </div>
@@ -400,30 +401,22 @@
             <div class="job-category align-self-center">
             
                 <?php if($job->percentfinish == 100): ?>
-                    <img src="<?php echo e(asset($job->ValuerAvatar)); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e(asset($job->HeadAvatar)); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                     <br>
                     <span class="badge badge-pill badge-primary">  
                         
                         <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                     </span>
                 <?php elseif($job->percentfinish >= 50 and $job->percentfinish < 100): ?>
-                    <img src="<?php echo e(asset($job->ValuerAvatar)); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e(asset($job->HeadAvatar)); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                     <br>
                     <span class="badge badge-pill badge-warning">
                         <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                     </span>
                 <?php elseif($job->percentfinish == 0): ?>
-                    <img src="<?php echo e(asset($job->ValuerAvatar)); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e(asset($job->HeadAvatar)); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                     <br>
                     <span class="badge badge-pill badge-danger">
-                        0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                        &nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                     </span>                
                 <?php else: ?>
-                    <img src="<?php echo e(asset($job->ValuerAvatar)); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e(asset($job->HeadAvatar)); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                     <br>
                     <span class="badge badge-pill badge-danger">
                         <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
