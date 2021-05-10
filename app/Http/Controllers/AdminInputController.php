@@ -196,12 +196,15 @@ class AdminInputController extends Controller
             'deedno' => $request->get('deedno'),
             'deedtumbon' => $request->get('deedtumbon'),
             'deedamphur' => $request->get('deedamphur'),
+            'marketvalue' => $request->get('marketvalue'),
+            'marketvalue_unit' => $request->get('marketvalue_unit'),
         ]);
         //}
 
         //$this->updateAllExceptImage($request,$id);
-        //return redirect()->back()->with('message','Post updated successfully');
-        return redirect('/dashboard')->with('message', 'Post created successfully');
+        // return redirect()->back()->with('message','Post updated successfully');
+        // return redirect('/dashboard')->with('message', 'Post created successfully');
+        return redirect('/')->with('message', 'Post created successfully');
     }
 
 

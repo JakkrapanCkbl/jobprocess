@@ -23,23 +23,23 @@
   <!-- pdfobject -->
   <script src="<?php echo e(asset('external/js/pdfobject.js')); ?>"></script>
   <style>
-.pdfobject-container {
-    max-width: 100%;
-	  width: 350px;
-	  max-height: 100%;
-    height: 215px;
-	  border: 10px solid rgba(0,0,0,.2);
-	  margin: auto;
-    padding: auto;
-}
-</style>
+    .pdfobject-container {
+      max-width: 100%;
+      width: 350px;
+      max-height: 100%;
+      height: 190px;
+      border: 10px solid rgba(0, 0, 0, .2);
+      margin: auto;
+      padding: auto;
+    }
+  </style>
 </head>
 
 <body>
 
   <?php echo $__env->make('partials.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <?php echo $__env->make('partials.hero', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-  
+
   <!-- <?php echo $__env->make('partials.category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> -->
   <div class="site-section bg-light">
     <div class="container">
@@ -59,7 +59,7 @@
 
               <!-- Carousel Picture Display -->
               <div class="col-md-4">
-              
+
 
                 <div id="carousel<?php echo e($job->id); ?>" class="carousel slide" data-interval="false">
                   <style>
@@ -81,58 +81,66 @@
 
                   <div class="carousel-inner">
                     <?php
-                        $jobcode = str_replace('/', '_', $job->jobcode);
-                        $fileList = glob('storage/project_reports/' . $jobcode . '/*.*');
+                    $jobcode = str_replace('/', '_', $job->jobcode);
+                    $fileList = glob('storage/project_reports/' . $jobcode . '/*.*');
                     ?>
                     <?php $__currentLoopData = $fileList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php if($loop->first): ?>
-                            <?php if(substr($file,-3) === 'pdf'): ?>
-                                <div class="carousel-item carousel-item-min active">
-                                  <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
-                                      <P ALIGN=CENTER>
-                                        <span style="font-size: 3em; color: Tomato;">
-                                          <div class="pdfobject-com" id="example1"></div>
-                                          <script>PDFObject.embed("<?php echo e(asset($file)); ?>", "#example1", {page: "1"});</script>
-                                        </span>
-                                      </p>
-                                    </a>
-                                </div>
-                            <?php else: ?>
-                              <div class="carousel-item carousel-item-min active popup-gallery">
-                                <a href="<?php echo e(asset($file)); ?>" target="_blank">
-                                    <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="First slide">
-                                </a>
-                              </div>
-                            <?php endif; ?>
-                        <?php else: ?>
-                            <?php if(substr($file,-3) === 'pdf'): ?>
-                              <div class="carousel-item carousel-item-min">
-                                  <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
-                                    <P ALIGN=CENTER>
-                                      <span style="font-size: 3em; color: Tomato;">
-                                        <div class="pdfobject-com" id="example<?php echo e($loop->index); ?>"></div>
-                                        <script>PDFObject.embed("<?php echo e(asset($file)); ?>", "#example<?php echo e($loop->index); ?>", {page: "1"});</script>
-                                      </span>
-                                    </p>
-                                  </a>
-                              </div>
-                            <?php else: ?>
-                              <div class="carousel-item carousel-item-min popup-gallery">
-                                  <a href="<?php echo e(asset($file)); ?>" target="_blank">
-                                      <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="Sec slide">
-                                  </a>
-                              </div>
-                            <?php endif; ?>
-                            
-                            <a class="carousel-control-prev" href="#carousel<?php echo e($job->id); ?>" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carousel<?php echo e($job->id); ?>" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        <?php endif; ?>
+                    <?php if($loop->first): ?>
+                    <?php if(substr($file,-3) === 'pdf'): ?>
+                    <div class="carousel-item carousel-item-min active">
+                      <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
+                        <P ALIGN=CENTER>
+                          <span style="font-size: 3em; color: Tomato;">
+                            <div class="pdfobject-com" id="example<?php echo e($job->id . '_' . $loop->index); ?>"></div>
+                            <script>
+                              PDFObject.embed("<?php echo e(asset($file)); ?>", "#example<?php echo e($job->id . '_' . $loop->index); ?>", {
+                                page: "1"
+                              });
+                            </script>
+                          </span>
+                        </p>
+                      </a>
+                    </div>
+                    <?php else: ?>
+                    <div class="carousel-item carousel-item-min active popup-gallery">
+                      <a href="<?php echo e(asset($file)); ?>" target="_blank">
+                        <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="First slide">
+                      </a>
+                    </div>
+                    <?php endif; ?>
+                    <?php else: ?>
+                    <?php if(substr($file,-3) === 'pdf'): ?>
+                    <div class="carousel-item carousel-item-min">
+                      <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
+                        <P ALIGN=CENTER>
+                          <span style="font-size: 3em; color: Tomato;">
+                            <div class="pdfobject-com" id="example<?php echo e($job->id . '_' . $loop->index); ?>"></div>
+                            <script>
+                              PDFObject.embed("<?php echo e(asset($file)); ?>", "#example<?php echo e($job->id . '_' . $loop->index); ?>", {
+                                page: "1"
+                              });
+                            </script>
+                          </span>
+                        </p>
+                      </a>
+                    </div>
+                    <?php else: ?>
+                    <div class="carousel-item carousel-item-min popup-gallery">
+                      <a href="<?php echo e(asset($file)); ?>" target="_blank">
+                        <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="Sec slide">
+                      </a>
+                    </div>
+                    <?php endif; ?>
+
+                    <a class="carousel-control-prev" href="#carousel<?php echo e($job->id); ?>" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel<?php echo e($job->id); ?>" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                    <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
@@ -140,7 +148,7 @@
                 </div>
               </div>
 
-              
+
 
               <div class="job-details h-100">
                 <div class="p-3 align-self-center">
@@ -154,52 +162,52 @@
                       </a>
                     </div>
                     <?php if($job->urgent == 1): ?>
-                        <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">Urgent</span></div>
+                    <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">Urgent</span></div>
                     <?php endif; ?>
                     <?php if(empty(!$job->client)): ?>
-                        <div title="ส่งธนาคาร" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info"><?php echo e($job->client); ?></span></div>
+                    <div title="ส่งธนาคาร" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info"><?php echo e($job->client); ?></span></div>
                     <?php endif; ?>
                     <?php if($job->jobsize != "" && $job->jobsize != "-"): ?>
-                      <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info"><?php echo e($job->jobsize); ?></span></div>
+                    <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info"><?php echo e($job->jobsize); ?></span></div>
                     <?php endif; ?>
                     <!-- <?php if(empty(!$job->jobsize)): ?>              
                             <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info"><?php echo e($job->jobsize); ?></span></div>
                     <?php endif; ?> -->
                     <?php if($job->easydiff == "DIFF"): ?>
-                      <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">DIFF</span></div>
+                    <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">DIFF</span></div>
                     <?php endif; ?>
                     <!-- <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">Norm</span></div>
                     <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">Diff</span></div> -->
                     <?php if($job->withcd == 1): ?>
-                      <div class="mr-2"><span class="fas fa-compact-disc text-primary"></span>&nbsp;CD</div>
+                    <div class="mr-2"><span class="fas fa-compact-disc text-primary"></span>&nbsp;CD</div>
                     <?php endif; ?>
-                    
+
                     <div title="ขนาดพื้นที่" class="mr-2"><span class="fas fa-th-large text-primary"></span>&nbsp;<?php echo e($job->prop_size); ?> </div>
-                    
-                    
-                </div>
-                <div class="d-flex row justify-content-center justify-content-md-start">
+
+
+                  </div>
+                  <div class="d-flex row justify-content-center justify-content-md-start">
                     <!-- <div title="ชื่อโครงการ" class="mr-2"><span class="fas fa-building text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div> -->
                     <!-- <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div> -->
                     <?php if($job->projectname == $job->proplocation): ?>
-                        <?php if($job->projectname != ""): ?>
-                            <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div>
-                        <?php else: ?>
-                            <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->proplocation); ?></div>
-                        <?php endif; ?>
-                        
+                    <?php if($job->projectname != ""): ?>
+                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div>
                     <?php else: ?>
-                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div>
+                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->proplocation); ?></div>
                     <?php endif; ?>
-                </div>
+
+                    <?php else: ?>
+                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div>
+                    <?php endif; ?>
+                  </div>
                   <div class="d-flex row justify-content-center justify-content-md-start">
-                    
+
                     <div class="mr-3"><span class="fas fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e(number_format($job->marketvalue)); ?> บาท</div>
-                    <div class="mr-3"><span class="far fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e(number_format($job->assessmentvalue)); ?> บาท / ตร.ม.</div>
-                    
+                    <div class="mr-3"><span class="far fa-money-bill-alt text-primary"></span>&nbsp;<?php echo e(number_format($job->marketvalue_unit)); ?> บาท / ตร.ม.</div>
+
                   </div>
 
-                  
+
 
 
                   <div class="d-flex row justify-content-center justify-content-md-start">
@@ -207,20 +215,21 @@
                       <span class="jobdatetype">รับงาน</span>
                       <div class="calendar">
                         <div class="dateicon">
-                          <span class="vertical" id="dayofweek">MON</span>
-                          <h1 id="dayCaption">28</h1>
-                          <h2 id="monthCaption" class="color1">May</h2>
+                          <span class="vertical" id="dayofweek"><?php echo e(substr(Carbon\Carbon::parse($job->startdate)->format('l'),0,3)); ?></span>
+                          <h1 id="dayCaption"><?php echo e(date('d', strtotime($job->startdate))); ?></h1>
+                          <h2 id="monthCaption" class="color1"><?php echo e(date('M', strtotime($job->startdate))); ?></h2>
                           <div class="over"></div>
                         </div>
                       </div>
                     </div>
+
                     <div class="calendarbox">
                       <span class="jobdatetype">สำรวจ</span>
                       <div class="calendar">
                         <div class="dateicon">
-                          <span class="vertical" id="dayofweek">MON</span>
-                          <h1 id="dayCaption">28</h1>
-                          <h2 id="monthCaption" class="color2">May</h2>
+                          <span class="vertical" id="dayofweek"><?php echo e(substr(Carbon\Carbon::parse($job->inspectiondate)->format('l'),0,3)); ?></span>
+                          <h1 id="dayCaption"><?php echo e(date('d', strtotime($job->inspectiondate))); ?></h1>
+                          <h2 id="monthCaption" class="color2"><?php echo e(date('M', strtotime($job->inspectiondate))); ?></h2>
                           <div class="over"></div>
                         </div>
                       </div>
@@ -229,9 +238,9 @@
                       <span class="jobdatetype">ส่ง LC</span>
                       <div class="calendar">
                         <div class="dateicon">
-                          <span class="vertical" id="dayofweek">MON</span>
-                          <h1 id="dayCaption">28</h1>
-                          <h2 id="monthCaption" class="color3">May</h2>
+                          <span class="vertical" id="dayofweek"><?php echo e(substr(Carbon\Carbon::parse($job->lcduedate)->format('l'),0,3)); ?></span>
+                          <h1 id="dayCaption"><?php echo e(date('d', strtotime($job->lcduedate))); ?></h1>
+                          <h2 id="monthCaption" class="color3"><?php echo e(date('M', strtotime($job->lcduedate))); ?></h2>
                           <div class="over"></div>
                         </div>
                       </div>
@@ -240,17 +249,17 @@
                       <span class="jobdatetype">Due</span>
                       <div class="calendar">
                         <div class="dateicon">
-                          <span class="vertical" id="dayofweek">MON</span>
-                          <h1 id="dayCaption">28</h1>
-                          <h2 id="monthCaption" class="color4">May</h2>
+                          <span class="vertical" id="dayofweek"><?php echo e(substr(Carbon\Carbon::parse($job->clientduedate)->format('l'),0,3)); ?></span>
+                          <h1 id="dayCaption"><?php echo e(date('d', strtotime($job->clientduedate))); ?></h1>
+                          <h2 id="monthCaption" class="color4"><?php echo e(date('M', strtotime($job->clientduedate))); ?></h2>
                           <div class="over"></div>
                         </div>
                       </div>
                     </div>
-                            
+
                   </div>
 
-                    
+
 
                   <style>
                     .fa-icon {
@@ -288,29 +297,28 @@
                     }
                   }
                   ?>
-                  
-                
 
-                  
+
                   <div class="col-md-12 row justify-content-center justify-content-md-start">
                     <!-- <div class="fa-icon"><a onclick="popupCenter('testdc4', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
                     <!-- <div class="fa-icon"><a onclick="popupCenter('fmg', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
                     <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc<?php echo e($job->id); ?>" aria-expanded="false" aria-controls="collapse" title="open file"></div> -->
-                   
+
                     <!-- <div class="fa-icon"><a onclick="popupCenter('/file-manager/fm-button', 'fm',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
-                    <!-- <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?=str_replace('/', '_', $job->jobcode)?>/report/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
-                    <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?=str_replace('/', '_', $job->jobcode)?>/All/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Green;" class="far fa-images" title="open job folders"></a></div>
+                    <!-- <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?= str_replace('/', '_', $job->jobcode) ?>/report/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
+                    <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?= str_replace('/', '_', $job->jobcode) ?>/All/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Green;" class="far fa-images" title="open job folders"></a></div>
                     <!-- <div class="fa-icon "><a onclick="popupCenter('file:///C:\test\', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div> -->
+                    <div class="fa-icon"><a href="<?php echo e(route('admininputjob.edit',[$job->id])); ?>"><span class="fas fa-edit" alt="ปรับปรุงข้อมูล" title="ปรับปรุงข้อมูล"></a></div>
                     <div class="col-md-1"></div>
                     <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div>
                     <div class="fa-icon"><a href="<?php echo e(route('print-order.show',[$job->id])); ?>"><span class="far fa-paper-plane" alt="ใบสั่งงาน" title="ใบสั่งงาน" id="fa-invoice"></a></div>
-                    <div class="fa-icon" id="fa-invoice<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-invoice.show','1200')); ?>"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div> 
+                    <div class="fa-icon" id="fa-invoice<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-invoice.show','1200')); ?>"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div>
                     <div class="fa-icon" id="fa-receipt<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-receipt.show','1200')); ?>"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div>
                     <div class="col-md-1"></div>
                     <div class="fa-icon-inrow" id="fa-ope<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-receipt.show','1200')); ?>"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div>
                     <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload<?php echo e($job->id); ?>" onclick="dropzone(<?php echo e($job->id); ?>)" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div> -->
                   </div>
-                 
+
 
                   <div id="pdfCollapse<?php echo e($job->id); ?>">
                     <div class="collapse" id="collapseUpload<?php echo e($job->id); ?>" data-parent="#pdfCollapse<?php echo e($job->id); ?>">
@@ -342,7 +350,7 @@
                                     </label> -->
                                   </div>
 
-                                 
+
 
                                   <script>
                                     function uploadGroup(id, folderType) {
@@ -374,7 +382,7 @@
                               <div class="md-col-4">
                                 <div class="card-body">
 
-                                  
+
 
                                   <?php
                                   $jobcode = str_replace('/', '_', $job->jobcode);
@@ -417,36 +425,35 @@
                   <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary w-70"></div>
                 </div> -->
                 <?php if($job->percentfinish == 100): ?>
-                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
-                    <br>
-                    <span class="badge badge-pill badge-primary">  
-                        
-                        <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                    </span>
-                <?php elseif($job->percentfinish >= 50 and $job->percentfinish < 100): ?>
-                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
-                    <br>
-                    <span class="badge badge-pill badge-warning">
-                        <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                    </span>
-                <?php elseif($job->percentfinish == 0): ?>
-                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
-                    <br>
-                    <span class="badge badge-pill badge-danger">
-                        0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                    </span>                
-                <?php else: ?>
-                    <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                    <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
-                    <br>
-                    <span class="badge badge-pill badge-danger">
-                        <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
-                    </span>
-                <?php endif; ?>
-                    
+                <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                <br>
+                <span class="badge badge-pill badge-primary">
+
+                  <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                </span>
+                <?php elseif($job->percentfinish >= 50 and $job->percentfinish < 100): ?> <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                  <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                  <br>
+                  <span class="badge badge-pill badge-warning">
+                    <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                  </span>
+                  <?php elseif($job->percentfinish == 0): ?>
+                  <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                  <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                  <br>
+                  <span class="badge badge-pill badge-danger">
+                    0&nbsp;&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                  </span>
+                  <?php else: ?>
+                  <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                  <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                  <br>
+                  <span class="badge badge-pill badge-danger">
+                    <?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                  </span>
+                  <?php endif; ?>
+
               </div>
             </div>
 
@@ -571,31 +578,31 @@
     weekday[6] = "SAT";
 
 
-    document.getElementById('dayCaption').innerHTML = date.getDate();
-    document.getElementById('monthCaption').innerHTML = month[date.getMonth()];
-    document.getElementById('dayofweek').innerHTML = weekday[date.getDay()];
+    // document.getElementById('dayCaption').innerHTML = date.getDate();
+    // document.getElementById('monthCaption').innerHTML = month[date.getMonth()];
+    // document.getElementById('dayofweek').innerHTML = weekday[date.getDay()];
   </script>
 
   <SCRIPT>
-      function popupCenter(url, title, w, h) {
-        var left = (screen.width/2)-(w/2);
-        var top = (screen.height/2)-(h/2);
-        return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-      }
+    function popupCenter(url, title, w, h) {
+      var left = (screen.width / 2) - (w / 2);
+      var top = (screen.height / 2) - (h / 2);
+      return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    }
   </SCRIPT>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('button-image').addEventListener('click', (event) => {
-      event.preventDefault();
-      window.open('/file-manager/fm-button', 'fm', 'width=1400,height=800');
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('button-image').addEventListener('click', (event) => {
+        event.preventDefault();
+        window.open('/file-manager/fm-button', 'fm', 'width=1400,height=800');
+      });
     });
-  });
-  // set file link
-  function fmSetLink($url) {
-    document.getElementById('image_label').value = $url;
-  }
-</script>
+    // set file link
+    function fmSetLink($url) {
+      document.getElementById('image_label').value = $url;
+    }
+  </script>
 
 
 

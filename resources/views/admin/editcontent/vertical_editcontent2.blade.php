@@ -4,8 +4,6 @@
     @endif
     <div class="row">
 
-
-
         <div class="col-md-12">
             <!-- <div class="card">
                 <div class="card-header">
@@ -15,6 +13,7 @@
 
             <div class="card-body" style="background-color: #B0C4DE;">
 
+          
                 <style>
                     .row {
                         padding-top: 7px;
@@ -24,6 +23,7 @@
                         font-size: 19px;
                     }
                 </style>
+
 
 
                 <div class="container">
@@ -285,7 +285,6 @@
 
                 <div class="container">
                     <div class="row">
-
                         <div class="col-md-3 align-self-center p-1">
                             <label class="float-right">ตำบล/แขวง</label>
                         </div>
@@ -297,9 +296,39 @@
                             </span>
                             @endif
                         </div>
-
                     </div>
+                </div>
 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 align-self-center p-1">
+                            <label class="float-right">ราคาประเมิน</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="marketvalue" id="marketvalue" class="form-control{{ $errors->has('marketvalue') ? ' is-invalid' : '' }}" value="{{ number_format($job->marketvalue,2) }}">
+                            @if ($errors->has('marketvalue'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('marketvalue') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 align-self-center p-1">
+                            <label class="float-right">ราคาประเมินต่อพื้นที่</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="marketvalue_unit" id="marketvalue_unit" class="form-control{{ $errors->has('marketvalue_unit') ? ' is-invalid' : '' }}" value="{{ number_format($job->marketvalue_unit,2) }}">
+                            @if ($errors->has('marketvalue_unit'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('marketvalue_unit') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
                 </div>
 
 
@@ -312,7 +341,7 @@
                     </div>
                 </div>
 
-                </form>
+            </form>
 
                 <script>
                     $(document).ready(function() {
