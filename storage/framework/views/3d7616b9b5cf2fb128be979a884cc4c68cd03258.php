@@ -71,7 +71,74 @@
                                 </span>
                                 <?php endif; ?>
                             </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ประเภททรัพย์สิน</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select name="prop_type" class="form-control">
+                                    <option value="ห้องชุด" <?php echo e($job->prop_type=='ห้องชุด'?'selected':''); ?>>ห้องชุด</option>
+                                    <option value="บ้านเดี่ยว" <?php echo e($job->prop_type=='บ้านเดี่ยว'?'selected':''); ?>>บ้านเดี่ยว</option>
+                                    <option value="บ้านแฝด" <?php echo e($job->prop_type=='บ้านแฝด'?'selected':''); ?>>บ้านแฝด</option>
+                                    <option value="ทาวน์เฮาส์/ทาวน์โฮม" <?php echo e($job->prop_type=='ทาวน์เฮาส์/ทาวน์โฮม'?'selected':''); ?>>ทาวน์เฮาส์/ทาวน์โฮม</option>
+                                    <option value="ตึกแถว" <?php echo e($job->prop_type=='ตึกแถว'?'selected':''); ?>>ตึกแถว</option>
+                                    <option value="ที่ดินว่างเปล่า" <?php echo e($job->prop_type=='ที่ดินว่างเปล่า'?'selected':''); ?>>ที่ดินว่างเปล่า</option>
+                                    <option value="โรงงาน/โกดัง" <?php echo e($job->prop_type=='โรงงาน/โกดัง'?'selected':''); ?>>โรงงาน/โกดัง</option>
+                                    <option value="อพาร์ทเม้นท์" <?php echo e($job->prop_type=='อพาร์ทเม้นท์'?'selected':''); ?>>อพาร์ทเม้นท์</option>
+                                    <option value="โรงแรม" <?php echo e($job->prop_type=='โรงแรม'?'selected':''); ?>>โรงแรม</option>
+                                    <option value="อาคารสำนักงาน" <?php echo e($job->prop_type=='อาคารสำนักงาน'?'selected':''); ?>>อาคารสำนักงาน</option>
+                                    <option value="โฮมออฟฟิศ/มินิออฟฟิศ" <?php echo e($job->prop_type=='โฮมออฟฟิศ/มินิออฟฟิศ'?'selected':''); ?>>โฮมออฟฟิศ/มินิออฟฟิศ</option>
+                                    <option value="ที่ดินพร้อมสิ่งปลูกสร้าง" <?php echo e($job->prop_type=='ที่ดินพร้อมสิ่งปลูกสร้าง'?'selected':''); ?>>ที่ดินพร้อมสิ่งปลูกสร้าง</option>
+                                    <option value="สิทธิการเช่า" <?php echo e($job->prop_type=='สิทธิการเช่า'?'selected':''); ?>>สิทธิการเช่า</option>
+                                    <option value="เครื่องจักร" <?php echo e($job->prop_type=='อื่น ๆ'?'selected':''); ?>>เครื่องจักร</option>
+                                    <option value="อื่น ๆ" <?php echo e($job->prop_type=='อื่น ๆ'?'selected':''); ?>>อื่น ๆ</option>
+                                </select>
+                            </div>
+                        </div>
 
+                       
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ชื่่อโครงการ</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="projectname" class="form-control<?php echo e($errors->has('projectname') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->projectname); ?>">
+                                <?php if($errors->has('projectname')): ?>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($errors->first('projectname')); ?></strong>
+                                </span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ชื่อลูกค้า / ผู้ติดต่อ</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="customer" class="form-control<?php echo e($errors->has('customer') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->customer); ?>">
+                                <?php if($errors->has('customer')): ?>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($errors->first('customer')); ?></strong>
+                                </span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">โทร</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="customer_tel" class="form-control<?php echo e($errors->has('customer_tel') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->customer_tel); ?>">
+                                <?php if($errors->has('customer_tel')): ?>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($errors->first('customer_tel')); ?></strong>
+                                </span>
+                                <?php endif; ?>
+                            </div>
                         </div>
 
                         <div class="row">
@@ -109,39 +176,8 @@
                                     <option value="11" <?php echo e($job->obj_id=='11'?'selected':''); ?>>อื่น ๆ</option>
                                 </select>
                             </div>
-
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-3 align-self-center p-1">
-                                <label class="float-right">ลูกค้าราย / ผู้ติดต่อ</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="customer" class="form-control<?php echo e($errors->has('customer') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->customer); ?>">
-                                <?php if($errors->has('customer')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('customer')); ?></strong>
-                                </span>
-                                <?php endif; ?>
-                            </div>
-
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-md-3 align-self-center p-1">
-                                <label class="float-right">โทร</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="customer_tel" class="form-control<?php echo e($errors->has('customer_tel') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->customer_tel); ?>">
-                                <?php if($errors->has('customer_tel')): ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($errors->first('customer_tel')); ?></strong>
-                                </span>
-                                <?php endif; ?>
-                            </div>
-
-                        </div>
 
                         <div class="row">
                             <div class="col-md-3 align-self-center p-1">
@@ -233,9 +269,54 @@
 
                         </div>
 
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ผู้ประเมินหลัก</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select name="headvaluer" class="form-control headvaluer<?php echo e($errors->has('headvaluer') ? ' is-invalid' : ''); ?>">
+                                    <?php $__currentLoopData = $listfour; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($employee->id == $job->headvaluer): ?>   
+                                            <option value="<?php echo e($employee->id); ?>" selected="">
+                                                <?php echo e($employee->username); ?>
+
+                                            </option>
+                                        <?php else: ?>
+                                            <option value="<?php echo e($employee->id); ?>">
+                                                <?php echo e($employee->username); ?>
+
+                                            </option>        
+                                        <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ผู้ประเมิน</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select name="valuer" class="form-control valuer<?php echo e($errors->has('valuer') ? ' is-invalid' : ''); ?>">
+                                    <?php $__currentLoopData = $listfour; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($employee->id == $job->valuer): ?>
+                                            <option value="<?php echo e($employee->id); ?>" selected="">
+                                                <?php echo e($employee->username); ?>
+
+                                            </option>
+                                        <?php else: ?>
+                                            <option value="<?php echo e($employee->id); ?>">
+                                                <?php echo e($employee->username); ?>
+
+                                            </option>
+                                        <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </select>
+                            </div>
+                        </div>
 
                         <!-- add -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-3 align-self-center p-1">
                                 <label class="float-right">Valuer</label>
                             </div>
@@ -250,10 +331,10 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> -->
 
                         <!-- add -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-3 align-self-center p-1">
                                 <label class="float-right">Approver</label>
                             </div>
@@ -266,7 +347,7 @@
                                 <?php endif; ?>
                             </div>
 
-                        </div>
+                        </div> -->
 
                         <div class="container">
                             <div class="row">

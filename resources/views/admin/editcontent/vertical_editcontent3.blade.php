@@ -1,7 +1,7 @@
 <div class="container">
-    <?php if(Session::has('message')): ?>
-    <div class="alert alert-success"><?php echo e(Session::get('message')); ?></div>
-    <?php endif; ?>
+    @if(Session::has('message'))
+    <div class="alert alert-success">{{Session::get('message')}}</div>
+    @endif
     <div class="row">
 
         <div class="col-md-12">
@@ -30,12 +30,12 @@
                             <label class="float-right">ราคาประเมิน</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="marketvalue" id="marketvalue" class="form-control<?php echo e($errors->has('marketvalue') ? ' is-invalid' : ''); ?>" value="<?php echo e(number_format($job->marketvalue,2)); ?>">
-                            <?php if($errors->has('marketvalue')): ?>
+                            <input type="text" name="marketvalue" id="marketvalue" class="form-control{{ $errors->has('marketvalue') ? ' is-invalid' : '' }}" value="{{ number_format($job->marketvalue,2) }}">
+                            @if ($errors->has('marketvalue'))
                             <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('marketvalue')); ?></strong>
+                                <strong>{{ $errors->first('marketvalue') }}</strong>
                             </span>
-                            <?php endif; ?>
+                            @endif
                         </div>
                     </div>
                 
@@ -46,12 +46,12 @@
                             <label class="float-right">ราคาประเมินต่อพื้นที่</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="marketvalue_unit" id="marketvalue_unit" class="form-control<?php echo e($errors->has('marketvalue_unit') ? ' is-invalid' : ''); ?>" value="<?php echo e(number_format($job->marketvalue_unit,2)); ?>">
-                            <?php if($errors->has('marketvalue_unit')): ?>
+                            <input type="text" name="marketvalue_unit" id="marketvalue_unit" class="form-control{{ $errors->has('marketvalue_unit') ? ' is-invalid' : '' }}" value="{{ number_format($job->marketvalue_unit,2) }}">
+                            @if ($errors->has('marketvalue_unit'))
                             <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('marketvalue_unit')); ?></strong>
+                                <strong>{{ $errors->first('marketvalue_unit') }}</strong>
                             </span>
-                            <?php endif; ?>
+                            @endif
                         </div>
                     </div>
                 
@@ -109,4 +109,4 @@
     <!-- </div> -->
     <!-- </div> -->
 </div>
-<?php echo e(csrf_field()); ?><?php /**PATH C:\xampp\htdocs\jobprocess\resources\views/admin/editcontent/vertical_editcontent3.blade.php ENDPATH**/ ?>
+{{csrf_field()}}

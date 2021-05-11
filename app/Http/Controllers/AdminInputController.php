@@ -138,7 +138,9 @@ class AdminInputController extends Controller
         $listtwo = DB::table('amphures')->get();
         $job = Job::find($id);
         $listthree = DB::table('jobs_img')->get();
-        return view('admin.edit', compact('job'))->with('list', $list)->with('listtwo', $listtwo)->with('listthree', $listthree);
+        $listfour = DB::table('users')->get();
+
+        return view('admin.edit', compact('job'))->with('list', $list)->with('listtwo', $listtwo)->with('listthree', $listthree)->with('listfour', $listfour);
     }
 
     /**
@@ -182,13 +184,16 @@ class AdminInputController extends Controller
             'easydiff' => $request->get('easydiff'),
             'valuationfee' => $request->get('valuationfee'),
             'valuationfee_case' => $request->get('valuationfee_case'),
-            'valuer_n' => $request->get('valuer_n'),
-            'headvaluer_n' => $request->get('headvaluer_n'),
+            'headvaluer' => $request->get('headvaluer'),
+            'headvaluer_n' => $this->getUserName($request->get('headvaluer')),
+            'valuer' => $request->get('valuer'),
+            'valuer_n' => $this->getUserName($request->get('valuer')),
             'jobtype' => $request->get('jobtype'),
             'startdate' => $request->get('startdate'),
             'inspectiondate' => $request->get('inspectiondate'),
             'lcduedate' => $request->get('lcduedate'),
             'clientduedate' => $request->get('clientduedate'),
+            'address_no' => $request->get('address_no'),
             'level' => $request->get('level'),
             'moo' => $request->get('moo'),
             'soi' => $request->get('soi'),
@@ -298,5 +303,11 @@ class AdminInputController extends Controller
         $output = DB::table('amphures')->where('name_th','LIKE','%'.$apName.'%')->first();
         // dd($output->code);
         return $output->code;
+    }
+
+    private function  getUserName($userid){
+        $output = DB::table('users')->where('id',$userid)->first();
+        // dd($output->code);
+        return $output->name;
     }
 }

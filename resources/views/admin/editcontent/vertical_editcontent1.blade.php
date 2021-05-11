@@ -71,7 +71,74 @@
                                 </span>
                                 @endif
                             </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ประเภททรัพย์สิน</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select name="prop_type" class="form-control">
+                                    <option value="ห้องชุด" {{$job->prop_type=='ห้องชุด'?'selected':''}}>ห้องชุด</option>
+                                    <option value="บ้านเดี่ยว" {{$job->prop_type=='บ้านเดี่ยว'?'selected':''}}>บ้านเดี่ยว</option>
+                                    <option value="บ้านแฝด" {{$job->prop_type=='บ้านแฝด'?'selected':''}}>บ้านแฝด</option>
+                                    <option value="ทาวน์เฮาส์/ทาวน์โฮม" {{$job->prop_type=='ทาวน์เฮาส์/ทาวน์โฮม'?'selected':''}}>ทาวน์เฮาส์/ทาวน์โฮม</option>
+                                    <option value="ตึกแถว" {{$job->prop_type=='ตึกแถว'?'selected':''}}>ตึกแถว</option>
+                                    <option value="ที่ดินว่างเปล่า" {{$job->prop_type=='ที่ดินว่างเปล่า'?'selected':''}}>ที่ดินว่างเปล่า</option>
+                                    <option value="โรงงาน/โกดัง" {{$job->prop_type=='โรงงาน/โกดัง'?'selected':''}}>โรงงาน/โกดัง</option>
+                                    <option value="อพาร์ทเม้นท์" {{$job->prop_type=='อพาร์ทเม้นท์'?'selected':''}}>อพาร์ทเม้นท์</option>
+                                    <option value="โรงแรม" {{$job->prop_type=='โรงแรม'?'selected':''}}>โรงแรม</option>
+                                    <option value="อาคารสำนักงาน" {{$job->prop_type=='อาคารสำนักงาน'?'selected':''}}>อาคารสำนักงาน</option>
+                                    <option value="โฮมออฟฟิศ/มินิออฟฟิศ" {{$job->prop_type=='โฮมออฟฟิศ/มินิออฟฟิศ'?'selected':''}}>โฮมออฟฟิศ/มินิออฟฟิศ</option>
+                                    <option value="ที่ดินพร้อมสิ่งปลูกสร้าง" {{$job->prop_type=='ที่ดินพร้อมสิ่งปลูกสร้าง'?'selected':''}}>ที่ดินพร้อมสิ่งปลูกสร้าง</option>
+                                    <option value="สิทธิการเช่า" {{$job->prop_type=='สิทธิการเช่า'?'selected':''}}>สิทธิการเช่า</option>
+                                    <option value="เครื่องจักร" {{$job->prop_type=='อื่น ๆ'?'selected':''}}>เครื่องจักร</option>
+                                    <option value="อื่น ๆ" {{$job->prop_type=='อื่น ๆ'?'selected':''}}>อื่น ๆ</option>
+                                </select>
+                            </div>
+                        </div>
 
+                       
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ชื่่อโครงการ</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="projectname" class="form-control{{ $errors->has('projectname') ? ' is-invalid' : '' }}" value="{{ $job->projectname }}">
+                                @if ($errors->has('projectname'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('projectname') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ชื่อลูกค้า / ผู้ติดต่อ</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="customer" class="form-control{{ $errors->has('customer') ? ' is-invalid' : '' }}" value="{{ $job->customer }}">
+                                @if ($errors->has('customer'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('customer') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">โทร</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="customer_tel" class="form-control{{ $errors->has('customer_tel') ? ' is-invalid' : '' }}" value="{{ $job->customer_tel }}">
+                                @if ($errors->has('customer_tel'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('customer_tel') }}</strong>
+                                </span>
+                                @endif
+                            </div>
                         </div>
 
                         <div class="row">
@@ -109,39 +176,8 @@
                                     <option value="11" {{$job->obj_id=='11'?'selected':''}}>อื่น ๆ</option>
                                 </select>
                             </div>
-
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-3 align-self-center p-1">
-                                <label class="float-right">ลูกค้าราย / ผู้ติดต่อ</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="customer" class="form-control{{ $errors->has('customer') ? ' is-invalid' : '' }}" value="{{ $job->customer }}">
-                                @if ($errors->has('customer'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('customer') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-md-3 align-self-center p-1">
-                                <label class="float-right">โทร</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="customer_tel" class="form-control{{ $errors->has('customer_tel') ? ' is-invalid' : '' }}" value="{{ $job->customer_tel }}">
-                                @if ($errors->has('customer_tel'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('customer_tel') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-
-                        </div>
 
                         <div class="row">
                             <div class="col-md-3 align-self-center p-1">
@@ -233,9 +269,50 @@
 
                         </div>
 
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ผู้ประเมินหลัก</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select name="headvaluer" class="form-control headvaluer{{ $errors->has('headvaluer') ? ' is-invalid' : '' }}">
+                                    @foreach($listfour as $employee)
+                                        @if($employee->id == $job->headvaluer)   
+                                            <option value="{{ $employee->id }}" selected="">
+                                                {{ $employee->username }}
+                                            </option>
+                                        @else
+                                            <option value="{{ $employee->id }}">
+                                                {{ $employee->username }}
+                                            </option>        
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 align-self-center p-1">
+                                <label class="float-right">ผู้ประเมิน</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select name="valuer" class="form-control valuer{{ $errors->has('valuer') ? ' is-invalid' : '' }}">
+                                    @foreach($listfour as $employee)
+                                        @if($employee->id == $job->valuer)
+                                            <option value="{{ $employee->id }}" selected="">
+                                                {{ $employee->username }}
+                                            </option>
+                                        @else
+                                            <option value="{{ $employee->id }}">
+                                                {{ $employee->username }}
+                                            </option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
 
                         <!-- add -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-3 align-self-center p-1">
                                 <label class="float-right">Valuer</label>
                             </div>
@@ -250,10 +327,10 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> -->
 
                         <!-- add -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-3 align-self-center p-1">
                                 <label class="float-right">Approver</label>
                             </div>
@@ -266,7 +343,7 @@
                                 @endif
                             </div>
 
-                        </div>
+                        </div> -->
 
                         <div class="container">
                             <div class="row">

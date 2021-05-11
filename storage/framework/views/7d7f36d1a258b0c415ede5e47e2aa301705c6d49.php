@@ -8,7 +8,8 @@
 					<!-- Tabs -->
 					<ul class="nav panel-tabs">
 						<li class=""><a href="#tab1" class="active" data-toggle="tab">ข้อมูลงาน</a></li>
-						<li><a href="#tab2" data-toggle="tab" class="">รายละเอียดทรัพย์สิน</a></li>
+						<li><a href="#tab2" data-toggle="tab" class="">ทำเลที่ตั้ง</a></li>
+						<li><a href="#tab3" data-toggle="tab" class="">สรุปผลการประเมินทรัพย์สิน</a></li>
 					</ul>
 				</div>
 			</div>
@@ -19,6 +20,9 @@
 					</div>
 					<div class="tab-pane" id="tab2">
 						<?php echo $__env->make('admin.editcontent.vertical_editcontent2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+					</div>
+					<div class="tab-pane" id="tab3">
+						<?php echo $__env->make('admin.editcontent.vertical_editcontent3', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 					</div>
 				</div>
 			</div>

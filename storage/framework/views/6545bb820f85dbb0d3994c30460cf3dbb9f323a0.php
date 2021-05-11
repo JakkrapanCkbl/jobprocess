@@ -23,63 +23,27 @@
                         font-size: 19px;
                     }
                 </style>
-
-
-
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">ประเภททรัพย์สิน</label>
-                        </div>
-                        <div class="col-md-6">
-                            <select name="prop_type" class="form-control">
-                                <option value="ห้องชุด" <?php echo e($job->prop_type=='ห้องชุด'?'selected':''); ?>>ห้องชุด</option>
-                                <option value="บ้านเดี่ยว" <?php echo e($job->prop_type=='บ้านเดี่ยว'?'selected':''); ?>>บ้านเดี่ยว</option>
-                                <option value="บ้านแฝด" <?php echo e($job->prop_type=='บ้านแฝด'?'selected':''); ?>>บ้านแฝด</option>
-                                <option value="ทาวน์เฮาส์/ทาวน์โฮม" <?php echo e($job->prop_type=='ทาวน์เฮาส์/ทาวน์โฮม'?'selected':''); ?>>ทาวน์เฮาส์/ทาวน์โฮม</option>
-                                <option value="ตึกแถว" <?php echo e($job->prop_type=='ตึกแถว'?'selected':''); ?>>ตึกแถว</option>
-                                <option value="ที่ดินว่างเปล่า" <?php echo e($job->prop_type=='ที่ดินว่างเปล่า'?'selected':''); ?>>ที่ดินว่างเปล่า</option>
-                                <option value="โรงงาน/โกดัง" <?php echo e($job->prop_type=='โรงงาน/โกดัง'?'selected':''); ?>>โรงงาน/โกดัง</option>
-                                <option value="อพาร์ทเม้นท์" <?php echo e($job->prop_type=='อพาร์ทเม้นท์'?'selected':''); ?>>อพาร์ทเม้นท์</option>
-                                <option value="โรงแรม" <?php echo e($job->prop_type=='โรงแรม'?'selected':''); ?>>โรงแรม</option>
-                                <option value="อาคารสำนักงาน" <?php echo e($job->prop_type=='อาคารสำนักงาน'?'selected':''); ?>>อาคารสำนักงาน</option>
-                                <option value="โฮมออฟฟิศ/มินิออฟฟิศ" <?php echo e($job->prop_type=='โฮมออฟฟิศ/มินิออฟฟิศ'?'selected':''); ?>>โฮมออฟฟิศ/มินิออฟฟิศ</option>
-                                <option value="ที่ดินพร้อมสิ่งปลูกสร้าง" <?php echo e($job->prop_type=='ที่ดินพร้อมสิ่งปลูกสร้าง'?'selected':''); ?>>ที่ดินพร้อมสิ่งปลูกสร้าง</option>
-                                <option value="สิทธิการเช่า" <?php echo e($job->prop_type=='สิทธิการเช่า'?'selected':''); ?>>สิทธิการเช่า</option>
-                                <option value="เครื่องจักร" <?php echo e($job->prop_type=='อื่น ๆ'?'selected':''); ?>>เครื่องจักร</option>
-                                <option value="อื่น ๆ" <?php echo e($job->prop_type=='อื่น ๆ'?'selected':''); ?>>อื่น ๆ</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                </div>
+               
 
                 <div class="container">
                     <div class="row">
-
                         <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">ชื่่อโครงการ</label>
+                            <label class="float-right">บ้านเลขที่ / เลขที่ห้อง</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="projectname" class="form-control<?php echo e($errors->has('projectname') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->projectname); ?>">
-                            <?php if($errors->has('projectname')): ?>
+                            <input type="text" name="address_no" class="form-control<?php echo e($errors->has('address_no') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->address_no); ?>">
+                            <?php if($errors->has('address_no')): ?>
                             <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('projectname')); ?></strong>
+                                <strong><?php echo e($errors->first('address_no')); ?></strong>
                             </span>
                             <?php endif; ?>
                         </div>
-
                     </div>
-
-                </div>
-
+                </div>    
 
 
                 <div class="container">
                     <div class="row">
-
                         <div class="col-md-3 align-self-center p-1">
                             <label class="float-right" name="level">ชั้น</label>
                         </div>
@@ -126,6 +90,7 @@
                                 <div class="input-group-prepend">
                                     <select name="areaUnit" class="form-control">
                                         <option value="ตร.ม." <?php echo e($job->easydiff=='NORM'?'selected':''); ?>>ตร.ม.</option>
+                                        <option value="ตร.ว.">ตร.ว.</option>
                                         <option value="ไร่" <?php echo e($job->easydiff=='DIFF'?'selected':''); ?>>ไร่</option>
                                     </select>
                                 </div>
@@ -268,7 +233,7 @@
                     <div class="row">
 
                         <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">อำเภอ/เขต</label>
+                            <label class="float-right">อำเภอ/เขต (ตามเขตปกครอง)</label>
                         </div>
                         <div class="col-md-6">
                             <select name="amphure_code" class="form-control amphures<?php echo e($errors->has('amphure_code') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->amphure_code); ?>">
@@ -288,7 +253,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">ตำบล/แขวง</label>
+                            <label class="float-right">ตำบล/แขวง (ตามเขตปกครอง)</label>
                         </div>
                         <div class="col-md-6">
                             <input type="text" name="district" class="form-control<?php echo e($errors->has('district') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->district); ?>">
@@ -301,83 +266,13 @@
                     </div>
                 </div>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">ราคาประเมิน</label>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="marketvalue" id="marketvalue" class="form-control<?php echo e($errors->has('marketvalue') ? ' is-invalid' : ''); ?>" value="<?php echo e(number_format($job->marketvalue,2)); ?>">
-                            <?php if($errors->has('marketvalue')): ?>
-                            <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('marketvalue')); ?></strong>
-                            </span>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 align-self-center p-1">
-                            <label class="float-right">ราคาประเมินต่อพื้นที่</label>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="marketvalue_unit" id="marketvalue_unit" class="form-control<?php echo e($errors->has('marketvalue_unit') ? ' is-invalid' : ''); ?>" value="<?php echo e(number_format($job->marketvalue_unit,2)); ?>">
-                            <?php if($errors->has('marketvalue_unit')): ?>
-                            <span class="invalid-feedback" role="alert">
-                                <strong><?php echo e($errors->first('marketvalue_unit')); ?></strong>
-                            </span>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
+               
 
 
 
-                <div class="container">
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <button type="submit" class="btn btn-block btn-success">Update</button>
-                        </div>
-                    </div>
-                </div>
+                
 
-            </form>
-
-                <script>
-                    $(document).ready(function() {
-                        if ($('select[name = "prop_type"]').val() == 'ห้องชุด') {
-                            document.getElementsByName("moo")[0].style.visibility = "hidden";
-                            document.getElementsByName("moo")[1].style.visibility = "hidden";
-                            document.getElementsByName("area")[0].placeholder = "00.00";
-                            document.getElementsByName("areaUnit")[0].value = "ตร.ม.";
-                        } else {
-                            document.getElementsByName("moo")[0].style.visibility = "visible";
-                            document.getElementsByName("moo")[1].style.visibility = "visible";
-                            document.getElementsByName("area")[0].placeholder = "00-0-00";
-                            document.getElementsByName("areaUnit")[0].value = "ไร่";
-                        }
-                        $('select[name = "prop_type"]').change(function() {
-                            if ($(this).val() == 'ห้องชุด') {
-                                document.getElementsByName("moo")[0].style.visibility = "hidden";
-                                document.getElementsByName("moo")[1].style.visibility = "hidden";
-                                document.getElementsByName("level")[0].style.visibility = "visible";
-                                document.getElementsByName("level")[1].style.visibility = "visible";
-                                document.getElementsByName("area")[0].placeholder = "00.00";
-                                document.getElementsByName("areaUnit")[0].value = "ตร.ม.";
-                            } else {
-                                document.getElementsByName("moo")[0].style.visibility = "visible";
-                                document.getElementsByName("moo")[1].style.visibility = "visible";
-                                document.getElementsByName("level")[0].style.visibility = "hidden";
-                                document.getElementsByName("level")[1].style.visibility = "hidden";
-                                document.getElementsByName("area")[0].placeholder = "00-0-00";
-                                document.getElementsByName("areaUnit")[0].value = "ไร่";
-                            }
-
-                        });
-                    });
-                </script>
+               
 
             </div>
 
