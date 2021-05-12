@@ -94,7 +94,7 @@
                                         <option value="ไร่" <?php echo e($job->areaunit=='ไร่'?'selected':''); ?>>ไร่</option>
                                     </select>
                                 </div>
-                                <input type="text" name="area" placeholder="00.00" class="form-control<?php echo e($errors->has('prop_size') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->prop_size); ?>">
+                                <input type="text" name="prop_size" placeholder="00.00" class="form-control<?php echo e($errors->has('prop_size') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->prop_size); ?>">
 
                             </div>
                         </div>

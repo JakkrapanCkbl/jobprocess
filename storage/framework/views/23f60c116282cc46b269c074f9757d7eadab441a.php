@@ -85,7 +85,7 @@
 		var date_input = $('input[name="startdate"]'); //our date input has the name "date"
 		var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
 		var options = {
-			format: 'dd/mm/yyyy',
+			format: 'd/m/Y',
 			container: container,
 			todayHighlight: true,
 			autoclose: true,
@@ -99,7 +99,7 @@
 		var date_input = $('input[name="inspectiondate"]'); //our date input has the name "date"
 		var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
 		var options = {
-			format: 'dd/mm/yyyy',
+			format: 'd/m/Y',
 			container: container,
 			todayHighlight: true,
 			autoclose: true,
@@ -113,7 +113,7 @@
 		var date_input = $('input[name="lcduedate"]'); //our date input has the name "date"
 		var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
 		var options = {
-			format: 'dd/mm/yyyy',
+			format: 'd/m/Y',
 			container: container,
 			todayHighlight: true,
 			autoclose: true,
@@ -127,7 +127,7 @@
 		var date_input = $('input[name="clientduedate"]'); //our date input has the name "date"
 		var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
 		var options = {
-			format: 'dd/mm/yyyy',
+			format: 'd/m/Y',
 			container: container,
 			todayHighlight: true,
 			autoclose: true,

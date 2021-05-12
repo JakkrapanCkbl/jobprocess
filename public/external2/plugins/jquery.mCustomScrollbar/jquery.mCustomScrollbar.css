@@ -1265,3 +1265,40 @@ yx-axis
 	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
 	
 	/* ---------------------------------------- */
+
+
+	/* ---------- test-1 ----------------- */
+	/* 
+	:root {
+  --gutter: 20px;
+}
+.hs {
+  display: grid;
+  grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns: repeat(6, calc(50% - var(--gutter) * 2));
+  grid-template-rows: minmax(150px, 1fr);
+  
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(.75 * var(--gutter));
+  margin-bottom: calc(-.25 * var(--gutter));
+}
+*/
+
+	:root {
+		--gutter: 5px;
+	  }
+	  
+	  .hs {
+		display: grid;
+		grid-gap: calc(var(--gutter) / 1);
+		grid-template-columns: repeat(6, calc(103% - var(--gutter) * 2));
+		grid-template-rows: minmax(200px, 1fr);
+		
+		overflow-x: scroll;
+		scroll-snap-type: x proximity;
+		padding-bottom: calc(0.75* var(--gutter));
+		margin-bottom: calc(-0.75 * var(--gutter));
+
+	  }
+	 

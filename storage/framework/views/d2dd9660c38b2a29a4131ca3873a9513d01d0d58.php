@@ -307,14 +307,15 @@
                     <!-- <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?= str_replace('/', '_', $job->jobcode) ?>/report/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
                     <!-- <div class="fa-icon "><a onclick="popupCenter('file:///C:\test\', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div> -->
 
-
                     <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?= str_replace('/', '_', $job->jobcode) ?>/All/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Green;" class="far fa-images" title="open job folders"></a></div>
                     <div class="fa-icon"><a href="<?php echo e(route('admininputjob.edit',[$job->id])); ?>"><span class="fas fa-edit" alt="ปรับปรุงข้อมูล" title="ปรับปรุงข้อมูล"></a></div>
+                    
                     <div class="col-md-1"></div>
                     <!-- <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div> -->
                     <div class="fa-icon"><a href="<?php echo e(route('print-order.show',[$job->id])); ?>"><span class="far fa-paper-plane" alt="ใบสั่งงาน" title="ใบสั่งงาน" id="fa-invoice"></a></div>
                     <!-- <div class="fa-icon" id="fa-invoice<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-invoice.show','1200')); ?>"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div>
                     <div class="fa-icon" id="fa-receipt<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-receipt.show','1200')); ?>"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div> -->
+                    
                     <div class="col-md-1"></div>
                     <!-- <div class="fa-icon-inrow" id="fa-ope<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-receipt.show','1200')); ?>"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div> -->
                     <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload<?php echo e($job->id); ?>" onclick="dropzone(<?php echo e($job->id); ?>)" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div> -->

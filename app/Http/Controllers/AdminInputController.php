@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Job;
 use DB;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Carbon\Carbon;
+
+
 
 class AdminInputController extends Controller
 {
@@ -166,6 +169,11 @@ class AdminInputController extends Controller
             $path = $file->store('uploads','public');**/
         //dd($request->get('jobsize'));
         //from Job Class
+
+        //  $startdate = Carbon::createFromFormat('d/m/Y', $request->startdate)->format('Y-m-d');
+        //$startdate = Carbon::now()->startOfMonth(); 
+        $startdate = Carbon::createFromFormat('d/m/Y',$request->get('startdate'));
+
         Job::where('id', $id)->update([
             'jobcode' => $request->get('jobcode'),
             'reportcode' => $request->get('reportcode'),
@@ -183,14 +191,14 @@ class AdminInputController extends Controller
             'jobsize' => $request->get('jobsize'),
             'easydiff' => $request->get('easydiff'),
             'urgent' => $request->get('urgent'),
-            'valuationfee' => $request->get('valuationfee'),
+            'valuationfee' => str_replace(',', '',$request->get('valuationfee')),
             'valuationfee_case' => $request->get('valuationfee_case'),
             'headvaluer' => $request->get('headvaluer'),
             'headvaluer_n' => $this->getUserName($request->get('headvaluer')),
             'valuer' => $request->get('valuer'),
             'valuer_n' => $this->getUserName($request->get('valuer')),
             'jobtype' => $request->get('jobtype'),
-            'startdate' => $request->get('startdate'),
+            'startdate' => $startdate,
             'inspectiondate' => $request->get('inspectiondate'),
             'lcduedate' => $request->get('lcduedate'),
             'clientduedate' => $request->get('clientduedate'),
