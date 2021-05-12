@@ -173,6 +173,9 @@ class AdminInputController extends Controller
         //  $startdate = Carbon::createFromFormat('d/m/Y', $request->startdate)->format('Y-m-d');
         //$startdate = Carbon::now()->startOfMonth(); 
         $startdate = Carbon::createFromFormat('d/m/Y',$request->get('startdate'));
+        $inspectiondate = Carbon::createFromFormat('d/m/Y',$request->get('inspectiondate'));
+        $lcduedate = Carbon::createFromFormat('d/m/Y',$request->get('lcduedate'));
+        $clientduedate = Carbon::createFromFormat('d/m/Y',$request->get('clientduedate'));
 
         Job::where('id', $id)->update([
             'jobcode' => $request->get('jobcode'),
@@ -199,9 +202,9 @@ class AdminInputController extends Controller
             'valuer_n' => $this->getUserName($request->get('valuer')),
             'jobtype' => $request->get('jobtype'),
             'startdate' => $startdate,
-            'inspectiondate' => $request->get('inspectiondate'),
-            'lcduedate' => $request->get('lcduedate'),
-            'clientduedate' => $request->get('clientduedate'),
+            'inspectiondate' => $inspectiondate,
+            'lcduedate' => $lcduedate,
+            'clientduedate' => $clientduedate,
             'address_no' => $request->get('address_no'),
             'level' => $request->get('level'),
             'moo' => $request->get('moo'),

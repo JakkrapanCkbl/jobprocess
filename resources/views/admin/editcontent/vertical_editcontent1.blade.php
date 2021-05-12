@@ -51,7 +51,7 @@
                                     <option value="KK" {{$job->client=='KK'?'selected':''}}>KK</option>
                                     <option value="CIMB" {{$job->client=='CIMB'?'selected':''}}>CIMB</option>
                                     <option value="SCB" {{$job->client=='SCB'?'selected':''}}>SCB</option>
-                                    <option value="BOC" {{$job->client=='UOB'?'selected':''}}>BOC</option>
+                                    <option value="BOC" {{$job->client=='BOC'?'selected':''}}>BOC</option>
                                     <option value="ICBC" {{$job->client=='ICBC'?'selected':''}}>ICBC</option>
                                     <option value="LHB" {{$job->client=='LHB'?'selected':''}}>LHB</option>
                                 </select>
