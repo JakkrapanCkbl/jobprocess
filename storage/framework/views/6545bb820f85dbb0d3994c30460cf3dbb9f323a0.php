@@ -88,10 +88,10 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <select name="areaUnit" class="form-control">
-                                        <option value="ตร.ม." <?php echo e($job->easydiff=='NORM'?'selected':''); ?>>ตร.ม.</option>
-                                        <option value="ตร.ว.">ตร.ว.</option>
-                                        <option value="ไร่" <?php echo e($job->easydiff=='DIFF'?'selected':''); ?>>ไร่</option>
+                                    <select name="areaunit" class="form-control">
+                                        <option value="ตร.ม." <?php echo e($job->areaunit=='ตร.ม.'?'selected':''); ?>>ตร.ม.</option>
+                                        <option value="ตร.ว." <?php echo e($job->areaunit=='ตร.ว.'?'selected':''); ?>>ตร.ว.</option>
+                                        <option value="ไร่" <?php echo e($job->areaunit=='ไร่'?'selected':''); ?>>ไร่</option>
                                     </select>
                                 </div>
                                 <input type="text" name="area" placeholder="00.00" class="form-control<?php echo e($errors->has('prop_size') ? ' is-invalid' : ''); ?>" value="<?php echo e($job->prop_size); ?>">

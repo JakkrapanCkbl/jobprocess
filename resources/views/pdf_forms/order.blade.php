@@ -105,7 +105,7 @@
   <p style="float:right; text-align:center;">Date : {{date('d-m-yy', strtotime($item->startdate))}} 
 
   <br>
-   <br><img src="{{$item->ValuerAvatar}}" class="avatar">  <img src="{{$item->ValuerAvatar}}" class="avatar"> 
+   <br><img src="{{$item->ValuerAvatar}}" class="avatar">  <img src="{{$item->HeadAvatar}}" class="avatar"> 
   <br>Valuer/Approver
     
   </p>

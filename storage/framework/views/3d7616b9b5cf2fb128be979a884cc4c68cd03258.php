@@ -214,9 +214,9 @@
                                 <label class="float-right">ด่วน</label>
                             </div>
                             <div class="col-md-6">
-                                <select name="easydiff" class="form-control">
-                                    <option value="0" <?php echo e($job->easydiff=='NORM'?'selected':''); ?>>ไม่</option>
-                                    <option value="1" <?php echo e($job->easydiff=='DIFF'?'selected':''); ?>>ด่วน</option>
+                                <select name="urgent" class="form-control">
+                                    <option value="0" <?php echo e($job->urgent=='0'?'selected':''); ?>>ไม่</option>
+                                    <option value="1" <?php echo e($job->urgent=='1'?'selected':''); ?>>ด่วน</option>
                                 </select>
                             </div>
 

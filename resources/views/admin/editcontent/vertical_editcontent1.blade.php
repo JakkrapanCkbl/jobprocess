@@ -214,9 +214,9 @@
                                 <label class="float-right">ด่วน</label>
                             </div>
                             <div class="col-md-6">
-                                <select name="easydiff" class="form-control">
-                                    <option value="0" {{$job->easydiff=='NORM'?'selected':''}}>ไม่</option>
-                                    <option value="1" {{$job->easydiff=='DIFF'?'selected':''}}>ด่วน</option>
+                                <select name="urgent" class="form-control">
+                                    <option value="0" {{$job->urgent=='0'?'selected':''}}>ไม่</option>
+                                    <option value="1" {{$job->urgent=='1'?'selected':''}}>ด่วน</option>
                                 </select>
                             </div>
 

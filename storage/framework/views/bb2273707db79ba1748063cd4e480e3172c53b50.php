@@ -105,7 +105,7 @@
   <p style="float:right; text-align:center;">Date : <?php echo e(date('d-m-yy', strtotime($item->startdate))); ?> 
 
   <br>
-   <br><img src="<?php echo e($item->ValuerAvatar); ?>" class="avatar">  <img src="<?php echo e($item->ValuerAvatar); ?>" class="avatar"> 
+   <br><img src="<?php echo e($item->ValuerAvatar); ?>" class="avatar">  <img src="<?php echo e($item->HeadAvatar); ?>" class="avatar"> 
   <br>Valuer/Approver
     
   </p>
