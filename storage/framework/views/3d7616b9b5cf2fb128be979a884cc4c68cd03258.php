@@ -51,7 +51,7 @@
                                     <option value="KK" <?php echo e($job->client=='KK'?'selected':''); ?>>KK</option>
                                     <option value="CIMB" <?php echo e($job->client=='CIMB'?'selected':''); ?>>CIMB</option>
                                     <option value="SCB" <?php echo e($job->client=='SCB'?'selected':''); ?>>SCB</option>
-                                    <option value="BOC" <?php echo e($job->client=='UOB'?'selected':''); ?>>BOC</option>
+                                    <option value="BOC" <?php echo e($job->client=='BOC'?'selected':''); ?>>BOC</option>
                                     <option value="ICBC" <?php echo e($job->client=='ICBC'?'selected':''); ?>>ICBC</option>
                                     <option value="LHB" <?php echo e($job->client=='LHB'?'selected':''); ?>>LHB</option>
                                 </select>
