@@ -86,60 +86,60 @@
                     ?>
                     <?php $__currentLoopData = $fileList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php if($loop->first): ?>
-                    <?php if(substr($file,-3) === 'pdf'): ?>
-                    <div class="carousel-item carousel-item-min active">
-                      <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
-                        <P ALIGN=CENTER>
-                          <span style="font-size: 3em; color: Tomato;">
+                        <?php if(substr($file,-3) === 'pdf'): ?>
+                        <div class="carousel-item carousel-item-min active">
+                          <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
+                            <P ALIGN=CENTER>
+                              <span style="font-size: 3em; color: Tomato;">
+                                <div class="pdfobject-com" id="example<?php echo e($job->id . '_' . $loop->index); ?>"></div>
+                                <script>
+                                  PDFObject.embed("<?php echo e(asset($file)); ?>", "#example<?php echo e($job->id . '_' . $loop->index); ?>", {
+                                    page: "1"
+                                  });
+                                </script>
+                              </span>
+                            </p>
+                          </a>
+                        </div>
+                        <?php else: ?>
+                        <div class="carousel-item carousel-item-min active popup-gallery">
+                          <a href="<?php echo e(asset($file)); ?>" target="_blank">
+                            <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="First slide">
+                          </a>
+                        </div>
+                        <?php endif; ?>
+                    <?php else: ?>
+                      <?php if(substr($file,-3) === 'pdf'): ?>
+                      <div class="carousel-item carousel-item-min">
+                        <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
+                          <P ALIGN=CENTER>
+                            <span style="font-size: 3em; color: Tomato;">
                             <div class="pdfobject-com" id="example<?php echo e($job->id . '_' . $loop->index); ?>"></div>
-                            <script>
-                              PDFObject.embed("<?php echo e(asset($file)); ?>", "#example<?php echo e($job->id . '_' . $loop->index); ?>", {
-                                page: "1"
-                              });
-                            </script>
-                          </span>
-                        </p>
-                      </a>
-                    </div>
-                    <?php else: ?>
-                    <div class="carousel-item carousel-item-min active popup-gallery">
-                      <a href="<?php echo e(asset($file)); ?>" target="_blank">
-                        <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="First slide">
-                      </a>
-                    </div>
-                    <?php endif; ?>
-                    <?php else: ?>
-                    <?php if(substr($file,-3) === 'pdf'): ?>
-                    <div class="carousel-item carousel-item-min">
-                      <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
-                        <P ALIGN=CENTER>
-                          <span style="font-size: 3em; color: Tomato;">
-                            <div class="pdfobject-com" id="example<?php echo e($job->id . '_' . $loop->index); ?>"></div>
-                            <script>
-                              PDFObject.embed("<?php echo e(asset($file)); ?>", "#example<?php echo e($job->id . '_' . $loop->index); ?>", {
-                                page: "1"
-                              });
-                            </script>
-                          </span>
-                        </p>
-                      </a>
-                    </div>
-                    <?php else: ?>
-                    <div class="carousel-item carousel-item-min popup-gallery">
-                      <a href="<?php echo e(asset($file)); ?>" target="_blank">
-                        <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="Sec slide">
-                      </a>
-                    </div>
-                    <?php endif; ?>
+                              <script>
+                                PDFObject.embed("<?php echo e(asset($file)); ?>", "#example<?php echo e($job->id . '_' . $loop->index); ?>", {
+                                  page: "1"
+                                });
+                              </script>
+                            </span>
+                          </p>
+                        </a>
+                      </div>
+                      <?php else: ?>
+                      <div class="carousel-item carousel-item-min popup-gallery">
+                        <a href="<?php echo e(asset($file)); ?>" target="_blank">
+                          <img class="d-block w-100" src="<?php echo e(asset($file)); ?>" alt="Sec slide">
+                        </a>
+                      </div>
+                      <?php endif; ?>
 
-                    <a class="carousel-control-prev" href="#carousel<?php echo e($job->id); ?>" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel<?php echo e($job->id); ?>" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
+                      <a class="carousel-control-prev" href="#carousel<?php echo e($job->id); ?>" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel<?php echo e($job->id); ?>" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
                     <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

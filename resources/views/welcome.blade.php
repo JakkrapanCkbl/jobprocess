@@ -86,60 +86,60 @@
                     ?>
                     @foreach($fileList as $file)
                     @if ($loop->first)
-                    @if (substr($file,-3) === 'pdf')
-                    <div class="carousel-item carousel-item-min active">
-                      <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
-                        <P ALIGN=CENTER>
-                          <span style="font-size: 3em; color: Tomato;">
+                        @if (substr($file,-3) === 'pdf')
+                        <div class="carousel-item carousel-item-min active">
+                          <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
+                            <P ALIGN=CENTER>
+                              <span style="font-size: 3em; color: Tomato;">
+                                <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
+                                <script>
+                                  PDFObject.embed("{{asset($file)}}", "#example{{ $job->id . '_' . $loop->index }}", {
+                                    page: "1"
+                                  });
+                                </script>
+                              </span>
+                            </p>
+                          </a>
+                        </div>
+                        @else
+                        <div class="carousel-item carousel-item-min active popup-gallery">
+                          <a href="{{ asset($file) }}" target="_blank">
+                            <img class="d-block w-100" src="{{ asset($file) }}" alt="First slide">
+                          </a>
+                        </div>
+                        @endif
+                    @else
+                      @if (substr($file,-3) === 'pdf')
+                      <div class="carousel-item carousel-item-min">
+                        <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
+                          <P ALIGN=CENTER>
+                            <span style="font-size: 3em; color: Tomato;">
                             <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
-                            <script>
-                              PDFObject.embed("{{asset($file)}}", "#example{{ $job->id . '_' . $loop->index }}", {
-                                page: "1"
-                              });
-                            </script>
-                          </span>
-                        </p>
-                      </a>
-                    </div>
-                    @else
-                    <div class="carousel-item carousel-item-min active popup-gallery">
-                      <a href="{{ asset($file) }}" target="_blank">
-                        <img class="d-block w-100" src="{{ asset($file) }}" alt="First slide">
-                      </a>
-                    </div>
-                    @endif
-                    @else
-                    @if (substr($file,-3) === 'pdf')
-                    <div class="carousel-item carousel-item-min">
-                      <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
-                        <P ALIGN=CENTER>
-                          <span style="font-size: 3em; color: Tomato;">
-                            <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
-                            <script>
-                              PDFObject.embed("{{asset($file)}}", "#example{{ $job->id . '_' . $loop->index }}", {
-                                page: "1"
-                              });
-                            </script>
-                          </span>
-                        </p>
-                      </a>
-                    </div>
-                    @else
-                    <div class="carousel-item carousel-item-min popup-gallery">
-                      <a href="{{ asset($file) }}" target="_blank">
-                        <img class="d-block w-100" src="{{ asset($file) }}" alt="Sec slide">
-                      </a>
-                    </div>
-                    @endif
+                              <script>
+                                PDFObject.embed("{{asset($file)}}", "#example{{ $job->id . '_' . $loop->index }}", {
+                                  page: "1"
+                                });
+                              </script>
+                            </span>
+                          </p>
+                        </a>
+                      </div>
+                      @else
+                      <div class="carousel-item carousel-item-min popup-gallery">
+                        <a href="{{ asset($file) }}" target="_blank">
+                          <img class="d-block w-100" src="{{ asset($file) }}" alt="Sec slide">
+                        </a>
+                      </div>
+                      @endif
 
-                    <a class="carousel-control-prev" href="#carousel{{$job->id}}" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel{{$job->id}}" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
+                      <a class="carousel-control-prev" href="#carousel{{$job->id}}" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel{{$job->id}}" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
                     @endif
                     @endforeach
 
