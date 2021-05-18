@@ -238,6 +238,8 @@ Route::get('/user/{id}/trash', 'UserController@restore')->name('user.restore');
 Route::get('/print-order/{id}', 'JobController@pdf_order')->name('print-order.show');
 Route::get('/print-invoice/{id}', 'JobController@pdf_invoice')->name('print-invoice.show');
 Route::get('/print-receipt/{id}', 'JobController@pdf_receipt')->name('print-receipt.show');
+Route::get('/view-pdf/{id}', 'JobController@view_pdf')->name('view-pdf.show');
+
 
 
 //AdminInput Job order

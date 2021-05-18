@@ -87,8 +87,9 @@
                     @foreach($fileList as $file)
                     @if ($loop->first)
                         @if (substr($file,-3) === 'pdf')
+                        <!-- <input type="text" id="custId" name="custId" value="{{asset($file)}}"> -->
                         <div class="carousel-item carousel-item-min active">
-                          <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
+                        <a onclick="popupCenter('{{ route('view-pdf.show',$job->id) }}', 'myPop1',800,900);" href="javascript:void(0);">
                             <P ALIGN=CENTER>
                               <span style="font-size: 3em; color: Tomato;">
                                 <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
@@ -351,6 +352,7 @@
                     <div class="fa-icon" id="fa-invoice{{$job->id}}"><a href="{{route('print-invoice.show','1200')}}"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div>
                     <div class="fa-icon" id="fa-receipt{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div>            
                     <div class="fa-icon" id="fa-ope{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div>
+                    
                     <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload{{$job->id}}" onclick="dropzone({{$job->id}})" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div> -->
                   </div>
 
@@ -616,10 +618,34 @@
     // document.getElementById('dayofweek').innerHTML = weekday[date.getDay()];
   </script>
 
+  <!-- <script>
+    $(document).ready(function() {
+        $(window).on("contextmenu",function(e){
+          return false;
+        }); 
+    }); 
+    document.onkeydown = function (e) {
+        e = e || window.event;//Get event
+        if (e.ctrlKey) {
+            var c = e.which || e.keyCode;//Get key code
+            switch (c) {
+                case 83://Block Ctrl+S
+                case 87://Block Ctrl+W --Not work in Chrome
+                case 73://Block Ctrl+I
+                case 67: //Block Ctrl+C
+                    e.preventDefault();     
+                    e.stopPropagation();
+                break;
+            }
+        }
+    };
+  </script> -->
+
   <SCRIPT>
     function popupCenter(url, title, w, h) {
       var left = (screen.width / 2) - (w / 2);
-      var top = (screen.height / 2) - (h / 2);
+      var top = (screen.height / 2) - (h / 2); 
+     
       return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
     }
   </SCRIPT>

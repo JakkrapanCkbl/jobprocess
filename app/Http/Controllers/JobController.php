@@ -119,7 +119,15 @@ class JobController extends Controller
 
     }
 
-    
+    public function view_pdf($id)
+    {
+        $jobs = $id;
+        // dd($jobs);
+        // $pdf = PDFbarry::loadView('pdf_forms.viewpdf');    
+        // return $pdf->stream();
+         return view('pdf_forms.viewpdf', compact('jobs'));
+    }
+
 
     public function pdf_order($id)
     {
@@ -129,6 +137,7 @@ class JobController extends Controller
         $pdf = PDFbarry::loadView('pdf_forms.order', compact('jobs'));    
         return $pdf->stream();
     }
+
 
     public function pdf_invoice($id)
     {

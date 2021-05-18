@@ -87,8 +87,9 @@
                     <?php $__currentLoopData = $fileList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php if($loop->first): ?>
                         <?php if(substr($file,-3) === 'pdf'): ?>
+                        <!-- <input type="text" id="custId" name="custId" value="<?php echo e(asset($file)); ?>"> -->
                         <div class="carousel-item carousel-item-min active">
-                          <a onclick="popupCenter('<?php echo e(asset($file)); ?>', 'myPop1',600,900);" href="javascript:void(0);">
+                        <a onclick="popupCenter('<?php echo e(route('view-pdf.show',$job->id)); ?>', 'myPop1',800,900);" href="javascript:void(0);">
                             <P ALIGN=CENTER>
                               <span style="font-size: 3em; color: Tomato;">
                                 <div class="pdfobject-com" id="example<?php echo e($job->id . '_' . $loop->index); ?>"></div>
@@ -351,6 +352,7 @@
                     <div class="fa-icon" id="fa-invoice<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-invoice.show','1200')); ?>"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div>
                     <div class="fa-icon" id="fa-receipt<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-receipt.show','1200')); ?>"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div>            
                     <div class="fa-icon" id="fa-ope<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-receipt.show','1200')); ?>"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div>
+                    
                     <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload<?php echo e($job->id); ?>" onclick="dropzone(<?php echo e($job->id); ?>)" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div> -->
                   </div>
 
@@ -616,10 +618,34 @@
     // document.getElementById('dayofweek').innerHTML = weekday[date.getDay()];
   </script>
 
+  <!-- <script>
+    $(document).ready(function() {
+        $(window).on("contextmenu",function(e){
+          return false;
+        }); 
+    }); 
+    document.onkeydown = function (e) {
+        e = e || window.event;//Get event
+        if (e.ctrlKey) {
+            var c = e.which || e.keyCode;//Get key code
+            switch (c) {
+                case 83://Block Ctrl+S
+                case 87://Block Ctrl+W --Not work in Chrome
+                case 73://Block Ctrl+I
+                case 67: //Block Ctrl+C
+                    e.preventDefault();     
+                    e.stopPropagation();
+                break;
+            }
+        }
+    };
+  </script> -->
+
   <SCRIPT>
     function popupCenter(url, title, w, h) {
       var left = (screen.width / 2) - (w / 2);
-      var top = (screen.height / 2) - (h / 2);
+      var top = (screen.height / 2) - (h / 2); 
+     
       return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
     }
   </SCRIPT>
