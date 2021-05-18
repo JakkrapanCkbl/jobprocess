@@ -89,7 +89,7 @@
                         @if (substr($file,-3) === 'pdf')
                         <!-- <input type="text" id="custId" name="custId" value="{{asset($file)}}"> -->
                         <div class="carousel-item carousel-item-min active">
-                        <a onclick="popupCenter('{{ route('view-pdf.show',$job->id) }}', 'myPop1',800,900);" href="javascript:void(0);">
+                        <a onclick="popupCenter('{{ route('view-pdf.show', str_replace_array('/', ['*', '*', '*', '*', '*', '*'], asset($file))) }}', 'myPop1',800,900);" href="javascript:void(0);">
                             <P ALIGN=CENTER>
                               <span style="font-size: 3em; color: Tomato;">
                                 <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
@@ -112,7 +112,7 @@
                     @else
                       @if (substr($file,-3) === 'pdf')
                       <div class="carousel-item carousel-item-min">
-                        <a onclick="popupCenter('{{ asset($file) }}', 'myPop1',600,900);" href="javascript:void(0);">
+                        <a onclick="popupCenter('{{ route('view-pdf.show', str_replace_array('/', ['*', '*', '*', '*', '*', '*'], asset($file))) }}', 'myPop1',800,900);" href="javascript:void(0);">
                           <P ALIGN=CENTER>
                             <span style="font-size: 3em; color: Tomato;">
                             <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
@@ -618,7 +618,7 @@
     // document.getElementById('dayofweek').innerHTML = weekday[date.getDay()];
   </script>
 
-  <!-- <script>
+  <script>
     $(document).ready(function() {
         $(window).on("contextmenu",function(e){
           return false;
@@ -639,7 +639,7 @@
             }
         }
     };
-  </script> -->
+  </script>
 
   <SCRIPT>
     function popupCenter(url, title, w, h) {

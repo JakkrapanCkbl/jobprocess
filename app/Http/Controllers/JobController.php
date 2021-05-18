@@ -121,11 +121,11 @@ class JobController extends Controller
 
     public function view_pdf($id)
     {
-        $jobs = $id;
+        $jobs = str_replace('*', '/', $id);
         // dd($jobs);
         // $pdf = PDFbarry::loadView('pdf_forms.viewpdf');    
         // return $pdf->stream();
-         return view('pdf_forms.viewpdf', compact('jobs'));
+         return view('pdf_forms.viewpdf')->with('fn',$jobs);
     }
 
 

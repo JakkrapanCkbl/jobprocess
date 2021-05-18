@@ -27,7 +27,13 @@
             }
         }
         $(document).contextmenu(function() { return false;});
-        url = "http://127.0.0.1:8000/storage/project_reports/LC_64BF-0662/0.pdf";
+        // url = "http://127.0.0.1:8000/storage/project_reports/LC_64BF-0662/0.pdf";
+        // url = "https://www.jobprocess.landmarkcon.net/storage/project_reports/LC_64BF-0662/5.%20LC-64BF-0662-A.pdf";
+        var fns = <?php echo json_encode($fn); ?>;
+
+        console.log(fns);
+        url = fns;
+        
         var thePdf = null;
         var scale = 1;
         pdfjsLib.getDocument(url).promise.then(function(pdf) {
