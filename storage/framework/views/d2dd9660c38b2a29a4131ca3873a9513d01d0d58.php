@@ -259,31 +259,40 @@
                       &nbsp;&nbsp;
                       <div class="calendarbox">
                         <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                        <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                         <br>
                         <span class="badge badge-pill badge-primary">           
-                          &nbsp;&nbsp;<?php echo e($job->percentfinish); ?>&nbsp;%<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo e($job->percentfinish); ?>&nbsp;%&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                         </span>
                       </div>
-                    <?php elseif($job->percentfinish >= 50 and $job->percentfinish < 100): ?> 
-                      &nbsp;&nbsp;
                       <div class="calendarbox">
-                        <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
                         <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                         <br>
+                      </div>
+                    <?php elseif($job->percentfinish >= 50 and $job->percentfinish < 100): ?> 
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <div class="calendarbox">
+                        <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
+                        <br>
                         <span class="badge badge-pill badge-warning">
-                          &nbsp;&nbsp;<?php echo e($job->percentfinish); ?>&nbsp;%<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                        &nbsp;&nbsp;&nbsp;<?php echo e($job->percentfinish); ?>&nbsp;%<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                         </span>
+                      </div>
+                      <div class="calendarbox">
+                        <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                        <br>
                       </div>
                     <?php elseif($job->percentfinish == 0): ?>
                       &nbsp;&nbsp;
                       <div class="calendarbox">
                         <img src="<?php echo e($job->ValuerAvatar); ?>" alt="valuer" class="brround  avatar-md w-32">
-                        <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
                         <br>
                         <span class="badge badge-pill badge-danger">
-                          &nbsp;&nbsp;0&nbsp;&nbsp;%<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
+                        &nbsp;&nbsp;0&nbsp;%<a href="javascript:void(0)" class="mr-3" title="" data-original-title="Normal" data-toggle="modal" data-target="#progressModal<?php echo e($job->id); ?>"><i class="fe fe-edit-2 text-dark fs-16"></i></a>
                         </span>
+                      </div>
+                      <div class="calendarbox">
+                      <img src="<?php echo e($job->HeadAvatar); ?>" alt="headvaluer" class="brround  avatar-md w-32">
+                        <br>
                       </div>
                     <?php else: ?>
                       &nbsp;&nbsp;
@@ -336,21 +345,26 @@
                     }
                   }
                   ?>
-                  <!-- <div class="d-flex row justify-content-center justify-content-md-start"> -->
-                  <div class="col-md-8 row justify-content-center justify-content-md-start">
+                  <div class="d-flex row justify-content-center justify-content-md-start">
+                  <!-- <div class="col-md-8 row justify-content-center justify-content-md-start"> -->
                     <!-- <div class="fa-icon"><a onclick="popupCenter('testdc4', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
                     <!-- <div class="fa-icon"><a onclick="popupCenter('fmg', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
                     <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc<?php echo e($job->id); ?>" aria-expanded="false" aria-controls="collapse" title="open file"></div> -->
                     <!-- <div class="fa-icon"><a onclick="popupCenter('/file-manager/fm-button', 'fm',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
                     <!-- <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?= str_replace('/', '_', $job->jobcode) ?>/report/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
                     <!-- <div class="fa-icon "><a onclick="popupCenter('file:///C:\test\', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div> -->
-                    <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?= str_replace('/', '_', $job->jobcode) ?>/All/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Green;" class="far fa-images" title="open job folders"></a></div>
-                    <div class="fa-icon"><a href="<?php echo e(route('admininputjob.edit',[$job->id])); ?>"><span class="fas fa-edit" alt="ปรับปรุงข้อมูล" title="ปรับปรุงข้อมูล"></a></div>                    
+                    <div class="fa-icon"><a onclick="popupCenter('uploadfile/<?php echo e($job->id); ?>/<?= str_replace('/', '_', $job->jobcode) ?>/All/', 'myPop1',750,900);" href="javascript:void(0);"><span class="far fa-images" title="open job folders"></span></a></div>
+                    &nbsp;
+                    <div class="fa-icon"><a href="<?php echo e(route('admininputjob.edit',[$job->id])); ?>"><span  class="fas fa-edit" alt="ปรับปรุงข้อมูล" title="ปรับปรุงข้อมูล"></span></a></div>                    
                     <!-- <div class="col-md-1"></div> -->
                     <!-- <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div> -->
+                    &nbsp;
                     <div class="fa-icon"><a href="<?php echo e(route('print-order.show',[$job->id])); ?>"><span class="far fa-paper-plane" alt="ใบสั่งงาน" title="ใบสั่งงาน" id="fa-invoice"></a></div>
+                    &nbsp;
                     <div class="fa-icon" id="fa-invoice<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-invoice.show','1200')); ?>"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div>
+                    &nbsp;
                     <div class="fa-icon" id="fa-receipt<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-receipt.show','1200')); ?>"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div>            
+                    &nbsp;
                     <div class="fa-icon" id="fa-ope<?php echo e($job->id); ?>"><a href="<?php echo e(route('print-receipt.show','1200')); ?>"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div>
                     
                     <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload<?php echo e($job->id); ?>" onclick="dropzone(<?php echo e($job->id); ?>)" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div> -->
@@ -618,7 +632,8 @@
     // document.getElementById('dayofweek').innerHTML = weekday[date.getDay()];
   </script>
 
-  <script>
+  <!-- disible right click -->
+  <!-- <script>
     $(document).ready(function() {
         $(window).on("contextmenu",function(e){
           return false;
@@ -639,7 +654,7 @@
             }
         }
     };
-  </script>
+  </script> -->
 
   <SCRIPT>
     function popupCenter(url, title, w, h) {
