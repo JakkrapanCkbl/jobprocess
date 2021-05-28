@@ -168,6 +168,11 @@
                     @empty(!$job->client)
                     <div title="ส่งธนาคาร" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->client}}</span></div>
                     @endempty
+                    @empty(!$job->prop_type)
+                    <div title="ประเภททรัพย์สิน" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->prop_type}}</span></div>
+                    @endempty
+
+
                     @if ($job->jobsize != "" && $job->jobsize != "-")
                     <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->jobsize}}</span></div>
                     @endif
@@ -191,14 +196,13 @@
                     <!-- <div title="ชื่อโครงการ" class="mr-2"><span class="fas fa-building text-primary"></span>&nbsp;{{$job->projectname}}</div> -->
                     <!-- <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;{{$job->projectname}}&nbsp;{{$job->proplocation}}</div> -->
                     @if ($job->projectname == $job->proplocation)
-                    @if ($job->projectname != "")
-                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;{{$job->projectname}}</div>
+                        @if ($job->projectname != "")
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;{{$job->projectname}}</div>
+                        @else
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;{{$job->proplocation}}</div>
+                        @endif
                     @else
-                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;{{$job->proplocation}}</div>
-                    @endif
-
-                    @else
-                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;{{$job->projectname}}&nbsp;{{$job->proplocation}}</div>
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;{{$job->projectname}}&nbsp;{{$job->proplocation}}</div>
                     @endif
                   </div>
                   <div class="d-flex row justify-content-center justify-content-md-start">

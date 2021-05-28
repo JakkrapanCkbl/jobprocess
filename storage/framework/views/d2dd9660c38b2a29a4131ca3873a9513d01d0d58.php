@@ -168,6 +168,11 @@
                     <?php if(empty(!$job->client)): ?>
                     <div title="ส่งธนาคาร" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info"><?php echo e($job->client); ?></span></div>
                     <?php endif; ?>
+                    <?php if(empty(!$job->prop_type)): ?>
+                    <div title="ประเภททรัพย์สิน" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info"><?php echo e($job->prop_type); ?></span></div>
+                    <?php endif; ?>
+
+
                     <?php if($job->jobsize != "" && $job->jobsize != "-"): ?>
                     <div class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info"><?php echo e($job->jobsize); ?></span></div>
                     <?php endif; ?>
@@ -191,14 +196,13 @@
                     <!-- <div title="ชื่อโครงการ" class="mr-2"><span class="fas fa-building text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div> -->
                     <!-- <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div> -->
                     <?php if($job->projectname == $job->proplocation): ?>
-                    <?php if($job->projectname != ""): ?>
-                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div>
+                        <?php if($job->projectname != ""): ?>
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?></div>
+                        <?php else: ?>
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->proplocation); ?></div>
+                        <?php endif; ?>
                     <?php else: ?>
-                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->proplocation); ?></div>
-                    <?php endif; ?>
-
-                    <?php else: ?>
-                    <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div>
+                        <div title="ที่อยู่" class="mr-2"><span class="fas fa-map-marker-alt text-primary"></span>&nbsp;<?php echo e($job->projectname); ?>&nbsp;<?php echo e($job->proplocation); ?></div>
                     <?php endif; ?>
                   </div>
                   <div class="d-flex row justify-content-center justify-content-md-start">
@@ -633,7 +637,7 @@
   </script>
 
   <!-- disible right click -->
-  <!-- <script>
+  <script>
     $(document).ready(function() {
         $(window).on("contextmenu",function(e){
           return false;
@@ -654,7 +658,7 @@
             }
         }
     };
-  </script> -->
+  </script>
 
   <SCRIPT>
     function popupCenter(url, title, w, h) {
