@@ -7,6 +7,8 @@ use App\Exports\UsersExport;
 use App\Imports\UsersImport;
 use App\User;
 use Maatwebsite\Excel\Facades\Excel;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class HomeController extends Controller
 {
@@ -28,9 +30,52 @@ class HomeController extends Controller
      */
     public function index()
     {
+        /*for test spaties role and permission **/
+        //add new  -----
+        //Role::create(['name' => 'user']);
+        //Permission::create(['name' => 'print']);
+
+        //assign permission for role -----
+        // $role = Role::findById(3);
+        // $permission = Permission::findById(4);
+        // $role->givePermissionTo($permission);
+
+        // $role = Role::findById(4);
+        // $permission = Permission::findById(4);
+        // $role->givePermissionTo($permission);
+
+        //assign permission to model_has_permissions after login (model_type = App\User) -----
+        //auth()->user()->givePermissionTo('edit');
+        //get info user->permission -----
+        //return auth()->user()->permissions;
+
+        //assign role to model_has_roles after login (model_type = App\User) -----
+        //auth()->user()->assignRole('admin');
+        //return auth()->user()->permissions;
+        //return auth()->user()$user->hasRole('writer');
+
+
+        // Direct permissions---------------------------------------------------------------
+        //return auth()->$user->getDirectPermissions() // Or $user->permissions;
+
+        // Permissions inherited from the user's roles
+        //return auth()->$user->getPermissionsViaRoles();
+
+        // All permissions which apply on the user (inherited and direct)
+        //return auth()->$user->getAllPermissions();
+
+        // Get info by User---------------------------------------------------------------
+        //return User::role('edit')->get();
+        //return User::permission('edit')->get();
+
+
+
+
         /*for test login**/
         return view('home');
-        
+
+       
+
         /**
         $users = User::All();
         return view('test.customers', compact('users'));

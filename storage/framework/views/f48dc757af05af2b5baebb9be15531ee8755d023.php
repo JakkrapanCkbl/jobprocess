@@ -11,9 +11,14 @@
                             <?php echo e(session('status')); ?>
 
                         </div>
-                    <?php endif; ?>
-                    
+                    <?php endif; ?> 
                    <img src="<?php echo e(asset(Auth::user()->avatar)); ?>" style="height:60px;width:60px; border-radius:50%; margin-right:15px;" alt="">You are logged in!
+                    <?php if(auth()->check() && auth()->user()->hasRole('admin')): ?>
+                    <input type="button" value="Add" onclick="msg()">
+                    <?php else: ?>
+                    <input type="button" value="Add" onclick="msg()">
+                    <?php endif; ?>
+                   
                 </div>
                 
             </div>
@@ -51,6 +56,12 @@
   function fmSetLink($url) {
     document.getElementById('image_label').value = $url;
   }
+</script>
+
+<script>
+    function msg() {
+    alert("My role is ");
+    }
 </script>
 
 

@@ -189,6 +189,8 @@ return [
         //file manager
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        //for Role and Permission
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 

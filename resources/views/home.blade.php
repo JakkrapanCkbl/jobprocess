@@ -11,9 +11,14 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
-                    
+                    @endif 
                    <img src="{{asset(Auth::user()->avatar)}}" style="height:60px;width:60px; border-radius:50%; margin-right:15px;" alt="">You are logged in!
+                    @role('admin')
+                    <input type="button" value="Add" onclick="msg()">
+                    @else
+                    <input type="button" value="Add" onclick="msg()">
+                    @endrole
+                   
                 </div>
                 
             </div>
@@ -51,6 +56,12 @@
   function fmSetLink($url) {
     document.getElementById('image_label').value = $url;
   }
+</script>
+
+<script>
+    function msg() {
+    alert("My role is ");
+    }
 </script>
 
 

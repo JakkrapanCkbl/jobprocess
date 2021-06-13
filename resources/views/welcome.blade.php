@@ -89,18 +89,21 @@
                         @if (substr($file,-3) === 'pdf')
                         <!-- <input type="text" id="custId" name="custId" value="{{asset($file)}}"> -->
                         <div class="carousel-item carousel-item-min active">
-                        <a onclick="popupCenter('{{ route('view-pdf.show', str_replace_array('/', ['*', '*', '*', '*', '*', '*'], asset($file))) }}', 'myPop1',800,900);" href="javascript:void(0);">
-                            <P ALIGN=CENTER>
-                              <span style="font-size: 3em; color: Tomato;">
-                                <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
-                                <script>
-                                  PDFObject.embed("{{asset($file)}}", "#example{{ $job->id . '_' . $loop->index }}", {
-                                    page: "1"
-                                  });
-                                </script>
-                              </span>
-                            </p>
-                          </a>
+                        
+                          <a onclick="popupCenter('{{ route('view-pdf.show', str_replace_array('/', ['*', '*', '*', '*', '*', '*'], asset($file))) }}', 'myPop1',800,900);" href="javascript:void(0);">
+                              <P ALIGN=CENTER>
+                                <span style="font-size: 3em; color: Tomato;">
+                                  <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
+                                  <script>
+                                    PDFObject.embed("{{asset($file)}}", "#example{{ $job->id . '_' . $loop->index }}", {
+                                      page: "1"
+                                    });
+                                  </script>
+                                </span>
+                              </p>
+                            </a>
+                        
+                        
                         </div>
                         @else
                         <div class="carousel-item carousel-item-min active popup-gallery">
@@ -112,18 +115,21 @@
                     @else
                       @if (substr($file,-3) === 'pdf')
                       <div class="carousel-item carousel-item-min">
+                      
                         <a onclick="popupCenter('{{ route('view-pdf.show', str_replace_array('/', ['*', '*', '*', '*', '*', '*'], asset($file))) }}', 'myPop1',800,900);" href="javascript:void(0);">
-                          <P ALIGN=CENTER>
-                            <span style="font-size: 3em; color: Tomato;">
-                            <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
-                              <script>
-                                PDFObject.embed("{{asset($file)}}", "#example{{ $job->id . '_' . $loop->index }}", {
-                                  page: "1"
-                                });
-                              </script>
-                            </span>
-                          </p>
-                        </a>
+                            <P ALIGN=CENTER>
+                              <span style="font-size: 3em; color: Tomato;">
+                              <div class="pdfobject-com" id="example{{ $job->id . '_' . $loop->index }}"></div>
+                                <script>
+                                  PDFObject.embed("{{asset($file)}}", "#example{{ $job->id . '_' . $loop->index }}", {
+                                    page: "1"
+                                  });
+                                </script>
+                              </span>
+                            </p>
+                          </a>
+                      
+                        
                       </div>
                       @else
                       <div class="carousel-item carousel-item-min popup-gallery">
@@ -165,9 +171,11 @@
                     @if ($job->urgent == 1)
                     <div class="mr-2 mb-1"><span class="text-danger p-1 rounded border border-danger">Urgent</span></div>
                     @endif
+                    
                     @empty(!$job->client)
                     <div title="ส่งธนาคาร" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->client}}</span></div>
                     @endempty
+
                     @empty(!$job->prop_type)
                     <div title="ประเภททรัพย์สิน" class="mr-2 mb-1"><span class="text-info p-1 rounded border border-info">{{$job->prop_type}}</span></div>
                     @endempty
@@ -349,30 +357,37 @@
                     }
                   }
                   ?>
-                  <div class="d-flex row justify-content-center justify-content-md-start">
-                  <!-- <div class="col-md-8 row justify-content-center justify-content-md-start"> -->
-                    <!-- <div class="fa-icon"><a onclick="popupCenter('testdc4', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
-                    <!-- <div class="fa-icon"><a onclick="popupCenter('fmg', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
-                    <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc{{$job->id}}" aria-expanded="false" aria-controls="collapse" title="open file"></div> -->
-                    <!-- <div class="fa-icon"><a onclick="popupCenter('/file-manager/fm-button', 'fm',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
-                    <!-- <div class="fa-icon"><a onclick="popupCenter('uploadfile/{{$job->id}}/<?= str_replace('/', '_', $job->jobcode) ?>/report/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
-                    <!-- <div class="fa-icon "><a onclick="popupCenter('file:///C:\test\', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div> -->
-                    <div class="fa-icon"><a onclick="popupCenter('uploadfile/{{$job->id}}/<?= str_replace('/', '_', $job->jobcode) ?>/All/', 'myPop1',750,900);" href="javascript:void(0);"><span class="far fa-images" title="open job folders"></span></a></div>
-                    &nbsp;
-                    <div class="fa-icon"><a href="{{route('admininputjob.edit',[$job->id])}}"><span  class="fas fa-edit" alt="ปรับปรุงข้อมูล" title="ปรับปรุงข้อมูล"></span></a></div>                    
-                    <!-- <div class="col-md-1"></div> -->
-                    <!-- <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div> -->
-                    &nbsp;
-                    <div class="fa-icon"><a href="{{route('print-order.show',[$job->id])}}"><span class="far fa-paper-plane" alt="ใบสั่งงาน" title="ใบสั่งงาน" id="fa-invoice"></a></div>
-                    &nbsp;
-                    <div class="fa-icon" id="fa-invoice{{$job->id}}"><a href="{{route('print-invoice.show','1200')}}"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div>
-                    &nbsp;
-                    <div class="fa-icon" id="fa-receipt{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div>            
-                    &nbsp;
-                    <div class="fa-icon" id="fa-ope{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div>
-                    
-                    <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload{{$job->id}}" onclick="dropzone({{$job->id}})" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div> -->
-                  </div>
+                  @hasanyrole('admin|supervisor')
+                    <div class="d-flex row justify-content-center justify-content-md-start">
+                    <!-- <div class="col-md-8 row justify-content-center justify-content-md-start"> -->
+                      <!-- <div class="fa-icon"><a onclick="popupCenter('testdc4', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
+                      <!-- <div class="fa-icon"><a onclick="popupCenter('fmg', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
+                      <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-pdf" data-toggle="collapse" data-target="#collapseViewDoc{{$job->id}}" aria-expanded="false" aria-controls="collapse" title="open file"></div> -->
+                      <!-- <div class="fa-icon"><a onclick="popupCenter('/file-manager/fm-button', 'fm',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
+                      <!-- <div class="fa-icon"><a onclick="popupCenter('uploadfile/{{$job->id}}/<?= str_replace('/', '_', $job->jobcode) ?>/report/', 'myPop1',750,900);" href="javascript:void(0);"><span style="color: Gold;" class="fas fa-folder-open" title="open job folders"></a></div> -->
+                      <!-- <div class="fa-icon "><a onclick="popupCenter('file:///C:\test\', 'myPop1',600,900);" href="javascript:void(0);"><span style="color: Brown;" class="fas fa-tasks" title="I am hovering over the text"></a></div> -->
+                      <div class="fa-icon"><a onclick="popupCenter('uploadfile/{{$job->id}}/<?= str_replace('/', '_', $job->jobcode) ?>/All/', 'myPop1',750,900);" href="javascript:void(0);"><span class="far fa-images" title="open job folders"></span></a></div>
+                      &nbsp;
+                      <div class="fa-icon"><a href="{{route('admininputjob.edit',[$job->id])}}"><span  class="fas fa-edit" alt="ปรับปรุงข้อมูล" title="ปรับปรุงข้อมูล"></span></a></div>                    
+                      <!-- <div class="col-md-1"></div> -->
+                      <!-- <div class="fa-icon-inrow"><span class="fas fa-file-contract" alt="ใบเสนอราคา" title="ใบเสนอราคา"></div> -->
+                      &nbsp;
+                      <div class="fa-icon"><a href="{{route('print-order.show',[$job->id])}}"><span class="far fa-paper-plane" alt="ใบสั่งงาน" title="ใบสั่งงาน" id="fa-invoice"></a></div>
+                      &nbsp;
+                      @hasanyrole('admin')
+                        <div class="fa-icon" id="fa-invoice{{$job->id}}"><a href="{{route('print-invoice.show','1200')}}"><span class="fas fa-file-invoice" alt="ใบแจ้งหนี้" title="ใบแจ้งหนี้"></a></div>
+                        &nbsp;
+                        <div class="fa-icon" id="fa-receipt{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-file-invoice-dollar" alt="ใบเสร็จรับเงิน" title="ใบเสร็จรับเงิน"></a></div>            
+                        &nbsp;
+                      @endhasanyrole
+                      <div class="fa-icon" id="fa-ope{{$job->id}}"><a href="{{route('print-receipt.show','1200')}}"><span class="fas fa-donate" alt="OPE" title="OPE"></a></div>      
+                      <!-- <div class="fa-icon fa-icon-blue"><span class="fas fa-file-upload" data-toggle="collapse" data-target="#collapseUpload{{$job->id}}" onclick="dropzone({{$job->id}})" aria-expanded="false" aria-controls="collapse" title="อัพโหลด file fa-icon-blue"></div> -->
+                    </div>
+                  @else
+                      <!-- read only -->
+                  @endhasanyrole
+
+                  
 
 
                   <div id="pdfCollapse{{$job->id}}">
