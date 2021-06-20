@@ -138,7 +138,6 @@ class JobController extends Controller
         return $pdf->stream();
     }
 
-
     public function pdf_invoice($id)
     {
 

@@ -121,7 +121,6 @@
                 <td>Purpose : <?php echo e($item->obj_name); ?></td>
             </tr>                     
      
-  
   </table>
 
   <table>
@@ -163,7 +162,7 @@
   </table>
 
   <p><strong>3. THE SUBJECT PROPERTY</strong> </p>
-  <p><?php echo e($item->proplocation); ?></p>
+  <p><?php echo e($item->HideResult); ?></p>
 
   <p><strong>4. SUPPORTING DOCUMENTS</strong> </p>
 
